@@ -1,5 +1,6 @@
 var express = require("express");
 var app = express();
+var path = require('path');
 
 /* serves main page */
 app.get("/", function(req, res) {
