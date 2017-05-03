@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h1>Subscribe Now And Get 5% Off</h1>
+  <p>Type in your Phonenumber to subscribe to the LIDL Smart Event Service</p>
+
+  <form (submit)="addTel($event)">
+    <div class="form-group">
+      <input type="tel" [(ngModel)]="tel" name="tel" class="form-control" placeholder="Add here your Phonenumber..">
+    </div>
+  </form>
+
+  <p><a class="btn btn-primary btn-lg" href="#" role="button" (click)="addTel($event)">Subscribe</a></p>
+</div>
+
+
+<!-- TODO: validation for correct tel number input -->
