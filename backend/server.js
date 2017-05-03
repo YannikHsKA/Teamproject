@@ -4,7 +4,7 @@ var path = require('path');
 
 /* serves main page */
 app.get("/", function(req, res) {
-   res.sendfile(path.resolve('../frontend/index.html'))
+   res.sendfile(path.resolve('../frontend/src/index.html'))
 });
 
  app.post("/user/add", function(req, res) {
