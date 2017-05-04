@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SubscriptionService } from '../../services/subscription.service';
+import {User} from "../../../../Users";
 
 @Component({
   moduleId: module.id,
@@ -8,14 +9,25 @@ import { SubscriptionService } from '../../services/subscription.service';
 })
 
 export class SubscriptionsComponent  {
-  tel: number;
+  users: User[];
+  phonenumber: number;
 
   constructor(private subscriptionService:SubscriptionService){
 
   }
 
-  addTel(event: any){
+  addUser(event: any){
     event.preventDefault();
-    console.log(this.tel);
+
+    var newUser = {
+      phonenumber: this.phonenumber,
+      sms: 1,
+      whatsapp: 0
+    }
+
+    this.subscriptionService.addUser(newUser)
+      .subscribe(user => {
+        this.users.push(user);
+      });
   }
 }

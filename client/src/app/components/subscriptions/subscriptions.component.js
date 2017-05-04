@@ -14,9 +14,18 @@ var SubscriptionsComponent = (function () {
     function SubscriptionsComponent(subscriptionService) {
         this.subscriptionService = subscriptionService;
     }
-    SubscriptionsComponent.prototype.addTel = function (event) {
+    SubscriptionsComponent.prototype.addUser = function (event) {
+        var _this = this;
         event.preventDefault();
-        console.log(this.tel);
+        var newUser = {
+            phonenumber: this.phonenumber,
+            sms: 1,
+            whatsapp: 0
+        };
+        this.subscriptionService.addUser(newUser)
+            .subscribe(function (user) {
+            _this.users.push(user);
+        });
     };
     SubscriptionsComponent = __decorate([
         core_1.Component({

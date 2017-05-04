@@ -16,6 +16,13 @@ var SubscriptionService = (function () {
         this.http = http;
         console.log('Subscription Service initialized..');
     }
+    SubscriptionService.prototype.addUser = function (newUser) {
+        console.log(newUser);
+        var headers = new http_1.Headers();
+        headers.append('Content-Typte', 'application/json'); //TODO: application/x-www-form-urlencoded ??
+        return this.http.post('/api/subscribe', JSON.stringify(newUser), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     SubscriptionService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
