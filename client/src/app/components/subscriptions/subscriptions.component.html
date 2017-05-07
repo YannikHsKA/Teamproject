@@ -2,13 +2,13 @@
   <h1>Subscribe Now And Get 5% Off</h1>
   <p>Type in your Phonenumber to subscribe to the LIDL Smart Event Service</p>
 
-  <form (submit)="addUser($event)">
-    <div class="form-group">
-      <input type="tel" [(ngModel)]="phonenumber" name="tel" class="form-control" placeholder="Add here your Phonenumber..">
-    </div>
+  <div class="form-group">
+    <input type="tel" [(ngModel)]="phonenumber" name="tel" class="form-control"
+           placeholder="Add here your Phonenumber..">
+  </div>
+  <form (click)="addUser()">
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Subscribe</a></p>
   </form>
-
-  <p><a class="btn btn-primary btn-lg" href="#" role="button" (click)="addUser($event)">Subscribe</a></p>
 </div>
 
 

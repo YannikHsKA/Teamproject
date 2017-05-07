@@ -12,11 +12,6 @@ admin.initializeApp({
   databaseURL: "https://lidl-smart.firebaseio.com"
 });
 
-
-
-
-
-
 router.get("/send", function(req, res) {
    client.sendMessage({
      to: '+4915787295695',
@@ -24,9 +19,10 @@ router.get("/send", function(req, res) {
      body: 'Hello World'
    }, function(err, data){
      if(err){
-       console.log(err);
+       console.log("error:", err);
      }
      else{
+       console.log("start");
        console.log(data);
      }
    });
@@ -38,9 +34,9 @@ router.get("/send", function(req, res) {
 router.post("/subscribe", function(req, res)
 {
   /* Read POST Request */
-  var body = req.body;
-  console.log(body);
-  var phonenumber = body.number;
+  var user = req.body;
+  console.log("body: %j", user)
+  var phonenumber = user.phonenumber;
 
   /* Save Number into Firebase */
   var db = admin.database();

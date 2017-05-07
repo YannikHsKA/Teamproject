@@ -5,6 +5,6 @@ import { SubscriptionService } from './services/subscription.service';
   moduleId: module.id,
   selector: 'consumerAnalytics',
   templateUrl: `app.component.html`,
-  providers:[SubscriptionService]
+  providers: [ SubscriptionService ]
 })
 export class AppComponent  {  }

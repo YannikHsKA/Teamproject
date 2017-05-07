@@ -19,7 +19,7 @@ var SubscriptionService = (function () {
     SubscriptionService.prototype.addUser = function (newUser) {
         console.log(newUser);
         var headers = new http_1.Headers();
-        headers.append('Content-Typte', 'application/json'); //TODO: application/x-www-form-urlencoded ??
+        headers.append('Content-Type', 'application/json');
         return this.http.post('/api/subscribe', JSON.stringify(newUser), { headers: headers })
             .map(function (res) { return res.json(); });
     };
