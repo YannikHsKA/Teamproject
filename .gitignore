@@ -1,6 +1,5 @@
-backend/node_modules
+node_modules
 .idea/*
 npm-debug.log
-frontend/node_modules
 bower_components
 
