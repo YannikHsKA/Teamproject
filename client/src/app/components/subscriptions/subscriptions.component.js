@@ -17,12 +17,14 @@ var SubscriptionsComponent = (function () {
     }
     SubscriptionsComponent.prototype.addUser = function () {
         event.preventDefault();
-        console.log(this.phonenumber);
         var newUser = {
             phonenumber: this.phonenumber,
             sms: 1,
             whatsapp: 0
         };
+        if (newUser.phonenumber) {
+            this.saveSuccess = true;
+        }
         this.subscriptionService.addUser(newUser)
             .subscribe();
     };
@@ -32,7 +34,8 @@ SubscriptionsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'subscriptions',
-        templateUrl: "subscriptions.component.html"
+        templateUrl: "subscriptions.component.html",
+        styleUrls: ['subscriptions.component.css']
     }),
     __metadata("design:paramtypes", [subscription_service_1.SubscriptionService])
 ], SubscriptionsComponent);

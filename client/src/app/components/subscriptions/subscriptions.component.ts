@@ -4,11 +4,13 @@ import { SubscriptionService } from '../../services/subscription.service';
 @Component({
   moduleId: module.id,
   selector: 'subscriptions',
-  templateUrl: `subscriptions.component.html`
+  templateUrl: `subscriptions.component.html`,
+  styleUrls: ['subscriptions.component.css']
 })
 
 export class SubscriptionsComponent  {
   phonenumber: number;
+  saveSuccess: boolean;
 
   constructor(private subscriptionService:SubscriptionService){
 
@@ -16,7 +18,6 @@ export class SubscriptionsComponent  {
 
   addUser(){
     event.preventDefault();
-    console.log(this.phonenumber);
 
     var newUser = {
       phonenumber: this.phonenumber,
@@ -24,7 +25,11 @@ export class SubscriptionsComponent  {
       whatsapp: 0
     }
 
+    if(newUser.phonenumber ){
+      this.saveSuccess = true;
+    }
+
     this.subscriptionService.addUser(newUser)
-      .subscribe();
+      .subscribe()
   }
 }
