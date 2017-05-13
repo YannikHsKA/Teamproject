@@ -2,14 +2,24 @@
   <h1>Subscribe Now And Get 5% Off</h1>
   <p>Type in your Phonenumber to subscribe to the LIDL Smart Event Service</p>
 
-  <div class="form-group">
-    <input type="tel" [(ngModel)]="phonenumber" name="tel" class="form-control"
-           placeholder="Add here your Phonenumber..">
+
+  <input type="tel" class="form-control"
+         placeholder="Add here your Phonenumber.." required
+         pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
+         [(ngModel)]="phonenumber"
+         name="phonenumber" #number="ngModel">
+  <br>
+  <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
+    <div [hidden]="!number.errors.required">
+      Type in your phonenumber.
+    </div>
+    <div [hidden]="!number.errors.pattern">
+      Must be a valid phonenumber.
+    </div>
   </div>
-  <form (click)="addUser()">
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Subscribe</a></p>
-  </form>
+  <br>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button" (click)="addUser()">Subscribe</a></p>
+  <div class="alert alert-success fade in" *ngIf="saveSuccess">
+    <strong>Succes!</strong> You're now registered for the LIDL Smart Service.
+  </div>
 </div>
-
-
-<!-- TODO: validation for correct tel number input -->
