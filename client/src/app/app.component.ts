@@ -7,4 +7,7 @@ import { SubscriptionService } from './services/subscription.service';
   templateUrl: `app.component.html`,
   providers: [ SubscriptionService ]
 })
-export class AppComponent  {  }
+export class AppComponent  {
+
+  pageTitle: string ="Consumer Analytics Services"
+}

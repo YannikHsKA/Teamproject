@@ -13,21 +13,28 @@ admin.initializeApp({
 });
 
 router.get("/send", function(req, res) {
-   client.sendMessage({
-     to: '+4915787295695',
-     from: '+4915735984837',
-     body: 'Hello World'
-   }, function(err, data){
-     if(err){
-       console.log("error:", err);
-     }
-     else{
-       console.log("start");
-       console.log(data);
-     }
-   });
-   res.status(200).send("Success");
+    client.sendMessage({
+        to: '+4915787295695',
+        from: '+4915735984837',
+        body: 'Hello World'
+    }, function(err, data){
+        if(err){
+            console.log("error:", err);
+        }
+        else{
+            console.log("start");
+            console.log(data);
+        }
+    });
+    res.status(200).send("Success");
 });
+
+router.get("/test", function(req, res) {
+console.log("test")
+    res.status(200).send("Success!1");
+});
+
+
 
 
 /* Subscribe to the App */

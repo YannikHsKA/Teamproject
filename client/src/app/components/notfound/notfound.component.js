@@ -7,17 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var BundlesComponent = (function () {
-    function BundlesComponent() {
+var NotFoundComponent = (function () {
+    function NotFoundComponent() {
     }
-    return BundlesComponent;
+    return NotFoundComponent;
 }());
-BundlesComponent = __decorate([
+NotFoundComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'bundles',
-        templateUrl: "bundles.component.html"
+        selector: 'notfound',
+        templateUrl: "app/components/notfound/notfound.component.html"
     })
-], BundlesComponent);
-exports.BundlesComponent = BundlesComponent;
-//# sourceMappingURL=bundles.component.js.map
+], NotFoundComponent);
+exports.NotFoundComponent = NotFoundComponent;
+//# sourceMappingURL=notfound.component.js.map

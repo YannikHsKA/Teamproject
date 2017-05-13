@@ -7,17 +7,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var BundlesComponent = (function () {
-    function BundlesComponent() {
+var SettingsComponent = (function () {
+    function SettingsComponent() {
     }
-    return BundlesComponent;
+    return SettingsComponent;
 }());
-BundlesComponent = __decorate([
+SettingsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'bundles',
-        templateUrl: "bundles.component.html"
+        selector: 'settings',
+        templateUrl: "app/components/settings/settings.component.html"
     })
-], BundlesComponent);
-exports.BundlesComponent = BundlesComponent;
-//# sourceMappingURL=bundles.component.js.map
+], SettingsComponent);
+exports.SettingsComponent = SettingsComponent;
+//# sourceMappingURL=settings.component.js.map
