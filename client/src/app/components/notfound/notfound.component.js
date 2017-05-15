@@ -16,7 +16,7 @@ NotFoundComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'notfound',
-        templateUrl: "app/components/notfound/notfound.component.html"
+        templateUrl: 'notfound.component.html'
     })
 ], NotFoundComponent);
 exports.NotFoundComponent = NotFoundComponent;

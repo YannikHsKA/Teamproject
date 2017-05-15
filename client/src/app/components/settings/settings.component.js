@@ -16,7 +16,7 @@ SettingsComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'settings',
-        templateUrl: "app/components/settings/settings.component.html"
+        templateUrl: "settings.component.html"
     })
 ], SettingsComponent);
 exports.SettingsComponent = SettingsComponent;
