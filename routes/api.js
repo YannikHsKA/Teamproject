@@ -82,12 +82,12 @@ router.post("/subscribe", function(req, res)
  });
 
  /* Checks if phonenumber is already subscribed */
- router.post("/checktel", function(req, res)
+ router.post("/user/:phonenumber", function(req, res)
  {
    /* Read POST Request */
-   var user = req.body;
-   console.log("body: %j", user)
-   var phonenumber = user.phonenumber;
+   var phonenumber = req.params.phonenumber;
+
+   console.log("nummer: "+phonenumber);
 
    /* Connect to Firebase */
    var db = admin.database();
