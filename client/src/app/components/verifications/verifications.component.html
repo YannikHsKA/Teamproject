@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="jumbotron">
+    <p>Type in your registered Phonenumber and press Enter</p>
+    <input type="tel" class="form-control"
+           placeholder="Add here your Phonenumber.." required
+           pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
+           [(ngModel)]="phonenumber"
+           name="phonenumber" #number="ngModel">
+    <br>
+    <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
+      <div [hidden]="!number.errors.required">
+        Type in your phonenumber.2
+      </div>
+      <div [hidden]="!number.errors.pattern">
+        Must be a valid phonenumber.
+      </div>
+    </div>
+    <br>
+    <p>Type in your Verificationcode you've received and press Enter</p>
+    <input type="text" class="form-control" placeholder="Add here the Verificationcode.." required
+           [(ngModel)]="verCode" name="verCode" (submit)="checkVerification()">
+  </div>
+</div>

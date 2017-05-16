@@ -1,5 +1,5 @@
 export class User{
-  phonenumber: number;
+  phonenumber: string;
   sms: number;
   whatsapp: number;
 }

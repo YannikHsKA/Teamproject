@@ -10,10 +10,8 @@ export class SubscriptionService{
   }
 
   addUser(newUser: User){
-    console.log(newUser);
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/subscribe', JSON.stringify(newUser), {headers: headers})
-      .map(res => res.json());
+    return this.http.post('/api/subscribe', JSON.stringify(newUser), {headers: headers});
   }
 }

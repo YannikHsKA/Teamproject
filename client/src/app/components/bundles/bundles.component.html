@@ -1,24 +1,54 @@
-<div class="container" align="center">
-  <div class="row align-items-center">
-    <div class="col-8">
-    </div>
-    <div class="col-4">
-      <img src="../assets/Bundle.png" class="img-responsive" width="300" height="300">
-    </div>
-  </div>
-  <nav>
-  <a routerLink="/subscribe" routerLinkActive="active">Subscribe Now!</a>
-  </nav>
-    <router-outlet></router-outlet>
+<div class="container">
+  <p>It's Christmas Time!</p>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        1 of 2
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="src/assets/Bundle2.png" alt="Bundle1" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Your First Bundle Option</h3>
+          <p>Turkey & Red Wine & Persil</p>
+        </div>
       </div>
-      <div class="col">
-        1 of 2
+
+      <div class="item">
+        <img src="src/assets/Bundle1.png" alt="Bundle2" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Your Second Bundle Option</h3>
+          <p>Christmas Tree & Winterjacket & Candles</p>
+        </div>
       </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <p>
+
+  <div class="row">
+    <div class="col">
+      <label>Online</label>
+      <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+    </div>
+    <div class="col">
+      <label>In the Store</label>
+      <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
     </div>
   </div>
 </div>

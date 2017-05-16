@@ -9,7 +9,7 @@ import { SubscriptionService } from '../../services/subscription.service';
 })
 
 export class SubscriptionsComponent  {
-  phonenumber: number;
+  phonenumber: string;
   saveSuccess: boolean;
 
   constructor(private subscriptionService:SubscriptionService){
@@ -18,14 +18,13 @@ export class SubscriptionsComponent  {
 
   addUser(){
     event.preventDefault();
-
     var newUser = {
       phonenumber: this.phonenumber,
       sms: 1,
       whatsapp: 0
     }
 
-    if(newUser.phonenumber ){
+    if(newUser.phonenumber){
       this.saveSuccess = true;
     }
 
