@@ -98,7 +98,7 @@ router.post("/subscribe", function(req, res)
      if (snapshot.hasChild(phonenumber))
      {
        var body= snapshot.child(phonenumber).val();
-       res.status(200).send(body);
+       res.status(200).json(body);
      }
      else{
        res.status(500).send("Failure");

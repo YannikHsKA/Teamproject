@@ -18,24 +18,25 @@ export class VerificationsComponent  {
 
   checkUser(){
     console.log(this.phonenumber);
-    /*
+
     this.verificationService.getUserByNumber(this.phonenumber)
       .subscribe(data => {
         console.log(data);
+        /*
         if(data){
           this.user = data;
           //TODO: display verification field
         }else{
           //TODO: display Alert that user doesn't exist
-        }
+        }*/
       },
       err => {
         console.log(err);
-      });*/
+      });
   }
 
   checkVerification(){
-    consoloe.log(this.verCode);
+    console.log(this.verCode);
     console.log(this.user);
     if(this.verCode == this.user.settingkey) {
       //TODO: routing to personalized settings page (with telephonenumber in URL)

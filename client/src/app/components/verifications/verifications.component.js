@@ -14,17 +14,27 @@ var VerificationsComponent = (function () {
     function VerificationsComponent(verificationService) {
         this.verificationService = verificationService;
     }
-    VerificationsComponent.prototype.checkVerification = function () {
+    VerificationsComponent.prototype.checkUser = function () {
         console.log(this.phonenumber);
-        /*
         this.verificationService.getUserByNumber(this.phonenumber)
-          .subscribe(data => {
+            .subscribe(function (data) {
             console.log(data);
-            //TODO: catch error if user doesn't exist -> display alert in HTML, else: display verification field and check verification code with object
-          },
-          err => {
+            /*
+            if(data){
+              this.user = data;
+              //TODO: display verification field
+            }else{
+              //TODO: display Alert that user doesn't exist
+            }*/
+        }, function (err) {
             console.log(err);
-          });*/
+        });
+    };
+    VerificationsComponent.prototype.checkVerification = function () {
+        console.log(this.verCode);
+        console.log(this.user);
+        if (this.verCode == this.user.settingkey) {
+        }
     };
     VerificationsComponent = __decorate([
         core_1.Component({

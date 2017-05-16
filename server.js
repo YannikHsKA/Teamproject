@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 //app.use('/', routes);
 app.use('/api', api);
 app.get('*', function(req, res) {
-    res.sendfile('views/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    res.render('index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 

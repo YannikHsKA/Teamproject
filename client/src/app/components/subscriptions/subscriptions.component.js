@@ -19,7 +19,8 @@ var SubscriptionsComponent = (function () {
         var newUser = {
             phonenumber: this.phonenumber,
             sms: 1,
-            whatsapp: 0
+            whatsapp: 0,
+            settingkey: 0
         };
         if (newUser.phonenumber) {
             this.saveSuccess = true;
