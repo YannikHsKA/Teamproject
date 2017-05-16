@@ -64,7 +64,6 @@ router.post("/subscribe", function(req, res)
     }
   });
 
-
 /* Send Notification SMS with Settingkey and Voucher */
    client.sendMessage({
      to: phonenumber,
@@ -81,6 +80,92 @@ router.post("/subscribe", function(req, res)
      }
    });
  });
+
+ /* Checks if phonenumber is already subscribed */
+ router.post("/checktel", function(req, res)
+ {
+   /* Read POST Request */
+   var user = req.body;
+   console.log("body: %j", user)
+   var phonenumber = user.phonenumber;
+
+   /* Connect to Firebase */
+   var db = admin.database();
+   var ref = db.ref("user");
+
+   ref.once('value', function(snapshot)
+   {
+     if (snapshot.hasChild(phonenumber))
+     {
+       res.status(200).send("Success");
+     }
+     else{
+       res.status(500).send("Failure");
+       console.log("Phonenumber not subscribed");
+     }
+   });
+ });
+
+ /* Checks if phonenumber & verification combination is valid */
+ router.post("/checkveritel", function(req, res)
+ {
+  /* Read POST Request */
+  var user = req.body;
+  console.log("body: %j", user)
+  var phonenumber = user.phonenumber;
+  var vericode = user.vericode;
+
+  /* Connect to Firebase */
+  var db = admin.database();
+  var ref = db.ref('user/' + phonenumber);
+
+  console.log(phonenumber);
+  ref.once("value", function(snap) {
+  if(snap.val().setting_key.toString() == vericode.toString())
+  {
+    var body= snap.val();
+    res.status(200).send(body);
+    console.log("Valid Combination");
+  }
+  else
+  {
+    res.status(500).send("Failure");
+    console.log("Wrong Combination");
+  }
+  });
+});
+
+
+ /* Updates User Setting in Firebase */
+ router.post("/updatesetting", function(req, res)
+ {
+   /* Read POST Request */
+   var user = req.body;
+   console.log("body: %j", user)
+   var sms = user.sms;
+   var whatsapp = user.whatsapp;
+   var phonenumber = user.phonenumber;
+
+   /* Connect to Firebase */
+   var db = admin.database();
+   var ref = db.ref('user');
+
+   /* Write User into Firebase */
+   ref.on('value', function(snap) {
+     res.status(200).send("Success");
+   });
+
+   ref.update(
+   {
+     [phonenumber]:
+     {
+       Whatsapp: whatsapp,
+       SMS: sms
+     }
+   });
+ });
+
+
 
 
 module.exports = router;
