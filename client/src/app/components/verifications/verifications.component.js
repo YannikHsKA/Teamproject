@@ -15,10 +15,16 @@ var VerificationsComponent = (function () {
         this.verificationService = verificationService;
     }
     VerificationsComponent.prototype.checkVerification = function () {
+        console.log(this.phonenumber);
+        /*
         this.verificationService.getUserByNumber(this.phonenumber)
-            .subscribe(function (data) {
+          .subscribe(data => {
+            console.log(data);
             //TODO: catch error if user doesn't exist -> display alert in HTML, else: display verification field and check verification code with object
-        });
+          },
+          err => {
+            console.log(err);
+          });*/
     };
     VerificationsComponent = __decorate([
         core_1.Component({
