@@ -82,7 +82,7 @@ router.post("/subscribe", function(req, res)
  });
 
  /* Checks if phonenumber is already subscribed */
- router.post("/user/:phonenumber", function(req, res)
+ router.get("/user/:phonenumber", function(req, res)
  {
    /* Read POST Request */
    var phonenumber = req.params.phonenumber;
