@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var subscription_service_1 = require("./services/subscription.service");
+var verification_service_1 = require("./services/verification.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = "Consumer Analytics Services";
@@ -19,7 +20,7 @@ AppComponent = __decorate([
         moduleId: module.id,
         selector: 'consumerAnalytics',
         templateUrl: "app.component.html",
-        providers: [subscription_service_1.SubscriptionService]
+        providers: [subscription_service_1.SubscriptionService, verification_service_1.VerificationService]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

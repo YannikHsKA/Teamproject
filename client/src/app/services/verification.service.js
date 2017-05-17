@@ -12,21 +12,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var SubscriptionService = (function () {
-    function SubscriptionService(http) {
+var VerificationService = (function () {
+    function VerificationService(http) {
         this.http = http;
-        console.log('Subscription Service initialized..');
+        console.log('Verification Service initialized..');
     }
-    SubscriptionService.prototype.addUser = function (newUser) {
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/subscribe', JSON.stringify(newUser), { headers: headers });
+    VerificationService.prototype.getUserByNumber = function (phonenumber) {
+        return this.http.get('/api/user/' + phonenumber)
+            .map(function (res) { return res.json(); });
     };
-    return SubscriptionService;
+    return VerificationService;
 }());
-SubscriptionService = __decorate([
+VerificationService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], SubscriptionService);
-exports.SubscriptionService = SubscriptionService;
-//# sourceMappingURL=subscription.service.js.map
+], VerificationService);
+exports.VerificationService = VerificationService;
+//# sourceMappingURL=verification.service.js.map
