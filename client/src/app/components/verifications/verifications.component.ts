@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {VerificationService} from "../../services/verification.service";
 import {User} from "../../../../Users";
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -11,35 +12,33 @@ export class VerificationsComponent  {
   user: User;
   phonenumber: string;
   verCode: number;
+  displayVer: boolean;
+  displayAlert: boolean;
+  displayAlert2: boolean;
 
-  constructor(private verificationService:VerificationService){
-
+  constructor(private verificationService:VerificationService, private router:Router){
+    this.displayVer = true;
   }
 
   checkUser(){
-    console.log(this.phonenumber);
-
     this.verificationService.getUserByNumber(this.phonenumber)
       .subscribe(data => {
         console.log(data);
-        /*
-        if(data){
+        if(data) {
           this.user = data;
-          //TODO: display verification field
-        }else{
-          //TODO: display Alert that user doesn't exist
-        }*/
+          this.displayVer = false;
+        }
       },
       err => {
-        console.log(err);
+        this.displayAlert = true;
       });
   }
 
   checkVerification(){
-    console.log(this.verCode);
-    console.log(this.user);
-    if(this.verCode == this.user.settingkey) {
-      //TODO: routing to personalized settings page (with telephonenumber in URL)
+    if(this.verCode == this.user.setting_key) {
+      this.router.navigate(['./settings']);
+    }else{
+      this.displayAlert2 = true;
     }
   }
 

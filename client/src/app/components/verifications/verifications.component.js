@@ -8,45 +8,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var verification_service_1 = require("../../services/verification.service");
+var router_1 = require('@angular/router');
 var VerificationsComponent = (function () {
-    function VerificationsComponent(verificationService) {
+    function VerificationsComponent(verificationService, router) {
         this.verificationService = verificationService;
+        this.router = router;
+        this.displayVer = true;
     }
     VerificationsComponent.prototype.checkUser = function () {
-        console.log(this.phonenumber);
+        var _this = this;
         this.verificationService.getUserByNumber(this.phonenumber)
             .subscribe(function (data) {
             console.log(data);
-            /*
-            if(data){
-              this.user = data;
-              //TODO: display verification field
-            }else{
-              //TODO: display Alert that user doesn't exist
-            }*/
+            if (data) {
+                _this.user = data;
+                _this.displayVer = false;
+            }
         }, function (err) {
-            console.log(err);
+            _this.displayAlert = true;
         });
     };
     VerificationsComponent.prototype.checkVerification = function () {
-        console.log(this.verCode);
-        console.log(this.user);
-        if (this.verCode == this.user.settingkey) {
-            //TODO: routing to personalized settings page (with telephonenumber in URL)
+        if (this.verCode == this.user.setting_key) {
+            this.router.navigate(['./settings']);
+        }
+        else {
+            this.displayAlert2 = true;
         }
     };
+    VerificationsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'verifications',
+            templateUrl: "verifications.component.html"
+        }), 
+        __metadata('design:paramtypes', [verification_service_1.VerificationService, router_1.Router])
+    ], VerificationsComponent);
     return VerificationsComponent;
 }());
-VerificationsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'verifications',
-        templateUrl: "verifications.component.html"
-    }),
-    __metadata("design:paramtypes", [verification_service_1.VerificationService])
-], VerificationsComponent);
 exports.VerificationsComponent = VerificationsComponent;
 //# sourceMappingURL=verifications.component.js.map

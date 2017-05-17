@@ -22,7 +22,7 @@ export class SubscriptionsComponent  {
       phonenumber: this.phonenumber,
       sms: 1,
       whatsapp: 0,
-      settingkey: 0
+      setting_key: 0
     }
 
     if(newUser.phonenumber){

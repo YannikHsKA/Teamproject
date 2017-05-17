@@ -9,9 +9,14 @@
              name="phonenumber" #number="ngModel">
     </form>
     <br>
+    <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      <strong>ERROR!</strong> Please use a registered phonenumber.
+    </div>
+    <br>
     <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
       <div [hidden]="!number.errors.required">
-        Type in your phonenumber.2
+        Type in your phonenumber.
       </div>
       <div [hidden]="!number.errors.pattern">
         Must be a valid phonenumber.
@@ -19,7 +24,14 @@
     </div>
     <br>
     <p>Type in your Verificationcode you've received and press Enter</p>
-    <input type="text" class="form-control" placeholder="Add here the Verificationcode.." required
-           [(ngModel)]="verCode" name="verCode">
+    <form (submit)="checkVerification()">
+      <input type="text" class="form-control" placeholder="Add here the Verificationcode.." required
+             [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
+    </form>
+    <br>
+    <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert2">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+      <strong>ERROR!</strong> Please use the correct verificationcode.
+    </div>
   </div>
 </div>
