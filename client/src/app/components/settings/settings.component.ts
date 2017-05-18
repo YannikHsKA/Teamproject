@@ -7,9 +7,14 @@ import {VerificationService} from "../../services/verification.service";
   templateUrl: `settings.component.html`,
   providers: [VerificationService]
 })
-export class SettingsComponent  {
+export class SettingsComponent {
 
-  constructor(private verificationService: VerificationService){
+  constructor(private verificationService: VerificationService) {
     console.log(this.verificationService.user);
+    value : boolean = false;
+    Existing()
+    {
+      this.value = !this.value;
+    }
   }
 }

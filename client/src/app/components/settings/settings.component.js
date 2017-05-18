@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var verification_service_1 = require("../../services/verification.service");
 var SettingsComponent = (function () {
+<<<<<<< HEAD
     function SettingsComponent(verificationService) {
         this.verificationService = verificationService;
         console.log(this.verificationService.user);
@@ -24,6 +25,14 @@ var SettingsComponent = (function () {
         }), 
         __metadata('design:paramtypes', [verification_service_1.VerificationService])
     ], SettingsComponent);
+=======
+    function SettingsComponent() {
+        this.value = false;
+    }
+    SettingsComponent.prototype.Existing = function () {
+        this.value = !this.value;
+    };
+>>>>>>> toggleStyle
     return SettingsComponent;
 }());
 exports.SettingsComponent = SettingsComponent;
