@@ -5,4 +5,9 @@ import { Component } from '@angular/core';
   selector: 'settings',
   templateUrl: `settings.component.html`
 })
-export class SettingsComponent  {  }
+export class SettingsComponent  {
+  value : boolean= false;
+  Existing(){
+    this.value = !this.value;
+  }
+}

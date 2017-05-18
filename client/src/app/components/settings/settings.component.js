@@ -9,7 +9,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var SettingsComponent = (function () {
     function SettingsComponent() {
+        this.value = false;
     }
+    SettingsComponent.prototype.Existing = function () {
+        this.value = !this.value;
+    };
     return SettingsComponent;
 }());
 SettingsComponent = __decorate([
