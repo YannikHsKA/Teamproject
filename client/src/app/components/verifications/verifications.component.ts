@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'verifications',
-  templateUrl: `verifications.component.html`
+  templateUrl: `verifications.component.html`,
+  providers: []
 })
 export class VerificationsComponent  {
   user: User;
@@ -36,7 +37,9 @@ export class VerificationsComponent  {
 
   checkVerification(){
     if(this.verCode == this.user.setting_key) {
+      this.verificationService.user = this.user;
       this.router.navigate(['./settings']);
+      console.log(this.verificationService.user);
     }else{
       this.displayAlert2 = true;
     }

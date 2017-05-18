@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
+import {VerificationService} from "../../services/verification.service";
 
 @Component({
   moduleId: module.id,
   selector: 'settings',
-  templateUrl: `settings.component.html`
+  templateUrl: `settings.component.html`,
+  providers: [VerificationService]
 })
-export class SettingsComponent  {  }
+export class SettingsComponent  {
+
+  constructor(private verificationService: VerificationService){
+    console.log(this.verificationService.user);
+  }
+}
