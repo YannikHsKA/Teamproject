@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var verification_service_1 = require("../../services/verification.service");
-var router_1 = require("@angular/router");
+var router_1 = require('@angular/router');
 var VerificationsComponent = (function () {
     function VerificationsComponent(verificationService, router) {
         this.verificationService = verificationService;
@@ -39,15 +38,15 @@ var VerificationsComponent = (function () {
             this.displayAlert2 = true;
         }
     };
+    VerificationsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'verifications',
+            templateUrl: "verifications.component.html"
+        }), 
+        __metadata('design:paramtypes', [verification_service_1.VerificationService, router_1.Router])
+    ], VerificationsComponent);
     return VerificationsComponent;
 }());
-VerificationsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'verifications',
-        templateUrl: "verifications.component.html"
-    }),
-    __metadata("design:paramtypes", [verification_service_1.VerificationService, router_1.Router])
-], VerificationsComponent);
 exports.VerificationsComponent = VerificationsComponent;
 //# sourceMappingURL=verifications.component.js.map

@@ -11,6 +11,8 @@ IP Address: 165.227.128.51
 
 ##Frontend
 - move to client folder
+- npm install bower
+- bower install bootstrap-toggle
 - run "npm install" to download and install node_modules
 - run "npm start" to generate javascript files
 
