@@ -54,6 +54,25 @@ var SettingsComponent = (function () {
         }
     };
     SettingsComponent.prototype.saveSettings = function () {
+        if (this.sms_toggle == true) {
+            this.user.sms = 1;
+        }
+        else {
+            this.user.sms = 0;
+        }
+        if (this.whatsapp_toggle == true) {
+            this.user.whatsapp = 1;
+        }
+        else {
+            this.user.whatsapp = 0;
+        }
+        /*  if (this.email_toggle == true) {
+            this.user.email = 1;
+          } else {
+            this.user.email = 0;
+          }
+          */
+        this.settingsservice.updateSettings(this.user);
     };
     return SettingsComponent;
 }());

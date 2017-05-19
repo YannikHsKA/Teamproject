@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SubscriptionService } from './services/subscription.service';
+import {Component} from '@angular/core';
+import {SubscriptionService} from './services/subscription.service';
 import {VerificationService} from "./services/verification.service";
 import {SettingsService} from "./services/settings.service";
 
@@ -7,9 +7,9 @@ import {SettingsService} from "./services/settings.service";
   moduleId: module.id,
   selector: 'consumerAnalytics',
   templateUrl: `app.component.html`,
-  providers: [ SubscriptionService, VerificationService, SettingsService ]
+  providers: [SubscriptionService, VerificationService, SettingsService]
 })
-export class AppComponent  {
+export class AppComponent {
 
-  pageTitle: string ="Consumer Analytics Services"
+  pageTitle: string = "Consumer Analytics Services"
 }

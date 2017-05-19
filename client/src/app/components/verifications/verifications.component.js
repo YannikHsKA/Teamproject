@@ -17,6 +17,13 @@ var VerificationsComponent = (function () {
         this.verificationService = verificationService;
         this.router = router;
         this.displayVer = true;
+        // this.user = new User()
+        this.user = {
+            phonenumber: "1",
+            sms: 0,
+            whatsapp: 0,
+            setting_key: 0
+        };
     }
     VerificationsComponent.prototype.checkUser = function () {
         var _this = this;
@@ -24,7 +31,10 @@ var VerificationsComponent = (function () {
             .subscribe(function (data) {
             console.log(data);
             if (data) {
-                _this.user = data;
+                _this.user.setting_key = data.setting_key;
+                _this.user.whatsapp = data.Whatsapp;
+                _this.user.sms = data.SMS;
+                _this.user.phonenumber = _this.phonenumber;
                 _this.displayVer = false;
             }
         }, function (err) {

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { SubscriptionService } from '../../services/subscription.service';
+import {Component} from '@angular/core';
+import {SubscriptionService} from '../../services/subscription.service';
 
 @Component({
   moduleId: module.id,
@@ -8,15 +8,15 @@ import { SubscriptionService } from '../../services/subscription.service';
   styleUrls: ['subscriptions.component.css']
 })
 
-export class SubscriptionsComponent  {
+export class SubscriptionsComponent {
   phonenumber: string;
   saveSuccess: boolean;
 
-  constructor(private subscriptionService:SubscriptionService){
+  constructor(private subscriptionService: SubscriptionService) {
 
   }
 
-  addUser(){
+  addUser() {
     event.preventDefault();
     var newUser = {
       phonenumber: this.phonenumber,
@@ -25,7 +25,7 @@ export class SubscriptionsComponent  {
       setting_key: 0
     }
 
-    if(newUser.phonenumber){
+    if (newUser.phonenumber) {
       this.saveSuccess = true;
     }
 
