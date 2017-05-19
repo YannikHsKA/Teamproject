@@ -12,21 +12,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
-var SubscriptionService = (function () {
-    function SubscriptionService(http) {
+var SettingsService = (function () {
+    function SettingsService(http) {
         this.http = http;
-        console.log('Subscription Service initialized..');
+        console.log('Settings Service initialized..');
     }
-    SubscriptionService.prototype.addUser = function (newUser) {
+    SettingsService.prototype.updateSettings = function (user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/subscribe', JSON.stringify(newUser), { headers: headers });
+        return this.http.post('/api/updatesetting', JSON.stringify(user), { headers: headers });
     };
-    return SubscriptionService;
+    return SettingsService;
 }());
-SubscriptionService = __decorate([
+SettingsService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], SubscriptionService);
-exports.SubscriptionService = SubscriptionService;
-//# sourceMappingURL=subscription.service.js.map
+], SettingsService);
+exports.SettingsService = SettingsService;
+//# sourceMappingURL=settings.service.js.map

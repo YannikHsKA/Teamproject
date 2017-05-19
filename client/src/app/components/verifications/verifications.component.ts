@@ -36,6 +36,7 @@ export class VerificationsComponent  {
 
   checkVerification(){
     if(this.verCode == this.user.setting_key) {
+      this.verificationService.user = this.user;
       this.router.navigate(['./settings']);
     }else{
       this.displayAlert2 = true;

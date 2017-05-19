@@ -8,23 +8,62 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var settings_service_1 = require("../../services/settings.service");
+var verification_service_1 = require("../../services/verification.service");
 var SettingsComponent = (function () {
-    function SettingsComponent() {
-        this.value = false;
+    function SettingsComponent(settingsservice, verificationService) {
+        this.settingsservice = settingsservice;
+        this.verificationService = verificationService;
+        this.user = this.verificationService.user;
+        console.log(this.user);
+        if (this.user.sms == 1) {
+            this.sms_toggle = true;
+        }
+        else {
+            this.sms_toggle = false;
+        }
+        if (this.user.whatsapp == 1) {
+            this.whatsapp_toggle = true;
+        }
+        else {
+            this.whatsapp_toggle = false;
+        }
+        //    if (this.user.email == 1) {
+        //      this.email_toggle = true;
+        //    } else {
+        //      this.email_toggle = false;
+        //    }
+        this.email = "example@mail.com";
+        this.phonenumber = this.user.phonenumber;
+        console.log(this);
     }
-    SettingsComponent.prototype.Existing = function () {
-        this.value = !this.value;
+    SettingsComponent.prototype.switch = function (toggle) {
+        //  console.log(toggle);
+        switch (toggle) {
+            case 'whatsapp':
+                this.whatsapp_toggle = !this.whatsapp_toggle;
+                break;
+            case 'sms':
+                this.sms_toggle = !this.sms_toggle;
+                break;
+            case 'email':
+                this.email_toggle = !this.email_toggle;
+                break;
+        }
     };
-    SettingsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'settings',
-            templateUrl: "settings.component.html"
-        }), 
-        __metadata('design:paramtypes', [])
-    ], SettingsComponent);
+    SettingsComponent.prototype.saveSettings = function () {
+    };
     return SettingsComponent;
 }());
+SettingsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'settings',
+        templateUrl: "settings.component.html"
+    }),
+    __metadata("design:paramtypes", [settings_service_1.SettingsService, verification_service_1.VerificationService])
+], SettingsComponent);
 exports.SettingsComponent = SettingsComponent;
 //# sourceMappingURL=settings.component.js.map
