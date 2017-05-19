@@ -1,87 +1,13 @@
+
 <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
 
 
+<section class="engine"><a rel="external" ></a></section>
 
 
-<section class="engine"><a rel="external" ></a></section><section class="mbr-footer mbr-section mbr-section-md-padding mbr-after-navbar" id="contacts5-1" style="background-color: rgb(239, 239, 239); padding-top: 90px; padding-bottom: 90px;">
+<section  id="contacts5-1" style=" text-align: left; background-color: rgb(239, 239, 239); padding-top: 90px; padding-bottom: 90px;">
 
-
-
-  <div class="row">
-
-
-    <div class="mbr-footer-content col-xs-12 col-md-6 col-lg-3">
-
-    </div>
-
-    <div class="col-xs-12 col-md-6 col-lg-3" data-form-type="formoid">
-
-      <h3 style="color: black">
-        Change your Settings here
-      </h3>
-      <div data-form-alert="true">
-        <div hidden="" data-form-alert-success="true">Thanks for filling out form!</div>
-      </div>
-
-      <form action="/settings" method="post" data-form-title="MESSAGE">
-
-        <input type="hidden" value="PxfCt9HrY9PL7LHnjiOilNjhfnItgVDAWbCS30Bf8GMIjzJUaqvymF+lsL4Bdki+/zlsy1WMFTV0HNjcekwcF/nOsrOPmXQ9hcT8lBtL9LAaGk2P3MFvnQ61itftXr4L" data-form-email="true">
-
-
-        <div class="form-group">
-          <label class="form-control-label" for="contacts5-1-email">Email<span class="form-asterisk">*</span></label>
-          <input type="email" class="form-control input-sm input-inverse" name="email" required="" data-form-field="Email" id="contacts5-1-email">
-        </div>
-
-        <div class="form-group">
-          <label class="form-control-label" for="contacts5-1-phone">Phone</label>
-          <input type="tel" class="form-control input-sm input-inverse" name="phone" data-form-field="Phone" id="contacts5-1-phone">
-        </div>
-
-
-        <div><button type="submit" class="btn btn-sm btn-info" style="background-color: rgb(25,104,147)">Update&nbsp;</button></div>
-      </form>
-    </div>
-  </div>
-      <h3 style="color: black">
-        Choose your favorite Channels here
-      </h3>
-      <form >
-      <div class="form-group">
-        <label class="toggle col-sm-8">
-          <input type="checkbox"(click)="Existing()">
-          <span class="handle"></span>
-        </label>
-
-        <p>WhatsApp</p>
-      </div>
-
-      <div class="form-group">
-        <label class="toggle col-sm-8">
-          <input type="checkbox"(click)="Existing()">
-          <span class="handle"></span>
-        </label>
-        <p>SMS</p>
-      </div>
-
-      <div class="form-group">
-
-        <label class="toggle col-sm-8">
-
-          <input type="checkbox"(click)="Existing()">
-          <span class="handle"></span>
-
-        </label>
-        <p>E-Mail</p>
-      </div>
-
-    </form>
-
-</section>
-
-
-
-
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 <script src="assets/web/assets/jquery/jquery.min.js"></script>
 <script src="assets/tether/tether.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -91,6 +17,95 @@
 <script src="assets/viewport-checker/jquery.viewportchecker.js"></script>
 <script src="assets/theme/js/script.js"></script>
 <script src="assets/formoid/formoid.min.js"></script>
-
-
 <input name="animation" type="hidden">
+
+
+
+
+
+
+  <form class="form-horizontal" style="text-align: left">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Change your contact address</legend>
+      <!-- Text input-->
+      <div class="form-group" style="align-items: left; text-align: left">
+
+
+        <label class="col-md-4 control-label" for="email">E-Mail</label>
+        <div class="col-md-4">
+          <input id="email" name="email" type="text" placeholder="youremail@example.com" class="form-control input-md">
+
+        </div>
+      </div>
+
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="phonenumber">Phone Number</label>
+        <div class="col-md-4">
+          <input id="phonenumber" name="phonenumber" type="text" placeholder="0123456" class="form-control input-md">
+
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+
+
+
+
+  <form class="form-horizontal">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Choose your favorite Channels</legend>
+
+      <!-- Multiple Checkboxes -->
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="checkboxes">WhatsApp</label>
+        <div class="col-md-4">
+          <div class="checkbox">
+            <label class="toggle col-sm-8">
+              <input type="checkbox"(click)="Existing()">
+              <span class="handle"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="checkboxes">Email</label>
+        <div class="col-md-4">
+          <div class="checkbox">
+            <label class="toggle col-sm-8">
+              <input type="checkbox"(click)="Existing()">
+              <span class="handle"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label" for="checkboxes">SMS</label>
+        <div class="col-md-4">
+          <div class="checkbox">
+            <label class="toggle col-sm-8">
+              <input type="checkbox"(click)="Existing()">
+              <span class="handle"></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+
+
+
+
+
+
+
+</section>
+
+
+
