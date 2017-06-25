@@ -20,8 +20,14 @@ var SettingsService = (function () {
     SettingsService.prototype.updateSettings = function (user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        console.log(user);
-        return this.http.post('/api/updatesetting', user, { headers: headers });
+        console.log("Update User:" + user);
+        var body = JSON.stringify(user);
+        this.http.post('/api/updatesettings', body, { headers: headers })
+            .subscribe(function (data) {
+            alert('ok');
+        }, function (error) {
+            console.log(JSON.stringify(error.json()));
+        });
     };
     return SettingsService;
 }());

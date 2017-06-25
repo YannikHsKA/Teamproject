@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {VerificationService} from "../../services/verification.service";
-import {User} from "../../../../Users";
+import {User} from "../../../../User.js";
 import {Router} from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
   templateUrl: `verifications.component.html`
 })
 export class VerificationsComponent {
-  user: User;
+  user: User  = new User();
   phonenumber: string;
   verCode: number;
   displayVer: boolean;
@@ -18,15 +18,7 @@ export class VerificationsComponent {
 
   constructor(private verificationService: VerificationService, private router: Router) {
     this.displayVer = true;
-    // this.user = new User()
-    this.user = {
-      phonenumber: "1",
-      sms: 0,
-      whatsapp: 0,
-      setting_key: 0
-    }
-
-
+   //  this.user = new User();
   }
 
   checkUser() {
@@ -34,16 +26,18 @@ export class VerificationsComponent {
       .subscribe(data => {
           console.log(data);
           if (data) {
-
-
+            this.user.id = data.id;
             this.user.setting_key = data.setting_key;
-            this.user.whatsapp = data.Whatsapp;
-            this.user.sms = data.SMS;
+            this.user.whatsapp = data.whatsapp;
+            this.user.email = data.email;
+            this.user.email_address = data.email_address;
+            this.user.sms = data.sms;
             this.user.phonenumber = this.phonenumber;
             this.displayVer = false;
           }
         },
         err => {
+          console.log("User" + this.phonenumber + "not found")
           this.displayAlert = true;
         });
   }

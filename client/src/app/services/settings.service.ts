@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {User} from "../../../Users";
+import {User} from "../../../User";
 
 @Injectable()
 export class SettingsService {
@@ -12,7 +12,13 @@ export class SettingsService {
   updateSettings(user: User) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    console.log(user);
-    return this.http.post('/api/updatesetting', user, {headers: headers});
+    console.log("Update User:" + user);
+    var body = JSON.stringify(user);
+    this.http.post('/api/updatesettings', body, {headers: headers})
+      .subscribe(data => {
+      alert('ok');
+    }, error => {
+      console.log(JSON.stringify(error.json()));
+    });
   }
 }

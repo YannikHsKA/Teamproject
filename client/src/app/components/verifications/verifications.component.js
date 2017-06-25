@@ -11,19 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var verification_service_1 = require("../../services/verification.service");
+var User_js_1 = require("../../../../User.js");
 var router_1 = require("@angular/router");
 var VerificationsComponent = (function () {
     function VerificationsComponent(verificationService, router) {
         this.verificationService = verificationService;
         this.router = router;
+        this.user = new User_js_1.User();
         this.displayVer = true;
-        // this.user = new User()
-        this.user = {
-            phonenumber: "1",
-            sms: 0,
-            whatsapp: 0,
-            setting_key: 0
-        };
+        //  this.user = new User();
     }
     VerificationsComponent.prototype.checkUser = function () {
         var _this = this;
@@ -31,13 +27,17 @@ var VerificationsComponent = (function () {
             .subscribe(function (data) {
             console.log(data);
             if (data) {
+                _this.user.id = data.id;
                 _this.user.setting_key = data.setting_key;
-                _this.user.whatsapp = data.Whatsapp;
-                _this.user.sms = data.SMS;
+                _this.user.whatsapp = data.whatsapp;
+                _this.user.email = data.email;
+                _this.user.email_address = data.email_address;
+                _this.user.sms = data.sms;
                 _this.user.phonenumber = _this.phonenumber;
                 _this.displayVer = false;
             }
         }, function (err) {
+            console.log("User" + _this.phonenumber + "not found");
             _this.displayAlert = true;
         });
     };

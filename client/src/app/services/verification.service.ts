@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {User} from "../../../Users";
+import {User} from "../../../User";
 
 @Injectable()
 export class VerificationService {
@@ -14,7 +14,7 @@ export class VerificationService {
 
 
   getUserByNumber(phonenumber: string) {
-    return this.http.get('/api/user/' + phonenumber)
+    return this.http.get('/api/user/phone/' + phonenumber)
       .map(res => res.json());
   }
 

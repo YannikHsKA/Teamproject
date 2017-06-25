@@ -30,13 +30,12 @@ var SettingsComponent = (function () {
         else {
             this.whatsapp_toggle = false;
         }
-        //    if (this.user.email == 1) {
-        //      this.email_toggle = true;
-        //    } else {
-        //      this.email_toggle = false;
-        //    }
-        this.email = "example@mail.com";
-        this.phonenumber = this.user.phonenumber;
+        if (this.user.email == 1) {
+            this.email_toggle = true;
+        }
+        else {
+            this.email_toggle = false;
+        }
         console.log(this);
     }
     SettingsComponent.prototype.switch = function (toggle) {
@@ -66,12 +65,12 @@ var SettingsComponent = (function () {
         else {
             this.user.whatsapp = 0;
         }
-        /*  if (this.email_toggle == true) {
+        if (this.email_toggle == true) {
             this.user.email = 1;
-          } else {
+        }
+        else {
             this.user.email = 0;
-          }
-          */
+        }
         this.settingsservice.updateSettings(this.user);
     };
     return SettingsComponent;

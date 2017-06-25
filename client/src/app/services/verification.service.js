@@ -18,7 +18,7 @@ var VerificationService = (function () {
         console.log('Verification Service initialized..');
     }
     VerificationService.prototype.getUserByNumber = function (phonenumber) {
-        return this.http.get('/api/user/' + phonenumber)
+        return this.http.get('/api/user/phone/' + phonenumber)
             .map(function (res) { return res.json(); });
     };
     return VerificationService;

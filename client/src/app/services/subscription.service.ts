@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {User} from "../../../Users";
+import {User} from "../../../User";
 
 @Injectable()
 export class SubscriptionService{

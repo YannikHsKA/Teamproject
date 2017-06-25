@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var User_js_1 = require("../../../../User.js");
 var subscription_service_1 = require("../../services/subscription.service");
 var SubscriptionsComponent = (function () {
     function SubscriptionsComponent(subscriptionService) {
@@ -17,14 +18,16 @@ var SubscriptionsComponent = (function () {
     }
     SubscriptionsComponent.prototype.addUser = function () {
         event.preventDefault();
-        var newUser = {
-            phonenumber: this.phonenumber,
-            sms: 1,
-            whatsapp: 0,
-            setting_key: 0
-        };
+        var newUser = new User_js_1.User();
+        newUser.phonenumber = this.phonenumber;
+        newUser.email_address = this.email_address;
+        newUser.sms = 1;
         if (newUser.phonenumber) {
             this.saveSuccess = true;
+            newUser.sms = 1;
+        }
+        if (newUser.email_address) {
+            newUser.email = 1;
         }
         this.subscriptionService.addUser(newUser)
             .subscribe();

@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {SettingsService} from '../../services/settings.service';
-import {User} from "../../../../Users";
+import {User} from "../../../../User";
 import {VerificationService} from '../../services/verification.service';
 @Component({
   moduleId: module.id,
@@ -9,8 +9,6 @@ import {VerificationService} from '../../services/verification.service';
 })
 export class SettingsComponent {
   user: User;
-  phonenumber: String;
-  email: String;
   whatsapp_toggle: boolean;
   email_toggle: boolean;
   sms_toggle: boolean;
@@ -31,13 +29,11 @@ export class SettingsComponent {
     } else {
       this.whatsapp_toggle = false;
     }
-//    if (this.user.email == 1) {
-//      this.email_toggle = true;
-//    } else {
-//      this.email_toggle = false;
-//    }
-    this.email = "example@mail.com"
-    this.phonenumber = this.user.phonenumber;
+    if (this.user.email == 1) {
+      this.email_toggle = true;
+    } else {
+      this.email_toggle = false;
+    }
     console.log(this);
   }
 
@@ -73,12 +69,13 @@ export class SettingsComponent {
       this.user.whatsapp = 0;
     }
 
-  /*  if (this.email_toggle == true) {
+    if (this.email_toggle == true) {
       this.user.email = 1;
     } else {
       this.user.email = 0;
     }
-    */
+
+
     this.settingsservice.updateSettings(this.user);
   }
 

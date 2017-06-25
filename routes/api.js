@@ -28,7 +28,7 @@ router.get("/send", function (req, res) {
     res.status(200).send("Success");
 });
 
-router.get("/test", function (req, res) {
+router.post("/test", function (req, res) {
     console.log("test")
     res.status(200).send("Success!1");
 });
@@ -39,29 +39,16 @@ router.post("/subscribe", function (req, res) {
     /* Read POST Request */
     var user = req.body;
     console.log("body: %j", user)
-    var phonenumber = user.phonenumber;
 
-    /* Save Number into Firebase */
-    var db = admin.database();
-    var ref = db.ref("user");
 
     /* Generate Random setting_key */
     var settingkey1 = Math.random() * (90000 - 10000) + 10000;
     var settingkey2 = Math.floor(settingkey1);
 
-    /* Write User into Firebase */
-    ref.update(
-        {
-            [phonenumber]: {
-                Whatsapp: 0,
-                SMS: 1,
-                setting_key: settingkey2
-            }
-        });
 
-    /* Send Notification SMS with Settingkey and Voucher */
+    /* Send Notification SMS with Settingkey and Voucher
     client.sendMessage({
-        to: phonenumber,
+        to: user.phonenumber,
         from: '+4915735984837',
         body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
     }, function (err, data) {
@@ -74,10 +61,31 @@ router.post("/subscribe", function (req, res) {
             res.status(200).send("Success");
         }
     });
+  */
+
+    var db = admin.database();
+    var ref = db.ref("user");
+        user.id = ref.push().key; // this does *not* call the server
+
+    /* Write User into Firebase */
+
+    ref.push(
+        {
+            id : user.id,
+            phonenumber: user.phonenumber,
+            whatsapp: user.whatsapp,
+            email: user.email,
+            sms: user.sms,
+            setting_key: settingkey2,
+            email_address: user.email_address
+        });
+
+res.status(201).send(user);
 });
 
+
 /* Checks if phonenumber is already subscribed */
-router.get("/user/:phonenumber", function (req, res) {
+router.get("/user/phone/:phonenumber", function (req, res) {
     /* Read POST Request */
     var phonenumber = req.params.phonenumber;
 
@@ -88,28 +96,71 @@ router.get("/user/:phonenumber", function (req, res) {
     var ref = db.ref("user");
 
     ref.once('value', function (snapshot) {
-        if (snapshot.hasChild(phonenumber)) {
-            var body = snapshot.child(phonenumber).val();
-            res.status(200).json(body);
+    let found = false;
+    let user;
+
+            snapshot.forEach(function (snapshot2) {
+                var obj = snapshot2.val();
+
+                if (obj.phonenumber == phonenumber) {
+                    found = true;
+                    console.log("User found");
+                    user = obj;
+                }
+                })
+            if (found == true){
+                    res.status(200).json(user);
+                }
+                else {
+                    res.status(500).send("Failure");
+                    console.log("Phonenumber not subscribed");
+                }
+
+    });
+});
+
+/* Checks if phonenumber & verification combination is valid */
+/*
+router.post("/checkveritel", function (req, res) {
+    // Read POST Request
+    var user = req.body;
+    console.log("Check Verification")
+    var phonenumber = user.phonenumber;
+    var vericode = user.vericode;
+
+    // Connect to Firebase //
+    var db = admin.database();
+    var ref = db.ref("user");
+
+    ref.once('value', function (snapshot) {
+        let found = false;
+        let user;
+
+        snapshot.forEach(function (snapshot2) {
+            var obj = snapshot2.val();
+
+            if (obj.phonenumber == phonenumber) {
+                found = true;
+                console.log("user found");
+                user = obj;
+            }
+        })
+        if (found == true){
+            res.status(200).json(user);
         }
         else {
             res.status(500).send("Failure");
             console.log("Phonenumber not subscribed");
         }
+
     });
-});
 
-/* Checks if phonenumber & verification combination is valid */
-router.post("/checkveritel", function (req, res) {
-    /* Read POST Request */
-    var user = req.body;
-    console.log("body: %j", user)
-    var phonenumber = user.phonenumber;
-    var vericode = user.vericode;
 
-    /* Connect to Firebase */
-    var db = admin.database();
-    var ref = db.ref('user/' + phonenumber);
+    var ref = $http.get('/api/user/phone' + phonenumber)
+        .map(res => res.json());
+
+    console.log ("neue ref:" + ref);
+    //   var ref = db.ref('user/' + phonenumber);
 
     console.log(phonenumber);
     ref.once("value", function (snap) {
@@ -124,34 +175,29 @@ router.post("/checkveritel", function (req, res) {
         }
     });
 });
+*/
 
-
-/* Updates User Setting in Firebase */
-router.post("/updatesetting", function (req, res) {
+/* Update User Settings in Firebase */
+router.post("/updatesettings", function (req, res) {
     console.log("Update User");
     /* Read POST Request */
-    var user = req.body;
-    console.log("body: %j", user)
-    var sms = user.sms;
-    var whatsapp = user.whatsapp;
-    var phonenumber = user.phonenumber;
+    let user = req.body;
 
     /* Connect to Firebase */
     var db = admin.database();
-    var ref = db.ref('user');
+    var ref = db.ref("user");//.child(user.id);
 
-    /* Write User into Firebase */
-    ref.on('value', function (snap) {
-        res.status(200).send("Success");
-    });
-    var whatsappupdate = phonenumber + "/Whatsapp"
-    var smsupdate = phonenumber + "/SMS"
-    ref.update(
-        {
-            [smsupdate]: sms,
-            [whatsappupdate]: whatsapp
+    var userRef = ref.child(user.id);
+    userRef.update({
+            "sms": user.sms,
+            "id" : user.id,
+            "email": user.email,
+            "email_address" : user.email_address,
+            "whatsapp": user.whatsapp,
+            "phonenumber": user.phonenumber
         }
     );
+
 });
 
 
