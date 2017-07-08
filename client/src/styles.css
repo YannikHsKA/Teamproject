@@ -5,10 +5,10 @@ h1 {
 }
 
 .footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  margin-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-top: 1px solid #eee;
+  text-align: center;
 }
 
 body {
@@ -20,6 +20,18 @@ body {
   margin-bottom: 20px;
 }
 
+.navbar-brand {
+  padding-top: 0px;
+}
+
+.label-block {
+  font-weight: normal;
+  border: 1px solid transparent;
+  padding-top: 15px;
+  text-align: right;
+  width: 100%;
+}
+
 /**
  * toggle
  * --------------------------------------------------
@@ -27,6 +39,7 @@ body {
 .toggle {
   height: 32px;
 }
+
 .toggle input[type="checkbox"], .toggle input[type="radio"] {
   width: 0;
   height: 0;
@@ -36,6 +49,7 @@ body {
   filter: alpha(opacity=0);
   opacity: 0;
 }
+
 .toggle .handle {
   position: relative;
   top: 0px;
@@ -53,6 +67,7 @@ body {
   -webkit-border-radius: 19px;
   -moz-border-radius: 19px;
 }
+
 .toggle .handle:before, .toggle .handle:after {
   position: absolute;
   top: 1px;
@@ -74,17 +89,20 @@ body {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
 }
+
 .toggle input[type="checkbox"]:disabled + .handle, .toggle input[type="radio"]:disabled + .handle, .toggle input[type="checkbox"]:disabled + .handle:before, .toggle input[type="radio"]:disabled + .handle:before, .toggle input[type="checkbox"]:disabled + .handle:after, .toggle input[type="radio"]:disabled + .handle:after {
   background-color: #e6e9ed;
   filter: alpha(opacity=60);
 
   opacity: .6;
 }
+
 .toggle input[type="checkbox"]:checked + .handle:before, .toggle input[type="radio"]:checked + .handle:before {
   width: 70px;
   background-color: #a0d468;
-  content : "On";
+  content: "On";
 }
+
 .toggle input[type="checkbox"]:checked + .handle:after, .toggle input[type="radio"]:checked + .handle:after {
   left: 40px;
   content: "";
@@ -93,6 +111,7 @@ body {
   -moz-box-shadow: inset 0 0 0 1px #f5f7fa, 1px 1px 1px #c7ccd3;
   box-shadow: inset 0 0 0 1px #f5f7fa, 1px 1px 1px #c7ccd3;
 }
+
 .maincontainer {
   min-height: 100%;
   margin-top: 3%;
