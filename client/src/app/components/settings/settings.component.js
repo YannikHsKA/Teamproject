@@ -71,6 +71,7 @@ var SettingsComponent = (function () {
             this.user.email = 0;
         }
         this.settingsservice.updateSettings(this.user);
+        this.saveSuccess = true;
     };
     SettingsComponent = __decorate([
         core_1.Component({

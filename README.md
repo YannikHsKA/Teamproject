@@ -10,11 +10,15 @@ IP Address: 165.227.128.51
 - npm install -g nodemon
 
 ##Frontend
-- move to client folder
-- npm install bower
+- move to root folder
+- npm install -g bower
+- bower install bootstrap --save
 - bower install bootstrap-toggle
+- run nodemon
+
+- go to client folder
 - run "npm install" to download and install node_modules
 - run "npm start" to generate javascript files
 
 ##Run frontend + backend
-- run "npm start" (install nodemon )
+- run nodemon

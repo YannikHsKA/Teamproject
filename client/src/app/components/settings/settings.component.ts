@@ -12,6 +12,7 @@ export class SettingsComponent {
   whatsapp_toggle: boolean;
   email_toggle: boolean;
   sms_toggle: boolean;
+  saveSuccess: boolean;
 
   constructor(private settingsservice: SettingsService, private verificationService: VerificationService) {
     this.user = this.verificationService.user;
@@ -77,6 +78,7 @@ export class SettingsComponent {
 
 
     this.settingsservice.updateSettings(this.user);
+    this.saveSuccess = true;
   }
 
 }
