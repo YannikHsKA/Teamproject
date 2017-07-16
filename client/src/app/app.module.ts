@@ -10,12 +10,14 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { SubscriptionsComponent } from './components/subscriptions/subscriptions.component';
 import { NotFoundComponent } from './components/notfound/notfound.component';
 import { VerificationsComponent } from './components/verifications/verifications.component';
+import { DetailedbundleComponent } from './components/detailedbundle/detailedbundle.component';
 
 const appRoutes: Routes = [
   {path:'subscribe', component: SubscriptionsComponent},
   {path:'verification', component: VerificationsComponent},
-  {path:'settings', component: SettingsComponent}, //TODO: add :id for tel nr
-  {path:'bundles', component: BundlesComponent}, //TODO: add :id for tel nr
+  {path:'settings', component: SettingsComponent},
+  {path:'bundles', component: BundlesComponent},
+  {path:'detailedbundle', component: DetailedbundleComponent}, //TODO: introduce bundle ID as parameter
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: '/subscribe', pathMatch: 'full'},
   {path: '**', redirectTo: '404', pathMatch: 'full'}
@@ -23,7 +25,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, BundlesComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent ],
+  declarations: [ AppComponent, BundlesComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

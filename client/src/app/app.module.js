@@ -19,11 +19,13 @@ var settings_component_1 = require('./components/settings/settings.component');
 var subscriptions_component_1 = require('./components/subscriptions/subscriptions.component');
 var notfound_component_1 = require('./components/notfound/notfound.component');
 var verifications_component_1 = require('./components/verifications/verifications.component');
+var detailedbundle_component_1 = require('./components/detailedbundle/detailedbundle.component');
 var appRoutes = [
     { path: 'subscribe', component: subscriptions_component_1.SubscriptionsComponent },
     { path: 'verification', component: verifications_component_1.VerificationsComponent },
     { path: 'settings', component: settings_component_1.SettingsComponent },
     { path: 'bundles', component: bundles_component_1.BundlesComponent },
+    { path: 'detailedbundle', component: detailedbundle_component_1.DetailedbundleComponent },
     { path: '404', component: notfound_component_1.NotFoundComponent },
     { path: '', redirectTo: '/subscribe', pathMatch: 'full' },
     { path: '**', redirectTo: '404', pathMatch: 'full' }
@@ -34,7 +36,7 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, router_1.RouterModule.forRoot(appRoutes)],
-            declarations: [app_component_1.AppComponent, bundles_component_1.BundlesComponent, settings_component_1.SettingsComponent, subscriptions_component_1.SubscriptionsComponent, notfound_component_1.NotFoundComponent, verifications_component_1.VerificationsComponent],
+            declarations: [app_component_1.AppComponent, bundles_component_1.BundlesComponent, settings_component_1.SettingsComponent, subscriptions_component_1.SubscriptionsComponent, notfound_component_1.NotFoundComponent, verifications_component_1.VerificationsComponent, detailedbundle_component_1.DetailedbundleComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

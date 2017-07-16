@@ -8,8 +8,11 @@ h1 {
   position:absolute;
   bottom: 0;
   width: 100%;
-  font-size: 0.5em;
+  font-size: 1em;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #eee;
 }
 
 body {
