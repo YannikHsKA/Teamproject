@@ -5,11 +5,15 @@ h1 {
 }
 
 .footer {
-  position:absolute;
+  position:fixed;
   bottom: 0;
   width: 100%;
   font-size: 0.5em;
   text-align: center;
+  /*padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #eee;
+  text-align: center;*/
 }
 
 body {
