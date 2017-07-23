@@ -16,9 +16,20 @@ export class SubscriptionsComponent {
   email_address: string;
   saveSuccess: boolean;
 
-  constructor(private subscriptionService: SubscriptionService) {
 
+
+  constructor(private subscriptionService: SubscriptionService) {
+    document.body.style.backgroundImage = "url('src/assets/bg.jpg')";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
   }
+
+  ngOnDestroy(){
+    document.body.style.backgroundImage = "none";
+  }
+
 
 
   addUser() {

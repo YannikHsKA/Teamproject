@@ -14,7 +14,15 @@ var subscription_service_1 = require('../../services/subscription.service');
 var SubscriptionsComponent = (function () {
     function SubscriptionsComponent(subscriptionService) {
         this.subscriptionService = subscriptionService;
+        document.body.style.backgroundImage = "url('src/assets/bg.jpg')";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundSize = "cover";
     }
+    SubscriptionsComponent.prototype.ngOnDestroy = function () {
+        document.body.style.backgroundImage = "none";
+    };
     SubscriptionsComponent.prototype.addUser = function () {
         event.preventDefault();
         var newUser = new User_js_1.User();

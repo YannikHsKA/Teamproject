@@ -1,32 +1,111 @@
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
-}
-
 .footer {
   position:absolute;
+  color: #06507f;
   bottom: 0;
   width: 100%;
+  font-family: News-Gothic-BT-Bd-reg,'Trebuchet MS',Arial;
+  font-weight: 400;
   font-size: 1em;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  border-top: 1px solid #eee;
+  border-top: 2px solid #e6eef2;
 }
 
-body {
+.body{
   padding-top: 20px;
   padding-bottom: 20px;
+  min-height: 100%;
+  height: auto;
+  min-width: 100%;
 }
+
+/**
+ * navbar
+ * --------------------------------------------------
+ */
 
 .navbar {
+  font-family: News-Gothic-BT-reg,'Trebuchet MS',Arial;
+  font-size: 1em;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
+.navbar-default {
+  background-color: #e6eef2;
+  border-color: #06507f;
+}
+.navbar-default .navbar-brand {
+  color: #06507f;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #06507f;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #06507f;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #06507f;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #06507f;
+}
+.navbar-default .navbar-toggle {
+  border-color: #06507f;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #06507f;
+}
+
+.navbar-default .navbar-link {
+  color: #06507f;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #06507f;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #06507f;
+  }
+}
 .navbar-brand {
   padding-top: 0px;
 }
+
+
+/**
+ * other stuff
+ * --------------------------------------------------
+ */
+
+
 
 .label-block {
   font-weight: normal;
