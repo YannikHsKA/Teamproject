@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+
 .ng-valid[required], .ng-valid.required {
   border-left: 5px solid #42A948; /*green*/
 }
@@ -5,3 +8,20 @@
 .ng-invalid:not(form){
   border-left: 5px solid #a94442; /*red*/
 }
+
+.jumbotron {
+  background: rgb(40, 40, 100); /* This is for ie8 and below */
+  background: rgba(40, 40, 100, 0.3);
+  font-family: News-Gothic-BT-Bd-reg, 'Trebuchet MS', Arial;
+  color: white;
+}
+
+h2{
+  font-family: 'Alex Brush' !important;
+}
+
+p{
+  font-family: 'Anaheim' !important;
+  font-size: 18px;
+}
+
