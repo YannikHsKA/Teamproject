@@ -1,81 +1,84 @@
-<section class="engine"><a rel="external"></a></section>
+<div class="container" align="center">
+  <div class="jumbotron">
+    <form class="form-horizontal" style="text-align: center">
+      <fieldset>
 
-<form class="form-horizontal" style="text-align: center">
-  <fieldset>
-
-    <!-- Form Name -->
-    <legend>Change your contact address</legend>
-    <!-- Text input-->
-    <div class="form-group" style="align-items: left; text-align: left">
-
-
-      <label class="col-md-4 control-label" for="email">E-Mail</label>
-      <div class="col-md-4">
-        <input [(ngModel)]="user.email_address" id="email" name="email" type="text" class="form-control input-md">
-
-      </div>
-    </div>
-
-    <!-- Text input-->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="phonenumber">Phone Number</label>
-      <div class="col-md-4">
-        <input [(ngModel)]="user.phonenumber" id="phonenumber" name="phonenumber" type="text"
-               class="form-control input-md">
-      </div>
-    </div>
-  </fieldset>
-</form>
+        <!-- Form Name -->
+        <legend>Change your contact address</legend>
+        <!-- Text input-->
+        <div class="form-group">
 
 
-<form class="form-horizontal" style="text-align: center">
-  <fieldset>
+          <label class="col-xs-4 control-label" for="email">E-Mail</label>
+          <div class="col-xs-4">
+            <input [(ngModel)]="user.email_address" id="email" name="email" type="text" class="form-control input-md">
 
-    <!-- Form Name -->
-    <legend>Choose your favorite Channels</legend>
+          </div>
+        </div>
 
-    <!-- Multiple Checkboxes -->
-    <div class="form-group">
-      <label class="col-md-4 control-label">WhatsApp</label>
-      <div class="col-md-4">
-        <label class="switch">
-          <input type="checkbox" [checked]="whatsapp_toggle" ([ngModel])="whatsapp_toggle" name="whatsapp_toggle"
-                 (click)="switch('whatsapp')">
-          <div class="slider round"></div>
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-md-4 control-label">Email</label>
-      <div class="col-md-4">
-        <label class="switch">
-          <input type="checkbox" [checked]="email_toggle" ([ngModel])="email_toggle" name="email_toggle"
-                 (click)="switch('email')">
-          <div class="slider round"></div>
-        </label>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="col-md-4 control-label">SMS</label>
-      <div class="col-md-4">
-        <label class="switch">
-          <input type="checkbox" [checked]="sms_toggle" ([ngModel])="sms_toggle" name="sms_toggle"
-                 (click)="switch('sms')">
-          <div class="slider round"></div>
-        </label>
-      </div>
-    </div>
-    <button type="button" class="btn btn-info" (click)="saveSettings()">
-      Save Settings
-    </button>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-xs-4 control-label" for="phonenumber">Phone Number</label>
+          <div class="col-xs-4">
+            <input [(ngModel)]="user.phonenumber" id="phonenumber" name="phonenumber" type="text"
+                   class="form-control input-md">
+          </div>
+        </div>
+      </fieldset>
+    </form>
 
-    <!-- Alert -->
-    <br><br>
-    <div class="alert alert-success fade in" *ngIf="saveSuccess">
-      <strong>Succes!</strong> Your profile has been updated
-    </div>
-  </fieldset>
-</form>
+
+    <form class="form-horizontal" style="text-align: center">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Choose your favorite Channels</legend>
+
+        <!-- Multiple Checkboxes -->
+        <div class="form-group">
+          <label class="col-xs-4 control-label">WhatsApp</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="whatsapp_toggle" ([ngModel])="whatsapp_toggle" name="whatsapp_toggle"
+                     (click)="switch('whatsapp')">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label">Email</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="email_toggle" ([ngModel])="email_toggle" name="email_toggle"
+                     (click)="switch('email')">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label">SMS</label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="sms_toggle" ([ngModel])="sms_toggle" name="sms_toggle"
+                     (click)="switch('sms')">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-info" (click)="saveSettings()">
+          Save Settings
+        </button>
+
+        <!-- Alert -->
+        <br><br>
+        <div class="alert alert-success fade in" *ngIf="saveSuccess">
+          <strong>Succes!</strong> Your profile has been updated
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
 
 
 

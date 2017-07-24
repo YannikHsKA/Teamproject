@@ -25,3 +25,7 @@ p{
   font-size: 18px;
 }
 
+.alert{
+  opacity: 0.9;
+}
+

@@ -5,7 +5,8 @@ import {VerificationService} from '../../services/verification.service';
 @Component({
   moduleId: module.id,
   selector: 'settings',
-  templateUrl: `settings.component.html`
+  templateUrl: `settings.component.html`,
+  styleUrls: ['settings.component.css']
 })
 export class SettingsComponent {
   user: User;
@@ -36,6 +37,16 @@ export class SettingsComponent {
       this.email_toggle = false;
     }
     console.log(this);
+
+    document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+  }
+
+  ngOnDestroy(){
+    document.body.style.backgroundImage = "none";
   }
 
 

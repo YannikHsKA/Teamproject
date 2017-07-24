@@ -36,7 +36,15 @@ var SettingsComponent = (function () {
             this.email_toggle = false;
         }
         console.log(this);
+        document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundSize = "cover";
     }
+    SettingsComponent.prototype.ngOnDestroy = function () {
+        document.body.style.backgroundImage = "none";
+    };
     SettingsComponent.prototype.switch = function (toggle) {
         //  console.log(toggle);
         switch (toggle) {
@@ -77,7 +85,8 @@ var SettingsComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'settings',
-            templateUrl: "settings.component.html"
+            templateUrl: "settings.component.html",
+            styleUrls: ['settings.component.css']
         }), 
         __metadata('design:paramtypes', [settings_service_1.SettingsService, verification_service_1.VerificationService])
     ], SettingsComponent);
