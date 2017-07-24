@@ -19,7 +19,15 @@ var VerificationsComponent = (function () {
         this.user = new User_js_1.User();
         this.displayVer = true;
         //  this.user = new User();
+        document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundSize = "cover";
     }
+    VerificationsComponent.prototype.ngOnDestroy = function () {
+        document.body.style.backgroundImage = "none";
+    };
     VerificationsComponent.prototype.checkUser = function () {
         var _this = this;
         this.verificationService.getUserByNumber(this.phonenumber)
@@ -53,7 +61,8 @@ var VerificationsComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'verifications',
-            templateUrl: "verifications.component.html"
+            templateUrl: "verifications.component.html",
+            styleUrls: ['verifications.component.css']
         }), 
         __metadata('design:paramtypes', [verification_service_1.VerificationService, router_1.Router])
     ], VerificationsComponent);

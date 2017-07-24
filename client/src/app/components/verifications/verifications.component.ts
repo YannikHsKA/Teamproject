@@ -6,7 +6,8 @@ import {Router} from '@angular/router';
 @Component({
   moduleId: module.id,
   selector: 'verifications',
-  templateUrl: `verifications.component.html`
+  templateUrl: `verifications.component.html`,
+  styleUrls: ['verifications.component.css']
 })
 export class VerificationsComponent {
   user: User  = new User();
@@ -19,6 +20,16 @@ export class VerificationsComponent {
   constructor(private verificationService: VerificationService, private router: Router) {
     this.displayVer = true;
    //  this.user = new User();
+
+    document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+  }
+
+  ngOnDestroy(){
+    document.body.style.backgroundImage = "none";
   }
 
   checkUser() {
