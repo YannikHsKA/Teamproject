@@ -9,27 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var BundlesComponent = (function () {
-    function BundlesComponent() {
-        document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
-        document.body.style.backgroundPosition = "center center";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundSize = "cover";
+var BundleAdminComponent = (function () {
+    function BundleAdminComponent() {
     }
-    BundlesComponent.prototype.ngOnDestroy = function () {
-        document.body.style.backgroundImage = "none";
-    };
-    BundlesComponent = __decorate([
+    BundleAdminComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'bundles',
-            templateUrl: "bundles.component.html",
-            styleUrls: ["bundles.component.css"]
+            templateUrl: "bundleadmin.component.html",
+            styleUrls: ["bundleadmin.component.css"]
         }), 
         __metadata('design:paramtypes', [])
-    ], BundlesComponent);
-    return BundlesComponent;
+    ], BundleAdminComponent);
+    return BundleAdminComponent;
 }());
-exports.BundlesComponent = BundlesComponent;
-//# sourceMappingURL=bundles.component.js.map
+exports.BundleAdminComponent = BundleAdminComponent;
+//# sourceMappingURL=bundleadmin.component.js.map

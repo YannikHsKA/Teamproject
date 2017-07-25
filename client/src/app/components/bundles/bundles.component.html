@@ -1,233 +1,3 @@
-<style type="text/css">
-
-.panel-footer
-{
-  height: 3rem;
-  position:absolute;
-  left:0;
-  bottom:0;
-  right:0;
-  font-size:  10px;
-  padding-top: 0;
-  }
-	.row > div{
-        margin-bottom: 15px;
-    }
-	.header{
-        min-height: 90px;
-    }
-    .footer{
-        min-height: 60px;
-    }
-    .container{
-      height: 100%;
-      background-image: url("http://localhost:3000/src/assets/christable.jpg");
-      background-repeat:no-repeat;
-      -webkit-background-size:cover;
-      -moz-background-size:cover;
-      -o-background-size:cover;
-      background-size:cover;
-      background-position:center;
-    }
-    .header, .footer{
-        font-size:  4vmax;
-        display: flex;
-        justify-content: center; /* align horizontal */
-        align-items: center;
-        font-weight: bold;
-    }
-
-    .header{
-      margin-top: 5%;
-      background-image: url("http://localhost:3000/src/assets/fontlidlweb.png");
-      background-repeat:no-repeat;
-      background-size:auto 20vmax;
-      -webkit-background-size:auto 20vmax;
-      -moz-background-size:auto 20vmax;
-      -o-background-size:auto 20vmax;
-      background-position:center;
-      align-items: center;
-    }
-    .sidebar{
-        background: #dbdfe5;
-    }
-    .intro{
-
-        min-height: 100px;
-        width: 100%;
-    }
-    .section{
-        min-height: 250px;
-        background: #dbdfe5;
-        position:relative;
-    }
-    .section.bg-alt{
-        background: #b4bac0;
-        position:relative;
-    }
-
-    .shape{
-	border-style: ; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
-	-ms-transform:rotate(360deg); /* IE 9 */
-	-o-transform: rotate(360deg);  /* Opera 10.5 */
-	-webkit-transform:rotate(360deg); /* Safari and Chrome */
-	transform:rotate(360deg);
-}
-.offer{
-	background:#fff; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
-}
-.offer:hover {
-    -webkit-transform: scale(1.03);
-    -moz-transform: scale(1.03);
-    -ms-transform: scale(1.03);
-    -o-transform: scale(1.03);
-    transform:rotate scale(1.03);
-    -webkit-transition: all 0.2s ease-in-out;
--moz-transition: all 0.2s ease-in-out;
--o-transition: all 0.2s ease-in-out;
-transition: all 0.2s ease-in-out;
-    }
-.shape {
-
-}
-.offer-radius{
-	border-radius:7px;
-}
-.offer-danger {	border-color: #d9534f; }
-.offer-danger .shape{
-	border-color: transparent #d9534f transparent transparent;
-}
-.offer-success {	border-color: #5cb85c; }
-.offer-success .shape{
-	border-color: transparent #5cb85c transparent transparent;
-}
-.offer-default {
-  border-color: #999999;
-  height:280px;
-  background-image: url("http://localhost:3000/src/assets/kekse.jpg");
-  background-repeat:no-repeat;
--webkit-background-size:cover;
--moz-background-size:cover;
--o-background-size:cover;
-background-size:cover;
-background-position:center;
-}
-.offer-default2 {
-  border-color: #999999;
-  height:280px;
-  background-image: url("http://localhost:3000/src/assets/mode.jpg");
-  background-repeat:no-repeat;
--webkit-background-size:cover;
--moz-background-size:cover;
--o-background-size:cover;
-background-size:cover;
-background-position:center;
-}
-.offer-default .shape{
-	border-color: transparent #999999 transparent transparent;
-}
-
-.offer-default2 .shape{
-	border-color: transparent #999999 transparent transparent;
-}
-.offer-primary {	border-color: #428bca; }
-.offer-primary .shape{
-	border-color: transparent #428bca transparent transparent;
-}
-.offer-info {	border-color: #5bc0de; }
-.offer-info .shape{
-	border-color: transparent #5bc0de transparent transparent;
-}
-.offer-warning {	border-color: #f0ad4e; }
-.offer-warning .shape{
-	border-color: transparent #f0ad4e transparent transparent;
-}
-
-.shape-text{
-	color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
-	-ms-transform:rotate(30deg); /* IE 9 */
-	-o-transform: rotate(360deg);  /* Opera 10.5 */
-	-webkit-transform:rotate(30deg); /* Safari and Chrome */
-	transform:rotate(30deg);
-}
-.offer-content{
-  text-align: center;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* align horizontal */
-  align-items: center;
-  font-weight: bold;
-}
-
-@media (min-width: 487px) {
-  .container {
-    max-width: 750px;
-  }
-  .col-sm-6 {
-    width: 50%;
-  }
-}
-@media (min-width: 900px) {
-  .container {
-    max-width: 970px;
-  }
-  .col-md-4 {
-    width: 33.33333333333333%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1170px;
-  }
-  .col-lg-3 {
-    width: 25%;
-  }
-  }
-
-  .lead{
-    background: rgba(255,255,255,0.5);
-    opacity: 30%;
-    width: 100%;
-  }
-  #snow{
-	background: none;
-	font-family: Androgyne;
-	background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index:1;
-	-webkit-animation: snow 10s linear infinite;
-	-moz-animation: snow 10s linear infinite;
-	-ms-animation: snow 10s linear infinite;
-	animation: snow 10s linear infinite;
-}
-@keyframes snow {
-  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
-  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
-  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
-}
-@-moz-keyframes snow {
-  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
-  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
-  100% {background-position: 400px 1000px, 200px 400px, 100px 300px;}
-}
-@-webkit-keyframes snow {
-  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
-  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
-  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
-}
-@-ms-keyframes snow {
-  0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
-  50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
-  100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
-}
-</style>
-
     <div class="container">
 
     	<div class="row">
@@ -239,11 +9,11 @@ background-position:center;
             </div>
         </div>
       </div>
-        <div class="row">
+      <!--  <div class="row">
           <div class="col-xs-12">
               <div class="intro"></div>
           </div>
-        </div>
+        </div>-->
         <div class="row">
           <div class="col-xs-6">
             <div class="section">
@@ -293,9 +63,9 @@ background-position:center;
               </div>
           </div>
       </div>
-        <div class="row">
+      <!--  <div class="row">
             <div class="col-xs-12">
                 <div class="footer"></div>
             </div>
-        </div>
+        </div>-->
 	</div>
