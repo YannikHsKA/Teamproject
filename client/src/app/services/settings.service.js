@@ -29,6 +29,12 @@ var SettingsService = (function () {
             console.log(JSON.stringify(error.json()));
         });
     };
+    SettingsService.prototype.sendWhatsAppUpdate = function (subscribe_flag, user) {
+    };
+    SettingsService.prototype.sendEmailUpdate = function (subscribe_flag, user) {
+    };
+    SettingsService.prototype.sendSMSUpdate = function (subscribe_flag, user) {
+    };
     return SettingsService;
 }());
 SettingsService = __decorate([

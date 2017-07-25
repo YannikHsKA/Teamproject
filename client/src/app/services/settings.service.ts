@@ -21,4 +21,18 @@ export class SettingsService {
       console.log(JSON.stringify(error.json()));
     });
   }
+
+  sendWhatsAppUpdate(subscribe_flag: String, user: User){
+
+  }
+
+
+  sendEmailUpdate(subscribe_flag: String, user: User){
+
+  }
+
+  sendSMSUpdate(subscribe_flag: String, user:User){
+
+  }
+  
 }

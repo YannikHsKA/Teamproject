@@ -32,21 +32,27 @@ var SettingsComponent = (function () {
         }
         if (this.user.sms == 1) {
             this.sms_toggle = true;
+            this.sms_toggle_initial = true;
         }
         else {
             this.sms_toggle = false;
+            this.sms_toggle_initial = false;
         }
         if (this.user.whatsapp == 1) {
             this.whatsapp_toggle = true;
+            this.whatsapp_toggle_initial = true;
         }
         else {
             this.whatsapp_toggle = false;
+            this.whatsapp_toggle_initial = false;
         }
         if (this.user.email == 1) {
             this.email_toggle = true;
+            this.email_toggle_initial = true;
         }
         else {
             this.email_toggle = false;
+            this.email_toggle_initial = false;
         }
         console.log(this);
         document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
@@ -75,21 +81,39 @@ var SettingsComponent = (function () {
     SettingsComponent.prototype.saveSettings = function () {
         if (this.sms_toggle == true) {
             this.user.sms = 1;
+            if (this.sms_toggle_initial == false) {
+                this.settingsservice.sendSMSUpdate("subscribe", this.user);
+            }
         }
         else {
             this.user.sms = 0;
+            if (this.sms_toggle_initial == true) {
+                this.settingsservice.sendSMSUpdate("unsubscribe", this.user);
+            }
         }
         if (this.whatsapp_toggle == true) {
             this.user.whatsapp = 1;
+            if (this.whatsapp_toggle_initial == false) {
+                this.settingsservice.sendWhatsAppUpdate("subscribe", this.user);
+            }
         }
         else {
             this.user.whatsapp = 0;
+            if (this.whatsapp_toggle_initial == true) {
+                this.settingsservice.sendWhatsAppUpdate("unsubscribe", this.user);
+            }
         }
         if (this.email_toggle == true) {
             this.user.email = 1;
+            if (this.email_toggle_initial == false) {
+                this.settingsservice.sendEmailUpdate("subscribe", this.user);
+            }
         }
         else {
             this.user.email = 0;
+            if (this.email_toggle_initial == false) {
+                this.settingsservice.sendEmailUpdate("subscribe", this.user);
+            }
         }
         this.settingsservice.updateSettings(this.user);
         this.saveSuccess = true;
