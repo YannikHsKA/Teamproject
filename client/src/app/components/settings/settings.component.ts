@@ -14,10 +14,25 @@ export class SettingsComponent {
   email_toggle: boolean;
   sms_toggle: boolean;
   saveSuccess: boolean;
+  email_entered: boolean;
+  phone_entered: boolean;
 
   constructor(private settingsservice: SettingsService, private verificationService: VerificationService) {
     this.user = this.verificationService.user;
     console.log(this.user);
+
+    if (this.user.phonenumber == null) {
+      this.phone_entered = false;
+    }
+    else{
+      this.phone_entered = true;}
+
+    if (this.user.email_address ==""){
+      this.email_entered = false }
+    else {
+      this.email_entered = true;
+    }
+
 
     if (this.user.sms == 1) {
       this.sms_toggle = true;
