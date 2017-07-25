@@ -8,32 +8,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var settings_service_1 = require('../../services/settings.service');
-var verification_service_1 = require('../../services/verification.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var settings_service_1 = require("../../services/settings.service");
+var verification_service_1 = require("../../services/verification.service");
 var SettingsComponent = (function () {
     function SettingsComponent(settingsservice, verificationService) {
         this.settingsservice = settingsservice;
         this.verificationService = verificationService;
         this.user = this.verificationService.user;
         console.log(this.user);
+        if (this.user.phonenumber == null) {
+            this.phone_entered = false;
+        }
+        else {
+            this.phone_entered = true;
+        }
+        if (this.user.email_address == "") {
+            this.email_entered = false;
+        }
+        else {
+            this.email_entered = true;
+        }
         if (this.user.sms == 1) {
             this.sms_toggle = true;
+            this.sms_toggle_initial = true;
         }
         else {
             this.sms_toggle = false;
+            this.sms_toggle_initial = false;
         }
         if (this.user.whatsapp == 1) {
             this.whatsapp_toggle = true;
+            this.whatsapp_toggle_initial = true;
         }
         else {
             this.whatsapp_toggle = false;
+            this.whatsapp_toggle_initial = false;
         }
         if (this.user.email == 1) {
             this.email_toggle = true;
+            this.email_toggle_initial = true;
         }
         else {
             this.email_toggle = false;
+            this.email_toggle_initial = false;
         }
         console.log(this);
         document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
@@ -62,35 +81,53 @@ var SettingsComponent = (function () {
     SettingsComponent.prototype.saveSettings = function () {
         if (this.sms_toggle == true) {
             this.user.sms = 1;
+            if (this.sms_toggle_initial == false) {
+                this.settingsservice.sendSMSUpdate("subscribe", this.user);
+            }
         }
         else {
             this.user.sms = 0;
+            if (this.sms_toggle_initial == true) {
+                this.settingsservice.sendSMSUpdate("unsubscribe", this.user);
+            }
         }
         if (this.whatsapp_toggle == true) {
             this.user.whatsapp = 1;
+            if (this.whatsapp_toggle_initial == false) {
+                this.settingsservice.sendWhatsAppUpdate("subscribe", this.user);
+            }
         }
         else {
             this.user.whatsapp = 0;
+            if (this.whatsapp_toggle_initial == true) {
+                this.settingsservice.sendWhatsAppUpdate("unsubscribe", this.user);
+            }
         }
         if (this.email_toggle == true) {
             this.user.email = 1;
+            if (this.email_toggle_initial == false) {
+                this.settingsservice.sendEmailUpdate("subscribe", this.user);
+            }
         }
         else {
             this.user.email = 0;
+            if (this.email_toggle_initial == false) {
+                this.settingsservice.sendEmailUpdate("subscribe", this.user);
+            }
         }
         this.settingsservice.updateSettings(this.user);
         this.saveSuccess = true;
     };
-    SettingsComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'settings',
-            templateUrl: "settings.component.html",
-            styleUrls: ['settings.component.css']
-        }), 
-        __metadata('design:paramtypes', [settings_service_1.SettingsService, verification_service_1.VerificationService])
-    ], SettingsComponent);
     return SettingsComponent;
 }());
+SettingsComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'settings',
+        templateUrl: "settings.component.html",
+        styleUrls: ['settings.component.css']
+    }),
+    __metadata("design:paramtypes", [settings_service_1.SettingsService, verification_service_1.VerificationService])
+], SettingsComponent);
 exports.SettingsComponent = SettingsComponent;
 //# sourceMappingURL=settings.component.js.map
