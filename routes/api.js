@@ -200,5 +200,31 @@ router.post("/updatesettings", function (req, res) {
 
 });
 
+/* Update WhatsApp Update Notification Settings in Firebase */
+router.post("/updatesettings", function (req, res) {
+    console.log("Send Whatsup Update User");
+    /* Read POST Request */
+    let user = req.body;
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref("user");//.child(user.id);
+
+    var userRef = ref.child(user.id);
+    userRef.update({
+            "sms": user.sms,
+            "id" : user.id,
+            "email": user.email,
+            "email_address" : user.email_address,
+            "whatsapp": user.whatsapp,
+            "phonenumber": user.phonenumber
+        }
+    );
+
+});
+
+
+
+
 
 module.exports = router;

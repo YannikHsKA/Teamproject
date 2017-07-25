@@ -30,10 +30,70 @@ var SettingsService = (function () {
         });
     };
     SettingsService.prototype.sendWhatsAppUpdate = function (subscribe_flag, user) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        console.log("Send Update for User:" + user);
+        var body = JSON.stringify(user);
+        if (subscribe_flag == "subscribe") {
+            this.http.post('/api/sendWhatsAppUpdate_subscribe', body, { headers: headers })
+                .subscribe(function (data) {
+                alert('ok');
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else if (subscribe_flag == "unsubscribe") {
+            this.http.post('/api/sendWhatsAppUpdate_unsubscribe', body, { headers: headers })
+                .subscribe(function (data) {
+                alert('ok');
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
     };
     SettingsService.prototype.sendEmailUpdate = function (subscribe_flag, user) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        console.log("Send Update for User:" + user);
+        var body = JSON.stringify(user);
+        if (subscribe_flag == "subscribe") {
+            this.http.post('/api/sendEmailUpdate_subscribe', body, { headers: headers })
+                .subscribe(function (data) {
+                alert('ok');
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else if (subscribe_flag == "unsubscribe") {
+            this.http.post('/api/sendEmailUpdate_unsubscribe', body, { headers: headers })
+                .subscribe(function (data) {
+                alert('ok');
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
     };
     SettingsService.prototype.sendSMSUpdate = function (subscribe_flag, user) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        console.log("Send Update for User:" + user);
+        var body = JSON.stringify(user);
+        if (subscribe_flag == "subscribe") {
+            this.http.post('/api/sendSMSUpdate_subscribe', body, { headers: headers })
+                .subscribe(function (data) {
+                alert('ok');
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
+        else if (subscribe_flag == "unsubscribe") {
+            this.http.post('/api/sendSMSUpdate_unsubscribe', body, { headers: headers })
+                .subscribe(function (data) {
+                alert('ok');
+            }, function (error) {
+                console.log(JSON.stringify(error.json()));
+            });
+        }
     };
     return SettingsService;
 }());
