@@ -1,7 +1,17 @@
 var express = require('express');
 var router = express.Router();
 var client = require('twilio')('ACc4221e14d1d0540a89ec756b685ae93b', '1b5bbdebb51c9059ef3dd8ddb5db2a1b');
-
+var nodemailer = require('nodemailer');
+var oauth = require('xoauth2');
+var smtpTransport = require('nodemailer-smtp-transport');
+var smtpTransport = nodemailer.createTransport(smtpTransport({
+  service: "Gmail",
+    auth:
+    {
+    user : "lidlsmartshopping@gmail.com",
+    pass :  "lidlsmartshopping123",
+  }
+}));
 
 //FIREBASE
 var admin = require("firebase-admin");
@@ -30,7 +40,7 @@ router.get("/send", function (req, res) {
 
 router.post("/test", function (req, res) {
     console.log("test")
-    res.status(200).send("Success!1");
+    res.status(200).send("Success!");
 });
 
 
@@ -40,11 +50,9 @@ router.post("/subscribe", function (req, res) {
     var user = req.body;
     console.log("body: %j", user)
 
-
     /* Generate Random setting_key */
     var settingkey1 = Math.random() * (90000 - 10000) + 10000;
     var settingkey2 = Math.floor(settingkey1);
-
 
     /* Send Notification SMS with Settingkey and Voucher
     client.sendMessage({
@@ -62,6 +70,26 @@ router.post("/subscribe", function (req, res) {
         }
     });
   */
+
+
+
+  /*Send Notification Email with Setting Key and Voucher */
+  var mailOptions = {
+    from: "lidlsmartshopping@gmail.com",
+    to: "domenik.fox@gmail.com",
+    subject: "Willkommen bei LIDL Smart Shopping!",
+    generateTextFromHTML: true,
+    html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
+  };
+
+    smtpTransport.sendMail(mailOptions, function(error, response){
+      if (error) {
+         console.log(error);
+       } else {
+         console.log(response);
+       }
+       smtpTransport.close();
+     });
 
     var db = admin.database();
     var ref = db.ref("user");

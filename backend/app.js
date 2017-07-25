@@ -3,7 +3,29 @@ var app = express();
 var path = require('path');
 var client = require('twilio')('ACc4221e14d1d0540a89ec756b685ae93b','1b5bbdebb51c9059ef3dd8ddb5db2a1b');
 var admin = require("firebase-admin");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
+var oauth = require('xoauth2');
+var smtpTransport = require('nodemailer-smtp-transport');
+
+var smtpTransport = nodemailer.createTransport(smtpTransport({
+  service: "Gmail",
+    auth:
+    {
+    user : "lidlsmartshopping@gmail.com",
+    pass :  "lidlsmartshopping123",
+  }
+}));
+
+var mailOptions = {
+  from: "lidlsmartshopping@gmail.com",
+  to: "domenik.fox@gmail.com",
+  subject: "Willkommen bei LIDL Smart Shopping!",
+  generateTextFromHTML: true,
+  html: "<b>Hallo!</b> Dein Verification Key lautet"
+};
+
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -16,6 +38,8 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: "https://lidl-smart.firebaseio.com"
 });
+
+
 
 /* serves main page */
 app.get("/", function(req, res) {
@@ -69,6 +93,17 @@ app.post("/subscribe", function(req, res)
   });
 
 
+/*Send Notification Email with Setting Key and Voucher */
+  smtpTransport.sendMail(mailOptions, function(error, response){
+    if (error) {
+       console.log(error);
+     } else {
+       console.log(response);
+     }
+     smtpTransport.close();
+   });
+
+
 /* Send Notification SMS with Settingkey and Voucher */
    client.sendMessage({
      to: phonenumber,
@@ -80,10 +115,12 @@ app.post("/subscribe", function(req, res)
        res.status(500).send("Failure");
      }
      else{
+       console.log("Success!");
        console.log(data);
        res.status(200).send("Success");
      }
    });
+
  });
 
 /* Start Server */

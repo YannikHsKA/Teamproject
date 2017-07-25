@@ -8,6 +8,7 @@
     "ejs": "^2.5.6",
     "express": "^4.15.3",
     "firebase-admin": "^4.2.1",
+    "nodemailer": "^4.0.1",
     "twilio": "^2.11.1"
   },
   "devDependencies": {},
