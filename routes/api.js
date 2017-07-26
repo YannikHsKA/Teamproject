@@ -116,7 +116,6 @@ res.status(201).send(user);
 router.get("/user/phone/:phonenumber", function (req, res) {
     /* Read POST Request */
     var phonenumber = req.params.phonenumber;
-
     console.log("Get User, number: " + phonenumber);
 
     /* Connect to Firebase */
@@ -142,6 +141,41 @@ router.get("/user/phone/:phonenumber", function (req, res) {
                 else {
                     res.status(500).send("Failure");
                     console.log("Phonenumber not subscribed");
+                }
+
+    });
+});
+
+/* Checks if email is already subscribed */
+router.get("/user/mail/:email_address", function (req, res) {
+    /* Read POST Request */
+    var email_address = req.params.email_address;
+
+    console.log("Get User, mail: " + email_address);
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref("user");
+
+    ref.once('value', function (snapshot) {
+    let found = false;
+    let user;
+
+            snapshot.forEach(function (snapshot2) {
+                var obj = snapshot2.val();
+
+                if (obj.email_address == email_address) {
+                    found = true;
+                    console.log("User found");
+                    user = obj;
+                }
+                })
+            if (found == true){
+                    res.status(200).json(user);
+                }
+                else {
+                    res.status(500).send("Failure");
+                    console.log("Email not subscribed");
                 }
 
     });
