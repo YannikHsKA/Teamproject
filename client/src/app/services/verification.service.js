@@ -20,6 +20,10 @@ var VerificationService = (function () {
         return this.http.get('/api/user/phone/' + phonenumber)
             .map(function (res) { return res.json(); });
     };
+    VerificationService.prototype.getUserByMail = function (email_address) {
+        return this.http.get('/api/user/mail/' + email_address)
+            .map(function (res) { return res.json(); });
+    };
     VerificationService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

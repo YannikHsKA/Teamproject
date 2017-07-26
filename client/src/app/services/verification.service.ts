@@ -18,4 +18,10 @@ export class VerificationService {
       .map(res => res.json());
   }
 
+  getUserByMail(email_address: string){
+
+    return this.http.get('/api/user/mail/' + email_address)
+      .map(res => res.json());
+  }
+
 }

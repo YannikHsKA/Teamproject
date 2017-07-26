@@ -10,16 +10,22 @@ import {Router} from '@angular/router';
   styleUrls: ['verifications.component.css']
 })
 export class VerificationsComponent {
-  user: User  = new User();
+  user: User = new User();
   phonenumber: string;
+  email_address: string;
   verCode: number;
+  verifyPhone: boolean;
+  verifyMail: boolean;
   displayVer: boolean;
   displayAlert: boolean;
   displayAlert2: boolean;
+  disPhoneButton: boolean;
+  disMailButton: boolean;
 
   constructor(private verificationService: VerificationService, private router: Router) {
     this.displayVer = true;
-   //  this.user = new User();
+    this.disPhoneButton = true;
+    this.disMailButton = true;
 
     document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
     document.body.style.backgroundPosition = "center center";
@@ -28,11 +34,11 @@ export class VerificationsComponent {
     document.body.style.backgroundSize = "cover";
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     document.body.style.backgroundImage = "none";
   }
 
-  checkUser() {
+  checkUserByPhone() {
     this.verificationService.getUserByNumber(this.phonenumber)
       .subscribe(data => {
           console.log(data);
@@ -53,12 +59,56 @@ export class VerificationsComponent {
         });
   }
 
+  checkUserByMail() {
+    this.verificationService.getUserByMail(this.email_address)
+      .subscribe(data => {
+          console.log(data);
+          if (data) {
+            this.user.id = data.id;
+            this.user.setting_key = data.setting_key;
+            this.user.whatsapp = data.whatsapp;
+            this.user.email = data.email;
+            this.user.email_address = data.email_address;
+            this.user.sms = data.sms;
+            this.user.phonenumber = this.phonenumber;
+            this.displayVer = false;
+          }
+        },
+        err => {
+          console.log("User" + this.email_address + "not found")
+          this.displayAlert = true;
+        });
+  }
+
+
   checkVerification() {
     if (this.verCode == this.user.setting_key) {
       this.verificationService.user = this.user;
       this.router.navigate(['./settings']);
     } else {
       this.displayAlert2 = true;
+    }
+  }
+
+  showPhoneVer() {
+    if (!this.verifyPhone && this.verifyMail) {
+      this.verifyPhone = true;
+      this.verifyMail = false;
+    } else if(!this.verifyPhone){
+      this.verifyPhone = true;
+    } else {
+      this.verifyPhone = false;
+    }
+  }
+
+  showMailVer() {
+    if (!this.verifyMail && this.verifyPhone) {
+      this.verifyMail = true;
+      this.verifyPhone = false;
+    } else if(!this.verifyMail){
+      this.verifyMail = true;
+    } else {
+      this.verifyMail = false;
     }
   }
 

@@ -3,7 +3,6 @@ import {User} from '../../../../User.js';
 import {SubscriptionService} from '../../services/subscription.service';
 
 
-
 @Component({
   moduleId: module.id,
   selector: 'subscriptions',
@@ -19,7 +18,6 @@ export class SubscriptionsComponent {
   registerMail: boolean;
 
 
-
   constructor(private subscriptionService: SubscriptionService) {
     this.registerPhone = false;
     this.registerMail = false;
@@ -31,10 +29,9 @@ export class SubscriptionsComponent {
     document.body.style.backgroundSize = "cover";
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     document.body.style.backgroundImage = "none";
   }
-
 
 
   addUser() {
@@ -48,23 +45,30 @@ export class SubscriptionsComponent {
       this.saveSuccess = true;
       newUser.sms = 1;
     }
-if (newUser.email_address){
-      newUser.email =1;
-}
+    if (newUser.email_address) {
+      newUser.email = 1;
+    }
     this.subscriptionService.addUser(newUser)
       .subscribe()
   }
 
-  showPhoneFields(){
-    if(!this.registerPhone){
+  showPhoneFields() {
+    if (!this.registerPhone && this.registerMail) {
       this.registerPhone = true;
-    }else {
-      this.registerPhone = false;
+      this.registerMail = false;
+    } else if(!this.registerMail){
+      this.registerPhone = true;
+    } else{
+      this.registerMail = false;
     }
   }
 
-  showMailFields(){
-    if(!this.registerMail){
+  showMailFields() {
+    if (!this.registerMail && this.registerPhone) {
+        this.registerMail = true;
+        this.registerPhone = false;
+
+    } else if(!this.registerMail){
       this.registerMail = true;
     }else {
       this.registerMail = false;

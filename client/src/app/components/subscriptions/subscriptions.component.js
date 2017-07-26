@@ -42,15 +42,23 @@ var SubscriptionsComponent = (function () {
             .subscribe();
     };
     SubscriptionsComponent.prototype.showPhoneFields = function () {
-        if (!this.registerPhone) {
+        if (!this.registerPhone && this.registerMail) {
+            this.registerPhone = true;
+            this.registerMail = false;
+        }
+        else if (!this.registerMail) {
             this.registerPhone = true;
         }
         else {
-            this.registerPhone = false;
+            this.registerMail = false;
         }
     };
     SubscriptionsComponent.prototype.showMailFields = function () {
-        if (!this.registerMail) {
+        if (!this.registerMail && this.registerPhone) {
+            this.registerMail = true;
+            this.registerPhone = false;
+        }
+        else if (!this.registerMail) {
             this.registerMail = true;
         }
         else {

@@ -18,7 +18,8 @@ var VerificationsComponent = (function () {
         this.router = router;
         this.user = new User_js_1.User();
         this.displayVer = true;
-        //  this.user = new User();
+        this.disPhoneButton = true;
+        this.disMailButton = true;
         document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
@@ -28,7 +29,7 @@ var VerificationsComponent = (function () {
     VerificationsComponent.prototype.ngOnDestroy = function () {
         document.body.style.backgroundImage = "none";
     };
-    VerificationsComponent.prototype.checkUser = function () {
+    VerificationsComponent.prototype.checkUserByPhone = function () {
         var _this = this;
         this.verificationService.getUserByNumber(this.phonenumber)
             .subscribe(function (data) {
@@ -48,6 +49,26 @@ var VerificationsComponent = (function () {
             _this.displayAlert = true;
         });
     };
+    VerificationsComponent.prototype.checkUserByMail = function () {
+        var _this = this;
+        this.verificationService.getUserByMail(this.email_address)
+            .subscribe(function (data) {
+            console.log(data);
+            if (data) {
+                _this.user.id = data.id;
+                _this.user.setting_key = data.setting_key;
+                _this.user.whatsapp = data.whatsapp;
+                _this.user.email = data.email;
+                _this.user.email_address = data.email_address;
+                _this.user.sms = data.sms;
+                _this.user.phonenumber = _this.phonenumber;
+                _this.displayVer = false;
+            }
+        }, function (err) {
+            console.log("User" + _this.email_address + "not found");
+            _this.displayAlert = true;
+        });
+    };
     VerificationsComponent.prototype.checkVerification = function () {
         if (this.verCode == this.user.setting_key) {
             this.verificationService.user = this.user;
@@ -55,6 +76,30 @@ var VerificationsComponent = (function () {
         }
         else {
             this.displayAlert2 = true;
+        }
+    };
+    VerificationsComponent.prototype.showPhoneVer = function () {
+        if (!this.verifyPhone && this.verifyMail) {
+            this.verifyPhone = true;
+            this.verifyMail = false;
+        }
+        else if (!this.verifyPhone) {
+            this.verifyPhone = true;
+        }
+        else {
+            this.verifyPhone = false;
+        }
+    };
+    VerificationsComponent.prototype.showMailVer = function () {
+        if (!this.verifyMail && this.verifyPhone) {
+            this.verifyMail = true;
+            this.verifyPhone = false;
+        }
+        else if (!this.verifyMail) {
+            this.verifyMail = true;
+        }
+        else {
+            this.verifyMail = false;
         }
     };
     VerificationsComponent = __decorate([
