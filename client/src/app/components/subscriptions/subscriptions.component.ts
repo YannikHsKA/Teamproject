@@ -15,10 +15,15 @@ export class SubscriptionsComponent {
   phonenumber: string;
   email_address: string;
   saveSuccess: boolean;
+  registerPhone: boolean;
+  registerMail: boolean;
 
 
 
   constructor(private subscriptionService: SubscriptionService) {
+    this.registerPhone = false;
+    this.registerMail = false;
+
     document.body.style.backgroundImage = "url('src/assets/bg.jpg')";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundRepeat = "no-repeat";
@@ -49,4 +54,21 @@ if (newUser.email_address){
     this.subscriptionService.addUser(newUser)
       .subscribe()
   }
+
+  showPhoneFields(){
+    if(!this.registerPhone){
+      this.registerPhone = true;
+    }else {
+      this.registerPhone = false;
+    }
+  }
+
+  showMailFields(){
+    if(!this.registerMail){
+      this.registerMail = true;
+    }else {
+      this.registerMail = false;
+    }
+  }
+
 }

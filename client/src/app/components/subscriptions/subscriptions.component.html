@@ -1,52 +1,77 @@
 <div class="container" align="center">
   <div class="jumbotron">
     <h2>Subscribe Now And Get 5% Off</h2>
-    <p>Type in your Phonenumber or E-Mail to subscribe to the LIDL Smart Event Service</p>
-    <form #phoneForm="ngForm">
-      <input type="tel" class="form-control"
-             placeholder="Add here your Phonenumber.." required
-             pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
-             [(ngModel)]="phonenumber"
-             name="phonenumber" #number="ngModel">
-      <br>
-      <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
-        <div [hidden]="!number.errors.required">
-          Type in your phonenumber.
-        </div>
-        <div [hidden]="!number.errors.pattern">
-          Must be a valid phonenumber.
-        </div>
-
-      </div>
-    </form>
-
-      <form #mailForm="ngForm">
-
-      <input type="email" class="form-control"
-             placeholder="Add here your E-Mail.." required
-             [(ngModel)]="email_address"
-             pattern= '^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
-             name="email_address" #mail="ngModel">
-      <br>
-      <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
-        <div [hidden]="!mail.errors.required">
-          Type in your E-Mail.
-        </div>
-        <div [hidden]="!mail.errors.pattern">
-          Must be a valid E-mail.
-        </div>
-
-      </div>
+    <p>Register with your Phonenumber or E-Mail to subscribe to the LIDL Smart Event Service</p>
 
 
-
-      <button type="button" class="btn btn-info" [disabled]="!phoneForm.form.valid && !mailForm.form.valid" (click)="addUser()"> <!--subscriptionForm.form.valid -->
-        Subscribe
+    <form class="form-horizontal" style="text-align: center">
+      <button type="button" class="btn btn-info" (click)="showPhoneFields()">
+        Phonenumber
       </button>
-      <br><br>
-      <div class="alert alert-success fade in" *ngIf="saveSuccess">
-        <strong>Succes!</strong> You're now registered for the LIDL Smart Service.
-      </div>
+
+      <form #phoneForm="ngForm" [hidden]="!registerPhone">
+
+        <br>
+
+        <input type="tel" class="form-control"
+               placeholder="Add here your Phonenumber.." required
+               pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
+               [(ngModel)]="phonenumber"
+               name="phonenumber" #number="ngModel">
+        <br>
+        <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
+          <div [hidden]="!number.errors.required">
+            Type in your phonenumber.
+          </div>
+          <div [hidden]="!number.errors.pattern">
+            Must be a valid phonenumber.
+          </div>
+
+        </div>
+
+        <button type="button" class="btn btn-danger" [disabled]="!phoneForm.form.valid" (click)="addUser()">
+          Subscribe
+        </button>
+        <br><br>
+        <div class="alert alert-success fade in" *ngIf="saveSuccess">
+          <strong>Succes!</strong> You're now registered for the LIDL Smart Service.
+        </div>
+      </form>
+
+      <p>Or</p>
+
+      <button type="button" class="btn btn-info" (click)="showMailFields()">
+        Email
+      </button>
+
+      <form #mailForm="ngForm" [hidden]="!registerMail">
+
+        <br>
+
+        <input type="email" class="form-control"
+               placeholder="Add here your E-Mail.." required
+               [(ngModel)]="email_address"
+               pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+               name="email_address" #mail="ngModel">
+        <br>
+        <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
+          <div [hidden]="!mail.errors.required">
+            Type in your E-Mail.
+          </div>
+          <div [hidden]="!mail.errors.pattern">
+            Must be a valid E-mail.
+          </div>
+
+        </div>
+
+        <button type="button" class="btn btn-danger" [disabled]="!mailForm.form.valid" (click)="addUser()">
+          Subscribe
+        </button>
+        <br><br>
+        <div class="alert alert-success fade in" *ngIf="saveSuccess">
+          <strong>Succes!</strong> You're now registered for the LIDL Smart Service.
+        </div>
+      </form>
     </form>
   </div>
 </div>

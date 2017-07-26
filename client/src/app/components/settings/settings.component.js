@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var settings_service_1 = require("../../services/settings.service");
-var verification_service_1 = require("../../services/verification.service");
+var core_1 = require('@angular/core');
+var settings_service_1 = require('../../services/settings.service');
+var verification_service_1 = require('../../services/verification.service');
 var SettingsComponent = (function () {
     function SettingsComponent(settingsservice, verificationService) {
         this.settingsservice = settingsservice;
@@ -118,16 +117,16 @@ var SettingsComponent = (function () {
         this.settingsservice.updateSettings(this.user);
         this.saveSuccess = true;
     };
+    SettingsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'settings',
+            templateUrl: "settings.component.html",
+            styleUrls: ['settings.component.css']
+        }), 
+        __metadata('design:paramtypes', [settings_service_1.SettingsService, verification_service_1.VerificationService])
+    ], SettingsComponent);
     return SettingsComponent;
 }());
-SettingsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'settings',
-        templateUrl: "settings.component.html",
-        styleUrls: ['settings.component.css']
-    }),
-    __metadata("design:paramtypes", [settings_service_1.SettingsService, verification_service_1.VerificationService])
-], SettingsComponent);
 exports.SettingsComponent = SettingsComponent;
 //# sourceMappingURL=settings.component.js.map

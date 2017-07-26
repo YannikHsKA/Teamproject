@@ -8,8 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var BundlesComponent = (function () {
     function BundlesComponent() {
         document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
@@ -21,16 +20,16 @@ var BundlesComponent = (function () {
     BundlesComponent.prototype.ngOnDestroy = function () {
         document.body.style.backgroundImage = "none";
     };
+    BundlesComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'bundles',
+            templateUrl: "bundles.component.html",
+            styleUrls: ["bundles.component.css"]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], BundlesComponent);
     return BundlesComponent;
 }());
-BundlesComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'bundles',
-        templateUrl: "bundles.component.html",
-        styleUrls: ["bundles.component.css"]
-    }),
-    __metadata("design:paramtypes", [])
-], BundlesComponent);
 exports.BundlesComponent = BundlesComponent;
 //# sourceMappingURL=bundles.component.js.map

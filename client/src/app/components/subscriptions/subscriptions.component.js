@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var User_js_1 = require("../../../../User.js");
-var subscription_service_1 = require("../../services/subscription.service");
+var core_1 = require('@angular/core');
+var User_js_1 = require('../../../../User.js');
+var subscription_service_1 = require('../../services/subscription.service');
 var SubscriptionsComponent = (function () {
     function SubscriptionsComponent(subscriptionService) {
         this.subscriptionService = subscriptionService;
+        this.registerPhone = false;
+        this.registerMail = false;
         document.body.style.backgroundImage = "url('src/assets/bg.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
@@ -40,16 +41,32 @@ var SubscriptionsComponent = (function () {
         this.subscriptionService.addUser(newUser)
             .subscribe();
     };
+    SubscriptionsComponent.prototype.showPhoneFields = function () {
+        if (!this.registerPhone) {
+            this.registerPhone = true;
+        }
+        else {
+            this.registerPhone = false;
+        }
+    };
+    SubscriptionsComponent.prototype.showMailFields = function () {
+        if (!this.registerMail) {
+            this.registerMail = true;
+        }
+        else {
+            this.registerMail = false;
+        }
+    };
+    SubscriptionsComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'subscriptions',
+            templateUrl: "subscriptions.component.html",
+            styleUrls: ['subscriptions.component.css']
+        }), 
+        __metadata('design:paramtypes', [subscription_service_1.SubscriptionService])
+    ], SubscriptionsComponent);
     return SubscriptionsComponent;
 }());
-SubscriptionsComponent = __decorate([
-    core_1.Component({
-        moduleId: module.id,
-        selector: 'subscriptions',
-        templateUrl: "subscriptions.component.html",
-        styleUrls: ['subscriptions.component.css']
-    }),
-    __metadata("design:paramtypes", [subscription_service_1.SubscriptionService])
-], SubscriptionsComponent);
 exports.SubscriptionsComponent = SubscriptionsComponent;
 //# sourceMappingURL=subscriptions.component.js.map
