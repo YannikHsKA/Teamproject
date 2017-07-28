@@ -73,6 +73,8 @@ export class SettingsComponent {
   }
 
 
+
+
   switch(toggle: String) {
     //  console.log(toggle);
     switch (toggle) {

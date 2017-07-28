@@ -41,7 +41,7 @@ var VerificationsComponent = (function () {
                 _this.user.email = data.email;
                 _this.user.email_address = data.email_address;
                 _this.user.sms = data.sms;
-                _this.user.phonenumber = _this.phonenumber;
+                _this.user.phonenumber = data.phonenumber;
                 _this.displayVer = false;
             }
         }, function (err) {
@@ -61,7 +61,7 @@ var VerificationsComponent = (function () {
                 _this.user.email = data.email;
                 _this.user.email_address = data.email_address;
                 _this.user.sms = data.sms;
-                _this.user.phonenumber = _this.phonenumber;
+                _this.user.phonenumber = data.phonenumber;
                 _this.displayVer = false;
             }
         }, function (err) {

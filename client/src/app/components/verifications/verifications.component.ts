@@ -49,7 +49,7 @@ export class VerificationsComponent {
             this.user.email = data.email;
             this.user.email_address = data.email_address;
             this.user.sms = data.sms;
-            this.user.phonenumber = this.phonenumber;
+            this.user.phonenumber = data.phonenumber;
             this.displayVer = false;
           }
         },
@@ -70,7 +70,7 @@ export class VerificationsComponent {
             this.user.email = data.email;
             this.user.email_address = data.email_address;
             this.user.sms = data.sms;
-            this.user.phonenumber = this.phonenumber;
+            this.user.phonenumber = data.phonenumber;
             this.displayVer = false;
           }
         },
