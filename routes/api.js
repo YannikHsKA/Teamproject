@@ -47,68 +47,94 @@ router.post("/test", function (req, res) {
 /* Subscribe to the App */
 router.post("/subscribe", function (req, res) {
     /* Read POST Request */
+    var mode = 0;
     var user = req.body;
-    console.log("body: %j", user)
+    var number = req.body.phonenumber;
+    console.log("body: %j", user);
 
     /* Generate Random setting_key */
     var settingkey1 = Math.random() * (90000 - 10000) + 10000;
     var settingkey2 = Math.floor(settingkey1);
 
-    /* Send Notification SMS with Settingkey and Voucher
-    client.sendMessage({
-        to: user.phonenumber,
-        from: '+4915735984837',
-        body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
-    }, function (err, data) {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Failure");
-        }
-        else {
-            console.log(data);
-            res.status(200).send("Success");
-        }
-    });
-  */
+    if(number == null)
+    {
+      //only email
+      mode = 1;
+      /*Send Notification Email with Setting Key and Voucher */
+      var mailOptions = {
+        from: "lidlsmartshopping@gmail.com",
+        to: req.body.email_address  ,
+        subject: "Willkommen bei LIDL Smart Shopping!",
+        generateTextFromHTML: true,
+        html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
+        };
 
+      smtpTransport.sendMail(mailOptions, function(error, response){
+        if (error) {
+           console.log(error);
+         } else {
+           console.log(response);
+         }
+         smtpTransport.close();
+       });
 
-
-  /*Send Notification Email with Setting Key and Voucher */
-  var mailOptions = {
-    from: "lidlsmartshopping@gmail.com",
-    to: "domenik.fox@gmail.com",
-    subject: "Willkommen bei LIDL Smart Shopping!",
-    generateTextFromHTML: true,
-    html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
-  };
-
-    smtpTransport.sendMail(mailOptions, function(error, response){
-      if (error) {
-         console.log(error);
-       } else {
-         console.log(response);
-       }
-       smtpTransport.close();
-     });
+    }
+    else{
+        mode = 2;
+          /* Send Notification SMS with Settingkey and Voucher
+          client.sendMessage({
+              to: user.phonenumber,
+              from: '+4915735984837',
+              body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+          }, function (err, data) {
+              if (err) {
+                  console.log(err);
+                  res.status(500).send("Failure");
+              }
+              else {
+                  console.log(data);
+                  res.status(200).send("Success");
+              }
+          });
+        */
+    }
 
     var db = admin.database();
     var ref = db.ref("user");
-        user.id = ref.push().key; // this does *not* call the server
+    user.id = ref.push().key; // this does *not* call the server
+
+    console.log("Mode: ", mode);
 
     /* Write User into Firebase */
-
-    ref.push(
-        {
-            id : user.id,
-            phonenumber: user.phonenumber,
-            whatsapp: user.whatsapp,
-            email: user.email,
-            sms: user.sms,
-            setting_key: settingkey2,
-            email_address: user.email_address
-        });
-
-res.status(201).send(user);
+    switch (mode)
+    {
+      case 1:
+        ref.push(
+            {
+                phonenumber: "",
+                id : user.id,
+                email_address: user.email_address,
+                email: user.email,
+                sms: user.sms,
+                whatsapp: user.whatsapp,
+                setting_key: settingkey2,
+            });
+        res.status(201).send(user);
+        break;
+      case 2:
+        ref.push(
+            {
+                phonenumber: user.phonenumber,
+                id : user.id,
+                email_address: "",
+                email: 0,
+                sms: user.sms,
+                whatsapp: user.whatsapp,
+                setting_key: settingkey2,
+            });
+        res.status(201).send(user);
+        break;
+    }
 });
 
 
@@ -248,15 +274,19 @@ router.post("/updatesettings", function (req, res) {
     /* Connect to Firebase */
     var db = admin.database();
     var ref = db.ref("user");//.child(user.id);
-
     var userRef = ref.child(user.id);
+
+    console.log("UserRef ",user.id);
+
     userRef.update({
-            "sms": user.sms,
-            "id" : user.id,
             "email": user.email,
             "email_address" : user.email_address,
+            "id" : user.id,
+            "phonenumber": user.phonenumber,
+            "setting_key": user.setting_key,
+            "sms": user.sms,
             "whatsapp": user.whatsapp,
-            "phonenumber": user.phonenumber
+
         }
     );
 

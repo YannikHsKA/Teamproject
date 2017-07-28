@@ -8,6 +8,9 @@ IP Address: 165.227.128.51
 - move to root folder
 - npm install express body-parser twilio firebase-admin ejs --save
 - npm install -g nodemon
+- npm install nodemailer
+- npm install xoauth2
+- npm install nodemailer-smtp-transport
 
 ##Frontend
 - move to root folder

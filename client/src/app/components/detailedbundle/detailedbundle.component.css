@@ -1,0 +1,10 @@
+.container
+{
+  height: 100%;
+}
+
+div.image {
+  max-width: 100%;
+    height: auto;
+   content:url("http://localhost:3000/src/assets/lidl_aktion.jpg");
+}​

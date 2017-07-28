@@ -11,12 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var DetailedbundleComponent = (function () {
     function DetailedbundleComponent() {
+        document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundSize = "cover";
     }
     DetailedbundleComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'detailedbundle',
-            templateUrl: "detailedbundle.component.html"
+            templateUrl: "detailedbundle.component.html",
+            styleUrls: ["detailedbundle.component.css"]
         }), 
         __metadata('design:paramtypes', [])
     ], DetailedbundleComponent);

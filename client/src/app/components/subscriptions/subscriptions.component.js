@@ -30,18 +30,20 @@ var SubscriptionsComponent = (function () {
         var newUser = new User_js_1.User();
         newUser.phonenumber = this.phonenumber;
         newUser.email_address = this.email_address;
-        newUser.sms = 1;
         if (newUser.phonenumber) {
             this.saveSuccess = true;
             newUser.sms = 1;
         }
         if (newUser.email_address) {
+            this.saveSuccess = true;
             newUser.email = 1;
         }
         this.subscriptionService.addUser(newUser)
             .subscribe();
     };
     SubscriptionsComponent.prototype.showPhoneFields = function () {
+        this.email_address = null;
+        this.saveSuccess = false;
         if (!this.registerPhone && this.registerMail) {
             this.registerPhone = true;
             this.registerMail = false;
@@ -54,6 +56,8 @@ var SubscriptionsComponent = (function () {
         }
     };
     SubscriptionsComponent.prototype.showMailFields = function () {
+        this.phonenumber = null;
+        this.saveSuccess = false;
         if (!this.registerMail && this.registerPhone) {
             this.registerMail = true;
             this.registerPhone = false;

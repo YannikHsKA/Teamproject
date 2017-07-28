@@ -1,6 +1,6 @@
 .footer {
   position:absolute;
-  color: #06507f;
+  color: white;
   bottom: 0;
   width: 100%;
   font-family: News-Gothic-BT-Bd-reg,'Trebuchet MS',Arial;
@@ -32,8 +32,8 @@
 }
 
 .navbar-default {
-  background-color: #e6eef2;
-  border-color: #06507f;
+  background: rgba(255,255,255,0.7);
+  /*border-color: #06507f;*/
 }
 .navbar-default .navbar-brand {
   color: #06507f;
