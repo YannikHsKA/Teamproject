@@ -101,18 +101,18 @@ router.post("/subscribe", function (req, res) {
 
     var db = admin.database();
     var ref = db.ref("user");
-    user.id = ref.push().key; // this does *not* call the server
 
     console.log("Mode: ", mode);
 
     /* Write User into Firebase */
+    var newRef;
     switch (mode)
     {
       case 1:
-        ref.push(
+        newRef = ref.push(
             {
                 phonenumber: "",
-                id : user.id,
+                id: "",
                 email_address: user.email_address,
                 email: user.email,
                 sms: user.sms,
@@ -122,10 +122,10 @@ router.post("/subscribe", function (req, res) {
         res.status(201).send(user);
         break;
       case 2:
-        ref.push(
+        newRef = ref.push(
             {
                 phonenumber: user.phonenumber,
-                id : user.id,
+                id: "",
                 email_address: "",
                 email: 0,
                 sms: user.sms,
@@ -135,6 +135,12 @@ router.post("/subscribe", function (req, res) {
         res.status(201).send(user);
         break;
     }
+    var newID = newRef.key;
+    newRef.update(
+      {
+        id:newID
+      })
+    console.log("asdasdasd", newID);
 });
 
 
@@ -270,25 +276,20 @@ router.post("/updatesettings", function (req, res) {
     console.log("Update User");
     /* Read POST Request */
     let user = req.body;
+    console.log(user);
 
     /* Connect to Firebase */
     var db = admin.database();
-    var ref = db.ref("user");//.child(user.id);
-    var userRef = ref.child(user.id);
+    var ref = db.ref('user/'+user.id);
+    console.log("Ref: ",ref);
 
-    console.log("UserRef ",user.id);
-
-    userRef.update({
-            "email": user.email,
-            "email_address" : user.email_address,
-            "id" : user.id,
-            "phonenumber": user.phonenumber,
-            "setting_key": user.setting_key,
-            "sms": user.sms,
-            "whatsapp": user.whatsapp,
-
-        }
-    );
+    ref.update({
+            'phonenumber': user.phonenumber,
+            'email_address': user.email_address,
+            'email': user.email,
+            'sms': user.sms,
+            'whatsapp': user.whatsapp
+        });
 
 });
 

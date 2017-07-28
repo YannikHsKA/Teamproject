@@ -39,9 +39,9 @@ export class VerificationsComponent {
   }
 
   checkUserByPhone() {
+
     this.verificationService.getUserByNumber(this.phonenumber)
       .subscribe(data => {
-          console.log(data);
           if (data) {
             this.user.id = data.id;
             this.user.setting_key = data.setting_key;
