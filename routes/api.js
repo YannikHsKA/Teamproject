@@ -3,6 +3,7 @@ var router = express.Router();
 var client = require('twilio')('ACc4221e14d1d0540a89ec756b685ae93b', '1b5bbdebb51c9059ef3dd8ddb5db2a1b');
 var nodemailer = require('nodemailer');
 var oauth = require('xoauth2');
+var gcloud = require('gcloud');
 var smtpTransport = require('nodemailer-smtp-transport');
 var smtpTransport = nodemailer.createTransport(smtpTransport({
   service: "Gmail",
@@ -293,7 +294,80 @@ router.post("/updatesettings", function (req, res) {
 
 });
 
+/* Create Event */
+router.post("/createevent", function (req, res) {
+    console.log("Create Event");
+    /* Read POST Request */
+    let event = req.body;
+    console.log(event);
 
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref('events/current');
+    console.log("Ref: ",ref);
+
+    ref.update({
+            'eventtitle': event.title,
+            'timerangestart': event.start,
+            'timerangeend': event.end
+        });
+});
+
+/* Update Event */
+router.post("/updateevent", function (req, res) {
+    console.log("Update Event");
+    /* Read POST Request */
+    let event = req.body;
+    console.log(event);
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref('events/current');
+    console.log("Ref: ",ref);
+
+    ref.update({
+            'eventtitle': event.title,
+            'timerangestart': event.start,
+            'timerangeend': event.end
+        });
+});
+
+/* Create Bundle1 */
+router.post("/createbundle1", function (req, res) {
+    console.log("Create Bundle1");
+    /* Read POST Request */
+    let bundle = req.body;
+    console.log(event);
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref('events/current/bundles/bundle1');
+    console.log("Ref: ",ref);
+
+    ref.update({
+            'bundletitle': bundle.title,
+            'bundledescription': bundle.description,
+            'bundlepicture': bundle.picture,
+            'bundlediscount': bundle.discount
+        });
+});
+
+
+/* Get All Events */
+router.get("/getevents", function (req, res) {
+    console.log("Get Events");
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref('admin/events');
+
+    ref.once('value', function (snapshot) {
+      var obj = snapshot.val();
+      var arr2 = Object.keys(obj);
+      console.log(arr2);
+    });
+    res.status(200).send("Success");
+});
 
 
 
