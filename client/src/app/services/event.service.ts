@@ -11,7 +11,7 @@ export class EventService {
 
 
   getEvents(){
-    return this.http.get('')
+    return this.http.get('/api/getevents')
       .map(res => res.json());
   }
 }

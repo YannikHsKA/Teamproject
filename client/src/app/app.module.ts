@@ -11,7 +11,6 @@ import { SubscriptionsComponent } from './components/subscriptions/subscriptions
 import { NotFoundComponent } from './components/notfound/notfound.component';
 import { VerificationsComponent } from './components/verifications/verifications.component';
 import { DetailedbundleComponent } from './components/detailedbundle/detailedbundle.component';
-import { BundlecenterComponent } from './components/bundlecenter/bundlecenter.component';
 import {EventdetailComponent} from "./components/eventcenter/eventdetail/eventdetail.component";
 import {EventoverviewComponent} from "./components/eventcenter/eventoverview/eventoverview.component";
 

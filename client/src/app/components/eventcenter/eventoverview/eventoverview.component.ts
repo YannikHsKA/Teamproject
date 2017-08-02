@@ -12,11 +12,11 @@ export class EventoverviewComponent  {
 
   events: Event[];
 
-  /*constructor(private eventService: EventService){
+  constructor(private eventService: EventService){
       this.eventService.getEvents()
         .subscribe(events => {
           this.events = events;
         })
-  }*/
+  }
 
 }

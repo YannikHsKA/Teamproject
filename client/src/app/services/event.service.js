@@ -17,7 +17,7 @@ var EventService = (function () {
         console.log('Event Service initialized..');
     }
     EventService.prototype.getEvents = function () {
-        return this.http.get('')
+        return this.http.get('/api/getevents')
             .map(function (res) { return res.json(); });
     };
     EventService = __decorate([

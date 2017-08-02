@@ -6,8 +6,8 @@
   <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
-        <li class="list-group-item">
-          Test
+        <li class="list-group-item" *ngFor="let event of events">
+          {{ event.eventtitle }}
           <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete</button>
           <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit</button>
         </li>

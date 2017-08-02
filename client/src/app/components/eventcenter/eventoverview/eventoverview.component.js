@@ -9,8 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var event_service_1 = require('../../../services/event.service');
 var EventoverviewComponent = (function () {
-    function EventoverviewComponent() {
+    function EventoverviewComponent(eventService) {
+        var _this = this;
+        this.eventService = eventService;
+        this.eventService.getEvents()
+            .subscribe(function (events) {
+            _this.events = events;
+        });
     }
     EventoverviewComponent = __decorate([
         core_1.Component({
@@ -19,7 +26,7 @@ var EventoverviewComponent = (function () {
             templateUrl: "eventoverview.component.html",
             styleUrls: ["eventoverview.component.css"]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [event_service_1.EventService])
     ], EventoverviewComponent);
     return EventoverviewComponent;
 }());
