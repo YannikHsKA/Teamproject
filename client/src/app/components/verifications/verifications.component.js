@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var verification_service_1 = require("../../services/verification.service");
-var User_js_1 = require("../../../../User.js");
+var User_js_1 = require("../../model/User.js");
 var router_1 = require('@angular/router');
 var VerificationsComponent = (function () {
     function VerificationsComponent(verificationService, router) {
@@ -33,7 +33,6 @@ var VerificationsComponent = (function () {
         var _this = this;
         this.verificationService.getUserByNumber(this.phonenumber)
             .subscribe(function (data) {
-            console.log(data);
             if (data) {
                 _this.user.id = data.id;
                 _this.user.setting_key = data.setting_key;

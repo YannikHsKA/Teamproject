@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {SettingsService} from '../../services/settings.service';
-import {User} from "../../../../User";
+import {User} from "../../model/User";
 import {VerificationService} from '../../services/verification.service';
 @Component({
   moduleId: module.id,

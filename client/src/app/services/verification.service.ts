@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {User} from "../../../User";
+import {User} from "../model/User";
 
 @Injectable()
 export class VerificationService {

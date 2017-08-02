@@ -9,19 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var BundleAdminComponent = (function () {
-    function BundleAdminComponent() {
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/map');
+var EventService = (function () {
+    function EventService(http) {
+        this.http = http;
+        console.log('Event Service initialized..');
     }
-    BundleAdminComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'bundles',
-            templateUrl: "bundleadmin.component.html",
-            styleUrls: ["bundleadmin.component.css"]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], BundleAdminComponent);
-    return BundleAdminComponent;
+    EventService.prototype.getEvents = function () {
+        return this.http.get('')
+            .map(function (res) { return res.json(); });
+    };
+    EventService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], EventService);
+    return EventService;
 }());
-exports.BundleAdminComponent = BundleAdminComponent;
-//# sourceMappingURL=bundleadmin.component.js.map
+exports.EventService = EventService;
+//# sourceMappingURL=event.service.js.map
