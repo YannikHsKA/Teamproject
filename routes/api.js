@@ -363,7 +363,7 @@ router.get("/getevents", function (req, res) {
 
     ref.once('value', function (snapshot) {
       var obj = snapshot.val();
-      var arr2 = Object.keys(obj);
+      var arr2 = Object(obj);
       console.log(arr2);
     });
     res.status(200).send("Success");
