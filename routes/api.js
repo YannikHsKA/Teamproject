@@ -353,16 +353,17 @@ router.post("/createbundle/:num", function (req, res) {
 });
 
 
-/* Get All Events */
+// Get all Events
 router.get("/getevents", function (req, res) {
     console.log("Get Events");
 
-    /* Connect to Firebase */
+    // Connect Firebase
     var db = admin.database();
     var ref = db.ref('admin/events');
-    var item;
+
     ref.once('value', function (snapshot) {
        var obj = snapshot.val();
+       delete obj["bundles"];
        res.status(200).send(obj);
     });
   });
