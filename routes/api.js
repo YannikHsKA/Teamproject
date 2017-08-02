@@ -333,8 +333,8 @@ router.post("/updateevent", function (req, res) {
 });
 
 /* Create Bundle1 */
-router.post("/createbundle1", function (req, res) {
-    console.log("Create Bundle1");
+router.post("/createbundle/:num", function (req, res) {
+    console.log("Create Bundle");
     /* Read POST Request */
     let bundle = req.body;
     console.log(event);
@@ -363,10 +363,11 @@ router.get("/getevents", function (req, res) {
 
     ref.once('value', function (snapshot) {
       var obj = snapshot.val();
-      var arr2 = Object(obj);
+      arr2 = Object(obj);
       console.log(arr2);
+      res.status(200).send(arr2);
     });
-    res.status(200).send("Success");
+
 });
 
 
