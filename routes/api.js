@@ -4,6 +4,7 @@ var client = require('twilio')('ACc4221e14d1d0540a89ec756b685ae93b', '1b5bbdebb5
 var nodemailer = require('nodemailer');
 var oauth = require('xoauth2');
 var gcloud = require('gcloud');
+var axios = require('axios');
 var smtpTransport = require('nodemailer-smtp-transport');
 var smtpTransport = nodemailer.createTransport(smtpTransport({
   service: "Gmail",
@@ -45,7 +46,8 @@ router.post("/test", function (req, res) {
 });
 
 
-/* Subscribe to the App */
+
+// Subscribe to the App
 router.post("/subscribe", function (req, res) {
     /* Read POST Request */
     var mode = 0;
@@ -53,59 +55,80 @@ router.post("/subscribe", function (req, res) {
     var number = req.body.phonenumber;
     console.log("body: %j", user);
 
-    /* Generate Random setting_key */
+    // Generate Random setting_key
     var settingkey1 = Math.random() * (90000 - 10000) + 10000;
     var settingkey2 = Math.floor(settingkey1);
 
-    if(number == null)
-    {
-      //only email
-      mode = 1;
-      /*Send Notification Email with Setting Key and Voucher */
-      var mailOptions = {
-        from: "lidlsmartshopping@gmail.com",
-        to: req.body.email_address  ,
-        subject: "Willkommen bei LIDL Smart Shopping!",
-        generateTextFromHTML: true,
-        html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
-        };
-
-      smtpTransport.sendMail(mailOptions, function(error, response){
-        if (error) {
-           console.log(error);
-         } else {
-           console.log(response);
-         }
-         smtpTransport.close();
-       });
-
-    }
-    else{
-        mode = 2;
-          /* Send Notification SMS with Settingkey and Voucher
-          client.sendMessage({
-              to: user.phonenumber,
-              from: '+4915735984837',
-              body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
-          }, function (err, data) {
-              if (err) {
-                  console.log(err);
-                  res.status(500).send("Failure");
-              }
-              else {
-                  console.log(data);
-                  res.status(200).send("Success");
-              }
-          });
-        */
-    }
-
+    //Connection to Database
     var db = admin.database();
     var ref = db.ref("user");
 
-    console.log("Mode: ", mode);
+      if(number == null)
+      {
+        mode = 1; //mail mode
+        var inputmail = req.body.email_address;
+        // Send Notification Email with Setting Key and Voucher //
+        // Check if email address already exists
 
-    /* Write User into Firebase */
+        var substatus = ref.orderByChild("email_address").equalTo(inputmail).once("value", function(snapshot) {
+          var userData = snapshot.val();
+          if (userData) // Email already exists
+          {
+            console.log("Email already exists");
+          }
+          else // Email does not exist
+          {
+            console.log("New Email");
+            var mailOptions = {
+              from: "lidlsmartshopping@gmail.com",
+              to: req.body.email_address  ,
+              subject: "Willkommen bei LIDL Smart Shopping!",
+              generateTextFromHTML: true,
+              html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
+              };
+
+            smtpTransport.sendMail(mailOptions, function(error, response){
+              if (error) {
+                 // console.log(error);
+                 console.log("Email not sent");
+               } else {
+                 // console.log(response);
+                 console.log("Email Sent");
+               }
+               smtpTransport.close();
+             });
+          }
+        });
+        console.log("sub2",substatus);
+      }
+      else{
+          mode = 2;
+            /* Send Notification SMS with Settingkey and Voucher
+            client.sendMessage({
+                to: user.phonenumber,
+                from: '+4915735984837',
+                body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+            }, function (err, data) {
+                if (err) {
+                    console.log(err);
+                    res.status(500).send("Failure");
+                }
+                else {
+                    console.log(data);
+                    res.status(200).send("Success");
+                }
+            });
+          */
+      }
+
+
+
+
+    // Write User into Firebase
+    axios.get(substatus).then(
+      function(res)
+      {
+        console.log("sub:",substatus);
     var newRef;
     switch (mode)
     {
@@ -136,12 +159,17 @@ router.post("/subscribe", function (req, res) {
         res.status(201).send(user);
         break;
     }
+
+    // Add Key to Entry
     var newID = newRef.key;
     newRef.update(
       {
         id:newID
       })
-    console.log("asdasdasd", newID);
+    })
+    .catch(function(err) {
+      console.log('err');
+    })
 });
 
 
@@ -364,6 +392,11 @@ router.get("/getevents", function (req, res) {
     ref.once('value', function (snapshot) {
        var obj = snapshot.val();
        delete obj["bundles"];
+       var arr2;
+
+       arr2[0] = Object(obj["current"]);
+       console.log(arr2);
+
        res.status(200).send(obj);
     });
   });
