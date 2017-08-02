@@ -215,7 +215,7 @@ router.get("/user/mail/:email_address", function (req, res) {
 });
 
 /* Checks if phonenumber & verification combination is valid */
-/*
+
 router.post("/checkveritel", function (req, res) {
     // Read POST Request
     var user = req.body;
@@ -270,7 +270,7 @@ router.post("/checkveritel", function (req, res) {
         }
     });
 });
-*/
+
 
 /* Update User Settings in Firebase */
 router.post("/updatesettings", function (req, res) {
@@ -333,8 +333,8 @@ router.post("/updateevent", function (req, res) {
 });
 
 /* Create Bundle1 */
-router.post("/createbundle1", function (req, res) {
-    console.log("Create Bundle1");
+router.post("/createbundle/:num", function (req, res) {
+    console.log("Create Bundle");
     /* Read POST Request */
     let bundle = req.body;
     console.log(event);
@@ -353,21 +353,20 @@ router.post("/createbundle1", function (req, res) {
 });
 
 
-/* Get All Events */
+// Get all Events
 router.get("/getevents", function (req, res) {
     console.log("Get Events");
 
-    /* Connect to Firebase */
+    // Connect Firebase
     var db = admin.database();
     var ref = db.ref('admin/events');
 
     ref.once('value', function (snapshot) {
-      var obj = snapshot.val();
-      var arr2 = Object(obj);
-      console.log(arr2);
+       var obj = snapshot.val();
+       delete obj["bundles"];
+       res.status(200).send(obj);
     });
-    res.status(200).send("Success");
-});
+  });
 
 
 
