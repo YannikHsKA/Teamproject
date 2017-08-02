@@ -392,12 +392,20 @@ router.get("/getevents", function (req, res) {
     ref.once('value', function (snapshot) {
        var obj = snapshot.val();
        delete obj["bundles"];
-       var arr2;
+       var arr2 = [];
+       var eventarray = [];
+       var keys = Object.keys(obj)
+       console.log(keys);
 
-       arr2[0] = Object(obj["current"]);
-       console.log(arr2);
-
-       res.status(200).send(obj);
+       var count=0;
+       for(var prop in obj) {
+         if (obj.hasOwnProperty(prop))
+         {
+           ++count;
+           eventarray[count-1] = Object(obj[keys[count-1]]);
+          }
+        }
+       res.status(200).send(eventarray);
     });
   });
 
