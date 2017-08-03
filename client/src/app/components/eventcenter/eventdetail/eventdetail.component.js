@@ -9,9 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Event_1 = require("../../../model/Event");
+var event_service_1 = require("../../../services/event.service");
 var EventdetailComponent = (function () {
-    function EventdetailComponent() {
+    function EventdetailComponent(eventService) {
+        this.eventService = eventService;
+        this.event = {
+            title: "",
+            start: "",
+            end: ""
+        };
     }
+    EventdetailComponent.prototype.addEvent = function () {
+        event.preventDefault();
+        var newEvent = new Event_1.Event();
+        newEvent.title = this.title;
+        newEvent.start = this.start;
+        newEvent.end = this.end;
+        this.eventService.addEvent(newEvent)
+            .subscribe();
+    };
     EventdetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -19,7 +36,7 @@ var EventdetailComponent = (function () {
             templateUrl: "eventdetail.component.html",
             styleUrls: ["eventdetail.component.css"]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [event_service_1.EventService])
     ], EventdetailComponent);
     return EventdetailComponent;
 }());

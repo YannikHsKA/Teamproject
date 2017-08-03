@@ -20,6 +20,11 @@ var EventService = (function () {
         return this.http.get('/api/getevents')
             .map(function (res) { return res.json(); });
     };
+    EventService.prototype.addEvent = function (newEvent) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers });
+    };
     EventService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
