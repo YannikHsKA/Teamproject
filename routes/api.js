@@ -4,7 +4,6 @@ var client = require('twilio')('ACc4221e14d1d0540a89ec756b685ae93b', '1b5bbdebb5
 var nodemailer = require('nodemailer');
 var oauth = require('xoauth2');
 var gcloud = require('gcloud');
-var axios = require('axios');
 var smtpTransport = require('nodemailer-smtp-transport');
 var smtpTransport = nodemailer.createTransport(smtpTransport({
   service: "Gmail",
@@ -130,9 +129,8 @@ router.post("/subscribe", function(req, res) {
 */
   }
 
+  // Write User into Firebase
   function WriteUserToDB() {
-    // Write User into Firebase
-
     var newRef;
     switch (mode) {
       case 1:
@@ -160,7 +158,6 @@ router.post("/subscribe", function(req, res) {
         res.status(201).send(user);
         break;
     }
-
     // Add Key to Entry
     var newID = newRef.key;
     newRef.update({
@@ -237,8 +234,7 @@ router.get("/user/mail/:email_address", function(req, res) {
   });
 });
 
-/* Checks if phonenumber & verification combination is valid */
-
+// Checks if phonenumber & verification combination is valid
 router.post("/checkveritel", function(req, res) {
   // Read POST Request
   var user = req.body;
@@ -246,7 +242,7 @@ router.post("/checkveritel", function(req, res) {
   var phonenumber = user.phonenumber;
   var vericode = user.vericode;
 
-  // Connect to Firebase //
+  // Connect to Firebase
   var db = admin.database();
   var ref = db.ref("user");
 
@@ -272,12 +268,8 @@ router.post("/checkveritel", function(req, res) {
 
   });
 
-
   var ref = $http.get('/api/user/phone' + phonenumber)
     .map(res => res.json());
-
-  console.log("neue ref:" + ref);
-  //   var ref = db.ref('user/' + phonenumber);
 
   console.log(phonenumber);
   ref.once("value", function(snap) {
@@ -293,14 +285,13 @@ router.post("/checkveritel", function(req, res) {
 });
 
 
-/* Update User Settings in Firebase */
+// Update User Settings in Firebase
 router.post("/updatesettings", function(req, res) {
   console.log("Update User");
-  /* Read POST Request */
   let user = req.body;
   console.log(user);
 
-  /* Connect to Firebase */
+  // Connect to Firebase
   var db = admin.database();
   var ref = db.ref('user/' + user.id);
   console.log("Ref: ", ref);
@@ -312,46 +303,50 @@ router.post("/updatesettings", function(req, res) {
     'sms': user.sms,
     'whatsapp': user.whatsapp
   });
-
+  res.sendStatus(201);
 });
 
-/* Create Event */
+// Create Event
 router.post("/createevent", function(req, res) {
   console.log("Create Event");
   /* Read POST Request */
   let event = req.body;
-  console.log(event);
+  console.log(event.title);
 
-  /* Connect to Firebase */
+  // Connect to Firebase
   var db = admin.database();
-  var ref = db.ref('events/current');
-  console.log("Ref: ", ref);
+  var ref = db.ref('admin/events');
 
-  ref.update({
+  var newRef = ref.push({
     'eventtitle': event.title,
     'timerangestart': event.start,
     'timerangeend': event.end
   });
+
+  // Add Key to Entry
+  var newID = newRef.key;
+  newRef.update({
+    id: newID
+  })
+  res.sendStatus(201);
 });
 
-/* Update Event */
-router.post("/updateevent", function(req, res) {
-  console.log("Update Event");
-  /* Read POST Request */
-  let event = req.body;
-  console.log(event);
+// Get specific Event with information
+router.get("/getevents", function(req, res) {
+  console.log("Get Events");
 
-  /* Connect to Firebase */
+  // Connect Firebase
   var db = admin.database();
-  var ref = db.ref('events/current');
-  console.log("Ref: ", ref);
+  var ref = db.ref('admin/events');
 
-  ref.update({
-    'eventtitle': event.title,
-    'timerangestart': event.start,
-    'timerangeend': event.end
+  ref.once('value', function(snapshot) {
+    var obj = snapshot.val();
+    delete obj["bundles"];
+    res.status(200).send(Object.keys(obj).map(name => obj[name]));
   });
 });
+
+
 
 /* Create Bundle1 */
 router.post("/createbundle/:num", function(req, res) {
@@ -388,9 +383,6 @@ router.get("/getevents", function(req, res) {
     res.status(200).send(Object.keys(obj).map(name => obj[name]));
   });
 });
-
-
-
 
 
 module.exports = router;
