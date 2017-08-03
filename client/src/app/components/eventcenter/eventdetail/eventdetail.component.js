@@ -23,11 +23,12 @@ var EventdetailComponent = (function () {
     EventdetailComponent.prototype.addEvent = function () {
         event.preventDefault();
         var newEvent = new Event_1.Event();
-        newEvent.title = this.title;
-        newEvent.start = this.start;
-        newEvent.end = this.end;
+        newEvent.title = this.event.title;
+        newEvent.start = this.event.start;
+        newEvent.end = this.event.end;
         this.eventService.addEvent(newEvent)
             .subscribe();
+        console.log(newEvent);
     };
     EventdetailComponent = __decorate([
         core_1.Component({
