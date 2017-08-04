@@ -10,15 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var event_service_1 = require('../../../services/event.service');
+var router_1 = require('@angular/router');
 var EventoverviewComponent = (function () {
-    function EventoverviewComponent(eventService) {
+    function EventoverviewComponent(eventService, router) {
         var _this = this;
         this.eventService = eventService;
+        this.router = router;
         this.eventService.getEvents()
             .subscribe(function (events) {
             _this.events = events;
+            console.log(_this.events);
         });
     }
+    EventoverviewComponent.prototype.onCreate = function () {
+        this.event = {
+            title: "",
+            start: "",
+            end: ""
+        };
+        this.eventService.event = this.event;
+        this.router.navigate(['./eventdetail']);
+    };
+    EventoverviewComponent.prototype.onEdit = function (event) {
+        this.eventService.event = event;
+        this.router.navigate(['./eventdetail']);
+    };
+    ;
     EventoverviewComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -26,7 +43,7 @@ var EventoverviewComponent = (function () {
             templateUrl: "eventoverview.component.html",
             styleUrls: ["eventoverview.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService])
+        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router])
     ], EventoverviewComponent);
     return EventoverviewComponent;
 }());

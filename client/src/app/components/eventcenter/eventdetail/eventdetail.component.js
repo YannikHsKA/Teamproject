@@ -14,11 +14,13 @@ var event_service_1 = require("../../../services/event.service");
 var EventdetailComponent = (function () {
     function EventdetailComponent(eventService) {
         this.eventService = eventService;
-        this.event = {
-            title: "",
-            start: "",
-            end: ""
-        };
+        this.event = this.eventService.event;
+        if (this.event.title == "") {
+            this.createMode = true;
+        }
+        else {
+            this.createMode = false;
+        }
     }
     EventdetailComponent.prototype.addEvent = function () {
         event.preventDefault();
@@ -28,7 +30,16 @@ var EventdetailComponent = (function () {
         newEvent.end = this.event.end;
         this.eventService.addEvent(newEvent)
             .subscribe();
-        console.log(newEvent);
+    };
+    EventdetailComponent.prototype.updateEvent = function (event) {
+        var _event = {
+            title: event.title,
+            start: event.start,
+            end: event.end,
+            id: event.id
+        };
+        this.eventService.updateEvent(_event)
+            .subscribe();
     };
     EventdetailComponent = __decorate([
         core_1.Component({

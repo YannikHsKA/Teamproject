@@ -6,6 +6,8 @@ import {Event} from "../model/Event";
 @Injectable()
 export class EventService {
 
+  event: Event;
+
   constructor(private http: Http) {
     console.log('Event Service initialized..');
   }
@@ -20,5 +22,11 @@ export class EventService {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('/api/createevent', JSON.stringify(newEvent), {headers: headers});
+  }
+
+  updateEvent(event: Event){
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/updateevent', JSON.stringify(event), {headers:headers});
   }
 }

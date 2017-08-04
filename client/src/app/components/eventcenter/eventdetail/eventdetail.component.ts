@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {Event} from "../../../model/Event";
 import {EventService} from "../../../services/event.service";
 
@@ -8,22 +8,24 @@ import {EventService} from "../../../services/event.service";
   templateUrl: `eventdetail.component.html`,
   styleUrls: [`eventdetail.component.css`]
 })
-export class EventdetailComponent  {
+export class EventdetailComponent {
 
   event: Event;
   title: string;
   start: string;
   end: string;
+  createMode: boolean;
 
-  constructor(private eventService: EventService){
-    this.event = {
-      title: "",
-      start: "",
-      end: ""
-    };
+  constructor(private eventService: EventService) {
+    this.event = this.eventService.event;
+    if(this.event.title == ""){
+      this.createMode = true;
+    } else{
+      this.createMode = false;
+    }
   }
 
-  addEvent(){
+  addEvent() {
     event.preventDefault();
     let newEvent = new Event();
 
@@ -31,10 +33,18 @@ export class EventdetailComponent  {
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
 
-
     this.eventService.addEvent(newEvent)
       .subscribe();
+  }
 
-    console.log(newEvent);
+  updateEvent(event: Event) {
+    var _event = {
+      title: event.title,
+      start: event.start,
+      end: event.end,
+      id: event.id
+    };
+    this.eventService.updateEvent(_event)
+      .subscribe();
   }
 }

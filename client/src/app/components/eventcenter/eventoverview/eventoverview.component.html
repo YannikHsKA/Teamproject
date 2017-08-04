@@ -8,20 +8,18 @@
       <h1>Eventcenter</h1>
     </div>
     <div class="col-xs-2">
-      <a routerLink="/eventdetail">
-        <button class="btn btn-primary">Create new Event</button>
-      </a>
+        <button class="btn btn-primary" (click)="onCreate()">Create new Event</button>
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let event of events">
-          {{ event.eventtitle }}
+        <li class="list-group-item" *ngFor="let event of events" id="event.id">
+          {{ event.title }}
           <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
           </button>
-          <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
+          <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span class="glyphicon glyphicon-wrench"></span> Edit
           </button>
         </li>
       </ul>

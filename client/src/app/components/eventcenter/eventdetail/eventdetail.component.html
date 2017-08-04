@@ -26,5 +26,6 @@
       </fieldset>
     </form>
 
-    <button class="btn-success" (click)="addEvent()">Save Event</button>
+    <button class="btn-success" *ngIf="createMode" (click)="addEvent()">Save Event</button>
+    <button class="btn-success" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
 	</div>
