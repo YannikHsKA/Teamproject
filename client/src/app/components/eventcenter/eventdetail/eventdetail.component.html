@@ -1,31 +1,32 @@
-  <div class="container">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-      <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-    </ol>
+<div class="container">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
+    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
+    <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
+  </ol>
 
-    <h1>Eventcenter</h1>
-    <form class="form-horizontal">
-      <fieldset>
-        <div class="form-group">
-          <label class="col-xs-4 control-label" for="title">Eventtitle</label>
-          <div class="col-xs-4">
-            <input [(ngModel)]="event.title" id="title" name="title" type="text" class="form-control input-xs">
-          </div>
+  <h1>Eventcenter</h1>
+  <form class="form-horizontal">
+    <fieldset>
+      <div class="form-group">
+        <label class="col-xs-4 control-label" for="title">Eventtitle</label>
+        <div class="col-xs-4">
+          <input [(ngModel)]="event.title" id="title" name="title" type="text" class="form-control input-xs">
         </div>
-        <div class="form-group">
-          <label class="col-xs-4 control-label" for="start">Timerangestart</label>
-          <div class="col-xs-4">
-            <input [(ngModel)]="event.start" id="start" name="start" type="text" class="form-control input-xs">
-          </div>
-          <label class="col-xs-4 control-label" for="end">Timerangeend</label>
-          <div class="col-xs-4">
-            <input [(ngModel)]="event.end" id="end" name="end" type="text" class="form-control input-xs">
-          </div>
+      </div>
+      <div class="form-group">
+        <label class="col-xs-4 control-label" for="start">Timerangestart</label>
+        <div class="col-xs-4">
+          <input [(ngModel)]="event.start" id="start" name="start" type="text" class="form-control input-xs">
         </div>
-      </fieldset>
-    </form>
+        <label class="col-xs-4 control-label" for="end">Timerangeend</label>
+        <div class="col-xs-4">
+          <input [(ngModel)]="event.end" id="end" name="end" type="text" class="form-control input-xs">
+        </div>
+      </div>
+    </fieldset>
+  </form>
 
-    <button class="btn-success" *ngIf="createMode" (click)="addEvent()">Save Event</button>
-    <button class="btn-success" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
-	</div>
+  <button class="btn-success" *ngIf="createMode" (click)="addEvent()">Save Event</button>
+  <button class="btn-success" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
+</div>

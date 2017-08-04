@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
-import { Event } from '../../../model/Event';
-import { EventService } from '../../../services/event.service'
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import {Input} from '@angular/core';
-import {ControlValueAccessor} from '@angular/forms';
+
 
 @Component({
   moduleId: module.id,
@@ -11,14 +9,20 @@ import {ControlValueAccessor} from '@angular/forms';
   styleUrls: [`eventbundle.component.css`]
 })
 export class EventbundleComponent  {
- @Input() eventtitle : String;
+  @ViewChild('quote-carousel') carousel:ElementRef;
 
-  constructor(){
+  ngAfterViewInit() {
+      // sketchElement is usable
+      var carousel = this.carousel.nativeElement;
+      console.log(this.carousel);
+    }
+  goRight(test:String){
+    console.log("hallo",test);
 
-  }
-  goRight(){
 
-    console.log("hallo",this.eventtitle);
+
+  //  console.log(carousel);
+  //  carousel.carousel("next");
   }
 
 }

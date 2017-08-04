@@ -1,73 +1,79 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <base href="/">
-    <meta name="description" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <base href="/">
+  <meta name="description" content="">
 
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="src/styles.css">
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="src/styles.css">
 
-    <!-- Polyfill(s) for older browsers -->
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
-    <script src="assets/tether/tether.min.js"></script>
-    <script src="assets/smooth-scroll/smooth-scroll.js"></script>
-    <script src="assets/dropdown/js/script.min.js"></script>
-    <script src="assets/theme/js/script.js"></script>
-    <script src="assets/formoid/formoid.min.js"></script>
-    <script src="src/systemjs.config.js"></script>
-    <script>
-        System.import('src/main.js').catch(function (err) {
-            console.error(err);
-        });
-    </script>
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smooth-scroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
+  <script src="src/systemjs.config.js"></script>
+  <script>
+    System.import('src/main.js').catch(function(err) {
+      console.error(err);
+    });
+  </script>
 </head>
+
 <body>
 
-<!-- Navbar -->
+  <!-- Navbar -->
 
-<nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar" aria-expanded="false" aria-controls="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <div class="row">
-                    <div class="col-xs-2">
-                        <img src="src/assets/Lidl-Logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
-                    </div>
-                    <div class="col-xs-9">
-                        <label class="label-block">Subscription Service</label>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navigationbar">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../verification">Settings</a></li>
-                <li><a href="../bundles">Current bundles</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div><!--/.container-fluid -->
-</nav>
+        <a class="navbar-brand" href="#">
+          <div class="row">
+            <div class="col-xs-2">
+              <img src="src/assets/Lidl-Logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+            </div>
+            <div class="col-xs-9">
+              <label class="label-block">Subscription Service</label>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navigationbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="../verification">Settings</a></li>
+          <li><a href="../bundles">Current bundles</a></li>
+          <li><a href="../eventoverview">Admin</a></li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
 
-<!-- Content -->
-<consumerAnalytics class="maincontainer">Loading App...</consumerAnalytics>
+  <!-- Content -->
+  <consumerAnalytics class="maincontainer">Loading App...</consumerAnalytics>
 
-<!-- Footer -->
-<footer class="footer">
+  <!-- Footer -->
+  <footer class="footer">
     <p>Copyright (c) 2017 Consumer Analytics Team</p>
-</footer>
+  </footer>
 
 </body>
+
 </html>

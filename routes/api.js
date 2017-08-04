@@ -54,7 +54,8 @@ router.post("/subscribe", function(req, res) {
   var mode = 0;
   var user = req.body;
   var number = req.body.phonenumber;
-  console.log("body: %j", user);
+
+  console.log("USERBODY: %j", user);
 
   // Generate Random setting_key
   var settingkey1 = Math.random() * (90000 - 10000) + 10000;
@@ -65,72 +66,76 @@ router.post("/subscribe", function(req, res) {
   var ref = db.ref("user");
 
   if (number == null) {
+    console.log("Mode 1");
     mode = 1; //mail mode
     var inputmail = req.body.email_address;
     // Send Notification Email with Setting Key and Voucher //
     // Check if email address already exists
 
     ref.orderByChild("email_address").equalTo(inputmail).once("value", function(snapshot) {
-        var userData = snapshot.val();
-        if (userData) // Email already exists
-        {
-          console.log("Email already exists");
-        } else // Email does not exist
-        {
-          console.log("New Email");
-          WriteUserToDB();
-          var mailOptions = {
-            from: "lidlsmartshopping@gmail.com",
-            to: req.body.email_address,
-            subject: "Willkommen bei LIDL Smart Shopping!",
-            generateTextFromHTML: true,
-            html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
-          };
+      var userData = snapshot.val();
+      if (userData) // Email already exists
+      {
+        console.log("Email already exists");
+        res.sendStatus(201);
+      } else // Email does not exist
+      {
+        console.log("New Email");
 
-          smtpTransport.sendMail(mailOptions, function(error, response) {
-            if (error) {
-              // console.log(error);
-              console.log("Email not sent");
-            } else {
-              // console.log(response);
-              console.log("Email Sent");
-            }
-            smtpTransport.close();
-          });
-        }
-      },
-      function(error) {
-        // The Promise was rejected.
-        console.error(error);
-      })
-  } else {
-    /*
-        mode = 2;
-        // Send Notification SMS with Settingkey and Voucher
-        // Check if email address already exists
+        var mailOptions = {
+          from: "lidlsmartshopping@gmail.com",
+          to: req.body.email_address,
+          subject: "Willkommen bei LIDL Smart Shopping!",
+          generateTextFromHTML: true,
+          html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
+        };
 
-        ref.orderByChild("phonenumber").equalTo(inputmail).once("value", function(snapshot) {
-          var userData = snapshot.val();
-          if (userData) // Phonenumber already exists
-          {
-            console.log("Email already exists");
-          } else // Phonenumber does not exist
-          {
+        smtpTransport.sendMail(mailOptions, function(error, response) {
+          if (error) {
+            // console.log(error);
+            console.log("Email not sent");
+            res.sendStatus(500);
+          } else {
+            // console.log(response);
+            console.log("Email Sent");
             WriteUserToDB();
-            client.sendMessage({
-              to: user.phonenumber,
-              from: '+4915735984837',
-              body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
-            }, function(err, data) {
-              if (err) {
-                console.log(err);
-                res.status(500).send("Failure");
-              } else {
-                console.log(data);
-                res.status(200).send("Success");
-              }
-            });
-*/
+          }
+          smtpTransport.close();
+        });
+
+      }
+    })
+  } else {
+    console.log("Mode 2");
+    mode = 2;
+    // Send Notification SMS with Settingkey and Voucher
+    // Check if email address already exists
+
+    ref.orderByChild("phonenumber").equalTo(number).once("value", function(snapshot) {
+      var userData = snapshot.val();
+      if (userData) // Phonenumber already exists
+      {
+        console.log("Phonenumber already exists");
+        res.status(201).send("Success");
+      } else // Phonenumber does not exist
+      {
+        console.log("New Phonenumber")
+        WriteUserToDB();
+        client.sendMessage({
+          to: user.phonenumber,
+          from: '+4915735984837',
+          body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+        }, function(err, data) {
+          if (err) {
+            // console.log(err);
+            res.status(500).send("Failure");
+          } else {
+            // console.log(data);
+            res.status(200).send("Success");
+          }
+        });
+      }
+    });
   }
 
   // Write User into Firebase
@@ -147,7 +152,6 @@ router.post("/subscribe", function(req, res) {
           whatsapp: user.whatsapp,
           setting_key: settingkey2,
         });
-        res.status(201).send(user);
         break;
       case 2:
         newRef = ref.push({
@@ -159,7 +163,6 @@ router.post("/subscribe", function(req, res) {
           whatsapp: user.whatsapp,
           setting_key: settingkey2,
         });
-        res.status(201).send(user);
         break;
     }
     // Add Key to Entry
@@ -170,8 +173,7 @@ router.post("/subscribe", function(req, res) {
   }
 });
 
-
-/* Checks if phonenumber is already subscribed */
+// Checks if phonenumber is already subscribed
 router.get("/user/phone/:phonenumber", function(req, res) {
   /* Read POST Request */
   var phonenumber = req.params.phonenumber;
@@ -204,7 +206,7 @@ router.get("/user/phone/:phonenumber", function(req, res) {
   });
 });
 
-/* Checks if email is already subscribed */
+// Checks if email is already subscribed 
 router.get("/user/mail/:email_address", function(req, res) {
   /* Read POST Request */
   var email_address = req.params.email_address;

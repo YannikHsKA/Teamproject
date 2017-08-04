@@ -9,17 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var core_2 = require('@angular/core');
 var EventbundleComponent = (function () {
     function EventbundleComponent() {
     }
-    EventbundleComponent.prototype.goRight = function () {
-        console.log("hallo", this.eventtitle);
+    EventbundleComponent.prototype.ngAfterViewInit = function () {
+        // sketchElement is usable
+        var carousel = this.carousel.nativeElement;
+        console.log(this.carousel);
+    };
+    EventbundleComponent.prototype.goRight = function (test) {
+        console.log("hallo", test);
+        //  console.log(carousel);
+        //  carousel.carousel("next");
     };
     __decorate([
-        core_2.Input(), 
-        __metadata('design:type', String)
-    ], EventbundleComponent.prototype, "eventtitle", void 0);
+        core_1.ViewChild('quote-carousel'), 
+        __metadata('design:type', core_1.ElementRef)
+    ], EventbundleComponent.prototype, "carousel", void 0);
     EventbundleComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
