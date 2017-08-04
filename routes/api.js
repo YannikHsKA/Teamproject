@@ -5,6 +5,10 @@ var nodemailer = require('nodemailer');
 var oauth = require('xoauth2');
 var gcloud = require('gcloud');
 var smtpTransport = require('nodemailer-smtp-transport');
+var pdfkit = require('pdfkit');
+var fs = require('fs');
+
+
 var smtpTransport = nodemailer.createTransport(smtpTransport({
   service: "Gmail",
   auth: {
@@ -353,7 +357,6 @@ router.post("/createbundle/:num", function(req, res) {
   console.log("Create Bundle");
   /* Read POST Request */
   let bundle = req.body;
-  console.log(event);
 
   /* Connect to Firebase */
   var db = admin.database();
@@ -382,6 +385,64 @@ router.get("/getevents", function(req, res) {
     delete obj["bundles"];
     res.status(200).send(Object.keys(obj).map(name => obj[name]));
   });
+});
+
+//Create PDF for Bundle
+router.post("/createpdf", function(req, res) {
+
+  console.log("Create PDF for Bundle ");
+  var pdf = new pdfkit({
+    info: {
+      Title: 'lidlbundle',
+      Author: 'Some Author',
+    }
+  });
+
+  pdf.image('client/src/assets/Lidl-Logo.png', 25, 25, {
+    width: 60
+  });
+  pdf.fontSize(40).text('LIDL-GOLD-CLUB.de', 120, 40);
+
+  pdf.moveTo(0, 435)
+    .lineTo(700, 400)
+    .stroke();
+
+  pdf.image('client/src/assets/pdf/tree.jpeg', 0, 120, {
+    width: 700
+  });
+  pdf.moveTo(0, 435)
+    .lineTo(700, 400)
+    .stroke();
+
+  pdf.rect(0, 119, 700, 700)
+    .fillOpacity(0.8)
+    .fill("white")
+
+  pdf.fontSize(30).fillColor("black").text('Christmas Deakl lorem ipsi,m lorem ipsum lorem ipsum', 120, 200, {
+    align: 'center'
+  });
+
+  pdf.rect(50, 300, 200, 30)
+    .fillOpacity(0.8)
+    .fill("red")
+
+  pdf.fontSize(10).fillColor("black").text('LIDL Gold Discount!!!', 0, 300, {
+    align: 'center'
+  });
+
+
+  // Stream contents to a file
+  pdf.pipe(
+      fs.createWriteStream('./file2.pdf')
+    )
+    .on('finish', function() {
+      console.log('PDF closed');
+    });
+
+  // Close PDF and write file.
+  pdf.end();
+
+
 });
 
 
