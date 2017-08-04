@@ -19,7 +19,6 @@ var EventoverviewComponent = (function () {
         this.eventService.getEvents()
             .subscribe(function (events) {
             _this.events = events;
-            console.log(_this.events);
         });
     }
     EventoverviewComponent.prototype.onCreate = function () {
@@ -35,7 +34,17 @@ var EventoverviewComponent = (function () {
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
     };
-    ;
+    EventoverviewComponent.prototype.onDelete = function (event) {
+        var events = this.events;
+        this.eventService.deleteEvent(event)
+            .subscribe((function (data) {
+            for (var i = 0; i < events.length; i++) {
+                if (events[i].id == event.id) {
+                    events.splice(i, 1);
+                }
+            }
+        }));
+    };
     EventoverviewComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

@@ -30,6 +30,11 @@ var EventService = (function () {
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/updateevent', JSON.stringify(event), { headers: headers });
     };
+    EventService.prototype.deleteEvent = function (event) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/deleteevent', JSON.stringify(event), { headers: headers });
+    };
     EventService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

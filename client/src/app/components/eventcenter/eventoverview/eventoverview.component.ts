@@ -18,7 +18,6 @@ export class EventoverviewComponent {
     this.eventService.getEvents()
       .subscribe(events => {
         this.events = events;
-        console.log(this.events);
       });
   }
 
@@ -35,6 +34,19 @@ export class EventoverviewComponent {
   onEdit(event: Event) {
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
-  };
+  }
+
+  onDelete(event: Event) {
+    var events = this.events;
+
+    this.eventService.deleteEvent(event)
+      .subscribe((data => {
+        for (var i = 0; i < events.length; i++) {
+          if (events[i].id == event.id) {
+            events.splice(i, 1);
+          }
+        }
+      }))
+  }
 
 }

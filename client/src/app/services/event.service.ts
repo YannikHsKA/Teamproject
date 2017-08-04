@@ -13,20 +13,26 @@ export class EventService {
   }
 
 
-  getEvents(){
+  getEvents() {
     return this.http.get('/api/getevents')
       .map(res => res.json());
   }
 
-  addEvent(newEvent: Event){
+  addEvent(newEvent: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('/api/createevent', JSON.stringify(newEvent), {headers: headers});
   }
 
-  updateEvent(event: Event){
+  updateEvent(event: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/updateevent', JSON.stringify(event), {headers:headers});
+    return this.http.post('/api/updateevent', JSON.stringify(event), {headers: headers});
+  }
+
+  deleteEvent(event: Event) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/deleteevent', JSON.stringify(event), {headers: headers});
   }
 }
