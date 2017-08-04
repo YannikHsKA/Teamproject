@@ -355,6 +355,22 @@ router.post("/updateevent", function(req, res) {
   res.sendStatus(201);
 });
 
+// Create Event
+router.post("/deleteevent", function(req, res) {
+  console.log("Remove Event");
+  /* Read POST Request */
+  let event = req.body;
+  console.log(event.id);
+
+  // Connect to Firebase
+  var db = admin.database();
+  var ref = db.ref('admin/events/' + event.id);
+
+  ref.remove();
+
+  res.sendStatus(201);
+});
+
 // Get specific Event with information
 router.get("/getevents", function(req, res) {
   console.log("Get Events");
