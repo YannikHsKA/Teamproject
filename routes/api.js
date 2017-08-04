@@ -322,9 +322,9 @@ router.post("/createevent", function(req, res) {
   var ref = db.ref('admin/events');
 
   var newRef = ref.push({
-    'eventtitle': event.title,
-    'timerangestart': event.start,
-    'timerangeend': event.end
+    'title': event.title,
+    'start': event.start,
+    'end': event.end
   });
 
   // Add Key to Entry
@@ -332,6 +332,26 @@ router.post("/createevent", function(req, res) {
   newRef.update({
     id: newID
   })
+  res.sendStatus(201);
+});
+
+// Create Event
+router.post("/updateevent", function(req, res) {
+  console.log("Update Event");
+  /* Read POST Request */
+  let event = req.body;
+  console.log(event.title);
+
+  // Connect to Firebase
+  var db = admin.database();
+  var ref = db.ref('admin/events/' + event.id);
+
+  var newRef = ref.update({
+    'title': event.title,
+    'start': event.start,
+    'end': event.end
+  });
+
   res.sendStatus(201);
 });
 
