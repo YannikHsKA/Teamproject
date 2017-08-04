@@ -13,6 +13,7 @@ import { VerificationsComponent } from './components/verifications/verifications
 import { DetailedbundleComponent } from './components/detailedbundle/detailedbundle.component';
 import {EventdetailComponent} from "./components/eventcenter/eventdetail/eventdetail.component";
 import {EventoverviewComponent} from "./components/eventcenter/eventoverview/eventoverview.component";
+import {EventbundleComponent} from "./components/eventcenter/eventbundle/eventbundle.component";
 
 const appRoutes: Routes = [
   {path:'subscribe', component: SubscriptionsComponent},
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   {path:'bundles', component: BundlesComponent},
   {path:'eventdetail', component: EventdetailComponent},
   {path:'eventoverview', component: EventoverviewComponent},
+  {path:'eventbundle', component: EventbundleComponent},
   {path:'detailedbundle', component: DetailedbundleComponent}, //TODO: introduce bundle ID as parameter
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: '/subscribe', pathMatch: 'full'},
@@ -29,7 +31,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes) ],
-  declarations: [ AppComponent, BundlesComponent, EventoverviewComponent, EventdetailComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent ],
+  declarations: [ AppComponent, BundlesComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
