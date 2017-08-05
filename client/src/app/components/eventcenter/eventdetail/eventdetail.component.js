@@ -23,7 +23,6 @@ var EventdetailComponent = (function () {
         else {
             this.createMode = false;
         }
-        document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     }
     EventdetailComponent.prototype.addEvent = function () {
         event.preventDefault();

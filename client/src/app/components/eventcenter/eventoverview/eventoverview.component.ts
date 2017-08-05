@@ -36,6 +36,11 @@ export class EventoverviewComponent {
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }
+  
+  onNotify(event: Event) {
+    this.eventService.event = event;
+    this.router.navigate(['./notificationcenter'])
+  }
 
   onDelete(event: Event) {
     var events = this.events;

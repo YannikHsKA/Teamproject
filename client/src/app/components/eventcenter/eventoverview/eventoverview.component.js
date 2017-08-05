@@ -35,6 +35,10 @@ var EventoverviewComponent = (function () {
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
     };
+    EventoverviewComponent.prototype.onNotify = function (event) {
+        this.eventService.event = event;
+        this.router.navigate(['./notificationcenter']);
+    };
     EventoverviewComponent.prototype.onDelete = function (event) {
         var events = this.events;
         this.eventService.deleteEvent(event)
