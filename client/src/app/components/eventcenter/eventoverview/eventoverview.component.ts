@@ -20,6 +20,10 @@ export class EventoverviewComponent {
         this.events = events;
       });
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
   }
 
   onCreate() {
@@ -36,7 +40,7 @@ export class EventoverviewComponent {
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }
-  
+
   onNotify(event: Event) {
     this.eventService.event = event;
     this.router.navigate(['./notificationcenter'])

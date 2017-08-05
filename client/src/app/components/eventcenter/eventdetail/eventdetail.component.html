@@ -3,67 +3,83 @@
   <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
 </ol>
 <div class="container" align="center">
-  <form class="form-horizontal" style="text-align: center">
-    <h1>Eventcenter</h1>
 
-    <legend>Create an Event</legend>
+  <div class="card hovercard">
+    <div class="card-background">
 
-    <fieldset>
-      <div class="form-group row">
-        <label for="title" class="col-xs-4 col-form-label">Eventtitle</label>
-        <div class="col-xs-8">
-          <input [(ngModel)]="event.title" id="title" name="title" type="text" class="form-control input-xs">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="title" class="col-xs-4 col-form-label">Timerangestart</label>
-        <div class="col-xs-8">
-          <input [(ngModel)]="event.start" id="start" name="title" type="text" class="form-control input-xs">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="title" class="col-xs-4 col-form-label">Timerangeend</label>
-        <div class="col-xs-8">
-          <input [(ngModel)]="event.end" id="end" name="title" type="text" class="form-control input-xs">
-        </div>
-      </div>
-    </fieldset>
-
-
-    <legend>Add Bundles</legend>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <ul class="list-group">
-          <li class="list-group-item" id="event.id">
-            Bundle1
-            <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
-            </button>
-            <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
-            </button>
-          </li>
-          <li class="list-group-item" id="event.id">
-            Bundle2
-            <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
-            </button>
-            <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
-            </button>
-          </li>
-        </ul>
-      </div>
+      <!-- possible blurred image -->
     </div>
-
-    <div class="row">
-      <div class="col-xs-6">
-        <button class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Save Event</button>
-        <button class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
-      </div>
-      <div class="col-xs-6">
-        <a href="/eventoverview" class="btn btn-danger">Cancel</a>
-      </div>
+    <div class="useravatar">
+      <img alt=""
+           src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
     </div>
+    <div class="card-info"><span class="card-title">Create Bundle</span>
 
-  </form>
+    </div>
+  </div>
+
+  <div class="well">
+    <form class="form-horizontal" style="text-align: center">
+
+      <legend>Create an Event</legend>
+
+      <fieldset>
+        <div class="form-group row">
+          <label for="title" class="col-xs-4 col-form-label">Eventtitle</label>
+          <div class="col-xs-8">
+            <input [(ngModel)]="event.title" id="title" name="title" type="text" class="form-control input-xs">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="title" class="col-xs-4 col-form-label">Timerangestart</label>
+          <div class="col-xs-8">
+            <input [(ngModel)]="event.start" id="start" name="title" type="text" class="form-control input-xs">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="title" class="col-xs-4 col-form-label">Timerangeend</label>
+          <div class="col-xs-8">
+            <input [(ngModel)]="event.end" id="end" name="title" type="text" class="form-control input-xs">
+          </div>
+        </div>
+      </fieldset>
 
 
+      <legend>Add Bundles</legend>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="list-group">
+            <li class="list-group-item" id="event.id">
+              Bundle1
+              <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
+              </button>
+              <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
+              </button>
+            </li>
+            <li class="list-group-item" id="event.id">
+              Bundle2
+              <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
+              </button>
+              <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6">
+          <button class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Save Event</button>
+          <button class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
+        </div>
+        <div class="col-xs-6">
+          <a href="/eventoverview" class="btn btn-danger">Cancel</a>
+        </div>
+      </div>
+
+    </form>
+
+
+  </div>
 </div>

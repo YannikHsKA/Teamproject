@@ -8,6 +8,9 @@
   color: white;
 }
 
+.well {
+  opacity: 0.93;
+}
 
 
 /* USER PROFILE PAGE */
@@ -30,7 +33,6 @@
   padding-top: 0;
   overflow: hidden;
   text-align: center;
-  opacity: 0.93;
   background-color: #fff;
   background-color: rgba(255, 255, 255, 1);
 }
