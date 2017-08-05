@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var verification_service_1 = require("../../services/verification.service");
 var User_js_1 = require("../../model/User.js");
-var router_1 = require('@angular/router');
+var router_1 = require("@angular/router");
 var VerificationsComponent = (function () {
     function VerificationsComponent(verificationService, router) {
         this.verificationService = verificationService;
@@ -107,8 +108,8 @@ var VerificationsComponent = (function () {
             selector: 'verifications',
             templateUrl: "verifications.component.html",
             styleUrls: ['verifications.component.css']
-        }), 
-        __metadata('design:paramtypes', [verification_service_1.VerificationService, router_1.Router])
+        }),
+        __metadata("design:paramtypes", [verification_service_1.VerificationService, router_1.Router])
     ], VerificationsComponent);
     return VerificationsComponent;
 }());

@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var User_js_1 = require('../../model/User.js');
-var subscription_service_1 = require('../../services/subscription.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var User_js_1 = require("../../model/User.js");
+var subscription_service_1 = require("../../services/subscription.service");
 var SubscriptionsComponent = (function () {
     function SubscriptionsComponent(subscriptionService) {
         this.subscriptionService = subscriptionService;
@@ -75,8 +76,8 @@ var SubscriptionsComponent = (function () {
             selector: 'subscriptions',
             templateUrl: "subscriptions.component.html",
             styleUrls: ['subscriptions.component.css']
-        }), 
-        __metadata('design:paramtypes', [subscription_service_1.SubscriptionService])
+        }),
+        __metadata("design:paramtypes", [subscription_service_1.SubscriptionService])
     ], SubscriptionsComponent);
     return SubscriptionsComponent;
 }());

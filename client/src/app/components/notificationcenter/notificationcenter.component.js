@@ -10,24 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var DetailedbundleComponent = (function () {
-    function DetailedbundleComponent() {
-        document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
+var NotificationcenterComponent = (function () {
+    function NotificationcenterComponent() {
+        this.email_active = false;
+        this.sms_active = true;
+        this.whatsapp_active = false;
+        document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
     }
-    DetailedbundleComponent = __decorate([
+    NotificationcenterComponent.prototype.switchLane = function (btn) {
+    };
+    NotificationcenterComponent.prototype.ngOnDestroy = function () {
+        document.body.style.backgroundImage = "none";
+    };
+    NotificationcenterComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'detailedbundle',
-            templateUrl: "detailedbundle.component.html",
-            styleUrls: ["detailedbundle.component.css"]
+            selector: 'notificationcenter',
+            templateUrl: "notificationcenter.component.html",
+            styleUrls: ['notificationcenter.component.css']
         }),
         __metadata("design:paramtypes", [])
-    ], DetailedbundleComponent);
-    return DetailedbundleComponent;
+    ], NotificationcenterComponent);
+    return NotificationcenterComponent;
 }());
-exports.DetailedbundleComponent = DetailedbundleComponent;
-//# sourceMappingURL=detailedbundle.component.js.map
+exports.NotificationcenterComponent = NotificationcenterComponent;
+//# sourceMappingURL=notificationcenter.component.js.map

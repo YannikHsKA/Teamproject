@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var event_service_1 = require('../../../services/event.service');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var event_service_1 = require("../../../services/event.service");
+var router_1 = require("@angular/router");
 var EventoverviewComponent = (function () {
     function EventoverviewComponent(eventService, router) {
         var _this = this;
@@ -51,8 +52,8 @@ var EventoverviewComponent = (function () {
             selector: 'eventoverview',
             templateUrl: "eventoverview.component.html",
             styleUrls: ["eventoverview.component.css"]
-        }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router])
+        }),
+        __metadata("design:paramtypes", [event_service_1.EventService, router_1.Router])
     ], EventoverviewComponent);
     return EventoverviewComponent;
 }());

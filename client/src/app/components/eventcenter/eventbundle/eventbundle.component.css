@@ -8,7 +8,7 @@ button{
 #quote-carousel {
     padding: 0 10px 30px 10px;
     margin-top: 30px;
-    data-interval="false"
+    data-interval: "false"
     /* Control buttons  */
     /* Previous button  */
     /* Next button  */
@@ -27,7 +27,7 @@ button{
 }
 #quote-carousel .carousel-control.right {
     right: -60px;
-    
+
 }
 #quote-carousel .carousel-indicators {
     right: 50%;
