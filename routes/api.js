@@ -3,7 +3,7 @@ var router = express.Router();
 var client = require('twilio')('ACc4221e14d1d0540a89ec756b685ae93b', '1b5bbdebb51c9059ef3dd8ddb5db2a1b');
 var nodemailer = require('nodemailer');
 var oauth = require('xoauth2');
-var gcloud = require('gcloud');
+//var gcloud = require('google-cloud');
 var smtpTransport = require('nodemailer-smtp-transport');
 var pdfkit = require('pdfkit');
 var fs = require('fs');
@@ -26,6 +26,7 @@ admin.initializeApp({
 });
 
 router.get("/send", function(req, res) {
+    "use strict";
   client.sendMessage({
     to: '+4915787295695',
     from: '+4915735984837',
@@ -42,6 +43,7 @@ router.get("/send", function(req, res) {
 });
 
 router.post("/test", function(req, res) {
+    "use strict";
   console.log("test")
   res.status(200).send("Success!");
 });
@@ -51,7 +53,8 @@ router.post("/test", function(req, res) {
 // Subscribe to the App
 router.post("/subscribe", function(req, res) {
   /* Read POST Request */
-  var mode = 0;
+    var mode;
+    mode = 0;
   var user = req.body;
   var number = req.body.phonenumber;
 
@@ -104,7 +107,7 @@ router.post("/subscribe", function(req, res) {
         });
 
       }
-    })
+    });
   } else {
     console.log("Mode 2");
     mode = 2;
