@@ -11,6 +11,10 @@ import {Input} from '@angular/core';
 export class EventbundleComponent  {
   @ViewChild('quote-carousel') carousel:ElementRef;
 
+  constructor(){
+    document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
+  }
+
   ngAfterViewInit() {
       // sketchElement is usable
       var carousel = this.carousel.nativeElement;

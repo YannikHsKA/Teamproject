@@ -8,20 +8,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var NotificationcenterComponent = (function () {
     function NotificationcenterComponent() {
         this.email_active = false;
         this.sms_active = true;
         this.whatsapp_active = false;
-        document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+        document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
     }
     NotificationcenterComponent.prototype.switchLane = function (btn) {
+        switch (btn) {
+            case "whatsapp":
+                this.whatsapp_active = true;
+                this.sms_active = false;
+                this.email_active = false;
+                break;
+            case "sms":
+                this.email_active = false;
+                this.sms_active = true;
+                this.whatsapp_active = false;
+                break;
+            case "email":
+                this.email_active = true;
+                this.sms_active = false;
+                this.whatsapp_active = false;
+                break;
+        }
     };
     NotificationcenterComponent.prototype.ngOnDestroy = function () {
         document.body.style.backgroundImage = "none";
@@ -32,8 +48,8 @@ var NotificationcenterComponent = (function () {
             selector: 'notificationcenter',
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
-        }),
-        __metadata("design:paramtypes", [])
+        }), 
+        __metadata('design:paramtypes', [])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());

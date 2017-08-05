@@ -19,6 +19,7 @@ export class EventoverviewComponent {
       .subscribe(events => {
         this.events = events;
       });
+    document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
   }
 
   onCreate() {

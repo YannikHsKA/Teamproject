@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var EventbundleComponent = (function () {
     function EventbundleComponent() {
+        document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     }
     EventbundleComponent.prototype.ngAfterViewInit = function () {
         // sketchElement is usable
@@ -24,8 +24,8 @@ var EventbundleComponent = (function () {
         //  carousel.carousel("next");
     };
     __decorate([
-        core_1.ViewChild('quote-carousel'),
-        __metadata("design:type", core_1.ElementRef)
+        core_1.ViewChild('quote-carousel'), 
+        __metadata('design:type', core_1.ElementRef)
     ], EventbundleComponent.prototype, "carousel", void 0);
     EventbundleComponent = __decorate([
         core_1.Component({
@@ -33,7 +33,8 @@ var EventbundleComponent = (function () {
             selector: 'eventbundle',
             templateUrl: "eventbundle.component.html",
             styleUrls: ["eventbundle.component.css"]
-        })
+        }), 
+        __metadata('design:paramtypes', [])
     ], EventbundleComponent);
     return EventbundleComponent;
 }());
