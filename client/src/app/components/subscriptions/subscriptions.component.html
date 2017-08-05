@@ -1,7 +1,7 @@
 <div class="container" align="center">
   <div class="jumbotron">
     <h2>Subscribe Now And Get 5% Off</h2>
-    <p>Register with your Phonenumber or E-Mail to subscribe to the LIDL Smart Event Service</p>
+    <p>Simply register via phone number or E-Mail to subscribe to the LIDL Smart Shopping Service</p>
 
     <div class="row">
       <div class="col-xs-6 text-right">
@@ -21,15 +21,15 @@
 
           <br>
 
-          <input type="tel" class="form-control" placeholder="Add here your Phonenumber.." required pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$" [(ngModel)]="phonenumber"
+          <input type="tel" class="form-control" placeholder="Add your phone number.." required pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$" [(ngModel)]="phonenumber"
             name="phonenumber" #number="ngModel">
           <br>
           <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
             <div [hidden]="!number.errors.required">
-              Type in your phonenumber.
+              Type in your phone number.
             </div>
             <div [hidden]="!number.errors.pattern">
-              Must be a valid phonenumber.
+              Must be a valid phone number.
             </div>
 
           </div>
@@ -39,7 +39,7 @@
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Success!</strong> You're now registered for the LIDL Smart Service.
+            <strong>Success!</strong> You're now registered for LIDL Smart Shopping.
           </div>
         </form>
 
@@ -66,7 +66,7 @@
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Succes!</strong> You're now registered for the LIDL Smart Service.
+            <strong>Succes!</strong> You're now registered for the LIDL Smart Shopping.
           </div>
         </form>
       </div>
