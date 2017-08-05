@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {User} from "../../model/User";
-import {TaskRunner} from "protractor/built/taskRunner";
+import {Event} from '../../model/Event';
+import {EventService} from '../../services/event.service';
 @Component({
   moduleId: module.id,
   selector: 'notificationcenter',
@@ -8,7 +8,7 @@ import {TaskRunner} from "protractor/built/taskRunner";
   styleUrls: ['notificationcenter.component.css']
 })
 export class NotificationcenterComponent {
-  user: User;
+  event: Event;
   whatsapp_active : boolean;
   sms_active : boolean;
   email_active : boolean;
@@ -16,8 +16,9 @@ export class NotificationcenterComponent {
 
 
 
-  constructor() {
 
+  constructor(private eventService: EventService) {
+this.event = eventService.getEvent();
 this.email_active = false;
 this.sms_active  = true;
 this.whatsapp_active = false;

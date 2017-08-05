@@ -18,6 +18,10 @@ export class EventService {
       .map(res => res.json());
   }
 
+  getEvent(){
+    return this.event;
+  }
+
   addEvent(newEvent: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');

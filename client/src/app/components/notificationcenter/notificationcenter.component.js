@@ -10,8 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var event_service_1 = require("../../services/event.service");
 var NotificationcenterComponent = (function () {
-    function NotificationcenterComponent() {
+    function NotificationcenterComponent(eventService) {
+        this.eventService = eventService;
+        this.event = eventService.getEvent();
         this.email_active = false;
         this.sms_active = true;
         this.whatsapp_active = false;
@@ -50,7 +53,7 @@ var NotificationcenterComponent = (function () {
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [event_service_1.EventService])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());

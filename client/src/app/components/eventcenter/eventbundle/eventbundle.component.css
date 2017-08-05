@@ -76,30 +76,7 @@ button{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* USER PROFILE PAGE */
+/* Hovercard */
 .card {
   margin-top: 20px;
   padding: 30px;
@@ -119,7 +96,6 @@ button{
   padding-top: 0;
   overflow: hidden;
   text-align: center;
-  opacity: 0.93;
   background-color: #fff;
   background-color: rgba(255, 255, 255, 1);
 }
@@ -146,7 +122,7 @@ button{
 .card.hovercard .useravatar img {
   width: 150px;
   height: 100px;
-  max-width: 150px;
+  max-width: 100px;
   max-height: 100px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

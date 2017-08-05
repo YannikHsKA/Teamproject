@@ -22,6 +22,10 @@ var EventoverviewComponent = (function () {
             _this.events = events;
         });
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundSize = "cover";
     }
     EventoverviewComponent.prototype.onCreate = function () {
         this.event = {
