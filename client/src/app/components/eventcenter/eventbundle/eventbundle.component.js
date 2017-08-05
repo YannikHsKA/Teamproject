@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var EventbundleComponent = (function () {
     function EventbundleComponent() {
+        document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     }
     EventbundleComponent.prototype.ngAfterViewInit = function () {
         // sketchElement is usable
@@ -33,7 +34,8 @@ var EventbundleComponent = (function () {
             selector: 'eventbundle',
             templateUrl: "eventbundle.component.html",
             styleUrls: ["eventbundle.component.css"]
-        })
+        }),
+        __metadata("design:paramtypes", [])
     ], EventbundleComponent);
     return EventbundleComponent;
 }());

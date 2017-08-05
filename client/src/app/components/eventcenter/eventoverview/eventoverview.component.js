@@ -21,6 +21,7 @@ var EventoverviewComponent = (function () {
             .subscribe(function (events) {
             _this.events = events;
         });
+        document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     }
     EventoverviewComponent.prototype.onCreate = function () {
         this.event = {
