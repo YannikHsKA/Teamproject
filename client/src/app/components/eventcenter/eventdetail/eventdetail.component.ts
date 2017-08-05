@@ -23,7 +23,6 @@ export class EventdetailComponent {
     } else{
       this.createMode = false;
     }
-    document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
   }
 
   addEvent() {

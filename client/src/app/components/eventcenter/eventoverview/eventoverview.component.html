@@ -3,7 +3,6 @@
     <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
     <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
     <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
-    <li class ="breadcrumb-item"><a routerLink="/notificationcenter">Notification</a> </li>
   </ol>
 
   <div class="row">
@@ -23,6 +22,8 @@
           <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span class="glyphicon glyphicon-trash"></span> Delete
           </button>
           <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span class="glyphicon glyphicon-wrench"></span> Edit
+          </button>
+          <button class="btn btn-xs btn-success pull-right" (click)="onNotify(event)"><span class="glyphicon glyphicon-envelope"></span> Notify
           </button>
         </li>
       </ul>
