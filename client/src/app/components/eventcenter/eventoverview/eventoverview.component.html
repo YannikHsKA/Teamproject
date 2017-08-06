@@ -1,30 +1,28 @@
-<div class="container">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
-  </ol>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
+</ol>
 
-  <div class="row">
-    <div class="col-xs-10">
-      <h1>Eventcenter</h1>
-    </div>
-    <div class="col-xs-2">
-      <button class="btn btn-primary" (click)="onCreate()">Create new Event</button>
-    </div>
-  </div>
+<div class="container" align="center">
+  <h2>Welcome to the Eventcenter</h2>
+
+  <legend>Events</legend>
 
   <div class="row">
     <div class="col-xs-12">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let event of events" id="event.id">
           {{ event.title }}
-          <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span class="glyphicon glyphicon-trash"></span> Delete
+          <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span
+            class="glyphicon glyphicon-trash"></span> Delete
           </button>
-          <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span class="glyphicon glyphicon-wrench"></span> Edit
+          <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
+            class="glyphicon glyphicon-wrench"></span> Edit
           </button>
         </li>
       </ul>
     </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" (click)="onCreate()">Create new Event</button>
   </div>
 </div>

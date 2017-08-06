@@ -1,32 +1,65 @@
-<div class="container">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
-  </ol>
+<ol class="breadcrumb">
+  <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
+  <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
+</ol>
+<div class="container" align="center">
+  <form class="form-horizontal" style="text-align: center">
+    <h1>Eventcenter</h1>
 
-  <h1>Eventcenter</h1>
-  <form class="form-horizontal">
+    <legend>Create an Event</legend>
+
     <fieldset>
-      <div class="form-group">
-        <label class="col-xs-4 control-label" for="title">Eventtitle</label>
-        <div class="col-xs-4">
+      <div class="form-group row">
+        <label for="title" class="col-xs-4 col-form-label">Eventtitle</label>
+        <div class="col-xs-8">
           <input [(ngModel)]="event.title" id="title" name="title" type="text" class="form-control input-xs">
         </div>
       </div>
-      <div class="form-group">
-        <label class="col-xs-4 control-label" for="start">Timerangestart</label>
-        <div class="col-xs-4">
-          <input [(ngModel)]="event.start" id="start" name="start" type="text" class="form-control input-xs">
+      <div class="form-group row">
+        <label for="title" class="col-xs-4 col-form-label">Timerangestart</label>
+        <div class="col-xs-8">
+          <input [(ngModel)]="event.start" id="start" name="title" type="text" class="form-control input-xs">
         </div>
-        <label class="col-xs-4 control-label" for="end">Timerangeend</label>
-        <div class="col-xs-4">
-          <input [(ngModel)]="event.end" id="end" name="end" type="text" class="form-control input-xs">
+      </div>
+      <div class="form-group row">
+        <label for="title" class="col-xs-4 col-form-label">Timerangeend</label>
+        <div class="col-xs-8">
+          <input [(ngModel)]="event.end" id="end" name="title" type="text" class="form-control input-xs">
         </div>
       </div>
     </fieldset>
+
+
+    <legend>Add Bundles</legend>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <ul class="list-group">
+          <li class="list-group-item" id="event.id">
+            Bundle1
+            <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
+            </button>
+            <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
+            </button>
+          </li>
+          <li class="list-group-item" id="event.id">
+            Bundle2
+            <button class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-trash"></span> Delete
+            </button>
+            <button class="btn btn-xs btn-success pull-right"><span class="glyphicon glyphicon-wrench"></span> Edit
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <button class="btn-success" *ngIf="createMode" (click)="addEvent()">Save Event</button>
+      <button class="btn-success" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
+    </div>
+
   </form>
 
-  <button class="btn-success" *ngIf="createMode" (click)="addEvent()">Save Event</button>
-  <button class="btn-success" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
+
 </div>
