@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Event_1 = require("../../../model/Event");
 var event_service_1 = require("../../../services/event.service");
+var router_1 = require("@angular/router");
 var EventdetailComponent = (function () {
-    function EventdetailComponent(eventService) {
+    function EventdetailComponent(eventService, router) {
         this.eventService = eventService;
+        this.router = router;
         this.event = this.eventService.event;
         if (this.event.title == "") {
             this.createMode = true;
@@ -30,6 +32,7 @@ var EventdetailComponent = (function () {
         newEvent.end = this.event.end;
         this.eventService.addEvent(newEvent)
             .subscribe();
+        this.router.navigate(['./eventoverview']);
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
@@ -40,6 +43,7 @@ var EventdetailComponent = (function () {
         };
         this.eventService.updateEvent(_event)
             .subscribe();
+        this.router.navigate(['./eventoverview']);
     };
     EventdetailComponent = __decorate([
         core_1.Component({
@@ -48,7 +52,7 @@ var EventdetailComponent = (function () {
             templateUrl: "eventdetail.component.html",
             styleUrls: ["eventdetail.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService])
+        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router])
     ], EventdetailComponent);
     return EventdetailComponent;
 }());

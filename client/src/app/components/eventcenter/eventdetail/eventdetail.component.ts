@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Event} from "../../../model/Event";
 import {EventService} from "../../../services/event.service";
+import {Router} from "@angular/router";
 
 @Component({
   moduleId: module.id,
@@ -16,7 +17,7 @@ export class EventdetailComponent {
   end: string;
   createMode: boolean;
 
-  constructor(private eventService: EventService) {
+  constructor(private eventService: EventService, private router: Router) {
     this.event = this.eventService.event;
     if(this.event.title == ""){
       this.createMode = true;
@@ -35,6 +36,8 @@ export class EventdetailComponent {
 
     this.eventService.addEvent(newEvent)
       .subscribe();
+
+    this.router.navigate(['./eventoverview']);
   }
 
   updateEvent(event: Event) {
@@ -46,5 +49,7 @@ export class EventdetailComponent {
     };
     this.eventService.updateEvent(_event)
       .subscribe();
+
+    this.router.navigate(['./eventoverview']);
   }
 }

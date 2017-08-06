@@ -53,10 +53,14 @@
       </div>
     </div>
 
-
     <div class="row">
-      <button class="btn-success" *ngIf="createMode" (click)="addEvent()">Save Event</button>
-      <button class="btn-success" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
+      <div class="col-xs-6">
+        <button class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Save Event</button>
+        <button class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</button>
+      </div>
+      <div class="col-xs-6">
+        <a href="/eventoverview" class="btn btn-danger">Cancel</a>
+      </div>
     </div>
 
   </form>
