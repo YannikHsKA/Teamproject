@@ -2,7 +2,7 @@
   <div class="jumbotron">
     <h2>LIDL Smart Shopping Verification</h2>
 
-    <p>How did you choose to use LIDL Smart Shopping (please, choose one):</p>
+    <p>How did you choose to use the LIDL Smart Shopping Service?</p>
 
     <div class="row">
       <div class="col-xs-6 text-right">
@@ -20,7 +20,7 @@
       <div class="col-xs-12">
         <form [hidden]="!verifyPhone">
           <br>
-          <p>Type your registered phone number and press Enter. </p>
+          <p>Type your registered phone number and press Enter: </p>
           <form (submit)="checkUserByPhone()">
             <input type="tel" class="form-control"
                    placeholder="Type your phone number here (+4911221234567)" required
@@ -42,7 +42,7 @@
               Oops..It must be a valid phone number. Try this format +4911221234567.
             </div>
           </div>
-          <p>Type the verification code you just received and press Enter.</p>
+          <p>Type the verification code you just received and press Enter:</p>
           <form (submit)="checkVerification()">
             <input type="text" class="form-control" placeholder="Type the verification code here." required
                    [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
@@ -56,10 +56,10 @@
 
         <form [hidden]="!verifyMail">
           <br>
-          <p>Type your registered E-Mail and press Enter.</p>
+          <p>Type your registered E-Mail and press Enter:</p>
           <form (submit)="checkUserByMail()">
             <input type="email" class="form-control"
-                   placeholder="Add here your Email.." required
+                   placeholder="Type your E-Mail here" required
                    pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
                    [(ngModel)]="email_address"
                    name="email_address" #mail="ngModel">
@@ -80,7 +80,7 @@
           </div>
           <p>Type the verification code you just received and press Enter.</p>
           <form (submit)="checkVerification()">
-            <input type="text" class="form-control" placeholder="Type the verification code here." required
+            <input type="text" class="form-control" placeholder="Type the verification code here" required
                    [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
           </form>
           <br>
