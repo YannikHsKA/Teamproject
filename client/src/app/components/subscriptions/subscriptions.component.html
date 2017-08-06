@@ -1,17 +1,17 @@
 <div class="container" align="center">
   <div class="jumbotron">
     <h2>Subscribe Now And Get 5% Off</h2>
-    <p>Simply register via phone number or E-Mail to subscribe to the LIDL Smart Shopping Service</p>
+    <p>Register your phone number or E-Mail to get awesome shopping suggestions from the LIDL Smart Shopping Service</p>
 
     <div class="row">
       <div class="col-xs-6 text-right">
         <button type="button" class="btn btn-info" (click)="showPhoneFields()">
-          Phonenumber
+          Phone Number
         </button>
       </div>
       <div class="col-xs-6 text-left">
         <button type="button" class="btn btn-info" (click)="showMailFields()">
-          Email
+          E-Mail
         </button>
       </div>
     </div>
@@ -26,10 +26,10 @@
           <br>
           <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
             <div [hidden]="!number.errors.required">
-              Type in your phone number.
+              Type in your phone number (+4911221234567).
             </div>
             <div [hidden]="!number.errors.pattern">
-              Must be a valid phone number.
+              Oops..It must be a valid phone number. Try this format +4911221234567.
             </div>
 
           </div>
@@ -39,7 +39,7 @@
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Success!</strong> You're now registered for LIDL Smart Shopping.
+            <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
           </div>
         </form>
 
@@ -53,10 +53,10 @@
           <br>
           <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
             <div [hidden]="!mail.errors.required">
-              Type in your E-Mail.
+              Type in your E-Mail address.
             </div>
             <div [hidden]="!mail.errors.pattern">
-              Must be a valid E-mail.
+              Oops...It must be a valid E-Mail. For example, aaabbb@gmail.com.
             </div>
 
           </div>
@@ -66,7 +66,7 @@
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Succes!</strong> You're now registered for the LIDL Smart Shopping.
+            <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
           </div>
         </form>
       </div>
