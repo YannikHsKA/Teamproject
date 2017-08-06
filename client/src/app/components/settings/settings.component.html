@@ -4,7 +4,7 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Change your contact address</legend>
+        <legend>Change your E-Mail address</legend>
         <!-- Text input-->
         <div class="form-group">
           <label class="col-xs-4 control-label" for="email">E-Mail</label>
@@ -29,7 +29,7 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Choose your favorite Channels</legend>
+        <legend>What is the best way to reach you?</legend>
 
         <!-- Multiple Checkboxes -->
         <div class="form-group" [hidden]="!phone_entered">
@@ -43,7 +43,7 @@
           </div>
         </div>
         <div class="form-group" [hidden]="!email_entered">
-          <label class="col-xs-4 control-label">Email</label>
+          <label class="col-xs-4 control-label">E-Mail</label>
           <div class="col-xs-4">
             <label class="switch">
               <input type="checkbox" [checked]="email_toggle" ([ngModel])="email_toggle" name="email_toggle"
@@ -63,13 +63,13 @@
           </div>
         </div>
         <button type="button" class="btn btn-info" (click)="saveSettings()">
-          Save Settings
+          Done
         </button>
 
         <!-- Alert -->
         <br><br>
         <div class="alert alert-success fade in" *ngIf="saveSuccess">
-          <strong>Succes!</strong> Your profile has been updated
+          <strong>Success!</strong> Your profile has been updated!
         </div>
       </fieldset>
     </form>
