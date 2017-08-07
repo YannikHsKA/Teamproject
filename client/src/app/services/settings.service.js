@@ -24,7 +24,6 @@ var SettingsService = (function () {
         var body = JSON.stringify(user);
         this.http.post('/api/updatesettings', body, { headers: headers })
             .subscribe(function (data) {
-            alert('ok');
         }, function (error) {
             console.log(JSON.stringify(error.json()));
         });
@@ -32,12 +31,11 @@ var SettingsService = (function () {
     SettingsService.prototype.sendWhatsAppUpdate = function (subscribe_flag, user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        console.log("Send Update for User:" + user);
+        console.log("Send Update for User:" + user + "via Whatsapp");
         var body = JSON.stringify(user);
         if (subscribe_flag == "subscribe") {
             this.http.post('/api/sendWhatsAppUpdate_subscribe', body, { headers: headers })
                 .subscribe(function (data) {
-                alert('ok');
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });
@@ -45,7 +43,6 @@ var SettingsService = (function () {
         else if (subscribe_flag == "unsubscribe") {
             this.http.post('/api/sendWhatsAppUpdate_unsubscribe', body, { headers: headers })
                 .subscribe(function (data) {
-                alert('ok');
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });
@@ -54,12 +51,11 @@ var SettingsService = (function () {
     SettingsService.prototype.sendEmailUpdate = function (subscribe_flag, user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        console.log("Send Update for User:" + user);
+        console.log("Send Update for User:" + user + "via Email");
         var body = JSON.stringify(user);
         if (subscribe_flag == "subscribe") {
             this.http.post('/api/sendEmailUpdate_subscribe', body, { headers: headers })
                 .subscribe(function (data) {
-                alert('ok');
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });
@@ -67,7 +63,6 @@ var SettingsService = (function () {
         else if (subscribe_flag == "unsubscribe") {
             this.http.post('/api/sendEmailUpdate_unsubscribe', body, { headers: headers })
                 .subscribe(function (data) {
-                alert('ok');
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });
@@ -76,12 +71,11 @@ var SettingsService = (function () {
     SettingsService.prototype.sendSMSUpdate = function (subscribe_flag, user) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        console.log("Send Update for User:" + user);
+        console.log("Send Update for User:" + user + "via SMS");
         var body = JSON.stringify(user);
         if (subscribe_flag == "subscribe") {
             this.http.post('/api/sendSMSUpdate_subscribe', body, { headers: headers })
                 .subscribe(function (data) {
-                alert('ok');
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });
@@ -89,7 +83,6 @@ var SettingsService = (function () {
         else if (subscribe_flag == "unsubscribe") {
             this.http.post('/api/sendSMSUpdate_unsubscribe', body, { headers: headers })
                 .subscribe(function (data) {
-                alert('ok');
             }, function (error) {
                 console.log(JSON.stringify(error.json()));
             });

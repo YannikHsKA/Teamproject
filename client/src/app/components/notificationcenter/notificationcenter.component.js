@@ -8,13 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-<<<<<<< HEAD
 var core_1 = require('@angular/core');
-=======
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var event_service_1 = require("../../services/event.service");
->>>>>>> same structure for all admin pages
+var event_service_1 = require('../../services/event.service');
 var NotificationcenterComponent = (function () {
     function NotificationcenterComponent(eventService) {
         this.eventService = eventService;
@@ -56,13 +51,8 @@ var NotificationcenterComponent = (function () {
             selector: 'notificationcenter',
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
-<<<<<<< HEAD
         }), 
-        __metadata('design:paramtypes', [])
-=======
-        }),
-        __metadata("design:paramtypes", [event_service_1.EventService])
->>>>>>> same structure for all admin pages
+        __metadata('design:paramtypes', [event_service_1.EventService])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());
