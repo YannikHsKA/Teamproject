@@ -379,20 +379,22 @@ router.post("/deleteevent", function(req, res) {
 
 
 // Get Bundles for Event
-router.get("/geteventbundles/:event", function(req, res) {
+router.get("/geteventbundles/:eventid", function(req, res) {
   console.log("Get Bundles");
   /* Read POST Request */
-  var eventid = req.params.event;
-  let bundle = req.body;
+  var eventid = req.params.eventid;
+  console.log("id", eventid);
 
   /* Connect to Firebase */
   var db = admin.database();
   var ref = db.ref('admin/events/' + eventid + '/bundles');
-  console.log("Ref: ", ref);
+  var obj;
 
   ref.once('value', function(snapshot) {
-    var obj = snapshot.val();
-    res.status(200).send(Object.keys(obj).map(name => obj[name]));
+    obj = snapshot.val();
+    if (obj != undefined) {
+      res.status(200).send(Object.keys(obj).map(name => obj[name]));
+    }
   });
 });
 
@@ -520,49 +522,49 @@ router.post("/createpdf", function(req, res) {
 
 // Send Update Subscribe Email
 router.post("/sendEmailUpdate_subscribe", function(req, res) {
-    /* Read POST Request */
-    var user = req.body;
+  /* Read POST Request */
+  var user = req.body;
 
-    var inputmail = req.body.email_address;
-    // Send Notification Email with Setting Key and Voucher //
-    // Check if email address already exists
+  var inputmail = req.body.email_address;
+  // Send Notification Email with Setting Key and Voucher //
+  // Check if email address already exists
 
-    console.log("Notify User about Email Subscription")
-    /*
-        ref.orderByChild("email_address").equalTo(inputmail).once("value", function (snapshot) {
-            var userData = snapshot.val();
-            if (userData) // Email already exists
-            {
-                console.log("Email already exists");
-                res.sendStatus(201);
-            } else // Email does not exist
-            {
-                console.log("send Update Mail");
+  console.log("Notify User about Email Subscription")
+  /*
+      ref.orderByChild("email_address").equalTo(inputmail).once("value", function (snapshot) {
+          var userData = snapshot.val();
+          if (userData) // Email already exists
+          {
+              console.log("Email already exists");
+              res.sendStatus(201);
+          } else // Email does not exist
+          {
+              console.log("send Update Mail");
 
-                var mailOptions = {
-                    from: "lidlsmartshopping@gmail.com",
-                    to: req.body.email_address,
-                    subject: "LIDL Smart Shopping - Einstellungsänderung",
-                    generateTextFromHTML: true,
-                    html: "<b>Hallo!</b> 'Von nun an erhalten Sie die LIDL Smart Shopping Benachrichtigungen auf diese E-Mail Adresse. "
-                };
+              var mailOptions = {
+                  from: "lidlsmartshopping@gmail.com",
+                  to: req.body.email_address,
+                  subject: "LIDL Smart Shopping - Einstellungsänderung",
+                  generateTextFromHTML: true,
+                  html: "<b>Hallo!</b> 'Von nun an erhalten Sie die LIDL Smart Shopping Benachrichtigungen auf diese E-Mail Adresse. "
+              };
 
-                smtpTransport.sendMail(mailOptions, function (error, response) {
-                    if (error) {
-                        // console.log(error);
-                        console.log("Email not sent");
-                        res.sendStatus(500);
-                    } else {
-                        // console.log(response);
-                        console.log("Email Sent");
-                        WriteUserToDB();
-                    }
-                    smtpTransport.close();
-                });
-            }
-        });
+              smtpTransport.sendMail(mailOptions, function (error, response) {
+                  if (error) {
+                      // console.log(error);
+                      console.log("Email not sent");
+                      res.sendStatus(500);
+                  } else {
+                      // console.log(response);
+                      console.log("Email Sent");
+                      WriteUserToDB();
+                  }
+                  smtpTransport.close();
+              });
+          }
+      });
 
-        */
+      */
 });
 
 

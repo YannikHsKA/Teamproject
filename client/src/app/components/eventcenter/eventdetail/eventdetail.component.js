@@ -11,17 +11,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var Event_1 = require("../../../model/Event");
 var event_service_1 = require("../../../services/event.service");
+var bundle_service_1 = require("../../../services/bundle.service");
 var router_1 = require("@angular/router");
 var EventdetailComponent = (function () {
-    function EventdetailComponent(eventService, router) {
+    function EventdetailComponent(eventService, bundleService, router) {
+        var _this = this;
         this.eventService = eventService;
+        this.bundleService = bundleService;
         this.router = router;
         this.event = this.eventService.event;
-        if (this.event.title == "") {
-            this.createMode = true;
+        this.safebuttonclicked = this.eventService.safebuttonclicked;
+        if (this.safebuttonclicked == false) {
+            this.bundleService.getBundles(this.event)
+                .subscribe(function (bundles) {
+                _this.bundles = bundles;
+            });
+            if (this.event.title == "") {
+                this.createMode = true;
+            }
+            else {
+                this.createMode = false;
+            }
         }
         else {
-            this.createMode = false;
+            this.bundles = new Array();
+            console.log("if?????");
+            var bundle = {
+                title: "Please edit the bundle",
+                description: "descr von bundle 1",
+                picture: "url"
+            };
+            console.log("bundle", bundle);
+            this.bundles[0] = bundle;
+            this.bundles[1] = bundle;
         }
     }
     EventdetailComponent.prototype.addEvent = function () {
@@ -32,7 +54,6 @@ var EventdetailComponent = (function () {
         newEvent.end = this.event.end;
         this.eventService.addEvent(newEvent)
             .subscribe();
-        this.router.navigate(['./eventoverview']);
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
@@ -43,7 +64,13 @@ var EventdetailComponent = (function () {
         };
         this.eventService.updateEvent(_event)
             .subscribe();
-        this.router.navigate(['./eventoverview']);
+    };
+    EventdetailComponent.prototype.onAdd = function () {
+        this.router.navigate(['./eventbundle']);
+    };
+    EventdetailComponent.prototype.onDelete = function (num) {
+        event.preventDefault();
+        var id = this.event.id;
     };
     EventdetailComponent = __decorate([
         core_1.Component({
@@ -52,7 +79,7 @@ var EventdetailComponent = (function () {
             templateUrl: "eventdetail.component.html",
             styleUrls: ["eventdetail.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router])
+        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router])
     ], EventdetailComponent);
     return EventdetailComponent;
 }());

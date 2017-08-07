@@ -7,6 +7,7 @@ import {Event} from "../model/Event";
 export class EventService {
 
   event: Event;
+  safebuttonclicked: boolean;
 
   constructor(private http: Http) {
     console.log('Event Service initialized..');

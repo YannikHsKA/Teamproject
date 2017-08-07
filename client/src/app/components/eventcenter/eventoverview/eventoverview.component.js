@@ -32,10 +32,13 @@ var EventoverviewComponent = (function () {
             start: "",
             end: ""
         };
+        this.safebuttonclicked = true;
+        this.eventService.safebuttonclicked = this.safebuttonclicked;
         this.eventService.event = this.event;
         this.router.navigate(['./eventdetail']);
     };
     EventoverviewComponent.prototype.onEdit = function (event) {
+        console.log("event", event);
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
     };

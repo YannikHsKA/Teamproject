@@ -22,11 +22,8 @@
           <br>
           <p>Type your registered phone number and press Enter: </p>
           <form (submit)="checkUserByPhone()">
-            <input type="tel" class="form-control"
-                   placeholder="Type your phone number here (+4911221234567)" required
-                   pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
-                   [(ngModel)]="phonenumber"
-                   name="phonenumber" #number="ngModel">
+            <input type="tel" class="form-control" placeholder="Type your phone number here (+4911221234567)." required pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$" [(ngModel)]="phonenumber"
+              name="phonenumber" #number="ngModel">
           </form>
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert">
@@ -44,8 +41,7 @@
           </div>
           <p>Type the verification code you just received and press Enter:</p>
           <form (submit)="checkVerification()">
-            <input type="text" class="form-control" placeholder="Type the verification code here." required
-                   [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
+            <input type="text" class="form-control" placeholder="Type the verification code here." required [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
           </form>
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert2">
@@ -58,11 +54,8 @@
           <br>
           <p>Type your registered E-Mail and press Enter:</p>
           <form (submit)="checkUserByMail()">
-            <input type="email" class="form-control"
-                   placeholder="Type your E-Mail here" required
-                   pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
-                   [(ngModel)]="email_address"
-                   name="email_address" #mail="ngModel">
+            <input type="email" class="form-control" placeholder="Type your E-Mail here (john.doe@lidlmail.com)." required pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+              [(ngModel)]="email_address" name="email_address" #mail="ngModel">
           </form>
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert">
@@ -80,8 +73,7 @@
           </div>
           <p>Type the verification code you just received and press Enter.</p>
           <form (submit)="checkVerification()">
-            <input type="text" class="form-control" placeholder="Type the verification code here" required
-                   [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
+            <input type="text" class="form-control" placeholder="Type the verification code here." required [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
           </form>
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert2">

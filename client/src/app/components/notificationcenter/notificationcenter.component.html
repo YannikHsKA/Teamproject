@@ -1,4 +1,4 @@
-<div class="container" >
+<div class="container">
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
@@ -6,58 +6,63 @@
 
   </ol>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <div >
-      <div class="card hovercard">
-        <div class="card-background">
+  <form class="form-horizontal" style="text-align: center">
+    <div class="card hovercard">
+      <div class="card-background">
 
-          <!-- http://lorempixel.com/850/280/people/9/ -->
-        </div>
-
-        <div class="useravatar">
-          <img alt="" src="https://www.tagove.com/wp-content/uploads/2016/09/Reach-Customer-teach-min.jpg">
-        </div>
-        <div class="card-info"> <span class="card-title">Notification Center</span>
-
-        </div>
+        <!-- http://lorempixel.com/850/280/people/9/ -->
       </div>
-      <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-        <div class="btn-group" role="group" (click) = "switchLane('whatsapp')">
-          <button type="button" id="stars"  [ngClass]="{'btn' : true, 'btn-primary':whatsapp_active, 'btn-default':!whatsapp_active}" href="#tab1" data-toggle="tab"><i class="fa fa-whatsapp" aria-hidden="true"></i>
+
+      <div class="useravatar">
+        <img alt="" src="https://www.tagove.com/wp-content/uploads/2016/09/Reach-Customer-teach-min.jpg">
+      </div>
+      <div class="card-info"> <span class="card-title">Notification Center</span>
+
+      </div>
+    </div>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+      <div class="btn-group" role="group" (click)="switchLane('whatsapp')">
+        <button type="button" id="stars" [ngClass]="{'btn' : true, 'btn-primary':whatsapp_active, 'btn-default':!whatsapp_active}" href="#tab1" data-toggle="tab"><i class="fa fa-whatsapp" aria-hidden="true"></i>
             <div class="hidden-xs">WhatsApp</div>
           </button>
-        </div>
-        <div class="btn-group " role="group" (click) = "switchLane('sms')">
-          <button type="button" id="favorites" [ngClass]="{'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active}" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+      </div>
+      <div class="btn-group " role="group" (click)="switchLane('sms')">
+        <button type="button" id="favorites" [ngClass]="{'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active}" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
             <div class="hidden-xs">SMS</div>
           </button>
-        </div>
-        <div class="btn-group" role="group" (click) = "switchLane('email')">
-          <button type="button" id="following" [ngClass]="{'btn' : true, 'btn-primary':email_active,'btn-default':!email_active}" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+      </div>
+      <div class="btn-group" role="group" (click)="switchLane('email')">
+        <button type="button" id="following" [ngClass]="{'btn' : true, 'btn-primary':email_active,'btn-default':!email_active}" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
             <div class="hidden-xs">E-Mail</div>
           </button>
-        </div>
       </div>
-
-      <div class="well">
-        <div class="tab-content">
-          <div class="tab-pane fade in active" id="tab1">
-            <textarea placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
-          </div>
-          <div class="tab-pane fade in" id="tab2">
-            <textarea placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
-          </div>
-          <div class="tab-pane fade in" id="tab3">
-            <textarea placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
-          </div>
-        </div>
-      </div>
-
     </div>
 
-</div>
+    <div class="well">
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="tab1">
+          <textarea placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
+        </div>
+        <div class="tab-pane fade in" id="tab2">
+          <textarea placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
+        </div>
+        <div class="tab-pane fade in" id="tab3">
+          <textarea placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-10">
+          <div class="col-xs-6">
+            <button class="btn btn-info" *ngIf="!createMode" (click)="saveNotification()">Save Notification</button>
+          </div>
+          <div class="col-xs-6">
+            <a href="/eventoverview" class="btn btn-danger">Cancel</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 
-
-
-
-
+  </form>

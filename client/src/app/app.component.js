@@ -13,6 +13,7 @@ var subscription_service_1 = require('./services/subscription.service');
 var verification_service_1 = require("./services/verification.service");
 var settings_service_1 = require("./services/settings.service");
 var event_service_1 = require("./services/event.service");
+var bundle_service_1 = require("./services/bundle.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = "Consumer Analytics Services";
@@ -22,7 +23,7 @@ var AppComponent = (function () {
             moduleId: module.id,
             selector: 'consumerAnalytics',
             templateUrl: "app.component.html",
-            providers: [subscription_service_1.SubscriptionService, verification_service_1.VerificationService, settings_service_1.SettingsService, event_service_1.EventService]
+            providers: [subscription_service_1.SubscriptionService, verification_service_1.VerificationService, settings_service_1.SettingsService, event_service_1.EventService, bundle_service_1.BundleService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

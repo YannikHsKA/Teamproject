@@ -48,11 +48,11 @@ var SubscriptionsComponent = (function () {
             this.registerPhone = true;
             this.registerMail = false;
         }
-        else if (!this.registerMail) {
+        else if (!this.registerPhone) {
             this.registerPhone = true;
         }
         else {
-            this.registerMail = false;
+            this.registerPhone = false;
         }
     };
     SubscriptionsComponent.prototype.showMailFields = function () {

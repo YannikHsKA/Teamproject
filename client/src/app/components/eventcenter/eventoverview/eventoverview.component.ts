@@ -13,6 +13,7 @@ export class EventoverviewComponent {
 
   events: Event[];
   event: Event;
+  safebuttonclicked: boolean;
 
   constructor(private eventService: EventService, private router: Router) {
     this.eventService.getEvents()
@@ -32,11 +33,15 @@ export class EventoverviewComponent {
       start: "",
       end: ""
     };
+
+    this.safebuttonclicked = true;
+    this.eventService.safebuttonclicked = this.safebuttonclicked;
     this.eventService.event = this.event;
     this.router.navigate(['./eventdetail']);
   }
 
   onEdit(event: Event) {
+    console.log("event",event);
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }
