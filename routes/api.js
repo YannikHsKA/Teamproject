@@ -26,7 +26,7 @@ admin.initializeApp({
 });
 
 router.get("/send", function(req, res) {
-    "use strict";
+  "use strict";
   client.sendMessage({
     to: '+4915787295695',
     from: '+4915735984837',
@@ -43,7 +43,7 @@ router.get("/send", function(req, res) {
 });
 
 router.post("/test", function(req, res) {
-    "use strict";
+  "use strict";
   console.log("test")
   res.status(200).send("Success!");
 });
@@ -53,8 +53,8 @@ router.post("/test", function(req, res) {
 // Subscribe to the App
 router.post("/subscribe", function(req, res) {
   /* Read POST Request */
-    var mode;
-    mode = 0;
+  var mode;
+  mode = 0;
   var user = req.body;
   var number = req.body.phonenumber;
 
@@ -209,7 +209,7 @@ router.get("/user/phone/:phonenumber", function(req, res) {
   });
 });
 
-// Checks if email is already subscribed 
+// Checks if email is already subscribed
 router.get("/user/mail/:email_address", function(req, res) {
   /* Read POST Request */
   var email_address = req.params.email_address;
@@ -376,40 +376,63 @@ router.post("/deleteevent", function(req, res) {
   res.sendStatus(201);
 });
 
-// Get specific Event with information
-router.get("/getevents", function(req, res) {
-  console.log("Get Events");
-
-  // Connect Firebase
-  var db = admin.database();
-  var ref = db.ref('admin/events');
-
-  ref.once('value', function(snapshot) {
-    var obj = snapshot.val();
-    delete obj["bundles"];
-    res.status(200).send(Object.keys(obj).map(name => obj[name]));
-  });
-});
 
 
-
-/* Create Bundle1 */
-router.post("/createbundle/:num", function(req, res) {
-  console.log("Create Bundle");
+// Get Bundles for Event
+router.get("/geteventbundles/:event", function(req, res) {
+  console.log("Get Bundles");
   /* Read POST Request */
+  var eventid = req.params.event;
   let bundle = req.body;
 
   /* Connect to Firebase */
   var db = admin.database();
-  var ref = db.ref('events/current/bundles/bundle1');
+  var ref = db.ref('admin/events/' + eventid + '/bundles');
   console.log("Ref: ", ref);
 
-  ref.update({
-    'bundletitle': bundle.title,
-    'bundledescription': bundle.description,
-    'bundlepicture': bundle.picture,
-    'bundlediscount': bundle.discount
+  ref.once('value', function(snapshot) {
+    var obj = snapshot.val();
+    res.status(200).send(Object.keys(obj).map(name => obj[name]));
   });
+});
+
+// Create & Update Bundle for Event
+router.post("/createbundle/:num", function(req, res) {
+  console.log("Create Bundle");
+  /* Read POST Request */
+  var num = req.params.num;
+  let bundle = req.body;
+  var eventid = bundle.id;
+
+  /* Connect to Firebase */
+  var db = admin.database();
+  var ref = db.ref('admin/events/' + eventid + '/bundles/bundle' + num);
+  console.log("Ref: ", ref);
+
+  var newRef = ref.update({
+    'title': bundle.title,
+    'description': bundle.description,
+    'picture': bundle.picture
+  });
+
+  res.sendStatus(201);
+});
+
+// Delete Bundle for Event
+router.post("/deletebundle/:num", function(req, res) {
+  console.log("Create Bundle");
+  /* Read POST Request */
+  var num = req.params.num;
+  let bundle = req.body;
+  var eventid = bundle.id;
+
+  /* Connect to Firebase */
+  var db = admin.database();
+  var ref = db.ref('admin/events/' + eventid + '/bundles/bundle' + num);
+
+  ref.remove();
+
+  res.sendStatus(201);
 });
 
 
