@@ -52,10 +52,10 @@
                 <div class="col-sm-12">
                   <div class="form-group">
                     <label class="control-label"><h3>Choose a Title</h3></label>
-                    <input #title type="text" [(ngModel)]="eventtitle" class="form-control" placeholder="e.g. Lidl Christmas Special Event!!" required>
+                    <input type="text" [(ngModel)]="title" name="title" class="form-control" placeholder="e.g. Lidl Christmas Special Event!!" required>
 
                     <label class="control-label"><h3>Write a Description</h3></label>
-                    <textarea id="decr" [(ngModel)]="eventdescription" type="email" rows="3" class="form-control" placeholder="e.g. Lidl Christmas Special Event!!" required></textarea>
+                    <textarea [(ngModel)]="description" name="description" type="email" rows="3" class="form-control" placeholder="e.g. Lidl Christmas Special Event!!" required></textarea>
 
                   </div>
                 </div>

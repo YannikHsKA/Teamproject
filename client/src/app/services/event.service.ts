@@ -2,11 +2,13 @@ import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from "../model/Event";
+import {Bundle} from "../model/Bundle";
 
 @Injectable()
 export class EventService {
 
   event: Event;
+  bundle: Bundle;
   safebuttonclicked: boolean;
 
   constructor(private http: Http) {

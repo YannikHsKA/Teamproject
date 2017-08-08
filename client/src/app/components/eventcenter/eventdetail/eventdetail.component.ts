@@ -43,15 +43,15 @@ export class EventdetailComponent {
     else
     {
       this.bundles = new Array();
-      console.log("if?????");
       var bundle : Bundle = {
         title: "Please edit the bundle",
         description :"descr von bundle 1",
         picture:"url"
       }
-      console.log("bundle",bundle);
       this.bundles[0] = bundle;
       this.bundles[1] = bundle;
+
+      this.event.bundles = this.bundles;
     }
 
   }
@@ -74,22 +74,18 @@ export class EventdetailComponent {
       title: event.title,
       start: event.start,
       end: event.end,
-      id: event.id
+      id: event.id,
+      bundles: event.bundles
     };
     this.eventService.updateEvent(_event)
       .subscribe();
 
   }
 
-  onAdd()
-  {
-        this.router.navigate(['./eventbundle']);
-  }
-
-  onDelete(num: String)
-  {
-    event.preventDefault();
-    var id = this.event.id;
+  onEdit(bundle: Bundle, event: Event) {
+    this.eventService.event = event;
+    this.eventService.bundle = bundle;
+    this.router.navigate(['./eventbundle']);
   }
 
 }

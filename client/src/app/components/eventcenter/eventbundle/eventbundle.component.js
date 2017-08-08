@@ -9,20 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var event_service_1 = require("../../../services/event.service");
 var EventbundleComponent = (function () {
-    function EventbundleComponent() {
+    function EventbundleComponent(eventService) {
+        this.eventService = eventService;
+        this.event = this.eventService.event;
+        this.bundle = this.eventService.bundle;
+        console.log(this.bundle);
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     }
-    EventbundleComponent.prototype.ngAfterViewInit = function () {
-        // sketchElement is usable
-        var carousel = this.carousel.nativeElement;
-        console.log(this.carousel);
-    };
-    EventbundleComponent.prototype.goRight = function (test) {
-        console.log("hallo", test);
-        //  console.log(carousel);
-        //  carousel.carousel("next");
-    };
     __decorate([
         core_1.ViewChild('quote-carousel'), 
         __metadata('design:type', core_1.ElementRef)
@@ -34,7 +29,7 @@ var EventbundleComponent = (function () {
             templateUrl: "eventbundle.component.html",
             styleUrls: ["eventbundle.component.css"]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [event_service_1.EventService])
     ], EventbundleComponent);
     return EventbundleComponent;
 }());

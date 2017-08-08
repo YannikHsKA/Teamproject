@@ -27,10 +27,19 @@ var EventoverviewComponent = (function () {
         document.body.style.backgroundSize = "cover";
     }
     EventoverviewComponent.prototype.onCreate = function () {
+        this.bundles = new Array();
+        var bundle = {
+            title: "Please edit the bundle",
+            description: "descr of bundle 1",
+            picture: "url"
+        };
+        this.bundles[0] = bundle;
+        this.bundles[1] = bundle;
         this.event = {
             title: "",
             start: "",
-            end: ""
+            end: "",
+            bundles: this.bundles
         };
         this.safebuttonclicked = true;
         this.eventService.safebuttonclicked = this.safebuttonclicked;
@@ -38,7 +47,6 @@ var EventoverviewComponent = (function () {
         this.router.navigate(['./eventdetail']);
     };
     EventoverviewComponent.prototype.onEdit = function (event) {
-        console.log("event", event);
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
     };

@@ -22,4 +22,10 @@ export class BundleService {
     return this.http.get('/api/geteventbundles/'+event.id)
       .map(res => res.json());
   }
+
+  addBundle(newBundle: Bundle, event: Event) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/createbundle', JSON.stringify(newBundle), {headers: headers});
+  }
 }

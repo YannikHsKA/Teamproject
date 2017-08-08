@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Event} from '../../../model/Event';
 import {EventService} from '../../../services/event.service';
 import {Router} from '@angular/router';
+import {Bundle} from "../../../model/Bundle";
 
 @Component({
   moduleId: module.id,
@@ -13,6 +14,7 @@ export class EventoverviewComponent {
 
   events: Event[];
   event: Event;
+  bundles: Bundle[];
   safebuttonclicked: boolean;
 
   constructor(private eventService: EventService, private router: Router) {
@@ -28,10 +30,20 @@ export class EventoverviewComponent {
   }
 
   onCreate() {
+    this.bundles = new Array();
+    var bundle : Bundle = {
+      title: "Please edit the bundle",
+      description :"descr of bundle 1",
+      picture:"url"
+    }
+    this.bundles[0] = bundle;
+    this.bundles[1] = bundle;
+
     this.event = {
       title: "",
       start: "",
-      end: ""
+      end: "",
+      bundles: this.bundles
     };
 
     this.safebuttonclicked = true;
@@ -41,7 +53,6 @@ export class EventoverviewComponent {
   }
 
   onEdit(event: Event) {
-    console.log("event",event);
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }

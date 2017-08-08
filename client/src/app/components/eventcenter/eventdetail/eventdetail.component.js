@@ -35,15 +35,14 @@ var EventdetailComponent = (function () {
         }
         else {
             this.bundles = new Array();
-            console.log("if?????");
             var bundle = {
                 title: "Please edit the bundle",
                 description: "descr von bundle 1",
                 picture: "url"
             };
-            console.log("bundle", bundle);
             this.bundles[0] = bundle;
             this.bundles[1] = bundle;
+            this.event.bundles = this.bundles;
         }
     }
     EventdetailComponent.prototype.addEvent = function () {
@@ -60,17 +59,16 @@ var EventdetailComponent = (function () {
             title: event.title,
             start: event.start,
             end: event.end,
-            id: event.id
+            id: event.id,
+            bundles: event.bundles
         };
         this.eventService.updateEvent(_event)
             .subscribe();
     };
-    EventdetailComponent.prototype.onAdd = function () {
+    EventdetailComponent.prototype.onEdit = function (bundle, event) {
+        this.eventService.event = event;
+        this.eventService.bundle = bundle;
         this.router.navigate(['./eventbundle']);
-    };
-    EventdetailComponent.prototype.onDelete = function (num) {
-        event.preventDefault();
-        var id = this.event.id;
     };
     EventdetailComponent = __decorate([
         core_1.Component({
