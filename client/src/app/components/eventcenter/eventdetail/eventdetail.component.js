@@ -35,13 +35,20 @@ var EventdetailComponent = (function () {
         }
         else {
             this.bundles = new Array();
-            var bundle = {
+            var bundle0 = {
                 title: "Please edit the bundle",
                 description: "descr von bundle 1",
-                picture: "url"
+                picture: "url",
+                bundleId: 0
             };
-            this.bundles[0] = bundle;
-            this.bundles[1] = bundle;
+            var bundle1 = {
+                title: "Please edit the bundle",
+                description: "descr von bundle 1",
+                picture: "url",
+                bundleId: 1
+            };
+            this.bundles[0] = bundle0;
+            this.bundles[1] = bundle1;
             this.event.bundles = this.bundles;
         }
     }

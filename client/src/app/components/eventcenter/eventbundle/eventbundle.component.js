@@ -10,14 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var event_service_1 = require("../../../services/event.service");
+var Bundle_1 = require("../../../model/Bundle");
+var bundle_service_1 = require("../../../services/bundle.service");
 var EventbundleComponent = (function () {
-    function EventbundleComponent(eventService) {
+    function EventbundleComponent(eventService, bundleService) {
         this.eventService = eventService;
+        this.bundleService = bundleService;
         this.event = this.eventService.event;
         this.bundle = this.eventService.bundle;
-        console.log(this.bundle);
+        console.log(this.event);
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     }
+    EventbundleComponent.prototype.addBundle = function () {
+        event.preventDefault();
+        var newBundle = new Bundle_1.Bundle();
+        newBundle.title = this.bundle.title;
+        newBundle.description = this.bundle.description;
+        newBundle.picture = this.bundle.picture;
+        newBundle.bundleId = this.bundle.bundleId;
+        this.bundleService.addBundle(newBundle, this.event.id)
+            .subscribe();
+    };
     __decorate([
         core_1.ViewChild('quote-carousel'), 
         __metadata('design:type', core_1.ElementRef)
@@ -29,7 +42,7 @@ var EventbundleComponent = (function () {
             templateUrl: "eventbundle.component.html",
             styleUrls: ["eventbundle.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService])
+        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService])
     ], EventbundleComponent);
     return EventbundleComponent;
 }());

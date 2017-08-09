@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from "../model/Event";
+import {Bundle} from "../model/Bundle";
 
 @Injectable()
 export class BundleService {
@@ -23,9 +24,9 @@ export class BundleService {
       .map(res => res.json());
   }
 
-  addBundle(newBundle: Bundle, event: Event) {
+  addBundle(newBundle: Bundle, eventId: String) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/createbundle', JSON.stringify(newBundle), {headers: headers});
+    return this.http.post('/api/createbundle/' + newBundle.bundleId + '/' + eventId, JSON.stringify(newBundle), {headers: headers});
   }
 }

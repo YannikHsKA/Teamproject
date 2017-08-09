@@ -25,6 +25,11 @@ var BundleService = (function () {
         return this.http.get('/api/geteventbundles/' + event.id)
             .map(function (res) { return res.json(); });
     };
+    BundleService.prototype.addBundle = function (newBundle, eventId) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/createbundle/' + newBundle.bundleId + '/' + eventId, JSON.stringify(newBundle), { headers: headers });
+    };
     BundleService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
