@@ -399,16 +399,15 @@ router.get("/geteventbundles/:eventid", function(req, res) {
 });
 
 // Create & Update Bundle for Event
-router.post("/createbundle/:num", function(req, res) {
+router.post("/createbundle/:bundlenum/:eventid", function(req, res) {
   console.log("Create Bundle");
-  /* Read POST Request */
-  var num = req.params.num;
-  let bundle = req.body;
-  var eventid = bundle.id;
 
-  /* Connect to Firebase */
+  var bundlenum = req.params.bundlenum;
+  var eventid = req.params.eventid;
+  var bundle = req.body;
+
   var db = admin.database();
-  var ref = db.ref('admin/events/' + eventid + '/bundles/bundle' + num);
+  var ref = db.ref('admin/events/' + eventid + '/bundles/bundle' + bundlenum);
   console.log("Ref: ", ref);
 
   var newRef = ref.update({
@@ -416,23 +415,6 @@ router.post("/createbundle/:num", function(req, res) {
     'description': bundle.description,
     'picture': bundle.picture
   });
-
-  res.sendStatus(201);
-});
-
-// Delete Bundle for Event
-router.post("/deletebundle/:num", function(req, res) {
-  console.log("Create Bundle");
-  /* Read POST Request */
-  var num = req.params.num;
-  let bundle = req.body;
-  var eventid = bundle.id;
-
-  /* Connect to Firebase */
-  var db = admin.database();
-  var ref = db.ref('admin/events/' + eventid + '/bundles/bundle' + num);
-
-  ref.remove();
 
   res.sendStatus(201);
 });
