@@ -15,7 +15,7 @@ export class EventoverviewComponent {
   events: Event[];
   event: Event;
   bundles: Bundle[];
-  safebuttonclicked: boolean;
+  createbuttonclicked: boolean;
 
   constructor(private eventService: EventService, private router: Router) {
     this.eventService.getEvents()
@@ -53,8 +53,8 @@ export class EventoverviewComponent {
       bundles: this.bundles
     };
 
-    this.safebuttonclicked = true;
-    this.eventService.safebuttonclicked = this.safebuttonclicked;
+    this.createbuttonclicked = true;
+    this.eventService.createbuttonclicked = this.createbuttonclicked;
     this.eventService.event = this.event;
     this.router.navigate(['./eventdetail']);
   }

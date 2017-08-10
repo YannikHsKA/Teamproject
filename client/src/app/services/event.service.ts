@@ -9,7 +9,7 @@ export class EventService {
 
   event: Event;
   bundle: Bundle;
-  safebuttonclicked: boolean;
+  createbuttonclicked: boolean;
 
   constructor(private http: Http) {
     console.log('Event Service initialized..');

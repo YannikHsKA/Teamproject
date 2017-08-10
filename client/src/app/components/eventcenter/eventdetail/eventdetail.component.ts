@@ -20,14 +20,11 @@ export class EventdetailComponent {
   createMode: boolean;
   bundles: Bundle[];
   bundle: Bundle;
-  safebuttonclicked: boolean;
+  createbuttonclicked: boolean;
 
   constructor(private eventService: EventService, private bundleService: BundleService, private router: Router) {
     this.event = this.eventService.event;
-    this.safebuttonclicked = this.eventService.safebuttonclicked;
-
-    if(this.safebuttonclicked == false)
-    {
+    this.createbuttonclicked = this.eventService.createbuttonclicked;
 
     this.bundleService.getBundles(this.event)
       .subscribe(bundles => {
@@ -36,11 +33,9 @@ export class EventdetailComponent {
 
     if(this.event.title == ""){
       this.createMode = true;
-    } else{
-      this.createMode = false;
     }
-  }
-    else
+
+    if(this.createbuttonclicked)
     {
       this.bundles = new Array();
       var bundle0 : Bundle = {
@@ -74,6 +69,8 @@ export class EventdetailComponent {
     this.eventService.addEvent(newEvent)
       .subscribe();
 
+    this.createMode = false;
+
   }
 
   updateEvent(event: Event) {
@@ -89,8 +86,8 @@ export class EventdetailComponent {
 
   }
 
-  onEdit(bundle: Bundle, event: Event) {
-    this.eventService.event = event;
+  onEdit(bundle: Bundle) {
+    this.eventService.event = this.event;
     this.eventService.bundle = bundle;
     this.router.navigate(['./eventbundle']);
   }

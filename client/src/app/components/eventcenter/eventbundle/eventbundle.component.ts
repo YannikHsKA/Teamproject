@@ -34,6 +34,8 @@ export class EventbundleComponent  {
     newBundle.picture = this.bundle.picture;
     newBundle.bundleId = this.bundle.bundleId;
 
+    console.log(newBundle);
+
     this.bundleService.addBundle(newBundle, this.event.id)
       .subscribe();
   }

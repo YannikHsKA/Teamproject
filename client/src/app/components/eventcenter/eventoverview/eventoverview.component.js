@@ -48,8 +48,8 @@ var EventoverviewComponent = (function () {
             end: "",
             bundles: this.bundles
         };
-        this.safebuttonclicked = true;
-        this.eventService.safebuttonclicked = this.safebuttonclicked;
+        this.createbuttonclicked = true;
+        this.eventService.createbuttonclicked = this.createbuttonclicked;
         this.eventService.event = this.event;
         this.router.navigate(['./eventdetail']);
     };

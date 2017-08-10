@@ -28,6 +28,7 @@ var EventbundleComponent = (function () {
         newBundle.description = this.bundle.description;
         newBundle.picture = this.bundle.picture;
         newBundle.bundleId = this.bundle.bundleId;
+        console.log(newBundle);
         this.bundleService.addBundle(newBundle, this.event.id)
             .subscribe();
     };

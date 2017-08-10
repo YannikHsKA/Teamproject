@@ -20,20 +20,15 @@ var EventdetailComponent = (function () {
         this.bundleService = bundleService;
         this.router = router;
         this.event = this.eventService.event;
-        this.safebuttonclicked = this.eventService.safebuttonclicked;
-        if (this.safebuttonclicked == false) {
-            this.bundleService.getBundles(this.event)
-                .subscribe(function (bundles) {
-                _this.bundles = bundles;
-            });
-            if (this.event.title == "") {
-                this.createMode = true;
-            }
-            else {
-                this.createMode = false;
-            }
+        this.createbuttonclicked = this.eventService.createbuttonclicked;
+        this.bundleService.getBundles(this.event)
+            .subscribe(function (bundles) {
+            _this.bundles = bundles;
+        });
+        if (this.event.title == "") {
+            this.createMode = true;
         }
-        else {
+        if (this.createbuttonclicked) {
             this.bundles = new Array();
             var bundle0 = {
                 title: "Please edit the bundle",
@@ -60,6 +55,7 @@ var EventdetailComponent = (function () {
         newEvent.end = this.event.end;
         this.eventService.addEvent(newEvent)
             .subscribe();
+        this.createMode = false;
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
