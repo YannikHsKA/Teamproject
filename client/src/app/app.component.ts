@@ -5,6 +5,7 @@ import {SettingsService} from "./services/settings.service";
 import {EventService} from "./services/event.service";
 import {BundleService} from "./services/bundle.service";
 import {TranslateService, TranslatePipe} from 'ng2-translate';
+import {Router} from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit{
   public translatedText: string;
   pageTitle: string = "Consumer Analytics Services"
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     // this language will be used as a fallback when a translation isn't found in the current language
     translate.setDefaultLang('en');
 
@@ -42,10 +43,11 @@ isCurrentLang(lang: string) {
    selectLang(lang: string) {
      // set default;
      this.translate.use(lang);
-     this.refreshText();
+     
    }
-   refreshText() {
-     this.translatedText = this.translate.instant('hello world');
+   goTo(page:String)
+   {
+     this.router.navigate(["/"+page]);
    }
 
 }

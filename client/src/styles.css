@@ -32,7 +32,7 @@
 }
 
 .navbar-default {
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.95);
   /*border-color: #06507f;*/
 }
 .navbar-default .navbar-brand {
@@ -40,7 +40,7 @@
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #ffffff;
+  color: black;
 }
 .navbar-default .navbar-text {
   color: #06507f;
@@ -50,7 +50,7 @@
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
+  color: black;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -85,7 +85,7 @@
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #ffffff;
+    color: black;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
   .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
@@ -150,11 +150,24 @@ margin-right: 3%;
 
 /*Button Styling */
 .button-background {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .button-select {
-  background-color: rgba(255, 255, 255, 0.6)
+  background-color: rgba(0, 43, 106, 0.6)
 }
 .btn-group{
   padding-top: 14px;
+}
+
+.fontlang{
+  color: #06507f;
+  background: none;
+}
+
+.menupolarity{
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.containertop{
+      padding-top: 100px;
 }

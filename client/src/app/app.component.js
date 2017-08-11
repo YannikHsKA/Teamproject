@@ -15,9 +15,11 @@ var settings_service_1 = require("./services/settings.service");
 var event_service_1 = require("./services/event.service");
 var bundle_service_1 = require("./services/bundle.service");
 var ng2_translate_1 = require('ng2-translate');
+var router_1 = require('@angular/router');
 var AppComponent = (function () {
-    function AppComponent(translate) {
+    function AppComponent(translate, router) {
         this.translate = translate;
+        this.router = router;
         this.pageTitle = "Consumer Analytics Services";
         // this language will be used as a fallback when a translation isn't found in the current language
         translate.setDefaultLang('en');
@@ -39,10 +41,9 @@ var AppComponent = (function () {
     AppComponent.prototype.selectLang = function (lang) {
         // set default;
         this.translate.use(lang);
-        this.refreshText();
     };
-    AppComponent.prototype.refreshText = function () {
-        this.translatedText = this.translate.instant('hello world');
+    AppComponent.prototype.goTo = function (page) {
+        this.router.navigate(["/" + page]);
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -51,7 +52,7 @@ var AppComponent = (function () {
             templateUrl: "app.component.html",
             providers: [subscription_service_1.SubscriptionService, verification_service_1.VerificationService, settings_service_1.SettingsService, event_service_1.EventService, bundle_service_1.BundleService]
         }), 
-        __metadata('design:paramtypes', [ng2_translate_1.TranslateService])
+        __metadata('design:paramtypes', [ng2_translate_1.TranslateService, router_1.Router])
     ], AppComponent);
     return AppComponent;
 }());

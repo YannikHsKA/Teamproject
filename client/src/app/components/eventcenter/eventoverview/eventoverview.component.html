@@ -1,40 +1,42 @@
-<ol class="breadcrumb">
-  <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-</ol>
-<div class="container" align="center">
-  <div class="card hovercard">
-    <div class="card-background">
+<div class="containertop">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
+  </ol>
+  <div class="container" align="center">
+    <div class="card hovercard">
+      <div class="card-background">
 
-      <!-- possible blurred image -->
-      <div class="card-info">
-        <span class="card-title">LIDL Smart Dashboard</span>
+        <!-- possible blurred image -->
+        <div class="card-info">
+          <span class="card-title">LIDL Smart Dashboard</span>
 
+        </div>
       </div>
-    </div>
 
-  </div>
-  <div class="well">
-    <div class="row">
-      <legend>Events</legend>
-      <div class="col-xs-12">
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let event of events" id="event.id">
-            {{ event.title }}
-            <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span
+    </div>
+    <div class="well">
+      <div class="row">
+        <legend>Events</legend>
+        <div class="col-xs-12">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let event of events" id="event.id">
+              {{ event.title }}
+              <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span
               class="glyphicon glyphicon-trash"></span> Delete
             </button>
-            <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
+              <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
               class="glyphicon glyphicon-wrench"></span> Edit
             </button>
-            <button class="btn btn-xs btn-success pull-right" (click)="onNotify(event)"><span
+              <button class="btn btn-xs btn-success pull-right" (click)="onNotify(event)"><span
               class="glyphicon glyphicon-envelope"></span> Notify
             </button>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <button class="btn btn-primary" (click)="onCreate()">Create new Event</button>
+      <div class="row">
+        <button class="btn btn-primary" (click)="onCreate()">Create new Event</button>
+      </div>
     </div>
   </div>
 </div>
