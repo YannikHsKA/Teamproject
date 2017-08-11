@@ -14,10 +14,36 @@ var verification_service_1 = require("./services/verification.service");
 var settings_service_1 = require("./services/settings.service");
 var event_service_1 = require("./services/event.service");
 var bundle_service_1 = require("./services/bundle.service");
+var ng2_translate_1 = require('ng2-translate');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(translate) {
+        this.translate = translate;
         this.pageTitle = "Consumer Analytics Services";
+        // this language will be used as a fallback when a translation isn't found in the current language
+        translate.setDefaultLang('en');
+        // the lang to use, if the lang isn't available, it will use the current loader to get them
+        translate.use('de');
     }
+    AppComponent.prototype.ngOnInit = function () {
+        // standing data
+        this.supportedLanguages = [
+            { display: 'English', value: 'en' },
+            { display: 'Deutsch', value: 'de' },
+            { display: '华语', value: 'zh' },
+        ];
+        this.selectLang('en');
+    };
+    AppComponent.prototype.isCurrentLang = function (lang) {
+        return lang === this.translate.currentLang;
+    };
+    AppComponent.prototype.selectLang = function (lang) {
+        // set default;
+        this.translate.use(lang);
+        this.refreshText();
+    };
+    AppComponent.prototype.refreshText = function () {
+        this.translatedText = this.translate.instant('hello world');
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -25,7 +51,7 @@ var AppComponent = (function () {
             templateUrl: "app.component.html",
             providers: [subscription_service_1.SubscriptionService, verification_service_1.VerificationService, settings_service_1.SettingsService, event_service_1.EventService, bundle_service_1.BundleService]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [ng2_translate_1.TranslateService])
     ], AppComponent);
     return AppComponent;
 }());

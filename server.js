@@ -19,15 +19,17 @@ app.use(express.static(path.join(__dirname, 'client')));
 
 // Body Parser MW
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 
 //app.use('/', routes);
 app.use('/api', api);
 app.get('*', function(req, res) {
-    res.render('index.html'); // load the single view file (angular will handle the page changes on the front-end)
+  res.render('index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
 
-app.listen(port, function(){
-    console.log('Server started on port '+port);
+app.listen(port, function() {
+  console.log('Server started on port ' + port);
 });

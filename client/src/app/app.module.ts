@@ -1,6 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -14,7 +14,9 @@ import { DetailedbundleComponent } from './components/detailedbundle/detailedbun
 import {EventdetailComponent} from "./components/eventcenter/eventdetail/eventdetail.component";
 import {EventoverviewComponent} from "./components/eventcenter/eventoverview/eventoverview.component";
 import {EventbundleComponent} from "./components/eventcenter/eventbundle/eventbundle.component";
-import {NotificationcenterComponent} from "./components/notificationcenter/notificationcenter.component"
+import {NotificationcenterComponent} from "./components/notificationcenter/notificationcenter.component";
+import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
+
 
 const appRoutes: Routes = [
   {path:'subscribe', component: SubscriptionsComponent},
@@ -24,7 +26,7 @@ const appRoutes: Routes = [
   {path:'eventdetail', component: EventdetailComponent},
   {path:'eventoverview', component: EventoverviewComponent},
   {path:'eventbundle', component: EventbundleComponent},
-  {path:'detailedbundle', component: DetailedbundleComponent}, //TODO: introduce bundle ID as parameter
+  {path:'detailedbundle', component: DetailedbundleComponent},
   {path:'notificationcenter', component: NotificationcenterComponent},
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: '/subscribe', pathMatch: 'full'},
@@ -32,7 +34,12 @@ const appRoutes: Routes = [
 ]
 
 @NgModule({
-  imports:      [ BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes) ],
+  imports:      [ BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes),
+    TranslateModule.forRoot({
+            provide: TranslateLoader,
+            useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/assets/i18n', '.json'),
+            deps: [Http]
+        })],
   declarations: [ AppComponent, BundlesComponent, NotificationcenterComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent ],
   bootstrap:    [ AppComponent ]
 })
