@@ -24,6 +24,9 @@ var EventbundleComponent = (function () {
         this.storage.store('event', this.event);
     };
     EventbundleComponent.prototype.GoToArticles = function () {
+        this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
+        //Save in Storage
+        this.storage.store('event', this.event);
     };
     EventbundleComponent = __decorate([
         core_1.Component({

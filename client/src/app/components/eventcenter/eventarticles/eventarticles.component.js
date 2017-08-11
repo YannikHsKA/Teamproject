@@ -15,10 +15,14 @@ var EventarticlesComponent = (function () {
     function EventarticlesComponent(router, storage) {
         this.router = router;
         this.storage = storage;
+        this.articles = new Array();
     }
     EventarticlesComponent.prototype.back = function () {
+        //back to Bundle
+        //save entries
     };
     EventarticlesComponent.prototype.save = function () {
+        //Event wird gespeichert
     };
     EventarticlesComponent = __decorate([
         core_1.Component({

@@ -38,7 +38,8 @@ export class EventoverviewComponent {
       title: "",
       start: "",
       end: "",
-      bundles: []
+      bundles: [],
+      articles: []
     }
     this.safebuttonclicked = true;
     this.eventService.safebuttonclicked = this.safebuttonclicked;

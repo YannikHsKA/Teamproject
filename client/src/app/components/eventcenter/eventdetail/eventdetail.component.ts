@@ -80,6 +80,7 @@ export class EventdetailComponent {
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
     newEvent.bundles = this.event.bundles;
+    newEvent.articles = null;
 
     this.eventService.addEvent(newEvent)
       .subscribe();
@@ -92,7 +93,8 @@ export class EventdetailComponent {
       start: event.start,
       end: event.end,
       id: event.id,
-      bundles: event.bundles
+      bundles: event.bundles,
+      articles: event.articles
     };
     this.eventService.updateEvent(_event)
       .subscribe();

@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
+import {Article} from "../../../model/Article";
 import {EventService} from "../../../services/event.service";
 import {BundleService} from "../../../services/bundle.service";
 import {Router} from "@angular/router";
@@ -16,7 +17,7 @@ import {LocalStorage, SessionStorage} from 'ng2-webstorage';
 })
 export class EventarticlesComponent {
 
-
+  articles: Article[] = new Array();
 
   constructor(private router: Router, private storage:SessionStorageService) {
 
