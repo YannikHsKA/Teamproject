@@ -16,27 +16,32 @@ var EventoverviewComponent = (function () {
         var _this = this;
         this.eventService = eventService;
         this.router = router;
-        this.eventService.getEvents()
-            .subscribe(function (events) {
-            _this.events = events;
-        });
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
+        this.safebuttonclicked = false;
+        this.eventService.safebuttonclicked = this.safebuttonclicked;
+        this.eventService.getEvents()
+            .subscribe(function (events) {
+            console.log("eeveve", events);
+            _this.events = events;
+        });
     }
     EventoverviewComponent.prototype.onCreate = function () {
         this.event = {
             title: "",
             start: "",
-            end: ""
+            end: "",
+            bundles: []
         };
         this.safebuttonclicked = true;
         this.eventService.safebuttonclicked = this.safebuttonclicked;
         this.eventService.event = this.event;
         this.router.navigate(['./eventdetail']);
     };
+    ;
     EventoverviewComponent.prototype.onEdit = function (event) {
         console.log("event", event);
         this.eventService.event = event;

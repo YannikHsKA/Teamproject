@@ -1,7 +1,7 @@
 
-export class Bundle {
+export class Article {
   id: number;
   title: string;
-  description: string;
+  price: string;
   picture: string;
 }

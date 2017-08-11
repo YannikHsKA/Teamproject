@@ -16,30 +16,35 @@ export class EventoverviewComponent {
   safebuttonclicked: boolean;
 
   constructor(private eventService: EventService, private router: Router) {
-    this.eventService.getEvents()
-      .subscribe(events => {
-        this.events = events;
-      });
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundSize = "cover";
-  }
 
+
+    this.safebuttonclicked = false;
+    this.eventService.safebuttonclicked = this.safebuttonclicked;
+
+    this.eventService.getEvents()
+      .subscribe(events => {
+        console.log("eeveve",events);
+        this.events = events;
+      });
+
+  }
   onCreate() {
     this.event = {
       title: "",
       start: "",
-      end: ""
-    };
-
+      end: "",
+      bundles: []
+    }
     this.safebuttonclicked = true;
     this.eventService.safebuttonclicked = this.safebuttonclicked;
     this.eventService.event = this.event;
     this.router.navigate(['./eventdetail']);
-  }
-
+  };
   onEdit(event: Event) {
     console.log("event",event);
     this.eventService.event = event;

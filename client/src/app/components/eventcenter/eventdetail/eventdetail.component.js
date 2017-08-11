@@ -13,37 +13,50 @@ var Event_1 = require("../../../model/Event");
 var event_service_1 = require("../../../services/event.service");
 var bundle_service_1 = require("../../../services/bundle.service");
 var router_1 = require("@angular/router");
+var ng2_webstorage_1 = require('ng2-webstorage');
 var EventdetailComponent = (function () {
-    function EventdetailComponent(eventService, bundleService, router) {
-        var _this = this;
+    function EventdetailComponent(eventService, bundleService, router, storage) {
         this.eventService = eventService;
         this.bundleService = bundleService;
         this.router = router;
-        this.event = this.eventService.event;
-        this.safebuttonclicked = this.eventService.safebuttonclicked;
-        if (this.safebuttonclicked == false) {
-            this.bundleService.getBundles(this.event)
-                .subscribe(function (bundles) {
-                _this.bundles = bundles;
-            });
-            if (this.event.title == "") {
-                this.createMode = true;
+        this.storage = storage;
+        this.bundles = new Array();
+        if (this.eventService.safebuttonclicked == false) {
+            //working on edit mode - start with blank
+            //load current Event + Bundles + Articles into Storage
+            this.event = this.eventService.event;
+            var bundletemp = this.event.bundles;
+            //Transform from JSON to Array
+            var count = 0;
+            for (var propName in bundletemp) {
+                this[propName] = bundletemp[propName];
+                this.bundles[count] = this[propName];
+                count++;
             }
-            else {
-                this.createMode = false;
-            }
+            this.storage.store('event', this.event);
+            console.log(this.bundles);
         }
         else {
-            this.bundles = new Array();
-            console.log("if?????");
-            var bundle = {
-                title: "Please edit the bundle",
-                description: "descr von bundle 1",
-                picture: "url"
-            };
-            console.log("bundle", bundle);
-            this.bundles[0] = bundle;
-            this.bundles[1] = bundle;
+            //working on create mode
+            //start with empty default storage
+            //build event
+            this.event = new Event_1.Event();
+            this.event.title = "Sample Title";
+            this.event.start = "Sample Start";
+            this.event.end = "Sample End";
+            //build bundles
+            var n = 0;
+            while (n < 2) {
+                this.bundle = {
+                    title: "Please edit the Bundle",
+                    description: "Sample Description",
+                    picture: "...",
+                    id: n
+                };
+                this.bundles[n] = this.bundle;
+                n++;
+            }
+            this.event.bundles = this.bundles;
         }
     }
     EventdetailComponent.prototype.addEvent = function () {
@@ -52,6 +65,7 @@ var EventdetailComponent = (function () {
         newEvent.title = this.event.title;
         newEvent.start = this.event.start;
         newEvent.end = this.event.end;
+        newEvent.bundles = this.event.bundles;
         this.eventService.addEvent(newEvent)
             .subscribe();
     };
@@ -60,17 +74,20 @@ var EventdetailComponent = (function () {
             title: event.title,
             start: event.start,
             end: event.end,
-            id: event.id
+            id: event.id,
+            bundles: event.bundles
         };
         this.eventService.updateEvent(_event)
             .subscribe();
     };
-    EventdetailComponent.prototype.onAdd = function () {
-        this.router.navigate(['./eventbundle']);
-    };
-    EventdetailComponent.prototype.onDelete = function (num) {
+    EventdetailComponent.prototype.onEdit = function (bundle) {
         event.preventDefault();
-        var id = this.event.id;
+        this.storage.store('event', this.event);
+        this.storage.store('bundle_id', bundle.id);
+    };
+    EventdetailComponent.prototype.cancel = function () {
+        event.preventDefault();
+        this.storage.clear();
     };
     EventdetailComponent = __decorate([
         core_1.Component({
@@ -79,7 +96,7 @@ var EventdetailComponent = (function () {
             templateUrl: "eventdetail.component.html",
             styleUrls: ["eventdetail.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router])
+        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router, ng2_webstorage_1.SessionStorageService])
     ], EventdetailComponent);
     return EventdetailComponent;
 }());

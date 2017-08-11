@@ -320,7 +320,7 @@ router.post("/createevent", function(req, res) {
   console.log("Create Event");
   /* Read POST Request */
   let event = req.body;
-  console.log(event.title);
+  console.log(event);
 
   // Connect to Firebase
   var db = admin.database();
@@ -329,7 +329,8 @@ router.post("/createevent", function(req, res) {
   var newRef = ref.push({
     'title': event.title,
     'start': event.start,
-    'end': event.end
+    'end': event.end,
+    'bundles': event.bundles
   });
 
   // Add Key to Entry
@@ -354,7 +355,8 @@ router.post("/updateevent", function(req, res) {
   var newRef = ref.update({
     'title': event.title,
     'start': event.start,
-    'end': event.end
+    'end': event.end,
+    'bundles': event.bundles
   });
 
   res.sendStatus(201);
@@ -430,7 +432,6 @@ router.get("/getevents", function(req, res) {
 
   ref.once('value', function(snapshot) {
     var obj = snapshot.val();
-    delete obj["bundles"];
     res.status(200).send(Object.keys(obj).map(name => obj[name]));
   });
 });

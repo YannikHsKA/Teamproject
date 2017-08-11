@@ -3,6 +3,7 @@
     <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
     <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
     <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
+    <li class="breadcrumb-item"><a routerLink="/eventbundle">Articles</a></li>
   </ol>
 
   <div>
@@ -17,51 +18,38 @@
       <div class="useravatar">
         <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
       </div>
-      <div class="card-info"> <span class="card-title">Create Bundle</span>
+      <div class="card-info"> <span class="card-title">Article Center</span>
 
       </div>
     </div>
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
-        <legend>Create the Bundle</legend>
+        <legend>Add Articles</legend>
 
         <fieldset>
           <div class="form-group row">
             <label for="title" class="col-xs-4 col-form-label">Bundle-Title</label>
             <div class="col-xs-8">
-              <input [(ngModel)]="bundle.title" id="title" name="title" type="text" class="form-control input-xs">
+              <input id="title" name="title" type="text" class="form-control input-xs">
             </div>
           </div>
           <div class="form-group row">
             <label for="title" class="col-xs-4 col-form-label">Bundle Description</label>
             <div class="col-xs-8">
-              <textarea [(ngModel)]="bundle.description" id="description" name="description" type="text" class="form-control input-xs"></textarea>
+              <textarea id="description" name="description" type="text" class="form-control input-xs"></textarea>
             </div>
           </div>
         </fieldset>
 
 
-        <legend>Select your Style</legend>
-        <fieldset>
-          <div class="form-group row">
-            <label for="title" class="col-xs-4 col-form-label">Style Template</label>
-            <div class="col-xs-8">
-              <select class="form-control" id="selectstyle">
-                                     <option>Christmas</option>
-                                     <option>Sports</option>
-                                     <option>YAAAMAAAAAM</option>
-                                   </select>
-            </div>
-          </div>
-        </fieldset>
 
         <div class="row">
           <div class="col-xs-6">
-            <a [routerLink]="['/eventdetail']" class=" btn btn-danger " (click)="back()">Event Configurator</a>
+            <a [routerLink]="['/eventbundle']" class=" btn btn-danger " (click)="back()">Bundle Center</a>
           </div>
           <div class="col-xs-6">
-            <a [routerLink]="['/eventarticles']" class=" btn btn-danger " (click)="GoToArticles()">Add Articles</a>
+            <a [routerLink]="['/eventoverview']" class=" btn btn-danger " (click)="save()">Save</a>
           </div>
         </div>
 

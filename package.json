@@ -4,13 +4,18 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "angular-web-storage": "^1.0.0",
+    "angular2-localstorage": "github:marcj/angular2-localstorage",
     "body-parser": "^1.17.2",
-    "ejs": "^2.5.6",
-    "express": "^4.15.3",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
     "firebase-admin": "^4.2.1",
     "google-cloud": "^0.56.0",
+    "ng2-storage": "0.0.4",
     "nodemailer": "^4.0.1",
-    "twilio": "^2.11.1"
+    "pdfkit": "^0.8.3",
+    "twilio": "^2.11.1",
+    "typings": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {

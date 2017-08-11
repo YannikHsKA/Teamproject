@@ -1,9 +1,12 @@
-<div class=containertop>
+<div class="container containertop">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
     <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
   </ol>
-  <div class="container" align="center">
+
+  <div>
+
+
 
     <div class="card hovercard">
       <div class="card-background">
@@ -13,11 +16,10 @@
       <div class="useravatar">
         <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
       </div>
-      <div class="card-info"><span class="card-title">Create Bundle</span>
+      <div class="card-info"> <span class="card-title">Create Bundle</span>
 
       </div>
     </div>
-
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
@@ -50,9 +52,9 @@
         <div class="row">
           <div class="col-xs-12">
             <ul class="list-group">
-              <li class="list-group-item" *ngFor="let bundle of bundles" id="bundle.title">
+              <li class="list-group-item" *ngFor="let bundle of bundles" id="bundle.id">
                 {{ bundle.title }}
-                <button (click)="onDelete(1)" class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-edit"></span> edit
+                <button [routerLink]="['/eventbundle']" (click)="onEdit(bundle)" class="btn btn-xs btn-danger pull-right"><span class="glyphicon glyphicon-edit"></span> edit
               </button>
               </li>
             </ul>
@@ -65,7 +67,7 @@
             <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</a>
           </div>
           <div class="col-xs-6">
-            <a [routerLink]="['/eventoverview']" class=" btn btn-danger ">Cancel</a>
+            <a [routerLink]="['/eventoverview']" class=" btn btn-danger " (click)="cancel()">Cancel</a>
           </div>
         </div>
 

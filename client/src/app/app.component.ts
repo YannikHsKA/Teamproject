@@ -43,7 +43,7 @@ isCurrentLang(lang: string) {
    selectLang(lang: string) {
      // set default;
      this.translate.use(lang);
-     
+
    }
    goTo(page:String)
    {

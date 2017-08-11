@@ -9,24 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var ng2_webstorage_1 = require('ng2-webstorage');
 var EventbundleComponent = (function () {
-    function EventbundleComponent() {
-        document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
+    function EventbundleComponent(storage) {
+        this.storage = storage;
+        var event = this.storage.retrieve('event');
+        var bundle_id = this.storage.retrieve('bundle_id');
+        this.event = event;
+        this.bundle = this.event.bundles[bundle_id];
     }
-    EventbundleComponent.prototype.ngAfterViewInit = function () {
-        // sketchElement is usable
-        var carousel = this.carousel.nativeElement;
-        console.log(this.carousel);
+    EventbundleComponent.prototype.back = function () {
+        this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
+        //Save in Storage
+        this.storage.store('event', this.event);
     };
-    EventbundleComponent.prototype.goRight = function (test) {
-        console.log("hallo", test);
-        //  console.log(carousel);
-        //  carousel.carousel("next");
+    EventbundleComponent.prototype.GoToArticles = function () {
     };
-    __decorate([
-        core_1.ViewChild('quote-carousel'), 
-        __metadata('design:type', core_1.ElementRef)
-    ], EventbundleComponent.prototype, "carousel", void 0);
     EventbundleComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
@@ -34,7 +32,7 @@ var EventbundleComponent = (function () {
             templateUrl: "eventbundle.component.html",
             styleUrls: ["eventbundle.component.css"]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [ng2_webstorage_1.SessionStorageService])
     ], EventbundleComponent);
     return EventbundleComponent;
 }());
