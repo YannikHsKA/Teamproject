@@ -4,6 +4,7 @@ import {Bundle} from "../../../model/Bundle";
 import {EventService} from "../../../services/event.service";
 import {BundleService} from "../../../services/bundle.service";
 import {Router} from "@angular/router";
+import {SessionService} from "../../../services/session.service";
 
 @Component({
   moduleId: module.id,
@@ -21,20 +22,32 @@ export class EventdetailComponent {
   bundles: Bundle[];
   bundle: Bundle;
   createbuttonclicked: boolean;
+  result: any;
 
-  constructor(private eventService: EventService, private bundleService: BundleService, private router: Router) {
-    this.event = this.eventService.event;
+  constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private sessionService: SessionService) {
     this.createbuttonclicked = this.eventService.createbuttonclicked;
 
+    if(this.createbuttonclicked == true){
+      this.result = this.sessionService.getResultObj();
+    } else {
+      this.event = this.eventService.event;
+    }
+
+    console.log(this.result);
+
+
+    /*
     this.bundleService.getBundles(this.event)
       .subscribe(bundles => {
         this.bundles = bundles;
-      });
+      });*/
 
+    /*
     if(this.event.title == ""){
       this.createMode = true;
-    }
+    }*/
 
+    /*
     if(this.createbuttonclicked)
     {
       this.bundles = new Array();
@@ -54,7 +67,7 @@ export class EventdetailComponent {
       this.bundles[1] = bundle1;
 
       this.event.bundles = this.bundles;
-    }
+    }*/
 
   }
 

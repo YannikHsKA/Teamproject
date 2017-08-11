@@ -18,10 +18,12 @@ export class EventoverviewComponent {
   createbuttonclicked: boolean;
 
   constructor(private eventService: EventService, private router: Router) {
+
     this.eventService.getEvents()
       .subscribe(events => {
         this.events = events;
       });
+
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundRepeat = "no-repeat";

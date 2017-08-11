@@ -24,6 +24,7 @@ var eventdetail_component_1 = require("./components/eventcenter/eventdetail/even
 var eventoverview_component_1 = require("./components/eventcenter/eventoverview/eventoverview.component");
 var eventbundle_component_1 = require("./components/eventcenter/eventbundle/eventbundle.component");
 var notificationcenter_component_1 = require("./components/notificationcenter/notificationcenter.component");
+var LocalStorageEmitter_1 = require("angular2-localstorage/LocalStorageEmitter");
 var appRoutes = [
     { path: 'subscribe', component: subscriptions_component_1.SubscriptionsComponent },
     { path: 'verification', component: verifications_component_1.VerificationsComponent },
@@ -45,7 +46,8 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, forms_1.FormsModule, router_1.RouterModule.forRoot(appRoutes)],
             declarations: [app_component_1.AppComponent, bundles_component_1.BundlesComponent, notificationcenter_component_1.NotificationcenterComponent, eventoverview_component_1.EventoverviewComponent, eventdetail_component_1.EventdetailComponent, eventbundle_component_1.EventbundleComponent, settings_component_1.SettingsComponent, subscriptions_component_1.SubscriptionsComponent, notfound_component_1.NotFoundComponent, verifications_component_1.VerificationsComponent, detailedbundle_component_1.DetailedbundleComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            providers: [LocalStorageEmitter_1.LocalStorageService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

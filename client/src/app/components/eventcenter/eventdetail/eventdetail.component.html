@@ -44,9 +44,6 @@
         </div>
       </fieldset>
 
-
-      <form #bundleForm="ngForm" [hidden]="createMode">
-
         <legend>Add Bundles</legend>
 
         <div class="row">
@@ -62,12 +59,9 @@
           </div>
         </div>
 
-      </form>
-
-
       <div class="row">
         <div class="col-xs-6">
-          <a class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Save
+          <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Save
             Event</a>
           <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update
             Event</a>
@@ -78,7 +72,6 @@
       </div>
 
     </form>
-
 
   </div>
 </div>

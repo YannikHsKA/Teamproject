@@ -13,39 +13,51 @@ var Event_1 = require("../../../model/Event");
 var event_service_1 = require("../../../services/event.service");
 var bundle_service_1 = require("../../../services/bundle.service");
 var router_1 = require("@angular/router");
+var session_service_1 = require("../../../services/session.service");
 var EventdetailComponent = (function () {
-    function EventdetailComponent(eventService, bundleService, router) {
-        var _this = this;
+    function EventdetailComponent(eventService, bundleService, router, sessionService) {
         this.eventService = eventService;
         this.bundleService = bundleService;
         this.router = router;
-        this.event = this.eventService.event;
+        this.sessionService = sessionService;
         this.createbuttonclicked = this.eventService.createbuttonclicked;
+        if (this.createbuttonclicked == true) {
+            this.result = this.sessionService.getResultObj();
+        }
+        else {
+            this.event = this.eventService.event;
+        }
+        console.log(this.result);
+        /*
         this.bundleService.getBundles(this.event)
-            .subscribe(function (bundles) {
-            _this.bundles = bundles;
-        });
-        if (this.event.title == "") {
-            this.createMode = true;
-        }
-        if (this.createbuttonclicked) {
-            this.bundles = new Array();
-            var bundle0 = {
-                title: "Please edit the bundle",
-                description: "descr von bundle 1",
-                picture: "url",
-                bundleId: 0
-            };
-            var bundle1 = {
-                title: "Please edit the bundle",
-                description: "descr von bundle 1",
-                picture: "url",
-                bundleId: 1
-            };
-            this.bundles[0] = bundle0;
-            this.bundles[1] = bundle1;
-            this.event.bundles = this.bundles;
-        }
+          .subscribe(bundles => {
+            this.bundles = bundles;
+          });*/
+        /*
+        if(this.event.title == ""){
+          this.createMode = true;
+        }*/
+        /*
+        if(this.createbuttonclicked)
+        {
+          this.bundles = new Array();
+          var bundle0 : Bundle = {
+            title: "Please edit the bundle",
+            description :"descr von bundle 1",
+            picture:"url",
+            bundleId: 0
+          }
+          var bundle1 : Bundle = {
+            title: "Please edit the bundle",
+            description :"descr von bundle 1",
+            picture:"url",
+            bundleId: 1
+          }
+          this.bundles[0] = bundle0;
+          this.bundles[1] = bundle1;
+    
+          this.event.bundles = this.bundles;
+        }*/
     }
     EventdetailComponent.prototype.addEvent = function () {
         event.preventDefault();
@@ -68,8 +80,8 @@ var EventdetailComponent = (function () {
         this.eventService.updateEvent(_event)
             .subscribe();
     };
-    EventdetailComponent.prototype.onEdit = function (bundle, event) {
-        this.eventService.event = event;
+    EventdetailComponent.prototype.onEdit = function (bundle) {
+        this.eventService.event = this.event;
         this.eventService.bundle = bundle;
         this.router.navigate(['./eventbundle']);
     };
@@ -80,7 +92,7 @@ var EventdetailComponent = (function () {
             templateUrl: "eventdetail.component.html",
             styleUrls: ["eventdetail.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router])
+        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router, session_service_1.SessionService])
     ], EventdetailComponent);
     return EventdetailComponent;
 }());

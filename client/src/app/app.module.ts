@@ -14,7 +14,10 @@ import { DetailedbundleComponent } from './components/detailedbundle/detailedbun
 import {EventdetailComponent} from "./components/eventcenter/eventdetail/eventdetail.component";
 import {EventoverviewComponent} from "./components/eventcenter/eventoverview/eventoverview.component";
 import {EventbundleComponent} from "./components/eventcenter/eventbundle/eventbundle.component";
-import {NotificationcenterComponent} from "./components/notificationcenter/notificationcenter.component"
+import {NotificationcenterComponent} from "./components/notificationcenter/notificationcenter.component";
+import {LocalStorageService} from "angular2-localstorage/LocalStorageEmitter";
+
+
 
 const appRoutes: Routes = [
   {path:'subscribe', component: SubscriptionsComponent},
@@ -34,6 +37,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule, RouterModule.forRoot(appRoutes) ],
   declarations: [ AppComponent, BundlesComponent, NotificationcenterComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [ LocalStorageService ]
 })
 export class AppModule { }
