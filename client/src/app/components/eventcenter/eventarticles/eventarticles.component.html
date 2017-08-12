@@ -28,13 +28,28 @@
         <legend>Add Articles</legend>
 
         <fieldset>
+
           <ul>
             <li class="list-group-item" *ngFor="let article of articles; let i = index">
               <div class="form-group">
                 <label class="col-xs-2 control-label">Article {{article.id}}</label>
                 <div class="col-xs-2 col-xs-offset-1">
-                  <input [(ngModel)]="articles[i].title" id="title" name="title" type="text" class="form-control input-xs">
+                  <input [(ngModel)]="articles[i].title" name="title-{{i}}" type="text" class="form-control input-xs">
                 </div>
+
+                <div class="col-xs-2">
+                  <input [(ngModel)]="articles[i].ean" type="text" class="form-control" name="ean-{{i}}" placeholder="EAN" />
+                </div>
+                <div class="col-xs-2">
+                  <input [(ngModel)]="articles[i].price" type="text" class="form-control" name="price-{{i}}" placeholder="12,99" />
+                </div>
+                <div class="col-xs-1">
+                  <input [(ngModel)]="articles[i].currency" type="text" class="form-control" name="currency-{{i}}" placeholder="€" />
+                </div>
+                <div class="col-xs-2">
+                  <input [(ngModel)]="articles[i].picture" type="text" class="form-control" name="picture-{{i}}" placeholder="picture" />
+                </div>
+
               </div>
             </li>
           </ul>

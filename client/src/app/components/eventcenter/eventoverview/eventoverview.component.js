@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var event_service_1 = require('../../../services/event.service');
 var router_1 = require('@angular/router');
+var ng2_webstorage_1 = require('ng2-webstorage');
 var EventoverviewComponent = (function () {
-    function EventoverviewComponent(eventService, router) {
+    function EventoverviewComponent(eventService, router, storage) {
         var _this = this;
         this.eventService = eventService;
         this.router = router;
+        this.storage = storage;
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
@@ -38,12 +40,14 @@ var EventoverviewComponent = (function () {
             articles: []
         };
         this.safebuttonclicked = true;
+        this.storage.store('mode', 'create');
         this.eventService.safebuttonclicked = this.safebuttonclicked;
         this.eventService.event = this.event;
         this.router.navigate(['./eventdetail']);
     };
     ;
     EventoverviewComponent.prototype.onEdit = function (event) {
+        this.storage.store('mode', 'edit');
         console.log("event", event);
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
@@ -70,7 +74,7 @@ var EventoverviewComponent = (function () {
             templateUrl: "eventoverview.component.html",
             styleUrls: ["eventoverview.component.css"]
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router])
+        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router, ng2_webstorage_1.SessionStorageService])
     ], EventoverviewComponent);
     return EventoverviewComponent;
 }());

@@ -2,6 +2,9 @@ import {Component} from '@angular/core';
 import {Event} from '../../../model/Event';
 import {EventService} from '../../../services/event.service';
 import {Router} from '@angular/router';
+import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
+import {LocalStorage, SessionStorage} from 'ng2-webstorage';
+
 
 @Component({
   moduleId: module.id,
@@ -15,7 +18,7 @@ export class EventoverviewComponent {
   event: Event;
   safebuttonclicked: boolean;
 
-  constructor(private eventService: EventService, private router: Router) {
+  constructor(private eventService: EventService, private router: Router, private storage:SessionStorageService) {
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundRepeat = "no-repeat";
@@ -42,11 +45,13 @@ export class EventoverviewComponent {
       articles: []
     }
     this.safebuttonclicked = true;
+    this.storage.store('mode','create');
     this.eventService.safebuttonclicked = this.safebuttonclicked;
     this.eventService.event = this.event;
     this.router.navigate(['./eventdetail']);
   };
   onEdit(event: Event) {
+    this.storage.store('mode','edit');
     console.log("event",event);
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);

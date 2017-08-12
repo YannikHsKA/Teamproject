@@ -20,7 +20,7 @@ export class EventarticlesComponent {
   defaultarticle:Article;
   articles: Article[] = new Array();
 
-  constructor(private router: Router, private storage:SessionStorageService) {
+  constructor(private eventService: EventService,private router: Router, private storage:SessionStorageService) {
     //load articles from database
     //if no articles - add default ones
 
@@ -68,13 +68,31 @@ export class EventarticlesComponent {
   }
 
 
-  save()
+  save(event:Event)
   {
     //Event wird gespeichert
     //schreibe alle einträge in die Datenbank
     //lösche storage
+    this.event = this.storage.retrieve('event');
+    this.event.articles = this.articles;
+    console.log(this.storage.retrieve('mode'));
+
+    //Check Create oder Edit
+    if(this.storage.retrieve('mode') == "create")
+    {
+      this.eventService.addEvent(this.event)
+        .subscribe();
+    }
+    else{
+      this.eventService.updateEvent(this.event)
+        .subscribe();
+    }
+
     this.storage.clear();
+
   }
+
+
 
 
 }
