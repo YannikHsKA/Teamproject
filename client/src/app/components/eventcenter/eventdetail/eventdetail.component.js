@@ -20,10 +20,12 @@ var EventdetailComponent = (function () {
         this.bundleService = bundleService;
         this.router = router;
         this.storage = storage;
+        this.createMode = false;
         this.bundles = new Array();
         if (this.eventService.safebuttonclicked == false) {
             //working on edit mode - start with blank
             //load current Event + Bundles + Articles into Storage
+            this.createMode = false;
             this.event = this.eventService.event;
             var bundletemp = this.event.bundles;
             //Transform from JSON to Array
@@ -39,6 +41,7 @@ var EventdetailComponent = (function () {
         else {
             //working on create mode
             //start with empty default storage
+            this.createMode = true;
             //build event
             this.event = new Event_1.Event();
             this.event.title = "Sample Title";
@@ -58,6 +61,7 @@ var EventdetailComponent = (function () {
             }
             this.event.bundles = this.bundles;
         }
+        console.log("cm", this.createMode);
     }
     EventdetailComponent.prototype.addEvent = function () {
         event.preventDefault();
@@ -90,6 +94,7 @@ var EventdetailComponent = (function () {
     EventdetailComponent.prototype.cancel = function () {
         event.preventDefault();
         this.storage.clear();
+        this.router.navigate(["/eventoverview"]);
     };
     EventdetailComponent = __decorate([
         core_1.Component({
