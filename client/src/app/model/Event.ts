@@ -1,5 +1,5 @@
 import {Bundle} from './Bundle';
-import {Article} from './Article';
+
 
 export class Event {
   title: string;
@@ -7,5 +7,4 @@ export class Event {
   end: string;
   id?: string;
   bundles: Array<Bundle>;
-  articles: Array<Article>;
 }

@@ -22,6 +22,7 @@ var EventdetailComponent = (function () {
         this.storage = storage;
         this.createMode = false;
         this.bundles = new Array();
+        this.articles = new Array();
         if (this.eventService.safebuttonclicked == false) {
             //working on edit mode - start with blank
             //load current Event + Bundles + Articles into Storage
@@ -54,6 +55,7 @@ var EventdetailComponent = (function () {
                     title: "Please edit the Bundle",
                     description: "Sample Description",
                     picture: "...",
+                    articles: null,
                     id: n
                 };
                 this.bundles[n] = this.bundle;
@@ -70,7 +72,6 @@ var EventdetailComponent = (function () {
         newEvent.start = this.event.start;
         newEvent.end = this.event.end;
         newEvent.bundles = this.event.bundles;
-        newEvent.articles = null;
         this.eventService.addEvent(newEvent)
             .subscribe();
     };
@@ -81,7 +82,6 @@ var EventdetailComponent = (function () {
             end: event.end,
             id: event.id,
             bundles: event.bundles,
-            articles: event.articles
         };
         this.eventService.updateEvent(_event)
             .subscribe();

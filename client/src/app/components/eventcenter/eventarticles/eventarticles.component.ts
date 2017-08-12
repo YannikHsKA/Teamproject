@@ -25,7 +25,7 @@ export class EventarticlesComponent {
     //if no articles - add default ones
 
     console.log(this.storage.retrieve('event'));
-    if(this.storage.retrieve('event').articles == undefined)
+    if(this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")] == undefined)
     {
       console.log("NEW");
       //Create Default Article
@@ -51,7 +51,7 @@ export class EventarticlesComponent {
       //show existing
       this.event = this.storage.retrieve('event');
       console.log(this.event);
-      this.articles = this.event.articles;
+      this.articles = this.event.bundles[this.storage.retrieve('bundle_id')].articles;
     }
 
 
@@ -63,7 +63,7 @@ export class EventarticlesComponent {
     //back to Bundle
     //save entries
     this.event = this.storage.retrieve('event');
-    this.event.articles = this.articles;
+    this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
     this.storage.store('event',this.event);
   }
 
@@ -74,7 +74,7 @@ export class EventarticlesComponent {
     //schreibe alle einträge in die Datenbank
     //lösche storage
     this.event = this.storage.retrieve('event');
-    this.event.articles = this.articles;
+    this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
     console.log(this.storage.retrieve('mode'));
 
     //Check Create oder Edit
