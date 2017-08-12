@@ -4,5 +4,6 @@ export class Article {
   ean: number;
   title: string;
   price: string;
+  currency:string;
   picture: string;
 }

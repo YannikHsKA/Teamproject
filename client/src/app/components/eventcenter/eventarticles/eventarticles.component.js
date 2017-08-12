@@ -13,16 +13,51 @@ var router_1 = require("@angular/router");
 var ng2_webstorage_1 = require('ng2-webstorage');
 var EventarticlesComponent = (function () {
     function EventarticlesComponent(router, storage) {
+        //load articles from database
+        //if no articles - add default ones
         this.router = router;
         this.storage = storage;
         this.articles = new Array();
+        console.log(this.storage.retrieve('event'));
+        if (this.storage.retrieve('event').articles == undefined) {
+            console.log("NEW");
+            //Create Default Article
+            //build articles
+            var n = 0;
+            while (n < 3) {
+                this.defaultarticle = {
+                    ean: 815,
+                    id: n,
+                    title: "Article",
+                    currency: "€",
+                    price: "12,99",
+                    picture: "...",
+                };
+                this.articles[n] = this.defaultarticle;
+                n++;
+            }
+            console.log("init", this.articles);
+        }
+        else {
+            console.log("OLD");
+            //show existing
+            this.event = this.storage.retrieve('event');
+            console.log(this.event);
+            this.articles = this.event.articles;
+        }
     }
     EventarticlesComponent.prototype.back = function () {
         //back to Bundle
         //save entries
+        this.event = this.storage.retrieve('event');
+        this.event.articles = this.articles;
+        this.storage.store('event', this.event);
     };
     EventarticlesComponent.prototype.save = function () {
         //Event wird gespeichert
+        //schreibe alle einträge in die Datenbank
+        //lösche storage
+        this.storage.clear();
     };
     EventarticlesComponent = __decorate([
         core_1.Component({

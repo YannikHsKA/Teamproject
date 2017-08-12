@@ -20,7 +20,7 @@ export class EventdetailComponent {
   title: string;
   start: string;
   end: string;
-  createMode: boolean;
+  createMode: boolean = false;
   bundles: Bundle[] = new Array();
   bundle: Bundle;
   safebuttonclicked: boolean;
@@ -30,6 +30,7 @@ export class EventdetailComponent {
     if(this.eventService.safebuttonclicked == false){
       //working on edit mode - start with blank
       //load current Event + Bundles + Articles into Storage
+      this.createMode = false;
       this.event = this.eventService.event;
       var bundletemp = this.event.bundles;
 
@@ -48,7 +49,7 @@ export class EventdetailComponent {
     else{
       //working on create mode
       //start with empty default storage
-
+      this.createMode = true;
       //build event
       this.event = new Event();
       this.event.title = "Sample Title";
@@ -70,6 +71,8 @@ export class EventdetailComponent {
 
       this.event.bundles = this.bundles;
     }
+
+    console.log("cm",this.createMode);
   }
 
   addEvent() {
@@ -113,6 +116,7 @@ export class EventdetailComponent {
   {
     event.preventDefault();
     this.storage.clear();
+    this.router.navigate(["/eventoverview"]);
   }
 
 }
