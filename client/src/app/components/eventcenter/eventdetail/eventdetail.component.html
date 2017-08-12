@@ -1,8 +1,46 @@
-<div class="container containertop">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-  </ol>
+<div class="container containertop" style="margin-top:-50px">
+
+    <section>
+      <div class="wizard">
+      <div class="wizard-inner">
+      <div class="connecting-line"></div>
+      <ul class="nav nav-tabs" role="tablist">
+
+        <li role="presentation" class="active">
+          <a routerLink="/eventdetail" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+          </a>
+        </li>
+
+        <li role="presentation" class="disabled">
+          <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </span>
+          </a>
+        </li>
+        <li role="presentation" class="disabled">
+          <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </span>
+          </a>
+        </li>
+
+        <li role="presentation" class="disabled">
+          <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-bullhorn"></i>
+                            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+      </div>
+    </section>
+
 
   <div>
 
@@ -27,18 +65,7 @@
     </div>
 
 
-    <div class="card hovercard">
-      <div class="card-background">
 
-        <!-- possible blurred image -->
-      </div>
-      <div class="useravatar">
-        <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
-      </div>
-      <div class="card-info"> <span class="card-title">Create Bundle</span>
-
-      </div>
-    </div>
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
@@ -65,7 +92,7 @@
           </div>
         </fieldset>
 
-
+<!--
         <legend>Add Bundles</legend>
 
         <div class="row">
@@ -79,14 +106,14 @@
             </ul>
           </div>
         </div>
-
+-->
         <div class="row">
           <div class="col-xs-6">
             <button type="button" class=" btn btn-danger" data-toggle="modal" data-target="#myModal">Cancel</button>
           </div>
           <div class="col-xs-6">
-            <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Save Event</a>
-            <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event</a>
+            <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Create Event and continue</a>
+            <a [routerLink]="['/eventbundle']" class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event and continue</a>
           </div>
 
         </div>
