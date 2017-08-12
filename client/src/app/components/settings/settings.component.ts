@@ -97,11 +97,13 @@ export class SettingsComponent {
       this.user.sms = 1;
       if (this.sms_toggle_initial == false){
         this.settingsservice.sendSMSUpdate("subscribe", this.user);
+        this.sms_toggle_initial = true;
       }
     } else {
       this.user.sms = 0;
       if (this.sms_toggle_initial == true){
         this.settingsservice.sendSMSUpdate("unsubscribe", this.user);
+        this.sms_toggle_initial = false;
       }
 
     }
@@ -110,11 +112,13 @@ export class SettingsComponent {
       this.user.whatsapp = 1;
       if (this.whatsapp_toggle_initial ==false){
         this.settingsservice.sendWhatsAppUpdate("subscribe", this.user);
+        this.whatsapp_toggle_initial = true;
       }
     } else {
       this.user.whatsapp = 0;
       if (this.whatsapp_toggle_initial == true){
         this.settingsservice.sendWhatsAppUpdate("unsubscribe", this.user);
+        this.whatsapp_toggle_initial = false;
       }
     }
 
@@ -122,11 +126,13 @@ export class SettingsComponent {
       this.user.email = 1;
       if (this.email_toggle_initial == false){
         this.settingsservice.sendEmailUpdate("subscribe", this.user);
+        this.email_toggle_initial = true;
       }
     } else {
       this.user.email = 0;
-      if (this.email_toggle_initial == false){
-        this.settingsservice.sendEmailUpdate("subscribe", this.user);
+      if (this.email_toggle_initial == true){
+        this.settingsservice.sendEmailUpdate("unsubscribe", this.user);
+        this.email_toggle_initial = false;
       }
     }
 

@@ -95,11 +95,11 @@ router.post("/subscribe", function(req, res) {
 
         smtpTransport.sendMail(mailOptions, function(error, response) {
           if (error) {
-            // console.log(error);
+             console.log(error);
             console.log("Email not sent");
             res.sendStatus(500);
           } else {
-            // console.log(response);
+             console.log(response);
             console.log("Email Sent");
             WriteUserToDB();
           }
@@ -505,85 +505,174 @@ router.post("/createpdf", function(req, res) {
 
 // Send Update Subscribe Email
 router.post("/sendEmailUpdate_subscribe", function(req, res) {
-  /* Read POST Request */
-  var user = req.body;
+    /* Read POST Request */
+    var user = req.body;
 
-  var inputmail = req.body.email_address;
-  // Send Notification Email with Setting Key and Voucher //
-  // Check if email address already exists
+    var inputmail = req.body.email_address;
+    console.log(inputmail);
+    // Send Notification Email with Setting Key and Voucher //
+    // Check if email address already exists
 
-  console.log("Notify User about Email Subscription")
-  /*
-      ref.orderByChild("email_address").equalTo(inputmail).once("value", function (snapshot) {
-          var userData = snapshot.val();
-          if (userData) // Email already exists
-          {
-              console.log("Email already exists");
-              res.sendStatus(201);
-          } else // Email does not exist
-          {
-              console.log("send Update Mail");
+    console.log("Notify User about Email Subscription");
+    var mailOptions = {
+        from: "lidlsmartshopping@gmail.com",
+        to: req.body.email_address,
+        subject: "Willkommen bei LIDL Smart Shopping!",
+        generateTextFromHTML: true,
+        html: "<b>Hallo!</b> neue Mail "
+    };
 
-              var mailOptions = {
-                  from: "lidlsmartshopping@gmail.com",
-                  to: req.body.email_address,
-                  subject: "LIDL Smart Shopping - Einstellungsänderung",
-                  generateTextFromHTML: true,
-                  html: "<b>Hallo!</b> 'Von nun an erhalten Sie die LIDL Smart Shopping Benachrichtigungen auf diese E-Mail Adresse. "
-              };
+    smtpTransport.sendMail(mailOptions, function(error, response) {
+        if (error) {
+             console.log(error);
+            console.log("Email not sent");
+            res.sendStatus(500);
+        } else {
+            // console.log(response);
+            console.log("Email Sent");
+            WriteUserToDB();
+        }
+        smtpTransport.close();
+    });
 
-              smtpTransport.sendMail(mailOptions, function (error, response) {
-                  if (error) {
-                      // console.log(error);
-                      console.log("Email not sent");
-                      res.sendStatus(500);
-                  } else {
-                      // console.log(response);
-                      console.log("Email Sent");
-                      WriteUserToDB();
-                  }
-                  smtpTransport.close();
-              });
-          }
-      });
 
-      */
 });
 
 
-/*
-        } else {
-            console.log("Mode 2");
-            mode = 2;
-            // Send Notification SMS with Settingkey and Voucher
-            // Check if email address already exists
 
-            ref.orderByChild("phonenumber").equalTo(number).once("value", function(snapshot) {
-                var userData = snapshot.val();
-                if (userData) // Phonenumber already exists
-                {
-                    console.log("Phonenumber already exists");
-                    res.status(201).send("Success");
-                } else // Phonenumber does not exist
-                {
-                    console.log("New Phonenumber")
-                    WriteUserToDB();
-                    client.sendMessage({
-                        to: user.phonenumber,
-                        from: '+4915735984837',
-                        body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
-                    }, function(err, data) {
-                        if (err) {
-                            // console.log(err);
-                            res.status(500).send("Failure");
-                        } else {
-                            // console.log(data);
-                            res.status(200).send("Success");
-                        }
-                    });
-                }
-            });
-        }*/
+// Send Update Subscribe Email
+router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
+    /* Read POST Request */
+    var user = req.body;
+
+    var inputmail = req.body.email_address;
+    console.log(inputmail);
+    // Send Notification Email with Setting Key and Voucher //
+    // Check if email address already exists
+
+    console.log("Notify User about Email Unsubscription")
+/*
+        ref.orderByChild("email_address").equalTo(inputmail).once("value", function (snapshot) {
+            var userData = snapshot.val();
+            if (userData) // Email already exists
+            {
+                console.log("Email already exists");
+                res.sendStatus(201);
+            } else // Email does not exist
+            {
+                console.log("send Update Mail");
+
+                var mailOptions = {
+                    from: "lidlsmartshopping@gmail.com",
+                    to: req.body.email_address,
+                    subject: "LIDL Smart Shopping - Einstellungsänderung",
+                    generateTextFromHTML: true,
+                    html: "<b>Hallo!</b> 'Von nun an erhalten Sie die LIDL Smart Shopping Benachrichtigungen auf diese E-Mail Adresse. "
+                };
+
+                smtpTransport.sendMail(mailOptions, function (error, response) {
+                    if (error) {
+                        // console.log(error);
+                        console.log("Email not sent");
+                        res.sendStatus(500);
+                    } else {
+                        // console.log(response);
+                        console.log("Email Sent");
+                        WriteUserToDB();
+                    }
+                    smtpTransport.close();
+                });
+            }
+
+        })
+*/
+});
+
+
+
+
+router.post("/sendSMSUpdate_subscribe", function(req, res) {
+
+    // Send Notification SMS with Settingkey and Voucher
+    // Check if email address already exists
+    console.log("SMS Subscribe");
+    /*
+                ref.orderByChild("phonenumber").equalTo(number).once("value", function(snapshot) {
+                    var userData = snapshot.val();
+                    if (userData) // Phonenumber already exists
+                    {
+                        console.log("Phonenumber already exists");
+                        res.status(201).send("Success");
+                    } else // Phonenumber does not exist
+                    {
+                        console.log("New Phonenumber")
+                        WriteUserToDB();
+                        client.sendMessage({
+                            to: user.phonenumber,
+                            from: '+4915735984837',
+                            body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+                        }, function(err, data) {
+                            if (err) {
+                                // console.log(err);
+                                res.status(500).send("Failure");
+                            } else {
+                                // console.log(data);
+                                res.status(200).send("Success");
+                            }
+                        });
+                    }
+
+                    */
+});
+
+
+router.post("/sendSMSUpdate_unsubscribe", function(req, res) {
+
+    // Send Notification SMS with Settingkey and Voucher
+    // Check if email address already exists
+    console.log("SMS Unsubscribe");
+    /*
+                ref.orderByChild("phonenumber").equalTo(number).once("value", function(snapshot) {
+                    var userData = snapshot.val();
+                    if (userData) // Phonenumber already exists
+                    {
+                        console.log("Phonenumber already exists");
+                        res.status(201).send("Success");
+                    } else // Phonenumber does not exist
+                    {
+                        console.log("New Phonenumber")
+                        WriteUserToDB();
+                        client.sendMessage({
+                            to: user.phonenumber,
+                            from: '+4915735984837',
+                            body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+                        }, function(err, data) {
+                            if (err) {
+                                // console.log(err);
+                                res.status(500).send("Failure");
+                            } else {
+                                // console.log(data);
+                                res.status(200).send("Success");
+                            }
+                        });
+                    }
+
+                    */
+});
+
+
+router.post("/sendWhatsAppUpdate_subscribe", function(req, res) {
+
+    console.log("Whatsapp Subscribe");
+
+});
+
+router.post("/sendWhatsAppUpdate_unsubscribe", function(req, res) {
+
+    console.log("Whatsapp Unsubscribe");
+
+});
+
 
 
 
