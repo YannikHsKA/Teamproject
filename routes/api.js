@@ -95,7 +95,7 @@ router.post("/subscribe", function(req, res) {
 
         smtpTransport.sendMail(mailOptions, function(error, response) {
           if (error) {
-             console.log(error);
+            console.log(error);
             console.log("Email not sent");
             res.sendStatus(500);
           } else {
@@ -553,23 +553,14 @@ router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
     // Check if email address already exists
 
     console.log("Notify User about Email Unsubscription")
-/*
-        ref.orderByChild("email_address").equalTo(inputmail).once("value", function (snapshot) {
-            var userData = snapshot.val();
-            if (userData) // Email already exists
-            {
-                console.log("Email already exists");
-                res.sendStatus(201);
-            } else // Email does not exist
-            {
-                console.log("send Update Mail");
+
 
                 var mailOptions = {
                     from: "lidlsmartshopping@gmail.com",
                     to: req.body.email_address,
-                    subject: "LIDL Smart Shopping - Einstellungsänderung",
+                    subject: "LIDL Smart Shopping - Unsubscribe",
                     generateTextFromHTML: true,
-                    html: "<b>Hallo!</b> 'Von nun an erhalten Sie die LIDL Smart Shopping Benachrichtigungen auf diese E-Mail Adresse. "
+                    html: "<b>Hallo!</b> 'Von nun an erhalten Sie keine LIDL Smart Shopping Benachrichtigungen mehr auf diese E-Mail Adresse. "
                 };
 
                 smtpTransport.sendMail(mailOptions, function (error, response) {
@@ -584,10 +575,7 @@ router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
                     }
                     smtpTransport.close();
                 });
-            }
 
-        })
-*/
 });
 
 
@@ -597,22 +585,13 @@ router.post("/sendSMSUpdate_subscribe", function(req, res) {
 
     // Send Notification SMS with Settingkey and Voucher
     // Check if email address already exists
+    var number = req.body.phonenumber;
     console.log("SMS Subscribe");
-    /*
-                ref.orderByChild("phonenumber").equalTo(number).once("value", function(snapshot) {
-                    var userData = snapshot.val();
-                    if (userData) // Phonenumber already exists
-                    {
-                        console.log("Phonenumber already exists");
-                        res.status(201).send("Success");
-                    } else // Phonenumber does not exist
-                    {
-                        console.log("New Phonenumber")
-                        WriteUserToDB();
+
                         client.sendMessage({
-                            to: user.phonenumber,
+                            to: number,
                             from: '+4915735984837',
-                            body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+                            body: "LIDL Smart Shopping! Sie haben erfolgreich diese Nummer registriert! Viel Spaß! "
                         }, function(err, data) {
                             if (err) {
                                 // console.log(err);
@@ -622,32 +601,23 @@ router.post("/sendSMSUpdate_subscribe", function(req, res) {
                                 res.status(200).send("Success");
                             }
                         });
-                    }
 
-                    */
+
+
 });
 
 
 router.post("/sendSMSUpdate_unsubscribe", function(req, res) {
 
-    // Send Notification SMS with Settingkey and Voucher
-    // Check if email address already exists
+
+    var number = req.body.phonenumber;
+    console.log("number" + number);
     console.log("SMS Unsubscribe");
-    /*
-                ref.orderByChild("phonenumber").equalTo(number).once("value", function(snapshot) {
-                    var userData = snapshot.val();
-                    if (userData) // Phonenumber already exists
-                    {
-                        console.log("Phonenumber already exists");
-                        res.status(201).send("Success");
-                    } else // Phonenumber does not exist
-                    {
-                        console.log("New Phonenumber")
-                        WriteUserToDB();
+
                         client.sendMessage({
-                            to: user.phonenumber,
+                            to: number,
                             from: '+4915735984837',
-                            body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+                            body: "Lidl Smart Shopping: Sie haben sich erfolgreich abgemeldet! "
                         }, function(err, data) {
                             if (err) {
                                 // console.log(err);
@@ -657,9 +627,6 @@ router.post("/sendSMSUpdate_unsubscribe", function(req, res) {
                                 res.status(200).send("Success");
                             }
                         });
-                    }
-
-                    */
 });
 
 
