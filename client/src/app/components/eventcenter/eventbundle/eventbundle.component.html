@@ -1,30 +1,53 @@
-<div class="container containertop">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
-  </ol>
+<div class="container containertop" style="margin-top:-50px">
+
+  <section>
+    <div class="wizard">
+      <div class="wizard-inner">
+        <div class="connecting-line"></div>
+        <ul class="nav nav-tabs" role="tablist">
+
+          <li role="presentation" class="disabled">
+            <a routerLink="/eventdetail" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-calendar"></i>
+                            </span>
+            </a>
+          </li>
+
+          <li role="presentation" [ngClass]="{'active' : bundle1_active, 'disabled':!bundle1_active}">
+            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </span>
+            </a>
+          </li>
+          <li role="presentation" [ngClass]="{'disabled' : bundle1_active, 'active': !bundle1_active}">
+            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-shopping-cart"></i>
+                            </span>
+            </a>
+          </li>
+
+          <li role="presentation" class="disabled">
+            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-bullhorn"></i>
+                            </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <div>
 
 
-
-    <div class="card hovercard">
-      <div class="card-background">
-
-        <!-- possible blurred image -->
-      </div>
-      <div class="useravatar">
-        <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
-      </div>
-      <div class="card-info"> <span class="card-title">Create Bundle</span>
-
-      </div>
-    </div>
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
-        <legend>Create the Bundle</legend>
+        <legend>Create the First Bundle</legend>
 
         <fieldset>
           <div class="form-group row">
@@ -57,12 +80,17 @@
         </fieldset>
 
         <div class="row">
-          <div class="col-xs-6">
-            <a [routerLink]="['/eventdetail']" class=" btn btn-danger " (click)="back()">Event Configurator</a>
+          <div class="pull-left">
+            <button [routerLink]="['/eventbundle']" *ngIf="!bundle1_active" class=" btn btn-danger " (click)="backToBundle1()">Back to First Bundle </button>
+            <button [routerLink]="['/eventdetail']" *ngIf="bundle1_active" class=" btn btn-danger " (click)="backToEvent()">Back To Events </button>
           </div>
-          <div class="col-xs-6">
-            <a [routerLink]="['/eventarticles']" class=" btn btn-danger " (click)="GoToArticles()">Add Articles</a>
+          <div class="pull-right">
+            <button class="btn btn-info" (click)="save()">Save and continue</button>
           </div>
+          <div class="col-xs-4 pull-right">
+            <button [routerLink]="['/eventarticles']" class="btn btn-default" (click)="GoToArticles()">Add articles to bundle</button>
+          </div>
+
         </div>
 
       </form>

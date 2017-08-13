@@ -72,6 +72,8 @@ var EventdetailComponent = (function () {
         newEvent.start = this.event.start;
         newEvent.end = this.event.end;
         newEvent.bundles = this.event.bundles;
+        this.bundle_id = 0;
+        this.storage.store('bundle_id', this.bundle_id);
         this.eventService.addEvent(newEvent)
             .subscribe();
     };
@@ -83,14 +85,22 @@ var EventdetailComponent = (function () {
             id: event.id,
             bundles: event.bundles,
         };
-        this.eventService.updateEvent(_event)
+        this.bundle_id = 0;
+        this.storage.store('bundle_id', this.bundle_id);
+        //Save in Storage
+        this.storage.store('event', this.event);
+        this.event = _event;
+        this.eventService.updateEvent(this.event)
             .subscribe();
     };
-    EventdetailComponent.prototype.onEdit = function (bundle) {
+    /*
+      onEdit(bundle: Bundle)
+      {
         event.preventDefault();
-        this.storage.store('event', this.event);
-        this.storage.store('bundle_id', bundle.id);
-    };
+        this.storage.store('event',this.event);
+        this.storage.store('bundle_id',bundle.id);
+    
+      }*/
     EventdetailComponent.prototype.cancel = function () {
         event.preventDefault();
         this.storage.clear();

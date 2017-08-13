@@ -16,7 +16,7 @@ import {LocalStorage, SessionStorage} from 'ng2-webstorage';
   styleUrls: [`eventdetail.component.css`]
 })
 export class EventdetailComponent {
-
+  bundle_id: number;
   event: Event;
   title: string;
   start: string;
@@ -86,6 +86,8 @@ export class EventdetailComponent {
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
     newEvent.bundles = this.event.bundles;
+    this.bundle_id = 0;
+    this.storage.store('bundle_id', this.bundle_id);
 
     this.eventService.addEvent(newEvent)
       .subscribe();
@@ -100,18 +102,25 @@ export class EventdetailComponent {
       id: event.id,
       bundles: event.bundles,
     };
-    this.eventService.updateEvent(_event)
+    this.bundle_id = 0;
+    this.storage.store('bundle_id', this.bundle_id);
+    //Save in Storage
+    this.storage.store('event',this.event);
+    this.event = _event
+    this.eventService.updateEvent(this.event)
       .subscribe();
 
-  }
 
+
+  }
+/*
   onEdit(bundle: Bundle)
   {
     event.preventDefault();
     this.storage.store('event',this.event);
     this.storage.store('bundle_id',bundle.id);
 
-  }
+  }*/
 
   cancel()
   {
