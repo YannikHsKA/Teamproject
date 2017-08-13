@@ -330,8 +330,7 @@ router.post("/createevent", function(req, res) {
     'title': event.title,
     'start': event.start,
     'end': event.end,
-    'bundles': event.bundles,
-    'articles': event.articles
+    'bundles': event.bundles
   });
 
   // Add Key to Entry
@@ -357,8 +356,7 @@ router.post("/updateevent", function(req, res) {
     'title': event.title,
     'start': event.start,
     'end': event.end,
-    'bundles': event.bundles,
-    'articles': event.articles
+    'bundles': event.bundles
   });
 
   res.sendStatus(201);

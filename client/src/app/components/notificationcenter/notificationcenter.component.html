@@ -57,7 +57,7 @@
             <button class="btn btn-info" *ngIf="!createMode" (click)="saveNotification()">Save Notification</button>
           </div>
           <div class="col-xs-6">
-            <a href="/eventoverview" class="btn btn-danger">Cancel</a>
+            <a [routerLink]="['/eventoverview']" class="btn btn-danger">Cancel</a>
           </div>
         </div>
 

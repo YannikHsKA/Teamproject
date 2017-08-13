@@ -41,8 +41,7 @@ export class EventoverviewComponent {
       title: "",
       start: "",
       end: "",
-      bundles: [],
-      articles: []
+      bundles: []
     }
     this.safebuttonclicked = true;
     this.storage.store('mode','create');

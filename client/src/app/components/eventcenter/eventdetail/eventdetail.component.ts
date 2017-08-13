@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
+import {Article} from "../../../model/Article";
 import {EventService} from "../../../services/event.service";
 import {BundleService} from "../../../services/bundle.service";
 import {Router} from "@angular/router";
@@ -22,6 +23,7 @@ export class EventdetailComponent {
   end: string;
   createMode: boolean = false;
   bundles: Bundle[] = new Array();
+  articles:Article[] = new Array();
   bundle: Bundle;
   safebuttonclicked: boolean;
 
@@ -63,6 +65,7 @@ export class EventdetailComponent {
           title: "Please edit the Bundle",
           description :"Sample Description",
           picture:"...",
+          articles:null,
           id: n
         }
         this.bundles[n] = this.bundle;
@@ -83,7 +86,6 @@ export class EventdetailComponent {
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
     newEvent.bundles = this.event.bundles;
-    newEvent.articles = null;
 
     this.eventService.addEvent(newEvent)
       .subscribe();
@@ -97,7 +99,6 @@ export class EventdetailComponent {
       end: event.end,
       id: event.id,
       bundles: event.bundles,
-      articles: event.articles
     };
     this.bundle_id = 0;
     this.storage.store('bundle_id', this.bundle_id);
