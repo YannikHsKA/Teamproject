@@ -80,14 +80,14 @@
         </fieldset>
 
         <div class="row">
-          <div class="col-xs-6 text-left">
-            <a [routerLink]="['/eventdetail']" class=" btn btn-danger " (click)="back()">Back to Event Configurations</a>
+          <div class="pull-left">
+            <button [routerLink]="['/eventdetail']" class=" btn btn-danger " (click)="back()">Back to Event </button>
           </div>
-          <div class="col-xs-6 text-center">
-            <a [routerLink]="['/eventarticles']" class="btn btn-info" (click)="GoToArticles()">Add articles to bundle</a>
+          <div class="col-xs-4 pull-right">
+            <button [routerLink]="['/eventarticles']" class="btn btn-default" (click)="GoToArticles()">Add articles to bundle</button>
           </div>
-          <div class="col-xs-6 text-right">
-            <a [routerLink]="['/eventbundle']" class="btn btn-outline-success" (click)="GoToSecondBundle()">Save and continue</a>
+          <div class="pull-right">
+            <button [routerLink]="['/eventbundle']" class="btn btn-info" (click)="GoToSecondBundle()">Save and continue</button>
           </div>
         </div>
 

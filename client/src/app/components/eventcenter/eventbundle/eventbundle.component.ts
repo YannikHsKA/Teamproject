@@ -16,20 +16,21 @@ export class EventbundleComponent  {
 
   event: Event;
   bundle : Bundle;
+  bundle_id: number;
 
   constructor(private storage:SessionStorageService){
     var event = this.storage.retrieve('event');
-    var bundle_id: number;
-      bundle_id = this.storage.retrieve('bundle_id');
+    this.bundle_id = this.storage.retrieve('bundle_id');
     this.event = event;
     this.bundle = this.event.bundles[bundle_id];
 
   }
 
   back(){
-    this.event.bundles[this.storage.retrieve('id')] = this.bundle;
+    this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
     //Save in Storage
     this.storage.store('event',this.event);
+    this.storage.store('bundle_id',this.bundle_id);
   }
 
   GoToArticles()
@@ -37,13 +38,16 @@ export class EventbundleComponent  {
     this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
     //Save in Storage
     this.storage.store('event',this.event);
+    this.storage.store('bundle_id',this.bundle_id);
   }
 
   GoToSecondBundle()
   {
-    this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
+    this.event.bundles[this.bundle_id] = this.bundle;
     //Save in Storage
     this.storage.store('event',this.event);
+    this.bundle_id = 1;
+    this.storage.store('bundle_id',this.bundle_id);
   }
 
 

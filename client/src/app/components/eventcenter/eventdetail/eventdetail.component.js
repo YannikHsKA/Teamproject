@@ -87,7 +87,8 @@ var EventdetailComponent = (function () {
         this.storage.store('bundle_id', this.bundle_id);
         //Save in Storage
         this.storage.store('event', this.event);
-        this.eventService.updateEvent(_event)
+        this.event = _event;
+        this.eventService.updateEvent(this.event)
             .subscribe();
     };
     /*
