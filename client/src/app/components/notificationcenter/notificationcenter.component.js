@@ -10,9 +10,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var event_service_1 = require('../../services/event.service');
+var ng2_webstorage_1 = require('ng2-webstorage');
+var router_1 = require('@angular/router');
 var NotificationcenterComponent = (function () {
-    function NotificationcenterComponent(eventService) {
+    function NotificationcenterComponent(eventService, storage, router) {
         this.eventService = eventService;
+        this.storage = storage;
+        this.router = router;
         this.event = eventService.getEvent();
         this.email_active = false;
         this.sms_active = true;
@@ -45,6 +49,12 @@ var NotificationcenterComponent = (function () {
     NotificationcenterComponent.prototype.ngOnDestroy = function () {
         document.body.style.backgroundImage = "none";
     };
+    NotificationcenterComponent.prototype.backToBundle2 = function () {
+        this.bundle_id = 1;
+        this.storage.store('event', this.event);
+        this.storage.store('bundle_id', this.bundle_id);
+        this.router.navigate(['./eventbundle']);
+    };
     NotificationcenterComponent.prototype.saveNotification = function () {
         console.log("Send out messages");
     };
@@ -55,7 +65,7 @@ var NotificationcenterComponent = (function () {
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
         }), 
-        __metadata('design:paramtypes', [event_service_1.EventService])
+        __metadata('design:paramtypes', [event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());
