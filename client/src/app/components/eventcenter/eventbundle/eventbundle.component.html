@@ -14,14 +14,14 @@
             </a>
           </li>
 
-          <li role="presentation" class="active">
+          <li role="presentation" [ngClass]="{'active' : bundle1_active, 'disabled':!bundle1_active}">
             <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-shopping-cart"></i>
                             </span>
             </a>
           </li>
-          <li role="presentation" class="disabled">
+          <li role="presentation" [ngClass]="{'disabled' : bundle1_active, 'active': !bundle1_active}">
             <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
                             <span class="round-tab">
                                 <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -81,14 +81,16 @@
 
         <div class="row">
           <div class="pull-left">
-            <button [routerLink]="['/eventdetail']" class=" btn btn-danger " (click)="back()">Back to Event </button>
+            <button [routerLink]="['/eventbundle']" *ngIf="!bundle1_active" class=" btn btn-danger " (click)="backToBundle1()">Back to First Bundle </button>
+            <button [routerLink]="['/eventdetail']" *ngIf="bundle1_active" class=" btn btn-danger " (click)="backToEvent()">Back To Events </button>
+          </div>
+          <div class="pull-right">
+            <button class="btn btn-info" (click)="save()">Save and continue</button>
           </div>
           <div class="col-xs-4 pull-right">
             <button [routerLink]="['/eventarticles']" class="btn btn-default" (click)="GoToArticles()">Add articles to bundle</button>
           </div>
-          <div class="pull-right">
-            <button [routerLink]="['/eventbundle']" class="btn btn-info" (click)="GoToSecondBundle()">Save and continue</button>
-          </div>
+
         </div>
 
       </form>

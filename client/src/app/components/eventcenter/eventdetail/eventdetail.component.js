@@ -72,6 +72,8 @@ var EventdetailComponent = (function () {
         newEvent.start = this.event.start;
         newEvent.end = this.event.end;
         newEvent.bundles = this.event.bundles;
+        this.bundle_id = 0;
+        this.storage.store('bundle_id', this.bundle_id);
         this.eventService.addEvent(newEvent)
             .subscribe();
     };
