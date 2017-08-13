@@ -69,7 +69,8 @@
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
-        <legend>Create an Event</legend>
+        <legend *ngIf="createMode">Create an Event</legend>
+        <legend *ngIf="!createMode">Update your Event</legend>
 
         <fieldset>
           <div class="form-group row">
