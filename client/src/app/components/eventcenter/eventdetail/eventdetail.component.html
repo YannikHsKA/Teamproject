@@ -108,11 +108,11 @@
         </div>
 -->
         <div class="row">
-          <div class="col-xs-6">
+          <div class="text-left col-xs-6">
             <button type="button" class=" btn btn-danger" data-toggle="modal" data-target="#myModal">Cancel</button>
           </div>
-          <div class="col-xs-6">
-            <a [routerLink]="['/eventoverview']" class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Create Event and continue</a>
+          <div class="col-xs-6 text-right">
+            <a [routerLink]="['/eventbundle']" class="btn btn-info" *ngIf="createMode" (click)="addEvent()">Create Event and continue</a>
             <a [routerLink]="['/eventbundle']" class="btn btn-info" *ngIf="!createMode" (click)="updateEvent(event)">Update Event and continue</a>
           </div>
 

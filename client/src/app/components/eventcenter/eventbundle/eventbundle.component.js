@@ -14,16 +14,22 @@ var EventbundleComponent = (function () {
     function EventbundleComponent(storage) {
         this.storage = storage;
         var event = this.storage.retrieve('event');
-        var bundle_id = this.storage.retrieve('bundle_id');
+        var bundle_id;
+        bundle_id = this.storage.retrieve('bundle_id');
         this.event = event;
         this.bundle = this.event.bundles[bundle_id];
     }
     EventbundleComponent.prototype.back = function () {
-        this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
+        this.event.bundles[this.storage.retrieve('id')] = this.bundle;
         //Save in Storage
         this.storage.store('event', this.event);
     };
     EventbundleComponent.prototype.GoToArticles = function () {
+        this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
+        //Save in Storage
+        this.storage.store('event', this.event);
+    };
+    EventbundleComponent.prototype.GoToSecondBundle = function () {
         this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
         //Save in Storage
         this.storage.store('event', this.event);

@@ -83,14 +83,21 @@ var EventdetailComponent = (function () {
             bundles: event.bundles,
             articles: event.articles
         };
+        this.bundle_id = 0;
+        this.storage.store('bundle_id', this.bundle_id);
+        //Save in Storage
+        this.storage.store('event', this.event);
         this.eventService.updateEvent(_event)
             .subscribe();
     };
-    EventdetailComponent.prototype.onEdit = function (bundle) {
+    /*
+      onEdit(bundle: Bundle)
+      {
         event.preventDefault();
-        this.storage.store('event', this.event);
-        this.storage.store('bundle_id', bundle.id);
-    };
+        this.storage.store('event',this.event);
+        this.storage.store('bundle_id',bundle.id);
+    
+      }*/
     EventdetailComponent.prototype.cancel = function () {
         event.preventDefault();
         this.storage.clear();
