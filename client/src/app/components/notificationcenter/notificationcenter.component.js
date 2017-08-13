@@ -45,6 +45,9 @@ var NotificationcenterComponent = (function () {
     NotificationcenterComponent.prototype.ngOnDestroy = function () {
         document.body.style.backgroundImage = "none";
     };
+    NotificationcenterComponent.prototype.saveNotification = function () {
+        console.log("Send out messages");
+    };
     NotificationcenterComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
