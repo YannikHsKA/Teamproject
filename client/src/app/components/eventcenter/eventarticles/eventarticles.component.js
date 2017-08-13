@@ -14,17 +14,23 @@ var router_1 = require("@angular/router");
 var ng2_webstorage_1 = require('ng2-webstorage');
 var EventarticlesComponent = (function () {
     function EventarticlesComponent(eventService, router, storage) {
-        //load articles from database
-        //if no articles - add default ones
         this.eventService = eventService;
         this.router = router;
         this.storage = storage;
         this.articles = new Array();
-        console.log(this.storage.retrieve('event'));
-        if (this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")] == undefined) {
-            console.log("NEW");
-            //Create Default Article
-            //build articles
+        //load articles from database
+        //if no articles - add default ones
+        switch (this.storage.retrieve("bundle_id")) {
+            case 0:
+                this.bundle_id_text = "First";
+                this.bundle1_active = true;
+                break;
+            case 1:
+                this.bundle_id_text = "Second";
+                this.bundle1_active = false;
+                break;
+        }
+        if (this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")].articles == null) {
             var n = 0;
             while (n < 3) {
                 this.defaultarticle = {
@@ -38,13 +44,9 @@ var EventarticlesComponent = (function () {
                 this.articles[n] = this.defaultarticle;
                 n++;
             }
-            console.log("init", this.articles);
         }
         else {
-            console.log("OLD");
-            //show existing
             this.event = this.storage.retrieve('event');
-            console.log(this.event);
             this.articles = this.event.bundles[this.storage.retrieve('bundle_id')].articles;
         }
     }
@@ -55,23 +57,14 @@ var EventarticlesComponent = (function () {
         this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
         this.storage.store('event', this.event);
     };
-    EventarticlesComponent.prototype.save = function (event) {
-        //Event wird gespeichert
-        //schreibe alle einträge in die Datenbank
-        //lösche storage
+    EventarticlesComponent.prototype.GoToSecond = function () {
         this.event = this.storage.retrieve('event');
         this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
-        console.log(this.storage.retrieve('mode'));
-        //Check Create oder Edit
-        if (this.storage.retrieve('mode') == "create") {
-            this.eventService.addEvent(this.event)
-                .subscribe();
-        }
-        else {
-            this.eventService.updateEvent(this.event)
-                .subscribe();
-        }
-        this.storage.clear();
+        this.storage.store('event', this.event);
+        this.storage.store('bundle_id', 1);
+        //Save in DB
+        this.eventService.updateEvent(this.event)
+            .subscribe();
     };
     EventarticlesComponent = __decorate([
         core_1.Component({

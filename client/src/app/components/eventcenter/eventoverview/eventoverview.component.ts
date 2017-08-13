@@ -16,42 +16,27 @@ export class EventoverviewComponent {
 
   events: Event[];
   event: Event;
-  safebuttonclicked: boolean;
 
-  constructor(private eventService: EventService, private router: Router, private storage:SessionStorageService) {
+  constructor(private eventService: EventService, private router: Router, private storage: SessionStorageService) {
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundSize = "cover";
 
-
-    this.safebuttonclicked = false;
-    this.eventService.safebuttonclicked = this.safebuttonclicked;
-
     this.eventService.getEvents()
       .subscribe(events => {
-        console.log("eeveve",events);
+        console.log("eeveve", events);
         this.events = events;
       });
 
   }
   onCreate() {
-    this.event = {
-      title: "",
-      start: "",
-      end: "",
-      bundles: []
-    }
-    this.safebuttonclicked = true;
-    this.storage.store('mode','create');
-    this.eventService.safebuttonclicked = this.safebuttonclicked;
-    this.eventService.event = this.event;
+    this.storage.store('mode', 'create');
     this.router.navigate(['./eventdetail']);
   };
   onEdit(event: Event) {
-    this.storage.store('mode','edit');
-    console.log("event",event);
+    this.storage.store('mode', 'edit');
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }

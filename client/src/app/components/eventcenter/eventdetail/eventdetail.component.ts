@@ -15,82 +15,83 @@ import {LocalStorage, SessionStorage} from 'ng2-webstorage';
   templateUrl: `eventdetail.component.html`,
   styleUrls: [`eventdetail.component.css`]
 })
+
 export class EventdetailComponent {
   bundle_id: number;
-  event: Event;
-  title: string;
-  start: string;
-  end: string;
+  event: Event = new Event();
   createMode: boolean = false;
   bundles: Bundle[] = new Array();
-  articles:Article[] = new Array();
+  articles: Article[] = new Array();
   bundle: Bundle;
-  safebuttonclicked: boolean;
 
-  constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage:SessionStorageService) {
+  constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage: SessionStorageService) {
 
-    if(this.eventService.safebuttonclicked == false){
-      //working on edit mode - start with blank
-      //load current Event + Bundles + Articles into Storage
+    if (this.storage.retrieve("mode") == "edit") {
       this.createMode = false;
-      this.event = this.eventService.event;
+      console.log("test", this.eventService.event);
+      switch (this.eventService.event) {
+        case undefined:
+          this.event = this.storage.retrieve('event');
+          break;
+        default:
+          this.event = this.eventService.event;
+          break;
+      }
+
       var bundletemp = this.event.bundles;
 
       //Transform from JSON to Array
       var count = 0;
       for (var propName in bundletemp) {
-            this[propName] = bundletemp[propName];
-            this.bundles[count] = this[propName];
-            count++;
-        }
-
+        this[propName] = bundletemp[propName];
+        this.bundles[count] = this[propName];
+        count++;
+      }
       this.storage.store('event', this.event);
-            console.log(this.bundles);
-
-  }
-    else{
+    }
+    else {
+      console.log("CREATE MODE");
       //working on create mode
       //start with empty default storage
       this.createMode = true;
-      //build event
-      this.event = new Event();
       this.event.title = "Sample Title";
       this.event.start = "Sample Start";
       this.event.end = "Sample End";
 
       //build bundles
-      var n:number = 0;
-      while(n < 2) {
+      var n: number = 0;
+      while (n < 2) {
         this.bundle = {
           title: "Please edit the Bundle",
-          description :"Sample Description",
-          picture:"...",
-          articles:null,
+          description: "Sample Description",
+          picture: "...",
+          articles: null,
           id: n
         }
         this.bundles[n] = this.bundle;
         n++;
       }
-
       this.event.bundles = this.bundles;
+      this.storage.store('event', this.event);
     }
-
-    console.log("cm",this.createMode);
   }
 
   addEvent() {
-    event.preventDefault();
     let newEvent = new Event();
-
     newEvent.title = this.event.title;
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
     newEvent.bundles = this.event.bundles;
     this.bundle_id = 0;
-    this.storage.store('bundle_id', this.bundle_id);
 
-    this.eventService.addEvent(newEvent)
-      .subscribe();
+    var temp = "";
+    this.eventService.addEvent(this.event)
+      .subscribe(result => temp);
+    console.log("create", temp);
+    this.storage.store('bundle_id', this.bundle_id);
+    this.storage.store('event', newEvent);
+    this.storage.store('mode', 'edit');
+
 
   }
 
@@ -105,25 +106,21 @@ export class EventdetailComponent {
     this.bundle_id = 0;
     this.storage.store('bundle_id', this.bundle_id);
     //Save in Storage
-    this.storage.store('event',this.event);
-    this.event = _event
+    this.storage.store('event', this.event);
+    this.event = _event;
     this.eventService.updateEvent(this.event)
       .subscribe();
-
-
-
   }
-/*
-  onEdit(bundle: Bundle)
-  {
-    event.preventDefault();
-    this.storage.store('event',this.event);
-    this.storage.store('bundle_id',bundle.id);
+  /*
+    onEdit(bundle: Bundle)
+    {
+      event.preventDefault();
+      this.storage.store('event',this.event);
+      this.storage.store('bundle_id',bundle.id);
 
-  }*/
+    }*/
 
-  cancel()
-  {
+  cancel() {
     event.preventDefault();
     this.storage.clear();
     this.router.navigate(["/eventoverview"]);

@@ -11,19 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ng2_webstorage_1 = require('ng2-webstorage');
 var router_1 = require('@angular/router');
+var event_service_1 = require("../../../services/event.service");
 var EventbundleComponent = (function () {
-    function EventbundleComponent(storage, router) {
+    function EventbundleComponent(eventService, storage, router) {
+        this.eventService = eventService;
         this.storage = storage;
         this.router = router;
         var event = this.storage.retrieve('event');
         this.bundle_id = this.storage.retrieve('bundle_id');
         this.event = event;
         this.bundle = this.event.bundles[this.bundle_id];
-        if (this.bundle_id == 0) {
-            this.bundle1_active = true;
-        }
-        else {
-            this.bundle1_active = false;
+        console.log("BUNDLEID", this.bundle_id);
+        switch (this.bundle_id) {
+            case 0:
+                this.bundle_id_text = "First";
+                this.bundle1_active = true;
+                break;
+            case 1:
+                this.bundle_id_text = "Second";
+                this.bundle1_active = false;
+                break;
         }
     }
     EventbundleComponent.prototype.backToEvent = function () {
@@ -35,30 +42,34 @@ var EventbundleComponent = (function () {
     EventbundleComponent.prototype.backToBundle1 = function () {
         this.storage.store('event', this.event);
         this.bundle_id = 0;
+        this.bundle_id_text = "First";
+        this.bundle = this.event.bundles[this.bundle_id];
         this.storage.store('bundle_id', this.bundle_id);
         this.bundle1_active = true;
     };
     EventbundleComponent.prototype.GoToArticles = function () {
         this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
-        //Save in Storage
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
     };
-    EventbundleComponent.prototype.save = function () {
-        // this.event.bundles[this.bundle_id] = this.bundle;
-        //Save in Storage
+    EventbundleComponent.prototype.GoNext = function () {
+        console.log(this.bundle_id);
         if (this.bundle_id == 0) {
             this.bundle_id = 1;
-            this.bundle1_active = false;
+            this.bundle_id_text = "Second";
+            this.bundle = this.event.bundles[this.bundle_id];
             this.storage.store('event', this.event);
             this.storage.store('bundle_id', this.bundle_id);
-            this.router.navigate(['./eventbundle']);
+            this.bundle1_active = false;
+            this.router.navigate(['/eventbundle']);
         }
         else {
             this.storage.store('event', this.event);
             this.storage.store('bundle_id', this.bundle_id);
             this.router.navigate(['./notificationcenter']);
         }
+        this.eventService.updateEvent(this.storage.retrieve('event'))
+            .subscribe();
     };
     EventbundleComponent = __decorate([
         core_1.Component({
@@ -67,7 +78,7 @@ var EventbundleComponent = (function () {
             templateUrl: "eventbundle.component.html",
             styleUrls: ["eventbundle.component.css"]
         }), 
-        __metadata('design:paramtypes', [ng2_webstorage_1.SessionStorageService, router_1.Router])
+        __metadata('design:paramtypes', [event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
     ], EventbundleComponent);
     return EventbundleComponent;
 }());

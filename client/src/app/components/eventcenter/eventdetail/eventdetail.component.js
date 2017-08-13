@@ -21,14 +21,21 @@ var EventdetailComponent = (function () {
         this.bundleService = bundleService;
         this.router = router;
         this.storage = storage;
+        this.event = new Event_1.Event();
         this.createMode = false;
         this.bundles = new Array();
         this.articles = new Array();
-        if (this.eventService.safebuttonclicked == false) {
-            //working on edit mode - start with blank
-            //load current Event + Bundles + Articles into Storage
+        if (this.storage.retrieve("mode") == "edit") {
             this.createMode = false;
-            this.event = this.eventService.event;
+            console.log("test", this.eventService.event);
+            switch (this.eventService.event) {
+                case undefined:
+                    this.event = this.storage.retrieve('event');
+                    break;
+                default:
+                    this.event = this.eventService.event;
+                    break;
+            }
             var bundletemp = this.event.bundles;
             //Transform from JSON to Array
             var count = 0;
@@ -38,14 +45,12 @@ var EventdetailComponent = (function () {
                 count++;
             }
             this.storage.store('event', this.event);
-            console.log(this.bundles);
         }
         else {
+            console.log("CREATE MODE");
             //working on create mode
             //start with empty default storage
             this.createMode = true;
-            //build event
-            this.event = new Event_1.Event();
             this.event.title = "Sample Title";
             this.event.start = "Sample Start";
             this.event.end = "Sample End";
@@ -63,20 +68,23 @@ var EventdetailComponent = (function () {
                 n++;
             }
             this.event.bundles = this.bundles;
+            this.storage.store('event', this.event);
         }
-        console.log("cm", this.createMode);
     }
     EventdetailComponent.prototype.addEvent = function () {
-        event.preventDefault();
         var newEvent = new Event_1.Event();
         newEvent.title = this.event.title;
         newEvent.start = this.event.start;
         newEvent.end = this.event.end;
         newEvent.bundles = this.event.bundles;
         this.bundle_id = 0;
+        var temp = "";
+        this.eventService.addEvent(this.event)
+            .subscribe(function (result) { return temp; });
+        console.log("create", temp);
         this.storage.store('bundle_id', this.bundle_id);
-        this.eventService.addEvent(newEvent)
-            .subscribe();
+        this.storage.store('event', newEvent);
+        this.storage.store('mode', 'edit');
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
@@ -100,7 +108,7 @@ var EventdetailComponent = (function () {
         event.preventDefault();
         this.storage.store('event',this.event);
         this.storage.store('bundle_id',bundle.id);
-    
+  
       }*/
     EventdetailComponent.prototype.cancel = function () {
         event.preventDefault();

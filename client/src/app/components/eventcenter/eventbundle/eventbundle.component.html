@@ -47,7 +47,7 @@
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
-        <legend>Create the First Bundle</legend>
+        <legend>Create the {{bundle_id_text}} Bundle</legend>
 
         <fieldset>
           <div class="form-group row">
@@ -85,7 +85,8 @@
             <button [routerLink]="['/eventdetail']" *ngIf="bundle1_active" class=" btn btn-danger " (click)="backToEvent()">Back To Events </button>
           </div>
           <div class="pull-right">
-            <button class="btn btn-info" (click)="save()">Save and continue</button>
+            <button class="btn btn-info" *ngIf="bundle1_active" (click)="GoNext()">Next to Second Bundle</button>
+            <button class="btn btn-info" *ngIf="!bundle1_active" (click)="GoNext()">Next to Notifications</button>
           </div>
           <div class="col-xs-4 pull-right">
             <button [routerLink]="['/eventarticles']" class="btn btn-default" (click)="GoToArticles()">Add articles to bundle</button>

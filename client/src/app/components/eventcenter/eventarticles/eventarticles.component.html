@@ -1,38 +1,62 @@
-<div class="container containertop">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventbundle">Articles</a></li>
-  </ol>
+<div class="container containertop" style="margin-top:-50px">
+
+  <section>
+    <div class="wizard">
+      <div class="wizard-inner">
+        <div class="connecting-line"></div>
+        <ul class="nav nav-tabs" role="tablist">
+
+          <li role="presentation" class="disabled">
+            <a routerLink="/eventdetail" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                              <span class="round-tab">
+                                  <i class="glyphicon glyphicon-calendar"></i>
+                              </span>
+              </a>
+          </li>
+
+          <li role="presentation" [ngClass]="{'active' : bundle1_active, 'disabled':!bundle1_active}">
+            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                              <span class="round-tab">
+                                  <i class="glyphicon glyphicon-shopping-cart"></i>
+                              </span>
+              </a>
+          </li>
+          <li role="presentation" [ngClass]="{'disabled' : bundle1_active, 'active': !bundle1_active}">
+            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                              <span class="round-tab">
+                                  <i class="glyphicon glyphicon-shopping-cart"></i>
+                              </span>
+              </a>
+          </li>
+
+          <li role="presentation" class="disabled">
+            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                              <span class="round-tab">
+                                  <i class="glyphicon glyphicon-bullhorn"></i>
+                              </span>
+              </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <div>
 
 
-
-    <div class="card hovercard">
-      <div class="card-background">
-
-        <!-- possible blurred image -->
-      </div>
-      <div class="useravatar">
-        <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
-      </div>
-      <div class="card-info"> <span class="card-title">Article Center</span>
-
-      </div>
-    </div>
     <div class="well">
       <form class="form-horizontal" style="text-align: center">
 
-        <legend>Add Articles</legend>
+        <legend>Add Articles for {{bundle_id_text}} Bundle</legend>
 
         <fieldset>
 
           <ul>
+
             <li class="list-group-item" *ngFor="let article of articles; let i = index">
+
               <div class="form-group">
-                <label class="col-xs-2 control-label">Article {{article.id}}</label>
+                <label class="col-xs-2 control-label">Article {{article.id + 1}}</label>
                 <div class="col-xs-2 col-xs-offset-1">
                   <input [(ngModel)]="articles[i].title" name="title-{{i}}" type="text" class="form-control input-xs">
                 </div>
@@ -59,10 +83,12 @@
 
         <div class="row">
           <div class="col-xs-6">
-            <a [routerLink]="['/eventbundle']" class=" btn btn-danger " (click)="back()">Back to bundle</a>
+            <a [routerLink]="['/eventbundle']" *ngIf="bundle1_active" class=" btn btn-danger " (click)="back()">Back to First Bundle</a>
+            <a [routerLink]="['/eventbundle']" *ngIf="!bundle1_active" class=" btn btn-danger " (click)="back()">Back to Second Bundle</a>
           </div>
           <div class="col-xs-6">
-            <a [routerLink]="['/eventoverview']" class=" btn btn-danger " (click)="save()">Save Event</a>
+            <a [routerLink]="['/eventbundle']" *ngIf="bundle1_active" class=" btn btn-danger " (click)="GoToSecond()">Next to Second Bundle</a>
+            <a [routerLink]="['/notificationcenter']" *ngIf="!bundle1_active" class=" btn btn-danger " (click)="GoToSecond()">Next to Notification</a>
           </div>
         </div>
 

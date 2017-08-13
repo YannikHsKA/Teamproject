@@ -16,83 +16,68 @@ import {LocalStorage, SessionStorage} from 'ng2-webstorage';
   styleUrls: [`eventarticles.component.css`]
 })
 export class EventarticlesComponent {
-  event:Event;
-  defaultarticle:Article;
+  event: Event;
+  defaultarticle: Article;
   articles: Article[] = new Array();
+  bundle_id_text: string;
+  bundle1_active: boolean;
 
-  constructor(private eventService: EventService,private router: Router, private storage:SessionStorageService) {
+  constructor(private eventService: EventService, private router: Router, private storage: SessionStorageService) {
     //load articles from database
     //if no articles - add default ones
+    switch (this.storage.retrieve("bundle_id")) {
+      case 0:
+        this.bundle_id_text = "First";
+        this.bundle1_active = true;
+        break;
+      case 1:
+        this.bundle_id_text = "Second";
+        this.bundle1_active = false;
+        break;
+    }
 
-    console.log(this.storage.retrieve('event'));
-    if(this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")] == undefined)
-    {
-      console.log("NEW");
-      //Create Default Article
-      //build articles
-      var n:number = 0;
-      while(n < 3) {
+    if (this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")].articles == null) {
+      var n: number = 0;
+      while (n < 3) {
         this.defaultarticle = {
           ean: 815,
           id: n,
           title: "Article",
           currency: "€",
-          price :"12,99",
-          picture:"...",
+          price: "12,99",
+          picture: "...",
         }
         this.articles[n] = this.defaultarticle;
         n++;
       }
-
-      console.log("init",this.articles);
     }
-    else{
-      console.log("OLD");
-      //show existing
+    else {
       this.event = this.storage.retrieve('event');
-      console.log(this.event);
       this.articles = this.event.bundles[this.storage.retrieve('bundle_id')].articles;
     }
-
-
-
   }
 
-  back()
-  {
+  back() {
     //back to Bundle
     //save entries
     this.event = this.storage.retrieve('event');
     this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
-    this.storage.store('event',this.event);
+    this.storage.store('event', this.event);
   }
 
 
-  save(event:Event)
-  {
-    //Event wird gespeichert
-    //schreibe alle einträge in die Datenbank
-    //lösche storage
+
+  GoToSecond() {
+
     this.event = this.storage.retrieve('event');
     this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
-    console.log(this.storage.retrieve('mode'));
+    this.storage.store('event', this.event);
+    this.storage.store('bundle_id', 1);
 
-    //Check Create oder Edit
-    if(this.storage.retrieve('mode') == "create")
-    {
-      this.eventService.addEvent(this.event)
-        .subscribe();
-    }
-    else{
-      this.eventService.updateEvent(this.event)
-        .subscribe();
-    }
-
-    this.storage.clear();
-
+    //Save in DB
+    this.eventService.updateEvent(this.event)
+      .subscribe();
   }
-
-
 
 
 }

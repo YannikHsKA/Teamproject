@@ -99,7 +99,7 @@ router.post("/subscribe", function(req, res) {
             console.log("Email not sent");
             res.sendStatus(500);
           } else {
-             console.log(response);
+            console.log(response);
             console.log("Email Sent");
             WriteUserToDB();
           }
@@ -338,7 +338,7 @@ router.post("/createevent", function(req, res) {
   newRef.update({
     id: newID
   })
-  res.sendStatus(201);
+  res.send(newID);
 });
 
 // Create Event
@@ -505,35 +505,35 @@ router.post("/createpdf", function(req, res) {
 
 // Send Update Subscribe Email
 router.post("/sendEmailUpdate_subscribe", function(req, res) {
-    /* Read POST Request */
-    var user = req.body;
+  /* Read POST Request */
+  var user = req.body;
 
-    var inputmail = req.body.email_address;
-    console.log(inputmail);
-    // Send Notification Email with Setting Key and Voucher //
-    // Check if email address already exists
+  var inputmail = req.body.email_address;
+  console.log(inputmail);
+  // Send Notification Email with Setting Key and Voucher //
+  // Check if email address already exists
 
-    console.log("Notify User about Email Subscription");
-    var mailOptions = {
-        from: "lidlsmartshopping@gmail.com",
-        to: req.body.email_address,
-        subject: "Willkommen bei LIDL Smart Shopping!",
-        generateTextFromHTML: true,
-        html: "<b>Hallo!</b> neue Mail "
-    };
+  console.log("Notify User about Email Subscription");
+  var mailOptions = {
+    from: "lidlsmartshopping@gmail.com",
+    to: req.body.email_address,
+    subject: "Willkommen bei LIDL Smart Shopping!",
+    generateTextFromHTML: true,
+    html: "<b>Hallo!</b> neue Mail "
+  };
 
-    smtpTransport.sendMail(mailOptions, function(error, response) {
-        if (error) {
-             console.log(error);
-            console.log("Email not sent");
-            res.sendStatus(500);
-        } else {
-            // console.log(response);
-            console.log("Email Sent");
-            WriteUserToDB();
-        }
-        smtpTransport.close();
-    });
+  smtpTransport.sendMail(mailOptions, function(error, response) {
+    if (error) {
+      console.log(error);
+      console.log("Email not sent");
+      res.sendStatus(500);
+    } else {
+      // console.log(response);
+      console.log("Email Sent");
+      WriteUserToDB();
+    }
+    smtpTransport.close();
+  });
 
 
 });
@@ -542,37 +542,37 @@ router.post("/sendEmailUpdate_subscribe", function(req, res) {
 
 // Send Update Subscribe Email
 router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
-    /* Read POST Request */
-    var user = req.body;
+  /* Read POST Request */
+  var user = req.body;
 
-    var inputmail = req.body.email_address;
-    console.log(inputmail);
-    // Send Notification Email with Setting Key and Voucher //
-    // Check if email address already exists
+  var inputmail = req.body.email_address;
+  console.log(inputmail);
+  // Send Notification Email with Setting Key and Voucher //
+  // Check if email address already exists
 
-    console.log("Notify User about Email Unsubscription")
+  console.log("Notify User about Email Unsubscription")
 
 
-                var mailOptions = {
-                    from: "lidlsmartshopping@gmail.com",
-                    to: req.body.email_address,
-                    subject: "LIDL Smart Shopping - Unsubscribe",
-                    generateTextFromHTML: true,
-                    html: "<b>Hallo!</b> 'Von nun an erhalten Sie keine LIDL Smart Shopping Benachrichtigungen mehr auf diese E-Mail Adresse. "
-                };
+  var mailOptions = {
+    from: "lidlsmartshopping@gmail.com",
+    to: req.body.email_address,
+    subject: "LIDL Smart Shopping - Unsubscribe",
+    generateTextFromHTML: true,
+    html: "<b>Hallo!</b> 'Von nun an erhalten Sie keine LIDL Smart Shopping Benachrichtigungen mehr auf diese E-Mail Adresse. "
+  };
 
-                smtpTransport.sendMail(mailOptions, function (error, response) {
-                    if (error) {
-                        // console.log(error);
-                        console.log("Email not sent");
-                        res.sendStatus(500);
-                    } else {
-                        // console.log(response);
-                        console.log("Email Sent");
-                        WriteUserToDB();
-                    }
-                    smtpTransport.close();
-                });
+  smtpTransport.sendMail(mailOptions, function(error, response) {
+    if (error) {
+      // console.log(error);
+      console.log("Email not sent");
+      res.sendStatus(500);
+    } else {
+      // console.log(response);
+      console.log("Email Sent");
+      WriteUserToDB();
+    }
+    smtpTransport.close();
+  });
 
 });
 
@@ -581,24 +581,24 @@ router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
 
 router.post("/sendSMSUpdate_subscribe", function(req, res) {
 
-    // Send Notification SMS with Settingkey and Voucher
-    // Check if email address already exists
-    var number = req.body.phonenumber;
-    console.log("SMS Subscribe");
+  // Send Notification SMS with Settingkey and Voucher
+  // Check if email address already exists
+  var number = req.body.phonenumber;
+  console.log("SMS Subscribe");
 
-                        client.sendMessage({
-                            to: number,
-                            from: '+4915735984837',
-                            body: "LIDL Smart Shopping! Sie haben erfolgreich diese Nummer registriert! Viel Spaß! "
-                        }, function(err, data) {
-                            if (err) {
-                                // console.log(err);
-                                res.status(500).send("Failure");
-                            } else {
-                                // console.log(data);
-                                res.status(200).send("Success");
-                            }
-                        });
+  client.sendMessage({
+    to: number,
+    from: '+4915735984837',
+    body: "LIDL Smart Shopping! Sie haben erfolgreich diese Nummer registriert! Viel Spaß! "
+  }, function(err, data) {
+    if (err) {
+      // console.log(err);
+      res.status(500).send("Failure");
+    } else {
+      // console.log(data);
+      res.status(200).send("Success");
+    }
+  });
 
 
 
@@ -608,35 +608,35 @@ router.post("/sendSMSUpdate_subscribe", function(req, res) {
 router.post("/sendSMSUpdate_unsubscribe", function(req, res) {
 
 
-    var number = req.body.phonenumber;
-    console.log("number" + number);
-    console.log("SMS Unsubscribe");
+  var number = req.body.phonenumber;
+  console.log("number" + number);
+  console.log("SMS Unsubscribe");
 
-                        client.sendMessage({
-                            to: number,
-                            from: '+4915735984837',
-                            body: "Lidl Smart Shopping: Sie haben sich erfolgreich abgemeldet! "
-                        }, function(err, data) {
-                            if (err) {
-                                // console.log(err);
-                                res.status(500).send("Failure");
-                            } else {
-                                // console.log(data);
-                                res.status(200).send("Success");
-                            }
-                        });
+  client.sendMessage({
+    to: number,
+    from: '+4915735984837',
+    body: "Lidl Smart Shopping: Sie haben sich erfolgreich abgemeldet! "
+  }, function(err, data) {
+    if (err) {
+      // console.log(err);
+      res.status(500).send("Failure");
+    } else {
+      // console.log(data);
+      res.status(200).send("Success");
+    }
+  });
 });
 
 
 router.post("/sendWhatsAppUpdate_subscribe", function(req, res) {
 
-    console.log("Whatsapp Subscribe");
+  console.log("Whatsapp Subscribe");
 
 });
 
 router.post("/sendWhatsAppUpdate_unsubscribe", function(req, res) {
 
-    console.log("Whatsapp Unsubscribe");
+  console.log("Whatsapp Unsubscribe");
 
 });
 

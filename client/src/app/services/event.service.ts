@@ -1,15 +1,20 @@
 import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from "../model/Event";
+import { Observable } from 'rxjs';
+import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
+import {LocalStorage, SessionStorage} from 'ng2-webstorage';
 
 @Injectable()
 export class EventService {
 
   event: Event;
+  event_temp: Event;
   safebuttonclicked: boolean;
+  storage_temp: SessionStorageService;
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private storage: SessionStorageService) {
     console.log('Event Service initialized..');
   }
 
@@ -19,25 +24,34 @@ export class EventService {
       .map(res => res.json());
   }
 
-  getEvent(){
+  getEvent() {
     return this.event;
   }
 
   addEvent(newEvent: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/createevent', JSON.stringify(newEvent), {headers: headers});
+    return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);
   }
 
   updateEvent(event: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/updateevent', JSON.stringify(event), {headers: headers});
+    return this.http.post('/api/updateevent', JSON.stringify(event), { headers: headers });
   }
 
   deleteEvent(event: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/deleteevent', JSON.stringify(event), {headers: headers});
+    return this.http.post('/api/deleteevent', JSON.stringify(event), { headers: headers });
+  }
+
+  private extractData(res: Response) {
+    let body = res.text();
+    this.storage_temp = new SessionStorageService();
+    this.event_temp = new Event();
+    this.event_temp = this.storage_temp.retrieve('event');
+    this.event_temp.id = body;
+    this.storage_temp.store('event', this.event_temp);
   }
 }

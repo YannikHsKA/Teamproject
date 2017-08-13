@@ -11,9 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
+var Event_1 = require("../model/Event");
+var ng2_webstorage_1 = require('ng2-webstorage');
 var EventService = (function () {
-    function EventService(http) {
+    function EventService(http, storage) {
         this.http = http;
+        this.storage = storage;
         console.log('Event Service initialized..');
     }
     EventService.prototype.getEvents = function () {
@@ -26,7 +29,7 @@ var EventService = (function () {
     EventService.prototype.addEvent = function (newEvent) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers });
+        return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);
     };
     EventService.prototype.updateEvent = function (event) {
         var headers = new http_1.Headers();
@@ -38,9 +41,17 @@ var EventService = (function () {
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/deleteevent', JSON.stringify(event), { headers: headers });
     };
+    EventService.prototype.extractData = function (res) {
+        var body = res.text();
+        this.storage_temp = new ng2_webstorage_1.SessionStorageService();
+        this.event_temp = new Event_1.Event();
+        this.event_temp = this.storage_temp.retrieve('event');
+        this.event_temp.id = body;
+        this.storage_temp.store('event', this.event_temp);
+    };
     EventService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, ng2_webstorage_1.SessionStorageService])
     ], EventService);
     return EventService;
 }());

@@ -23,8 +23,6 @@ var EventoverviewComponent = (function () {
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
-        this.safebuttonclicked = false;
-        this.eventService.safebuttonclicked = this.safebuttonclicked;
         this.eventService.getEvents()
             .subscribe(function (events) {
             console.log("eeveve", events);
@@ -32,22 +30,12 @@ var EventoverviewComponent = (function () {
         });
     }
     EventoverviewComponent.prototype.onCreate = function () {
-        this.event = {
-            title: "",
-            start: "",
-            end: "",
-            bundles: []
-        };
-        this.safebuttonclicked = true;
         this.storage.store('mode', 'create');
-        this.eventService.safebuttonclicked = this.safebuttonclicked;
-        this.eventService.event = this.event;
         this.router.navigate(['./eventdetail']);
     };
     ;
     EventoverviewComponent.prototype.onEdit = function (event) {
         this.storage.store('mode', 'edit');
-        console.log("event", event);
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
     };
