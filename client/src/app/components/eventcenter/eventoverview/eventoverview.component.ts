@@ -2,6 +2,9 @@ import {Component} from '@angular/core';
 import {Event} from '../../../model/Event';
 import {EventService} from '../../../services/event.service';
 import {Router} from '@angular/router';
+import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
+import {LocalStorage, SessionStorage} from 'ng2-webstorage';
+
 
 @Component({
   moduleId: module.id,
@@ -14,29 +17,26 @@ export class EventoverviewComponent {
   events: Event[];
   event: Event;
 
-  constructor(private eventService: EventService, private router: Router) {
-    this.eventService.getEvents()
-      .subscribe(events => {
-        this.events = events;
-      });
+  constructor(private eventService: EventService, private router: Router, private storage: SessionStorageService) {
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     document.body.style.backgroundPosition = "center center";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundAttachment = "fixed";
     document.body.style.backgroundSize = "cover";
-  }
 
+    this.eventService.getEvents()
+      .subscribe(events => {
+        console.log("eeveve", events);
+        this.events = events;
+      });
+
+  }
   onCreate() {
-    this.event = {
-      title: "",
-      start: "",
-      end: ""
-    };
-    this.eventService.event = this.event;
+    this.storage.store('mode', 'create');
     this.router.navigate(['./eventdetail']);
-  }
-
+  };
   onEdit(event: Event) {
+    this.storage.store('mode', 'edit');
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }

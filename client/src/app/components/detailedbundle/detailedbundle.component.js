@@ -8,8 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var DetailedbundleComponent = (function () {
     function DetailedbundleComponent() {
         document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
@@ -24,8 +23,8 @@ var DetailedbundleComponent = (function () {
             selector: 'detailedbundle',
             templateUrl: "detailedbundle.component.html",
             styleUrls: ["detailedbundle.component.css"]
-        }),
-        __metadata("design:paramtypes", [])
+        }), 
+        __metadata('design:paramtypes', [])
     ], DetailedbundleComponent);
     return DetailedbundleComponent;
 }());

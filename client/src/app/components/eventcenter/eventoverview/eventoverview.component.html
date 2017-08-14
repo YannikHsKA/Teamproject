@@ -1,37 +1,40 @@
-<div class="container">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a routerLink="/eventoverview">Event Overview</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventdetail">Event</a></li>
-    <li class="breadcrumb-item"><a routerLink="/eventbundle">Bundle</a></li>
-  </ol>
+<div class="container containertop">
+  <div class="container" align="center">
+    <div class="card hovercard">
+      <div class="card-background">
 
-  <div class="card hovercard">
-    <div class="card-background">
+        <!-- possible blurred image -->
+      </div>
+      <div class="useravatar">
+        <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
+      </div>
+      <div class="card-info"><span class="card-title, lead">{{ 'smartevent' | translate}}</span>
 
-      <!-- possible blurred image -->
+      </div>
     </div>
-    <div class="useravatar">
-      <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
-    </div>
-    <div class="card-info"> <span class="card-title">Event Overview</span>
-
+    <div class="well">
+      <div class="row">
+        <legend>{{ 'events1' | translate}}</legend>
+        <div class="col-xs-12">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let event of events" id="event.id">
+              {{ event.title }}
+              <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span
+              class="glyphicon glyphicon-trash"></span> {{ 'delete1' | translate}}
+            </button>
+              <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
+              class="glyphicon glyphicon-wrench"></span> {{ 'edit1' | translate}}
+            </button>
+              <button class="btn btn-xs btn-success pull-right" (click)="onNotify(event)"><span
+              class="glyphicon glyphicon-envelope"></span> {{ 'notify1' | translate}}
+            </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary" (click)="onCreate()">{{ 'newevent' | translate}}</button>
+      </div>
     </div>
   </div>
-  <div class="well">
-  <div class="row">
-    <div class="col-xs-12">
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let event of events" id="event.id">
-          {{ event.title }}
-          <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span class="glyphicon glyphicon-trash"></span> Delete
-          </button>
-          <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span class="glyphicon glyphicon-wrench"></span> Edit
-          </button>
-          <button class="btn btn-xs btn-success pull-right" (click)="onNotify(event)"><span class="glyphicon glyphicon-envelope"></span> Notify
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 </div>

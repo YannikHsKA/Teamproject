@@ -8,35 +8,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var event_service_1 = require("../../../services/event.service");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var event_service_1 = require('../../../services/event.service');
+var router_1 = require('@angular/router');
+var ng2_webstorage_1 = require('ng2-webstorage');
 var EventoverviewComponent = (function () {
-    function EventoverviewComponent(eventService, router) {
+    function EventoverviewComponent(eventService, router, storage) {
         var _this = this;
         this.eventService = eventService;
         this.router = router;
-        this.eventService.getEvents()
-            .subscribe(function (events) {
-            _this.events = events;
-        });
+        this.storage = storage;
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
+        this.eventService.getEvents()
+            .subscribe(function (events) {
+            console.log("eeveve", events);
+            _this.events = events;
+        });
     }
     EventoverviewComponent.prototype.onCreate = function () {
-        this.event = {
-            title: "",
-            start: "",
-            end: ""
-        };
-        this.eventService.event = this.event;
+        this.storage.store('mode', 'create');
         this.router.navigate(['./eventdetail']);
     };
+    ;
     EventoverviewComponent.prototype.onEdit = function (event) {
+        this.storage.store('mode', 'edit');
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
     };
@@ -61,8 +60,8 @@ var EventoverviewComponent = (function () {
             selector: 'eventoverview',
             templateUrl: "eventoverview.component.html",
             styleUrls: ["eventoverview.component.css"]
-        }),
-        __metadata("design:paramtypes", [event_service_1.EventService, router_1.Router])
+        }), 
+        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router, ng2_webstorage_1.SessionStorageService])
     ], EventoverviewComponent);
     return EventoverviewComponent;
 }());
