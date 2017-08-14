@@ -254,3 +254,14 @@ span.round-tab:hover {
     left: 35%;
   }
 }
+
+
+
+.margin {
+  margin-top : 35px;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}

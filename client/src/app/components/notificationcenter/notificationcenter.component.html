@@ -90,13 +90,13 @@
 
       <div class="tab-content">
         <div class="tab-pane fade in active" id="tab1">
-          <textarea placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
+          <textarea [(ngModel)]="notification.whatsapp_text" name="whatsapp_text" placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
         </div>
         <div class="tab-pane fade in" id="tab2">
-          <textarea placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
+          <textarea [(ngModel)]="notification.sms_text" name="sms_text" placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
         </div>
         <div class="tab-pane fade in" id="tab3">
-          <textarea placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
+          <textarea [(ngModel)]="notification.email_text" name="email_text" placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
         </div>
       </div>
 
@@ -110,5 +110,24 @@
       </div>
 
   </form>
+    <div class="margin">
+
+    <legend>Sent Messages</legend>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <table class="col-xs-12">
+          <tr><th>Message ID</th>
+            <th> Message Text</th>
+          <th>Message Date</th></tr>
+          <tr *ngFor="let notification of notifications" id="notification.id">
+            <td>{{ notification.id }}</td>
+            <td >{{notification.whatsapp_text}}</td>
+          <td > {{notification.time}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from "../model/Event";
+import {Notification} from "../model/Notification";
 import { Observable } from 'rxjs';
 import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 import {LocalStorage, SessionStorage} from 'ng2-webstorage';
@@ -33,6 +34,15 @@ export class EventService {
     headers.append('Content-Type', 'application/json');
     return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);
   }
+
+  addNotification(newNotification: Notification, eventid: String){
+var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/createnotification/' + eventid , JSON.stringify(newNotification), { headers: headers }).map(this.extractData);
+  }
+
+
+
 
   updateEvent(event: Event) {
     var headers = new Headers();

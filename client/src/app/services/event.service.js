@@ -31,6 +31,11 @@ var EventService = (function () {
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);
     };
+    EventService.prototype.addNotification = function (newNotification, eventid) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/createnotification/' + eventid, JSON.stringify(newNotification), { headers: headers }).map(this.extractData);
+    };
     EventService.prototype.updateEvent = function (event) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');

@@ -1,4 +1,5 @@
 import {Bundle} from './Bundle';
+import {Notification} from './Notification';
 
 
 export class Event {
@@ -7,4 +8,5 @@ export class Event {
   end: string;
   id?: string;
   bundles: Array<Bundle>;
+  notifications: Array<Notification>;
 }
