@@ -103,9 +103,21 @@ switch (btn)
 
   addNotification() {
     var newNotification = new Notification();
-    newNotification.whatsapp_text = this.notification.whatsapp_text;
-    newNotification.sms_text = this.notification.sms_text;
-    newNotification.email_text = this.notification.email_text;
+    if (!this.notification.whatsapp_text){
+      newNotification.whatsapp_text = "no Text";
+    } else {
+      newNotification.whatsapp_text = this.notification.whatsapp_text;
+    }
+    if (this.notification.sms_text) {
+      newNotification.sms_text = this.notification.sms_text;
+    } else{
+      newNotification.sms_text = "no Text";
+    }
+    if (this.notification.email_text) {
+      newNotification.email_text = this.notification.email_text;
+    } else{
+      newNotification.email_text = "no Text";
+    }
     newNotification.time = new Date();
     newNotification.whatsapp_receiver =132;
     newNotification.id ="1";
