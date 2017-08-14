@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+
 button{
   margin-left: 0.5em;
   margin-right: 0.5em;
@@ -7,7 +9,9 @@ li {
   text-align: left !important;
 }
 
-
+legend{
+  font-family: Anaheim;
+}
 
 
 /* Hovercard */
