@@ -18,6 +18,12 @@ var EventarticlesComponent = (function () {
         this.router = router;
         this.storage = storage;
         this.articles = new Array();
+        //Set NavigationBar Attributes
+        this.detail_status = this.storage.retrieve('detail_status');
+        this.bundle1_status = this.storage.retrieve('bundle1_status');
+        this.bundle2_status = this.storage.retrieve('bundle2_status');
+        this.notification_status = this.storage.retrieve('notification_status');
+        this.active_status = this.storage.retrieve('active_status');
         //load articles from database
         //if no articles - add default ones
         switch (this.storage.retrieve("bundle_id")) {
@@ -30,7 +36,7 @@ var EventarticlesComponent = (function () {
                 this.bundle1_active = false;
                 break;
         }
-        if (this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")].articles == null) {
+        if (this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")].articles == null || this.storage.retrieve('event').bundles[this.storage.retrieve("bundle_id")].articles == undefined) {
             var n = 0;
             while (n < 3) {
                 this.defaultarticle = {
@@ -62,6 +68,8 @@ var EventarticlesComponent = (function () {
         this.event.bundles[this.storage.retrieve('bundle_id')].articles = this.articles;
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', 1);
+        this.storage.store('bundle2_status', true);
+        this.storage.store('active_status', 'bundle2');
         //Save in DB
         this.eventService.updateEvent(this.event)
             .subscribe();

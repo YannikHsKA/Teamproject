@@ -32,13 +32,17 @@ export class EventoverviewComponent {
 
   }
   onCreate() {
+    this.storage.clear();
     this.storage.store('mode', 'create');
     this.router.navigate(['./eventdetail']);
-  };
+  }
+
   onEdit(event: Event) {
+    this.storage.clear();
     this.storage.store('mode', 'edit');
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
+
   }
 
   onNotify(event: Event) {

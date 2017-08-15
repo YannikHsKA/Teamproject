@@ -98,12 +98,6 @@ li {
 }
 
 
-
-
-
-
-
-
 .wizard {
   margin: 20px auto;
   background: #fff;
@@ -158,18 +152,16 @@ span.round-tab i{
   color:#555555;
 }
 .wizard li.active span.round-tab {
-  background: #fff;
-  border: 2px solid #5bc0de;
+  background: gray;
 
 }
 .wizard li.active span.round-tab i{
-  color: #5bc0de;
 }
 
-span.round-tab:hover {
+/*span.round-tab:hover {
   color: #333;
   border: 2px solid #333;
-}
+}*/
 
 .wizard .nav-tabs > li {
   width: 25%;
@@ -195,7 +187,7 @@ span.round-tab:hover {
   margin: 0 auto;
   bottom: 0px;
   border: 10px solid transparent;
-  border-bottom-color: #5bc0de;
+  border-bottom-color: gray;
 }
 
 .wizard .nav-tabs > li a {
@@ -205,10 +197,10 @@ span.round-tab:hover {
   border-radius: 100%;
   padding: 0;
 }
-
+/*
 .wizard .nav-tabs > li a:hover {
   background: transparent;
-}
+}*/
 
 .wizard .tab-pane {
   position: relative;

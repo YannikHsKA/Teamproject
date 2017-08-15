@@ -23,12 +23,23 @@ export class EventdetailComponent {
   bundles: Bundle[] = new Array();
   articles: Article[] = new Array();
   bundle: Bundle;
+  detail_status: boolean;
+  bundle1_status: boolean;
+  bundle2_status: boolean;
+  notification_status: boolean;
+  active_status: string;
 
   constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage: SessionStorageService) {
 
+    //Set NavigationBar Attributes
+    this.detail_status = true;
+    this.bundle1_status = this.storage.retrieve('bundle1_status');
+    this.bundle2_status = this.storage.retrieve('bundle2_status');
+    this.notification_status = this.storage.retrieve('notification_status');
+    this.active_status = "detail";
+
     if (this.storage.retrieve("mode") == "edit") {
       this.createMode = false;
-      console.log("test", this.eventService.event);
       switch (this.eventService.event) {
         case undefined:
           this.event = this.storage.retrieve('event');
@@ -51,6 +62,14 @@ export class EventdetailComponent {
     }
     else {
       console.log("CREATE MODE");
+
+      //Status for Navigation Bar
+      this.storage.store('bundle1_status', false);
+      this.storage.store('bundle2_status', false);
+      this.storage.store('notification_status', false);
+      this.storage.store('detail_status', true);
+
+
       //working on create mode
       //start with empty default storage
       this.createMode = true;
@@ -91,7 +110,7 @@ export class EventdetailComponent {
     this.storage.store('bundle_id', this.bundle_id);
     this.storage.store('event', newEvent);
     this.storage.store('mode', 'edit');
-
+    this.storage.store('detail_status', true);
 
   }
 
@@ -111,14 +130,6 @@ export class EventdetailComponent {
     this.eventService.updateEvent(this.event)
       .subscribe();
   }
-  /*
-    onEdit(bundle: Bundle)
-    {
-      event.preventDefault();
-      this.storage.store('event',this.event);
-      this.storage.store('bundle_id',bundle.id);
-
-    }*/
 
   cancel() {
     event.preventDefault();

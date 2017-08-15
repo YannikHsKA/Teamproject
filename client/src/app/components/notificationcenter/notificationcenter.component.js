@@ -21,6 +21,12 @@ var NotificationcenterComponent = (function () {
         this.email_active = false;
         this.sms_active = true;
         this.whatsapp_active = false;
+        //Set NavigationBar Attributes
+        this.detail_status = this.storage.retrieve('detail');
+        this.bundle1_status = this.storage.retrieve('bundle1_status');
+        this.bundle2_status = this.storage.retrieve('bundle2_status');
+        this.notification_status = true;
+        this.active_status = "notification";
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";

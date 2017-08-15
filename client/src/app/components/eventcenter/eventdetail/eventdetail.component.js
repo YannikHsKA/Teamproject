@@ -8,13 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var Event_1 = require("../../../model/Event");
 var event_service_1 = require("../../../services/event.service");
 var bundle_service_1 = require("../../../services/bundle.service");
 var router_1 = require("@angular/router");
-var ng2_webstorage_1 = require("ng2-webstorage");
+var ng2_webstorage_1 = require('ng2-webstorage');
 var EventdetailComponent = (function () {
     function EventdetailComponent(eventService, bundleService, router, storage) {
         this.eventService = eventService;
@@ -25,9 +24,14 @@ var EventdetailComponent = (function () {
         this.createMode = false;
         this.bundles = new Array();
         this.articles = new Array();
+        //Set NavigationBar Attributes
+        this.detail_status = true;
+        this.bundle1_status = this.storage.retrieve('bundle1_status');
+        this.bundle2_status = this.storage.retrieve('bundle2_status');
+        this.notification_status = this.storage.retrieve('notification_status');
+        this.active_status = "detail";
         if (this.storage.retrieve("mode") == "edit") {
             this.createMode = false;
-            console.log("test", this.eventService.event);
             switch (this.eventService.event) {
                 case undefined:
                     this.event = this.storage.retrieve('event');
@@ -48,6 +52,11 @@ var EventdetailComponent = (function () {
         }
         else {
             console.log("CREATE MODE");
+            //Status for Navigation Bar
+            this.storage.store('bundle1_status', false);
+            this.storage.store('bundle2_status', false);
+            this.storage.store('notification_status', false);
+            this.storage.store('detail_status', true);
             //working on create mode
             //start with empty default storage
             this.createMode = true;
@@ -85,6 +94,7 @@ var EventdetailComponent = (function () {
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('event', newEvent);
         this.storage.store('mode', 'edit');
+        this.storage.store('detail_status', true);
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
@@ -102,14 +112,6 @@ var EventdetailComponent = (function () {
         this.eventService.updateEvent(this.event)
             .subscribe();
     };
-    /*
-      onEdit(bundle: Bundle)
-      {
-        event.preventDefault();
-        this.storage.store('event',this.event);
-        this.storage.store('bundle_id',bundle.id);
-  
-      }*/
     EventdetailComponent.prototype.cancel = function () {
         event.preventDefault();
         this.storage.clear();
@@ -121,8 +123,8 @@ var EventdetailComponent = (function () {
             selector: 'eventdetail',
             templateUrl: "eventdetail.component.html",
             styleUrls: ["eventdetail.component.css"]
-        }),
-        __metadata("design:paramtypes", [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router, ng2_webstorage_1.SessionStorageService])
+        }), 
+        __metadata('design:paramtypes', [event_service_1.EventService, bundle_service_1.BundleService, router_1.Router, ng2_webstorage_1.SessionStorageService])
     ], EventdetailComponent);
     return EventdetailComponent;
 }());

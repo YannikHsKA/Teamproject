@@ -2,113 +2,195 @@
 
 
 
-
   <section>
     <div class="wizard">
       <div class="wizard-inner">
         <div class="connecting-line"></div>
         <ul class="nav nav-tabs" role="tablist">
 
-          <li role="presentation" class="disabled">
-            <a routerLink="/eventdetail" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-calendar"></i>
-                            </span>
+          <!-- Detail -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'detail'" role="presentation" class="active active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
             </a>
           </li>
 
-          <li role="presentation" class="disabled">
-            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-shopping-cart"></i>
-                            </span>
+          <!-- Finished active -->
+          <li *ngIf="detail_status && active_status != 'detail'" role="presentation" class="active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
             </a>
           </li>
-          <li role="presentation" class="disabled">
-            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-shopping-cart"></i>
-                            </span>
+
+          <!-- To be achieved -->
+          <li *ngIf="!detail_status" role="presentation" class="disabled">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
             </a>
           </li>
-          <li role="presentation" class="active">
-            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-bullhorn"></i>
-                            </span>
+
+
+          <!-- First Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
             </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+            <a aria-controls="step2" title="testt">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+          </a>
+          </li>
+
+          <!-- Second Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle2'" role="presentation" class="active1 active">
+            <a aria-controls="step1" title="Step 3">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle2_status && active_status != 'bundle2'" role="presentation" class="active1">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle2_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+          </a>
+          </li>
+
+
+          <!-- Notification -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'notification'" role="presentation" class="active1 active">
+            <a aria-controls="step4" title="Step 4">
+              <span class="round-tab" class="active" class="active">
+                  <i class="glyphicon-glyphicon-bullhorn"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="notification_status && active_status != 'notification'" role="presentation" class="active1">
+            <a aria-controls="step4" title="Step 4">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-bullhorn"></i>
+              </span>
+            </a>
+          </li>
+          <!-- To be... -->
+          <li *ngIf="!notification_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 4">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-bullhorn"></i>
+              </span>
+          </a>
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Information</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+  <div id="myModal " class="modal fade " role="dialog ">
+    <div class="modal-dialog " role="document ">
+      <div class="modal-content ">
+        <div class="modal-header ">
+          <h5 class="modal-title " id="exampleModalLabel ">Information</h5>
+          <button type="button " class="close " data-dismiss="modal " aria-label="Close ">
+            <span aria-hidden="true ">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body ">
           Do you really want to send out the notifications?
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" >Continue</button>
+        <div class="modal-footer ">
+          <button type="button " class="btn btn-secondary " data-dismiss="modal ">Close</button>
+          <button type="button " class="btn btn-primary " data-dismiss="modal ">Continue</button>
         </div>
       </div>
     </div>
   </div>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
 
-  <div class="well">
-  <form class="form-horizontal" style="text-align: center">
-    <legend>Notification Center</legend>
+  <div class="well ">
+    <form class="form-horizontal " style="text-align: center ">
+      <legend>Notification Center</legend>
 
-    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-      <div class="btn-group" role="group" (click)="switchLane('whatsapp')">
-        <button type="button" id="stars" [ngClass]="{'btn' : true, 'btn-primary':whatsapp_active, 'btn-default':!whatsapp_active}" href="#tab1" data-toggle="tab"><i class="fa fa-whatsapp" aria-hidden="true"></i>
-            <div class="hidden-xs">WhatsApp</div>
+      <div class="btn-pref btn-group btn-group-justified btn-group-lg " role="group " aria-label="... ">
+        <div class="btn-group " role="group " (click)="switchLane( 'whatsapp') ">
+          <button type="button " id="stars " [ngClass]="{ 'btn' : true, 'btn-primary':whatsapp_active, 'btn-default':!whatsapp_active} " href="#tab1 " data-toggle="tab "><i class="fa fa-whatsapp " aria-hidden="true "></i>
+            <div class="hidden-xs ">WhatsApp</div>
           </button>
-      </div>
-      <div class="btn-group " role="group" (click)="switchLane('sms')">
-        <button type="button" id="favorites" [ngClass]="{'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active}" href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-            <div class="hidden-xs">SMS</div>
-          </button>
-      </div>
-      <div class="btn-group" role="group" (click)="switchLane('email')">
-        <button type="button" id="following" [ngClass]="{'btn' : true, 'btn-primary':email_active,'btn-default':!email_active}" href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-            <div class="hidden-xs">E-Mail</div>
-          </button>
-      </div>
-    </div>
-
-
-      <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
-          <textarea placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
         </div>
-        <div class="tab-pane fade in" id="tab2">
-          <textarea placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
+        <div class="btn-group " role="group " (click)="switchLane( 'sms') ">
+          <button type="button " id="favorites " [ngClass]="{ 'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active} " href="#tab2 " data-toggle="tab "><span class="glyphicon glyphicon-comment " aria-hidden="true "></span>
+            <div class="hidden-xs ">SMS</div>
+          </button>
         </div>
-        <div class="tab-pane fade in" id="tab3">
-          <textarea placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
+        <div class="btn-group " role="group " (click)="switchLane( 'email') ">
+          <button type="button " id="following " [ngClass]="{ 'btn' : true, 'btn-primary':email_active, 'btn-default':!email_active} " href="#tab3 " data-toggle="tab "><span class="glyphicon glyphicon-envelope " aria-hidden="true "></span>
+            <div class="hidden-xs ">E-Mail</div>
+          </button>
         </div>
       </div>
 
-      <div class="row">
-          <div class="col-xs-6 ">
-            <a (click) ="backToBundle2()" class="btn btn-danger pull-left">Back to Bundles</a>
-          </div>
-          <div class="col-xs-6 ">
-            <button class="btn btn-info pull-right  " data-toggle="modal" data-target="#myModal" (click)="saveNotification()">Save and send Notifications</button>
-          </div>
+
+      <div class="tab-content ">
+        <div class="tab-pane fade in active " id="tab1 ">
+          <textarea placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp. "></textarea>
+        </div>
+        <div class="tab-pane fade in " id="tab2 ">
+          <textarea placeholder="Enter your SMS text here.&#10;Do not use emojis. "></textarea>
+        </div>
+        <div class="tab-pane fade in " id="tab3 ">
+          <textarea placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template. "></textarea>
+        </div>
       </div>
 
-  </form>
+      <div class="row ">
+        <div class="col-xs-6 ">
+          <a (click)="backToBundle2() " class="btn btn-danger pull-left ">Back to Bundles</a>
+        </div>
+        <div class="col-xs-6 ">
+          <button class="btn btn-info pull-right " data-toggle="modal " data-target="#myModal " (click)="saveNotification() ">Save and send Notifications</button>
+        </div>
+      </div>
+
+    </form>
   </div>
 </div>

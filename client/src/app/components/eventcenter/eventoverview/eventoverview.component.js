@@ -30,11 +30,12 @@ var EventoverviewComponent = (function () {
         });
     }
     EventoverviewComponent.prototype.onCreate = function () {
+        this.storage.clear();
         this.storage.store('mode', 'create');
         this.router.navigate(['./eventdetail']);
     };
-    ;
     EventoverviewComponent.prototype.onEdit = function (event) {
+        this.storage.clear();
         this.storage.store('mode', 'edit');
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);

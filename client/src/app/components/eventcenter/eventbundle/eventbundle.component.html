@@ -6,35 +6,117 @@
         <div class="connecting-line"></div>
         <ul class="nav nav-tabs" role="tablist">
 
-          <li role="presentation" class="disabled">
-            <a routerLink="/eventdetail" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-calendar"></i>
-                            </span>
+          <!-- Detail -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'detail'" role="presentation" class="active active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
             </a>
           </li>
 
-          <li role="presentation" [ngClass]="{'active' : bundle1_active, 'disabled':!bundle1_active}">
-            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-shopping-cart"></i>
-                            </span>
-            </a>
-          </li>
-          <li role="presentation" [ngClass]="{'disabled' : bundle1_active, 'active': !bundle1_active}">
-            <a routerLink="/eventbundle" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-shopping-cart"></i>
-                            </span>
+          <!-- Finished active -->
+          <li *ngIf="detail_status && active_status != 'detail'" role="presentation" class="active1">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
             </a>
           </li>
 
-          <li role="presentation" class="disabled">
-            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-bullhorn"></i>
-                            </span>
+          <!-- To be achieved -->
+          <li *ngIf="!detail_status" role="presentation" class="disabled">
+            <a aria-controls="step1" title="Step 1">
+              <span class="round-tab">
+                  <i class="glyphicon glyphicon-calendar"></i>
+              </span>
             </a>
+          </li>
+
+
+          <!-- First Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+            <a aria-controls="step2" title="Step 2">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+            <a aria-controls="step2" title="testt">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+          </a>
+          </li>
+
+          <!-- Second Bundle -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'bundle2'" role="presentation" class="active1 active">
+            <a aria-controls="step1" title="Step 3">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="bundle2_status && active_status != 'bundle2'" role="presentation" class="active1">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- To be achieved -->
+          <li *ngIf="!bundle2_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 3">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-shopping-cart"></i>
+              </span>
+          </a>
+          </li>
+
+
+          <!-- Notification -->
+          <!-- Currently active -->
+          <li *ngIf="active_status == 'notification'" role="presentation" class="active1 active">
+            <a aria-controls="step4" title="Step 4">
+              <span class="round-tab" class="active" class="active">
+                  <i class="glyphicon-glyphicon-bullhorn"></i>
+              </span>
+            </a>
+          </li>
+
+          <!-- Finished -->
+          <li *ngIf="notification_status && active_status != 'notification'" role="presentation" class="active1">
+            <a aria-controls="step4" title="Step 4">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-bullhorn"></i>
+              </span>
+            </a>
+          </li>
+          <!-- To be... -->
+          <li *ngIf="!notification_status" role="presentation" class="disabled">
+            <a aria-controls="step3" title="Step 4">
+              <span class="round-tab">
+                    <i class="glyphicon glyphicon-bullhorn"></i>
+              </span>
+          </a>
           </li>
         </ul>
       </div>
@@ -44,22 +126,22 @@
   <div>
 
 
-    <div class="well">
-      <form class="form-horizontal" style="text-align: center">
+    <div class="well ">
+      <form class="form-horizontal " style="text-align: center ">
 
         <legend>Create the {{bundle_id_text}} Bundle</legend>
 
         <fieldset>
-          <div class="form-group row">
-            <label for="title" class="col-xs-4 col-form-label">Bundle-Title</label>
-            <div class="col-xs-8">
-              <input [(ngModel)]="bundle.title" id="title" name="title" type="text" class="form-control input-xs">
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label ">Bundle-Title</label>
+            <div class="col-xs-8 ">
+              <input [(ngModel)]="bundle.title " id="title " name="title " type="text " class="form-control input-xs ">
             </div>
           </div>
-          <div class="form-group row">
-            <label for="title" class="col-xs-4 col-form-label">Bundle Description</label>
-            <div class="col-xs-8">
-              <textarea [(ngModel)]="bundle.description" id="description" name="description" type="text" class="form-control input-xs"></textarea>
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label ">Bundle Description</label>
+            <div class="col-xs-8 ">
+              <textarea [(ngModel)]="bundle.description " id="description " name="description " type="text " class="form-control input-xs "></textarea>
             </div>
           </div>
         </fieldset>
@@ -67,10 +149,10 @@
 
         <legend>Select your Style</legend>
         <fieldset>
-          <div class="form-group row">
-            <label for="title" class="col-xs-4 col-form-label">Style Template</label>
-            <div class="col-xs-8">
-              <select class="form-control" id="selectstyle">
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label ">Style Template</label>
+            <div class="col-xs-8 ">
+              <select class="form-control " id="selectstyle ">
                                      <option>Christmas</option>
                                      <option>Sports</option>
                                      <option>YAAAMAAAAAM</option>
@@ -79,17 +161,17 @@
           </div>
         </fieldset>
 
-        <div class="row">
-          <div class="pull-left">
-            <button [routerLink]="['/eventbundle']" *ngIf="!bundle1_active" class=" btn btn-danger " (click)="backToBundle1()">Back to First Bundle </button>
-            <button [routerLink]="['/eventdetail']" *ngIf="bundle1_active" class=" btn btn-danger " (click)="backToEvent()">Back To Events </button>
+        <div class="row ">
+          <div class="pull-left ">
+            <button [routerLink]="[ '/eventbundle'] " *ngIf="!bundle1_active " class=" btn btn-danger " (click)="backToBundle1() ">Back to First Bundle </button>
+            <button [routerLink]="[ '/eventdetail'] " *ngIf="bundle1_active " class=" btn btn-danger " (click)="backToEvent() ">Back To Events </button>
           </div>
-          <div class="pull-right">
-            <button class="btn btn-info" *ngIf="bundle1_active" (click)="GoNext()">Next to Second Bundle</button>
-            <button class="btn btn-info" *ngIf="!bundle1_active" (click)="GoNext()">Next to Notifications</button>
+          <div class="pull-right ">
+            <button class="btn btn-info " *ngIf="bundle1_active " (click)="GoNext() ">Next to Second Bundle</button>
+            <button class="btn btn-info " *ngIf="!bundle1_active " (click)="GoNext() ">Next to Notifications</button>
           </div>
-          <div class="col-xs-4 pull-right">
-            <button [routerLink]="['/eventarticles']" class="btn btn-default" (click)="GoToArticles()">Add articles to bundle</button>
+          <div class="col-xs-4 pull-right ">
+            <button [routerLink]="[ '/eventarticles'] " class="btn btn-default " (click)="GoToArticles() ">Add articles to bundle</button>
           </div>
 
         </div>
