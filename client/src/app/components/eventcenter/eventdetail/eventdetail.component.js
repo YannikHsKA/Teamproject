@@ -24,6 +24,7 @@ var EventdetailComponent = (function () {
         this.createMode = false;
         this.bundles = new Array();
         this.articles = new Array();
+        this.notifications = new Array();
         //Set NavigationBar Attributes
         this.detail_status = true;
         this.bundle1_status = this.storage.retrieve('bundle1_status');
@@ -63,6 +64,7 @@ var EventdetailComponent = (function () {
             this.event.title = "Sample Title";
             this.event.start = "Sample Start";
             this.event.end = "Sample End";
+            this.event.notifications = null;
             //build bundles
             var n = 0;
             while (n < 2) {
@@ -103,6 +105,7 @@ var EventdetailComponent = (function () {
             end: event.end,
             id: event.id,
             bundles: event.bundles,
+            notifications: event.notifications,
         };
         this.bundle_id = 0;
         this.storage.store('bundle_id', this.bundle_id);

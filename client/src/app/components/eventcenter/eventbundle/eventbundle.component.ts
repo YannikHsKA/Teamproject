@@ -29,6 +29,13 @@ export class EventbundleComponent {
 
   constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router) {
 
+
+    document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
+    document.body.style.backgroundPosition = "center center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
+    document.body.style.backgroundSize = "cover";
+
     this.bundle_id = this.storage.retrieve('bundle_id');
     this.event = this.storage.retrieve('event');
     this.bundle = this.event.bundles[this.bundle_id];

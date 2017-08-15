@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
+import {Notification} from "../../../model/Notification";
 import {Article} from "../../../model/Article";
 import {EventService} from "../../../services/event.service";
 import {BundleService} from "../../../services/bundle.service";
@@ -22,6 +23,7 @@ export class EventdetailComponent {
   createMode: boolean = false;
   bundles: Bundle[] = new Array();
   articles: Article[] = new Array();
+  notifications: Notification[] = new Array();
   bundle: Bundle;
   detail_status: boolean;
   bundle1_status: boolean;
@@ -76,6 +78,7 @@ export class EventdetailComponent {
       this.event.title = "Sample Title";
       this.event.start = "Sample Start";
       this.event.end = "Sample End";
+      this.event.notifications = null;
 
       //build bundles
       var n: number = 0;
@@ -121,6 +124,7 @@ export class EventdetailComponent {
       end: event.end,
       id: event.id,
       bundles: event.bundles,
+      notifications: event.notifications,
     };
     this.bundle_id = 0;
     this.storage.store('bundle_id', this.bundle_id);

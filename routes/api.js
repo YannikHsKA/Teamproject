@@ -341,7 +341,7 @@ router.post("/createevent", function(req, res) {
   res.send(newID);
 });
 
-// Create Event
+// Update Event
 router.post("/updateevent", function(req, res) {
   console.log("Update Event");
   /* Read POST Request */
@@ -362,7 +362,7 @@ router.post("/updateevent", function(req, res) {
   res.sendStatus(201);
 });
 
-// Create Event
+// Delete Event
 router.post("/deleteevent", function(req, res) {
   console.log("Remove Event");
   /* Read POST Request */
@@ -421,6 +421,34 @@ router.post("/createbundle/:bundlenum/:eventid", function(req, res) {
   res.sendStatus(201);
 });
 
+// Create Notification
+router.post("/createnotification/:eventid", function(req, res) {
+    console.log("Create Notification");
+    /* Read POST Request */
+    let notification = req.body;
+    console.log(notification);
+    var eventid = req.params.eventid;
+    console.log(eventid);
+
+    // Connect to Firebase
+    var db = admin.database();
+    var ref = db.ref('admin/events/' + eventid + '/notifications' );
+
+    var newRef = ref.push({
+        'whatsapp_text': notification.whatsapp_text,
+        'sms_text': notification.sms_text,
+        'email_text': notification.email_text,
+        'whatsapp_receiver': notification.whatsapp_receiver,
+        'time': notification.time
+    });
+
+    // Add Key to Entry
+    var newID = newRef.key;
+    newRef.update({
+        id: newID
+    })
+    res.send(newID);
+});
 
 // Get all Events
 router.get("/getevents", function(req, res) {
@@ -501,7 +529,7 @@ router.post("/createpdf", function(req, res) {
 
 
 
-//SETTINGS UPDATE NOTIFICATION   Work in Progress
+//SETTINGS UPDATE NOTIFICATION
 
 // Send Update Subscribe Email
 router.post("/sendEmailUpdate_subscribe", function(req, res) {
