@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var event_service_1 = require("../../../services/event.service");
 var router_1 = require("@angular/router");
-var ng2_webstorage_1 = require('ng2-webstorage');
+var ng2_webstorage_1 = require("ng2-webstorage");
 var EventarticlesComponent = (function () {
     function EventarticlesComponent(eventService, router, storage) {
         this.eventService = eventService;
@@ -80,8 +81,8 @@ var EventarticlesComponent = (function () {
             selector: 'eventarticles',
             templateUrl: "eventarticles.component.html",
             styleUrls: ["eventarticles.component.css"]
-        }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, router_1.Router, ng2_webstorage_1.SessionStorageService])
+        }),
+        __metadata("design:paramtypes", [event_service_1.EventService, router_1.Router, ng2_webstorage_1.SessionStorageService])
     ], EventarticlesComponent);
     return EventarticlesComponent;
 }());

@@ -16,11 +16,14 @@ export class SubscriptionsComponent {
   saveSuccess: boolean;
   registerPhone: boolean;
   registerMail: boolean;
+  registerWhatsapp: boolean;
+  whatsapp_number: string;
 
 
   constructor(private subscriptionService: SubscriptionService) {
     this.registerPhone = false;
     this.registerMail = false;
+    this.registerWhatsapp = false;
 
     document.body.style.backgroundImage = "url('src/assets/bg.jpg')";
     document.body.style.backgroundPosition = "center center";
@@ -41,13 +44,20 @@ export class SubscriptionsComponent {
     newUser.phonenumber = this.phonenumber;
     newUser.email_address = this.email_address;
 
-    if (newUser.phonenumber) {
+
+    if (this.phonenumber) {
+      newUser.phonenumber = this.phonenumber;
       this.saveSuccess = true;
       newUser.sms = 1;
     }
     if (newUser.email_address) {
       this.saveSuccess = true;
       newUser.email = 1;
+    }
+    if (this.whatsapp_number){
+      newUser.phonenumber = this.whatsapp_number;
+      this.saveSuccess = true;
+      newUser.whatsapp = 1;
     }
     this.subscriptionService.addUser(newUser)
       .subscribe()
@@ -59,6 +69,7 @@ export class SubscriptionsComponent {
     this.saveSuccess = false;
     if (!this.registerPhone && this.registerMail) {
       this.registerPhone = true;
+      this.registerWhatsapp = false;
       this.registerMail = false;
     } else if(!this.registerPhone){
       this.registerPhone = true;
@@ -67,18 +78,22 @@ export class SubscriptionsComponent {
     }
   }
 
+
+  showWhatsappFields() {
+
+    this.saveSuccess = false;
+      this.registerWhatsapp = true;
+      this.registerMail = false;
+      this.registerPhone = false;
+
+  }
+
   showMailFields() {
     this.phonenumber = null;
     this.saveSuccess = false;
-    if (!this.registerMail && this.registerPhone) {
         this.registerMail = true;
+        this.registerWhatsapp = false;
         this.registerPhone = false;
-
-    } else if(!this.registerMail){
-      this.registerMail = true;
-    }else {
-      this.registerMail = false;
-    }
   }
 
 }

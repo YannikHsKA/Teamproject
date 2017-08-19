@@ -1,19 +1,23 @@
+<!--   WhatsApp Logo -->
+<link rel="stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
 <div class="container containertop" align="center">
   <div class="jumbotron">
     <h2>{{ 'subscribe1' | translate}}</h2>
     <p>{{ 'subscribe2' | translate}}</p>
 
     <div class="row">
-      <div class="col-xs-6 text-right">
-        <button type="button" class="btn btn-info" (click)="showPhoneFields()">
-          Phone Number
+
+        <button  type="button"  class=" glyphicon glyphicon-comment button btn btn-info" (click)="showPhoneFields()">
+          SMS
         </button>
-      </div>
-      <div class="col-xs-6 text-left">
-        <button type="button" class="btn btn-info" (click)="showMailFields()">
+        <button type="button"  class="glyphicon glyphicon-envelope button btn btn-info" (click)="showMailFields()">
           E-Mail
         </button>
-      </div>
+        <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
+          <i class="fa fa-whatsapp " aria-hidden="true "></i> WhatsApp
+        </button>
+
+
     </div>
     <div class="row">
       <div class="col col-xs-12">
@@ -22,7 +26,7 @@
           <br>
 
           <input type="tel" class="form-control" placeholder="Add your phone number.." required pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$" [(ngModel)]="phonenumber"
-            name="phonenumber" #number="ngModel">
+                 name="phonenumber" #number="ngModel">
           <br>
           <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
             <div [hidden]="!number.errors.required">
@@ -42,6 +46,36 @@
             <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
           </div>
         </form>
+
+
+        <form #whatsappForm="ngForm" [hidden]="!registerWhatsapp">
+
+          <br>
+
+          <input type="tel" class="form-control" placeholder="Add your phone number.." required pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
+                 [(ngModel)]="whatsapp_number" name="whatsapp_number" #number="ngModel">
+          <br>
+          <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
+            <div [hidden]="!number.errors.required">
+
+            </div>
+            <div [hidden]="!number.errors.pattern">
+              Oops..It must be a valid phone number. Try this format +4911221234567.
+            </div>
+
+          </div>
+
+          <button type="button" class="btn btn-danger" [disabled]="!whatsappForm.form.valid" (click)="addUser()">
+            Subscribe
+          </button>
+          <br><br>
+          <div class="alert alert-success fade in" *ngIf="saveSuccess">
+            <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
+          </div>
+        </form>
+
+
+
 
 
         <form #mailForm="ngForm" [hidden]="!registerMail">

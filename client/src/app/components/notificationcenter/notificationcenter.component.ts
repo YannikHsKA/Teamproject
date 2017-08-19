@@ -1,7 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {Event} from '../../model/Event';
+import {Http, Headers, Response} from '@angular/http';
 import {EventService} from '../../services/event.service';
-import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
+import {SessionStorageService} from 'ng2-webstorage';
 import {Router} from '@angular/router';
 import {Notification} from "../../model/Notification";
 @Component({
@@ -28,7 +29,7 @@ export class NotificationcenterComponent {
 
 
 
-  constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router) {
+  constructor(private http: Http, private eventService: EventService, private storage: SessionStorageService, private router: Router) {
     this.event = this.storage.retrieve('event');
     this.email_active = false;
     this.sms_active = true;
@@ -48,19 +49,6 @@ export class NotificationcenterComponent {
     document.body.style.backgroundSize = "cover";
 
 
-    /*
-        this.notification = new Notification();
-        this.notification.whatsapp_text= "WhatsApp, SMS, Email";
-        this.notification.time= new Date();
-        this.notification.sms_text= "12";
-        this.notification.email_text ="12";
-        this.notification.whatsapp_receiver= 12;
-
-        this.notifications = [];
-        this.notifications.push(this.notification);
-        this.notifications.push(this.notification);
-
-    */
 
     if (this.event.notifications) {
 
@@ -73,14 +61,6 @@ export class NotificationcenterComponent {
     }
 
 
-    /*
-     this.event.notifications = Array.from(this.event.notifications);
-        var arr = [];
-        data.forEach(obj, function(value, key){
-          arr.push(value);
-        });
-
-        */
     console.log("BUNDLEID", this.notifications);
 
   }
@@ -171,8 +151,32 @@ export class NotificationcenterComponent {
 
   saveNotification() {
     console.log("Send out messages")
+    let object = {api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb', whatsapp_text: ''};
+    object.whatsapp_text="TEST";
+
+
+
+    var data = new FormData();
+    data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
+    data.append("content", this.notification.whatsapp_text);
+    data.append("msg_type", "text");
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("POST", "https://api.whatsbroadcast.com/v071/send_newsletter");
+
+    xhr.send(data);
+
     this.addNotification();
   }
+
   hack(val: any) {
     return Array.from(val);
   }

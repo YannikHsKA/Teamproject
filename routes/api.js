@@ -124,6 +124,7 @@ router.post("/subscribe", function(req, res) {
       {
         console.log("New Phonenumber")
         WriteUserToDB();
+        if (user.whatsapp ==0){
         client.sendMessage({
           to: user.phonenumber,
           from: '+4915735984837',
@@ -136,7 +137,10 @@ router.post("/subscribe", function(req, res) {
             // console.log(data);
             res.status(200).send("Success");
           }
-        });
+        });} else{
+          console.log("new Whatsapp User")
+
+        }
       }
     });
   }

@@ -20,6 +20,9 @@ h2{
   font-family: 'Alex Brush' !important;
 }
 
+.button {
+  margin-left: 10px;
+}
 p{
   font-family: 'Anaheim' !important;
   font-size: 18px;
