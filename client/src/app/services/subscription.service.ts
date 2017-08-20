@@ -13,7 +13,7 @@ export class SubscriptionService{
 
     var data = new FormData();
     data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
-    data.append("usernumber", "491735990392");
+    data.append("usernumber", newUser.phonenumber);
 
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = false;

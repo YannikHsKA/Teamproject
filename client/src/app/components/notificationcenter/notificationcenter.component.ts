@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {Event} from '../../model/Event';
 import {Http, Headers, Response} from '@angular/http';
 import {EventService} from '../../services/event.service';
+import {NotificationService} from '../../services/notification.service';
 import {SessionStorageService} from 'ng2-webstorage';
 import {Router} from '@angular/router';
 import {Notification} from "../../model/Notification";
@@ -29,7 +30,7 @@ export class NotificationcenterComponent {
 
 
 
-  constructor(private http: Http, private eventService: EventService, private storage: SessionStorageService, private router: Router) {
+  constructor(private notificationService: NotificationService, http: Http, private eventService: EventService, private storage: SessionStorageService, private router: Router) {
     this.event = this.storage.retrieve('event');
     this.email_active = false;
     this.sms_active = true;
@@ -96,20 +97,24 @@ export class NotificationcenterComponent {
       newNotification.whatsapp_text = "no Text";
     } else {
       newNotification.whatsapp_text = this.notification.whatsapp_text;
+      this.notificationService.sendWhatsapp(this.notification);
+
     }
     if (this.notification.sms_text) {
       newNotification.sms_text = this.notification.sms_text;
+      this.notificationService.sendSMS(this.notification);
     } else {
       newNotification.sms_text = "no Text";
     }
     if (this.notification.email_text) {
       newNotification.email_text = this.notification.email_text;
+      this.notificationService.sendEmail(this.notification);
     } else {
       newNotification.email_text = "no Text";
     }
     newNotification.time = new Date();
-    newNotification.whatsapp_receiver = 132;
-    newNotification.id = "1";
+    newNotification.whatsapp_receiver = 2;
+    newNotification.id = "0";
     var eventid: String = this.event.id;
     var temp = "";
     this.eventService.addNotification(newNotification, eventid)
@@ -133,7 +138,6 @@ export class NotificationcenterComponent {
     this.storage.store('mode', 'edit');
 
 
-
   }
 
 
@@ -149,33 +153,8 @@ export class NotificationcenterComponent {
     console.log("Reopen Message");
   }
 
-  saveNotification() {
-    console.log("Send out messages")
-    let object = {api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb', whatsapp_text: ''};
-    object.whatsapp_text="TEST";
 
 
-
-    var data = new FormData();
-    data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
-    data.append("content", this.notification.whatsapp_text);
-    data.append("msg_type", "text");
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = false;
-
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
-        console.log(this.responseText);
-      }
-    });
-
-    xhr.open("POST", "https://api.whatsbroadcast.com/v071/send_newsletter");
-
-    xhr.send(data);
-
-    this.addNotification();
-  }
 
   hack(val: any) {
     return Array.from(val);

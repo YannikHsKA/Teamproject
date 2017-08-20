@@ -8,17 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-var event_service_1 = require("../../services/event.service");
-var ng2_webstorage_1 = require("ng2-webstorage");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+var event_service_1 = require('../../services/event.service');
+var notification_service_1 = require('../../services/notification.service');
+var ng2_webstorage_1 = require('ng2-webstorage');
+var router_1 = require('@angular/router');
 var Notification_1 = require("../../model/Notification");
 var NotificationcenterComponent = (function () {
-    function NotificationcenterComponent(http, eventService, storage, router) {
+    function NotificationcenterComponent(notificationService, http, eventService, storage, router) {
         var _this = this;
-        this.http = http;
+        this.notificationService = notificationService;
         this.eventService = eventService;
         this.storage = storage;
         this.router = router;
@@ -78,22 +78,25 @@ var NotificationcenterComponent = (function () {
         }
         else {
             newNotification.whatsapp_text = this.notification.whatsapp_text;
+            this.notificationService.sendWhatsapp(this.notification);
         }
         if (this.notification.sms_text) {
             newNotification.sms_text = this.notification.sms_text;
+            this.notificationService.sendSMS(this.notification);
         }
         else {
             newNotification.sms_text = "no Text";
         }
         if (this.notification.email_text) {
             newNotification.email_text = this.notification.email_text;
+            this.notificationService.sendEmail(this.notification);
         }
         else {
             newNotification.email_text = "no Text";
         }
         newNotification.time = new Date();
-        newNotification.whatsapp_receiver = 132;
-        newNotification.id = "1";
+        newNotification.whatsapp_receiver = 2;
+        newNotification.id = "0";
         var eventid = this.event.id;
         var temp = "";
         this.eventService.addNotification(newNotification, eventid)
@@ -122,25 +125,6 @@ var NotificationcenterComponent = (function () {
     NotificationcenterComponent.prototype.onResend = function (event) {
         console.log("Reopen Message");
     };
-    NotificationcenterComponent.prototype.saveNotification = function () {
-        console.log("Send out messages");
-        var object = { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb', whatsapp_text: '' };
-        object.whatsapp_text = "TEST";
-        var data = new FormData();
-        data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
-        data.append("content", this.notification.whatsapp_text);
-        data.append("msg_type", "text");
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = false;
-        xhr.addEventListener("readystatechange", function () {
-            if (this.readyState === 4) {
-                console.log(this.responseText);
-            }
-        });
-        xhr.open("POST", "https://api.whatsbroadcast.com/v071/send_newsletter");
-        xhr.send(data);
-        this.addNotification();
-    };
     NotificationcenterComponent.prototype.hack = function (val) {
         return Array.from(val);
     };
@@ -150,8 +134,8 @@ var NotificationcenterComponent = (function () {
             selector: 'notificationcenter',
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
-        }),
-        __metadata("design:paramtypes", [http_1.Http, event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
+        }), 
+        __metadata('design:paramtypes', [notification_service_1.NotificationService, http_1.Http, event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());

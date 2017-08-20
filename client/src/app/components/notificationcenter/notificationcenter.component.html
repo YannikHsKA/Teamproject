@@ -147,7 +147,7 @@
   <link rel="stylesheet " href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css ">
 
   <div class="well ">
-    <form class="form-horizontal " style="text-align: center ">
+
       <legend>Notification Center</legend>
 
       <div class="btn-pref btn-group btn-group-justified btn-group-lg " role="group " aria-label="... ">
@@ -170,13 +170,13 @@
 
 
       <div class="tab-content">
-        <div class="tab-pane fade in active" id="tab1">
-          <textarea [(ngModel)]="notification.whatsapp_text" name="whatsapp_text" placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
+        <div [ngClass]="{'tab-pane fade in active' : whatsapp_active, 'tab-pane fade in' : !whatsapp_active }" id="tab1" >
+          <textarea  [(ngModel)]="notification.whatsapp_text" name="whatsapp_text" placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
         </div>
-        <div class="tab-pane fade in" id="tab2">
+        <div [ngClass]="{'tab-pane fade in active' : sms_active, 'tab-pane fade in' : !sms_active }" id="tab2" >
           <textarea [(ngModel)]="notification.sms_text" name="sms_text" placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
         </div>
-        <div class="tab-pane fade in" id="tab3">
+        <div [ngClass]="{'tab-pane fade in active' : email_active, 'tab-pane fade in' : !email_active }" id="tab3" >
           <textarea [(ngModel)]="notification.email_text" name="email_text" placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
         </div>
       </div>
@@ -186,11 +186,11 @@
           <a (click)="backToBundle2() " class="btn btn-danger pull-left ">Back to Bundles</a>
         </div>
         <div class="col-xs-6 ">
-          <button class="btn btn-info pull-right " data-toggle="modal " data-target="#myModal " (click)="saveNotification() ">Save and send Notifications</button>
+          <button class="btn btn-info pull-right " data-toggle="modal " data-target="#myModal " (click)="addNotification() ">Save and send Notifications</button>
         </div>
       </div>
 
-    </form>
+
     <div class="margin">
 
       <legend>Sent Messages</legend>

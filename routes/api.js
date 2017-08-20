@@ -527,9 +527,99 @@ router.post("/createpdf", function(req, res) {
 });
 
 
+// SEND NEWSLETTER
+
+router.post("/sendEmailNewsletter", function(req, res) {
+    /* Read POST Request */
+    var notification = req.body;
+
+console.log("Send Email Newsletter");
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref('user');
+    var users;
+
+    ref.once('value', function (snapshot) {
+        users = snapshot.val();
+
+    })
+    console.log("Users:");
+    console.log(users);
+    if (users != undefined) {
+
+      console.log("not undefined" + users);
+        var arrayLength = users.length;
+        for (var i = 0; i < arrayLength; i++) {
+            console.log(users[i]);
+        }
+
+    }
+
+/*
+
+    var inputmail = req.body.email_address;
+    console.log(inputmail);
+    // Send Notification Email with Setting Key and Voucher //
+    // Check if email address already exists
+
+    console.log("Notify User about Email Subscription");
+    var mailOptions = {
+        from: "lidlsmartshopping@gmail.com",
+        to: req.body.email_address,
+        subject: "Willkommen bei LIDL Smart Shopping!",
+        generateTextFromHTML: true,
+        html: "<b>Hallo!</b> neue Mail "
+    };
+
+    smtpTransport.sendMail(mailOptions, function(error, response) {
+        if (error) {
+            console.log(error);
+            console.log("Email not sent");
+            res.sendStatus(500);
+        } else {
+            // console.log(response);
+            console.log("Email Sent");
+            WriteUserToDB();
+        }
+        smtpTransport.close();
+    });
+*/
+});
 
 
+router.post("/sendSMSNewsletter", function(req, res) {
+    /* Read POST Request */
+    var user = req.body;
 
+    var inputmail = req.body.email_address;
+    console.log(inputmail);
+    // Send Notification Email with Setting Key and Voucher //
+    // Check if email address already exists
+
+    console.log("Notify User about Email Subscription");
+    var mailOptions = {
+        from: "lidlsmartshopping@gmail.com",
+        to: req.body.email_address,
+        subject: "Willkommen bei LIDL Smart Shopping!",
+        generateTextFromHTML: true,
+        html: "<b>Hallo!</b> neue Mail "
+    };
+
+    smtpTransport.sendMail(mailOptions, function(error, response) {
+        if (error) {
+            console.log(error);
+            console.log("Email not sent");
+            res.sendStatus(500);
+        } else {
+            // console.log(response);
+            console.log("Email Sent");
+            WriteUserToDB();
+        }
+        smtpTransport.close();
+    });
+
+
+});
 
 
 
@@ -537,35 +627,35 @@ router.post("/createpdf", function(req, res) {
 
 // Send Update Subscribe Email
 router.post("/sendEmailUpdate_subscribe", function(req, res) {
-  /* Read POST Request */
-  var user = req.body;
+    /* Read POST Request */
+    var user = req.body;
 
-  var inputmail = req.body.email_address;
-  console.log(inputmail);
-  // Send Notification Email with Setting Key and Voucher //
-  // Check if email address already exists
+    var inputmail = req.body.email_address;
+    console.log(inputmail);
+    // Send Notification Email with Setting Key and Voucher //
+    // Check if email address already exists
 
-  console.log("Notify User about Email Subscription");
-  var mailOptions = {
-    from: "lidlsmartshopping@gmail.com",
-    to: req.body.email_address,
-    subject: "Willkommen bei LIDL Smart Shopping!",
-    generateTextFromHTML: true,
-    html: "<b>Hallo!</b> neue Mail "
-  };
+    console.log("Notify User about Email Subscription");
+    var mailOptions = {
+        from: "lidlsmartshopping@gmail.com",
+        to: req.body.email_address,
+        subject: "Willkommen bei LIDL Smart Shopping!",
+        generateTextFromHTML: true,
+        html: "<b>Hallo!</b> neue Mail "
+    };
 
-  smtpTransport.sendMail(mailOptions, function(error, response) {
-    if (error) {
-      console.log(error);
-      console.log("Email not sent");
-      res.sendStatus(500);
-    } else {
-      // console.log(response);
-      console.log("Email Sent");
-      WriteUserToDB();
-    }
-    smtpTransport.close();
-  });
+    smtpTransport.sendMail(mailOptions, function(error, response) {
+        if (error) {
+            console.log(error);
+            console.log("Email not sent");
+            res.sendStatus(500);
+        } else {
+            // console.log(response);
+            console.log("Email Sent");
+            WriteUserToDB();
+        }
+        smtpTransport.close();
+    });
 
 
 });

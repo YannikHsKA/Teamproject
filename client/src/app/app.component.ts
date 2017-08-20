@@ -3,6 +3,7 @@ import {SubscriptionService} from './services/subscription.service';
 import {VerificationService} from "./services/verification.service";
 import {SettingsService} from "./services/settings.service";
 import {EventService} from "./services/event.service";
+import {NotificationService} from "./services/notification.service";
 import {BundleService} from "./services/bundle.service";
 import {TranslateService, TranslatePipe} from 'ng2-translate';
 import {Router} from '@angular/router';
@@ -11,7 +12,7 @@ import {Router} from '@angular/router';
   moduleId: module.id,
   selector: 'consumerAnalytics',
   templateUrl: `app.component.html`,
-  providers: [SubscriptionService, VerificationService, SettingsService, EventService, BundleService]
+  providers: [NotificationService,SubscriptionService, VerificationService, SettingsService, EventService, BundleService]
 })
 export class AppComponent implements OnInit{
 
