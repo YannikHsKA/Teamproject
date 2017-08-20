@@ -531,7 +531,7 @@ router.post("/createpdf", function(req, res) {
 // SEND NEWSLETTER
 
 router.post("/sendEmailNewsletter", function(req, res) {
-
+console.log("SEND EMAIL NEWSLETTER")
   var notification = req.body;
 
     // Connect to Firebase
@@ -543,26 +543,15 @@ router.post("/sendEmailNewsletter", function(req, res) {
 
         snapshot.forEach(function (snapshot2) {
             var obj = snapshot2.val();
-            console.log(obj.phonenumber);
-
-
-
-
-
-
-
-
 
             var inputmail = obj.email_address;
-            if (inputmail && obj.email) {
-                console.log(inputmail);
-                // Send Notification Email with Setting Key and Voucher //
-                // Check if email address already exists
+            if (inputmail && obj.email == 1) {
 
-                console.log("Notify User about current Event");
+                console.log("inputmail:" + inputmail);
+                //console.log("Notify User about current Event");
                 var mailOptions = {
                     from: "lidlsmartshopping@gmail.com",
-                    to: req.body.email_address,
+                    to: inputmail,
                     subject: "Neue interessante Bundles!",
                     generateTextFromHTML: true,
                     html: notification.email_text
@@ -585,42 +574,51 @@ router.post("/sendEmailNewsletter", function(req, res) {
 
         })
     });
-/*
 
-
-*/
 });
 
 
 router.post("/sendSMSNewsletter", function(req, res) {
-    /* Read POST Request */
-    var user = req.body;
 
-    var inputmail = req.body.email_address;
-    console.log(inputmail);
-    // Send Notification Email with Setting Key and Voucher //
-    // Check if email address already exists
 
-    console.log("Notify User about Email Subscription");
-    var mailOptions = {
-        from: "lidlsmartshopping@gmail.com",
-        to: req.body.email_address,
-        subject: "Willkommen bei LIDL Smart Shopping!",
-        generateTextFromHTML: true,
-        html: "<b>Hallo!</b> neue Mail "
-    };
 
-    smtpTransport.sendMail(mailOptions, function(error, response) {
-        if (error) {
-            console.log(error);
-            console.log("Email not sent");
-            res.sendStatus(500);
-        } else {
-            // console.log(response);
-            console.log("Email Sent");
-            WriteUserToDB();
-        }
-        smtpTransport.close();
+    console.log("SEND SMS NEWSLETTER")
+    var notification = req.body;
+
+    // Connect to Firebase
+    var db = admin.database();
+    var ref = db.ref("user");
+
+    ref.once('value', function(snapshot) {
+        let user;
+
+        snapshot.forEach(function (snapshot2) {
+            var obj = snapshot2.val();
+
+            var phonenumber = obj.phonenumber;
+            if (phonenumber && obj.sms == 1) {
+
+                console.log("Phonenumber:" + phonenumber);
+
+                client.sendMessage({
+                    to: phonenumber,
+                    from: '+4915735984837',
+                    body: notification.sms_text
+                }, function(err, data) {
+                    if (err) {
+                         console.log(err);
+                       // res.status(500).send("Failure");
+                    } else {
+                        // console.log(data);
+                     //   res.status(200).send("Success");
+                    }
+                });
+
+
+            }
+
+
+        })
     });
 
 
@@ -702,8 +700,6 @@ router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
   });
 
 });
-
-
 
 
 router.post("/sendSMSUpdate_subscribe", function(req, res) {

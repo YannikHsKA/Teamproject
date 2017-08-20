@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/map');
 var BundleService = (function () {
     function BundleService(http) {
         this.http = http;
@@ -27,8 +26,8 @@ var BundleService = (function () {
             .map(function (res) { return res.json(); });
     };
     BundleService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http])
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
     ], BundleService);
     return BundleService;
 }());
