@@ -96,18 +96,21 @@ export class NotificationcenterComponent {
     if (!this.notification.whatsapp_text) {
       newNotification.whatsapp_text = "no Text";
     } else {
+      console.log("Whatsapp Text vorhanden");
       newNotification.whatsapp_text = this.notification.whatsapp_text;
       this.notificationService.sendWhatsapp(this.notification);
 
     }
     if (this.notification.sms_text) {
       newNotification.sms_text = this.notification.sms_text;
+      console.log("SMS Text vorhanden");
       this.notificationService.sendSMS(this.notification);
     } else {
       newNotification.sms_text = "no Text";
     }
     if (this.notification.email_text) {
       newNotification.email_text = this.notification.email_text;
+      console.log("Email Text vorhanden");
       this.notificationService.sendEmail(this.notification);
     } else {
       newNotification.email_text = "no Text";
@@ -117,6 +120,7 @@ export class NotificationcenterComponent {
     newNotification.id = "0";
     var eventid: String = this.event.id;
     var temp = "";
+
     this.eventService.addNotification(newNotification, eventid)
       .subscribe(result => temp);
     console.log("create Notification", temp);

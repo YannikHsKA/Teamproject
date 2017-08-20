@@ -1,0 +1,250 @@
+{
+  "admin" : {
+    "events" : {
+      "-KrgXOu67WgK--vzef98" : {
+        "bundles" : [ {
+          "description" : "Sample Description",
+          "id" : 0,
+          "picture" : "...",
+          "title" : "Please edit the Bundle"
+        }, {
+          "description" : "Sample Description",
+          "id" : 1,
+          "picture" : "...",
+          "title" : "Please edit the Bundle"
+        } ],
+        "end" : "Sample End",
+        "start" : "Sample Start",
+        "title" : "Sample Title"
+      },
+      "-KrppUcv8ELPdEGWaGh0" : {
+        "notifications" : {
+          "-KrppZZ1LjB_5mHlonnX" : {
+            "email_text" : "no Text",
+            "id" : "-KrppZZ1LjB_5mHlonnX",
+            "sms_text" : "no Text",
+            "time" : "2017-08-18T14:54:07.388Z",
+            "whatsapp_receiver" : 132,
+            "whatsapp_text" : "12"
+          }
+        }
+      },
+      "-KrppZZ1LjB_5mHlonnX" : {
+        "notifications" : {
+          "-Krpq_IbD73u_vEVkGuG" : {
+            "email_text" : "no Text",
+            "id" : "-Krpq_IbD73u_vEVkGuG",
+            "sms_text" : "no Text",
+            "time" : "2017-08-18T14:58:32.720Z",
+            "whatsapp_receiver" : 132,
+            "whatsapp_text" : "123"
+          },
+          "-Krpve_Skr2aoz8jHGjc" : {
+            "email_text" : "no Text",
+            "id" : "-Krpve_Skr2aoz8jHGjc",
+            "sms_text" : "no Text",
+            "time" : "2017-08-18T15:20:44.175Z",
+            "whatsapp_receiver" : 132,
+            "whatsapp_text" : "123"
+          }
+        }
+      },
+      "-KrvYdOqANuWyCb4Y-1W" : {
+        "notifications" : {
+          "-KrvYpw7Cj225w-NvY4A" : {
+            "email_text" : "no Text",
+            "id" : "-KrvYpw7Cj225w-NvY4A",
+            "sms_text" : "no Text",
+            "time" : "2017-08-19T17:34:23.271Z",
+            "whatsapp_receiver" : 132,
+            "whatsapp_text" : "1234"
+          }
+        }
+      },
+      "-Ks-Sxp-2yNcwlIB3TLC" : {
+        "notifications" : {
+          "-Ks-UecnPzb1M6ySbqY1" : {
+            "email_text" : "test2",
+            "id" : "-Ks-UecnPzb1M6ySbqY1",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T16:34:14.244Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          }
+        }
+      },
+      "-Ks-UecnPzb1M6ySbqY1" : {
+        "notifications" : {
+          "-Ks-_fJL-cn970AC8GfW" : {
+            "email_text" : "123",
+            "id" : "-Ks-_fJL-cn970AC8GfW",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T17:00:30.178Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          },
+          "-Ks-cS_xicM7UEnpFKIV" : {
+            "email_text" : "123",
+            "id" : "-Ks-cS_xicM7UEnpFKIV",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T17:12:40.447Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          }
+        }
+      },
+      "-Ks-cS_xicM7UEnpFKIV" : {
+        "notifications" : {
+          "-Ks-ctVw3fdtkYCPhCJk" : {
+            "email_text" : "blub",
+            "id" : "-Ks-ctVw3fdtkYCPhCJk",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T17:14:34.838Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          },
+          "-Ks-dBlpiYQQxdiK6jIk" : {
+            "email_text" : "blub",
+            "id" : "-Ks-dBlpiYQQxdiK6jIk",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T17:15:53.772Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          },
+          "-Ks-dS7es5Dbz8umjtLK" : {
+            "email_text" : "blub",
+            "id" : "-Ks-dS7es5Dbz8umjtLK",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T17:17:00.771Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          },
+          "-Ks-daicxG-p1ZedCxA5" : {
+            "email_text" : "blub",
+            "id" : "-Ks-daicxG-p1ZedCxA5",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T17:17:40.067Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          }
+        }
+      },
+      "undefined" : {
+        "bundles" : [ {
+          "description" : "Sample Description",
+          "id" : 0,
+          "picture" : "...",
+          "title" : "Please edit the Bundle"
+        }, {
+          "description" : "Sample Description",
+          "id" : 1,
+          "picture" : "...",
+          "title" : "Please edit the Bundle"
+        } ],
+        "end" : "Sample End",
+        "notifications" : {
+          "-Ks-Sxp-2yNcwlIB3TLC" : {
+            "email_text" : "test",
+            "id" : "-Ks-Sxp-2yNcwlIB3TLC",
+            "sms_text" : "no Text",
+            "time" : "2017-08-20T16:26:48.466Z",
+            "whatsapp_receiver" : 132,
+            "whatsapp_text" : "no Text"
+          }
+        },
+        "start" : "Sample Start",
+        "title" : "Sample Title"
+      }
+    }
+  },
+  "data" : {
+    "week1" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 1239812312,
+              "name" : "artikel1",
+              "preis" : "50€"
+            },
+            "article2" : {
+              "ean" : 21323123,
+              "name" : "artikel2",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 2131231,
+              "name" : "artikel2",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 1239812312,
+              "name" : "artikel1",
+              "preis" : "50€"
+            },
+            "article2" : {
+              "ean" : 21323123,
+              "name" : "artikel2",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 2131231,
+              "name" : "artikel2",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week2" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 1239812312,
+              "name" : "artikel1",
+              "preis" : "50€"
+            },
+            "article2" : {
+              "ean" : 21323123,
+              "name" : "artikel2",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 2131231,
+              "name" : "artikel2",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 1239812312,
+              "name" : "artikel1",
+              "preis" : "50€"
+            },
+            "article2" : {
+              "ean" : 21323123,
+              "name" : "artikel2",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 2131231,
+              "name" : "artikel2",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    }
+  }
+}

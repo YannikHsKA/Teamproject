@@ -101,6 +101,7 @@ router.post("/subscribe", function(req, res) {
           } else {
             console.log(response);
             console.log("Email Sent");
+            res.sendStatus(200);
             WriteUserToDB();
           }
           smtpTransport.close();
@@ -530,59 +531,63 @@ router.post("/createpdf", function(req, res) {
 // SEND NEWSLETTER
 
 router.post("/sendEmailNewsletter", function(req, res) {
-    /* Read POST Request */
-    var notification = req.body;
 
-console.log("Send Email Newsletter");
-    /* Connect to Firebase */
+  var notification = req.body;
+
+    // Connect to Firebase
     var db = admin.database();
-    var ref = db.ref('user');
-    var users;
+    var ref = db.ref("user");
 
-    ref.once('value', function (snapshot) {
-        users = snapshot.val();
+    ref.once('value', function(snapshot) {
+        let user;
 
-    })
-    console.log("Users:");
-    console.log(users);
-    if (users != undefined) {
+        snapshot.forEach(function (snapshot2) {
+            var obj = snapshot2.val();
+            console.log(obj.phonenumber);
 
-      console.log("not undefined" + users);
-        var arrayLength = users.length;
-        for (var i = 0; i < arrayLength; i++) {
-            console.log(users[i]);
-        }
 
-    }
 
+
+
+
+
+
+
+            var inputmail = obj.email_address;
+            if (inputmail && obj.email) {
+                console.log(inputmail);
+                // Send Notification Email with Setting Key and Voucher //
+                // Check if email address already exists
+
+                console.log("Notify User about current Event");
+                var mailOptions = {
+                    from: "lidlsmartshopping@gmail.com",
+                    to: req.body.email_address,
+                    subject: "Neue interessante Bundles!",
+                    generateTextFromHTML: true,
+                    html: notification.email_text
+                };
+                smtpTransport.sendMail(mailOptions, function (error, response) {
+                    if (error) {
+                        console.log(error);
+                        console.log("Email not sent");
+                        //res.sendStatus(500);
+                    } else {
+                        // console.log(response);
+                        console.log("Email Sent");
+
+                    }
+                    smtpTransport.close();
+                });
+
+            }
+
+
+        })
+    });
 /*
 
-    var inputmail = req.body.email_address;
-    console.log(inputmail);
-    // Send Notification Email with Setting Key and Voucher //
-    // Check if email address already exists
 
-    console.log("Notify User about Email Subscription");
-    var mailOptions = {
-        from: "lidlsmartshopping@gmail.com",
-        to: req.body.email_address,
-        subject: "Willkommen bei LIDL Smart Shopping!",
-        generateTextFromHTML: true,
-        html: "<b>Hallo!</b> neue Mail "
-    };
-
-    smtpTransport.sendMail(mailOptions, function(error, response) {
-        if (error) {
-            console.log(error);
-            console.log("Email not sent");
-            res.sendStatus(500);
-        } else {
-            // console.log(response);
-            console.log("Email Sent");
-            WriteUserToDB();
-        }
-        smtpTransport.close();
-    });
 */
 });
 

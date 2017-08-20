@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var event_service_1 = require('../../services/event.service');
-var notification_service_1 = require('../../services/notification.service');
-var ng2_webstorage_1 = require('ng2-webstorage');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var event_service_1 = require("../../services/event.service");
+var notification_service_1 = require("../../services/notification.service");
+var ng2_webstorage_1 = require("ng2-webstorage");
+var router_1 = require("@angular/router");
 var Notification_1 = require("../../model/Notification");
 var NotificationcenterComponent = (function () {
     function NotificationcenterComponent(notificationService, http, eventService, storage, router) {
@@ -77,11 +78,13 @@ var NotificationcenterComponent = (function () {
             newNotification.whatsapp_text = "no Text";
         }
         else {
+            console.log("Whatsapp Text vorhanden");
             newNotification.whatsapp_text = this.notification.whatsapp_text;
             this.notificationService.sendWhatsapp(this.notification);
         }
         if (this.notification.sms_text) {
             newNotification.sms_text = this.notification.sms_text;
+            console.log("SMS Text vorhanden");
             this.notificationService.sendSMS(this.notification);
         }
         else {
@@ -89,6 +92,7 @@ var NotificationcenterComponent = (function () {
         }
         if (this.notification.email_text) {
             newNotification.email_text = this.notification.email_text;
+            console.log("Email Text vorhanden");
             this.notificationService.sendEmail(this.notification);
         }
         else {
@@ -134,8 +138,8 @@ var NotificationcenterComponent = (function () {
             selector: 'notificationcenter',
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
-        }), 
-        __metadata('design:paramtypes', [notification_service_1.NotificationService, http_1.Http, event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
+        }),
+        __metadata("design:paramtypes", [notification_service_1.NotificationService, http_1.Http, event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());
