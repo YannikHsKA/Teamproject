@@ -6,6 +6,7 @@ import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
 import {Router} from '@angular/router';
 import {EventService} from "../../../services/event.service";
+import {BundleService} from "../../../services/bundle.service";
 
 
 @Component({
@@ -27,7 +28,7 @@ export class EventbundleComponent {
   notification_status: boolean;
   active_status: string;
 
-  constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router) {
+  constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router, private bundleService: BundleService) {
 
 
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
@@ -61,6 +62,11 @@ export class EventbundleComponent {
         this.storage.store('bundle2_status', true);
         break;
     }
+
+    this.bundleService.getBundles(this.event.id)
+      .subscribe(bundles => {
+        this.bundles = bundles;
+      })
   }
 
   backToEvent() {
