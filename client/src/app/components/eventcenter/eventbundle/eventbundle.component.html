@@ -129,17 +129,17 @@
     <div class="well ">
       <form class="form-horizontal " style="text-align: center ">
 
-        <legend>Create the {{bundle_id_text}} Bundle</legend>
+        <legend>{{ 'create1' | translate}}{{bundle_id_text}} {{ 'bundle1' | translate}}</legend>
 
         <fieldset>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Bundle-Title</label>
+            <label for="title " class="col-xs-4 col-form-label ">{{ 'bundleTitle' | translate}}</label>
             <div class="col-xs-8 ">
               <input [(ngModel)]="bundle.title " id="title " name="title " type="text " class="form-control input-xs ">
             </div>
           </div>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Bundle Description</label>
+            <label for="title " class="col-xs-4 col-form-label ">{{ 'bundleDesc' | translate}}</label>
             <div class="col-xs-8 ">
               <textarea [(ngModel)]="bundle.description " id="description " name="description " type="text " class="form-control input-xs "></textarea>
             </div>
@@ -147,15 +147,15 @@
         </fieldset>
 
 
-        <legend>Select your Style</legend>
+        <legend>{{ 'selectStyle' | translate}}</legend>
         <fieldset>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Style Template</label>
+            <label for="title " class="col-xs-4 col-form-label ">{{ 'styleTemplate' | translate}}</label>
             <div class="col-xs-8 ">
               <select class="form-control " id="selectstyle ">
-                                     <option>Christmas</option>
-                                     <option>Sports</option>
-                                     <option>YAAAMAAAAAM</option>
+                                     <option>{{ 'opt1' | translate}}</option>
+                                     <option>{{ 'opt2' | translate}}</option>
+                                     <option>{{ 'opt3' | translate}}</option>
                                    </select>
             </div>
           </div>
@@ -163,15 +163,15 @@
 
         <div class="row ">
           <div class="pull-left ">
-            <button [routerLink]="[ '/eventbundle'] " *ngIf="!bundle1_active " class=" btn btn-danger " (click)="backToBundle1() ">Back to First Bundle </button>
-            <button [routerLink]="[ '/eventdetail'] " *ngIf="bundle1_active " class=" btn btn-danger " (click)="backToEvent() ">Back To Events </button>
+            <button [routerLink]="[ '/eventbundle'] " *ngIf="!bundle1_active " class=" btn btn-danger " (click)="backToBundle1() ">{{ 'back2bundle1' | translate}}</button>
+            <button [routerLink]="[ '/eventdetail'] " *ngIf="bundle1_active " class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events' | translate}}</button>
           </div>
           <div class="pull-right ">
-            <button class="btn btn-info " *ngIf="bundle1_active " (click)="GoNext() ">Next to Second Bundle</button>
-            <button class="btn btn-info " *ngIf="!bundle1_active " (click)="GoNext() ">Next to Notifications</button>
+            <button class="btn btn-info " *ngIf="bundle1_active " (click)="GoNext() ">{{ 'next2bundle2' | translate}}</button>
+            <button class="btn btn-info " *ngIf="!bundle1_active " (click)="GoNext() ">{{ 'next2notif' | translate}}</button>
           </div>
           <div class="col-xs-4 pull-right ">
-            <button [routerLink]="[ '/eventarticles'] " class="btn btn-default " (click)="GoToArticles() ">Add articles to bundle</button>
+            <button [routerLink]="[ '/eventarticles'] " class="btn btn-default " (click)="GoToArticles() ">{{ 'addProducts' | translate}}</button>
           </div>
 
         </div>

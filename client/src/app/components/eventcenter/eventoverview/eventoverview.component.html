@@ -8,29 +8,29 @@
       <div class="useravatar">
         <img alt="" src="https://i.pinimg.com/736x/f9/28/e2/f928e27b6513d0d9c25a1b80293b12d1--under-construction-sign-construction-clipart.jpg">
       </div>
-      <div class="card-info"><span class="card-title, lead">Smart Eventcenter</span>
+      <div class="card-info"><span class="card-title, lead">{{ 'eventCenter' | translate}}</span>
 
       </div>
     </div>
     <div class="well">
       <div class="row">
-        <legend>Events</legend>
+        <legend>{{ 'events1' | translate}}</legend>
         <div class="col-xs-12">
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let event of events" id="event.id">
               {{ event.title }}
               <button class="btn btn-xs btn-danger pull-right" (click)="onDelete(event)"><span
-              class="glyphicon glyphicon-trash"></span> Delete
+              class="glyphicon glyphicon-trash"></span> {{ 'delete1' | translate}}
             </button>
               <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
-              class="glyphicon glyphicon-wrench"></span> Go To Event
+              class="glyphicon glyphicon-wrench"></span> {{ 'goEvent' | translate}}
             </button>
             </li>
           </ul>
         </div>
       </div>
       <div class="row">
-        <button class="btn btn-primary" (click)="onCreate()">Create new Event</button>
+        <button class="btn btn-primary" (click)="onCreate()">{{ 'newEvent' | translate}}</button>
       </div>
     </div>
   </div>

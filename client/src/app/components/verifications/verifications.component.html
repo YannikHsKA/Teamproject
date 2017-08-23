@@ -1,18 +1,18 @@
 <div class="container containertop" align="center">
   <div class="jumbotron">
-    <h2>LIDL Smart Shopping Verification</h2>
+    <h2>{{ 'lidlssv' | translate}}</h2>
 
-    <p>How did you choose to use the LIDL Smart Shopping Service?</p>
+    <p>{{ 'channel?' | translate}}</p>
 
     <div class="row">
       <div class="col-xs-6 text-right">
         <button type="button" class="btn btn-info" (click)="showPhoneVer()">
-          Phone Number
+          {{ 'phone1' | translate}}
         </button>
       </div>
       <div class="col-xs-6 text-left">
         <button type="button" class="btn btn-info" (click)="showMailVer()">
-          E-Mail
+          {{ 'email2' | translate}}
         </button>
       </div>
     </div>
@@ -20,7 +20,7 @@
       <div class="col-xs-12">
         <form [hidden]="!verifyPhone">
           <br>
-          <p>Type your registered phone number and press Enter: </p>
+          <p>{{ 'typenum1' | translate}}</p>
           <form (submit)="checkUserByPhone()">
             <input type="tel" class="form-control" placeholder="Type your phone number here (+4911221234567)." required pattern="^(((((((00|\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$" [(ngModel)]="phonenumber"
               name="phonenumber" #number="ngModel">
@@ -28,31 +28,31 @@
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            <strong>ERROR!</strong> Please use a registered phone number.
+            {{ 'error1' | translate}}
           </div>
           <br>
           <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
             <div [hidden]="!number.errors.required">
-              Type your phone number.
+              {{ 'typenum2' | translate}}
             </div>
             <div [hidden]="!number.errors.pattern">
-              Oops..It must be a valid phone number. Try this format +4911221234567.
+              {{ 'error2' | translate}}
             </div>
           </div>
-          <p>Type the verification code you just received and press Enter:</p>
+          <p>{{ 'typecode1' | translate}}</p>
           <form (submit)="checkVerification()">
             <input type="text" class="form-control" placeholder="Type the verification code here." required [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
           </form>
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert2">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            <strong>ERROR!</strong> Please use the correct verification code.
+            {{ 'error3' | translate}}
           </div>
         </form>
 
         <form [hidden]="!verifyMail">
           <br>
-          <p>Type your registered E-Mail and press Enter:</p>
+          <p>{{ 'typeemail2' | translate}}</p>
           <form (submit)="checkUserByMail()">
             <input type="email" class="form-control" placeholder="Type your E-Mail here (john.doe@lidlmail.com)." required pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
               [(ngModel)]="email_address" name="email_address" #mail="ngModel">
@@ -60,25 +60,25 @@
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            <strong>ERROR!</strong> Please use a registered E-Mail address.
+            {{ 'error4' | translate}}
           </div>
           <br>
           <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
             <div [hidden]="!mail.errors.required">
-              Type your E-Mail.
+              {{ 'typeemail3' | translate}}
             </div>
             <div [hidden]="!mail.errors.pattern">
-              Oops..It must be a valid E-Mail, like this aaabbb@gmail.com.
+              {{ 'error5' | translate}}
             </div>
           </div>
-          <p>Type the verification code you just received and press Enter.</p>
+          <p>{{ 'typecode2' | translate}}</p>
           <form (submit)="checkVerification()">
             <input type="text" class="form-control" placeholder="Type the verification code here." required [(ngModel)]="verCode" name="verCode" [disabled]="displayVer">
           </form>
           <br>
           <div class="alert alert-danger alert-dismissable" *ngIf="displayAlert2">
             <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-            <strong>ERROR!</strong> Please use the correct verification code.
+            {{ 'error6' | translate}}
           </div>
         </form>
       </div>

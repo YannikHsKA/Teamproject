@@ -8,13 +8,13 @@
     <div class="row">
 
         <button  type="button"  class=" glyphicon glyphicon-comment button btn btn-info" (click)="showPhoneFields()">
-          SMS
+          {{ 'sms1' | translate}}
         </button>
         <button type="button"  class="glyphicon glyphicon-envelope button btn btn-info" (click)="showMailFields()">
-          E-Mail
+          {{ 'email1' | translate}}
         </button>
         <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
-          <i class="fa fa-whatsapp " aria-hidden="true "></i> WhatsApp
+          <i class="fa fa-whatsapp " aria-hidden="true "></i> {{ 'whatsapp1' | translate}}
         </button>
 
 
@@ -33,17 +33,17 @@
 
             </div>
             <div [hidden]="!number.errors.pattern">
-              Oops..It must be a valid phone number. Try this format +4911221234567.
+              {{ 'invalidnum1' | translate}}
             </div>
 
           </div>
 
           <button type="button" class="btn btn-danger" [disabled]="!phoneForm.form.valid" (click)="addUser()">
-            Subscribe
+            {{ 'subscribebutton1' | translate}}
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
+            {{ 'success1' | translate}}
           </div>
         </form>
 
@@ -60,17 +60,17 @@
 
             </div>
             <div [hidden]="!number.errors.pattern">
-              Oops..It must be a valid phone number. Try this format 4911221234567.
+              {{ 'invalidnum2' | translate}}
             </div>
 
           </div>
 
           <button type="button" class="btn btn-danger" [disabled]="!whatsappForm.form.valid" (click)="addUser()">
-            Subscribe
+            {{ 'subscribebutton2' | translate}}
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
+            {{ 'success2' | translate}}
           </div>
         </form>
 
@@ -87,20 +87,21 @@
           <br>
           <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
             <div [hidden]="!mail.errors.required">
-              Type in your E-Mail address.
+              {{ 'typeemail1' | translate}}
             </div>
             <div [hidden]="!mail.errors.pattern">
-              Oops...It must be a valid E-Mail. For example, aaabbb@gmail.com.
+              {{ 'invaliedemail1' | translate}}
             </div>
 
           </div>
 
           <button type="button" class="btn btn-danger" [disabled]="!mailForm.form.valid" (click)="addUser()">
-            Subscribe
+            {{ 'subscribebutton3' | translate}}
+
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            <strong>Success!</strong> You're now a smart customer with LIDL Smart Shopping :)
+            {{ 'success3' | translate}}
           </div>
         </form>
       </div>
