@@ -65,17 +65,11 @@ export class SubscriptionsComponent {
   }
 
   showPhoneFields() {
-    this.email_address = null;
     this.saveSuccess = false;
-    if (!this.registerPhone && this.registerMail) {
-      this.registerPhone = true;
-      this.registerWhatsapp = false;
-      this.registerMail = false;
-    } else if(!this.registerPhone){
-      this.registerPhone = true;
-    } else{
-      this.registerPhone = false;
-    }
+    this.registerPhone = true;
+    this.registerWhatsapp = false;
+    this.registerMail = false;
+
   }
 
 
@@ -89,7 +83,7 @@ export class SubscriptionsComponent {
   }
 
   showMailFields() {
-    this.phonenumber = null;
+   // this.phonenumber = null;
     this.saveSuccess = false;
         this.registerMail = true;
         this.registerWhatsapp = false;
