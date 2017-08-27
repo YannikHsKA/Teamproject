@@ -129,36 +129,86 @@
     <div class="well ">
       <form class="form-horizontal " style="text-align: center ">
 
-        <legend>Create the {{bundle_id_text}} Bundle</legend>
+        <legend>Create the Bundle for Calender Week 10</legend>
 
         <fieldset>
-          <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Bundle-Title</label>
-            <div class="col-xs-8 ">
-              <input [(ngModel)]="bundle.title " id="title " name="title " type="text " class="form-control input-xs ">
+          <div class="col-xs-6">
+            <div class="form-group row ">
+              <label for="title " class="col-xs-4 col-form-label ">Title</label>
+              <div class="col-xs-8 ">
+                <input [(ngModel)]="bundle.title " id="title " name="title " type="text " class="form-control input-xs ">
+              </div>
+            </div>
+            <div class="form-group row ">
+              <label for="title " class="col-xs-4 col-form-label ">Description</label>
+              <div class="col-xs-8 ">
+                <textarea [(ngModel)]="bundle.description " id="description " name="description " type="text " class="form-control input-xs "></textarea>
+              </div>
             </div>
           </div>
-          <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Bundle Description</label>
-            <div class="col-xs-8 ">
-              <textarea [(ngModel)]="bundle.description " id="description " name="description " type="text " class="form-control input-xs "></textarea>
+          <div class="col-xs-6">
+            <div class="form-group row ">
+              <label for="title " class="col-xs-4 col-form-label ">Style Template</label>
+              <div class="col-xs-8 ">
+                <select class="form-control " id="selectstyle ">
+                                       <option>Christmas</option>
+                                       <option>Sports</option>
+                                       <option>YAAAMAAAAAM</option>
+                                     </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="title " class="col-xs-4 col-form-label ">Discount</label>
+              <div class="col-xs-5 ">
+                <input id="slider-selection" type="range" list="tickmarks">
+
+                <datalist id="tickmarks">
+                  <option value="0" label="0%">
+                  <option value="10">
+                  <option value="20">
+                  <option value="30">
+                  <option value="40">
+                  <option value="50" label="50%">
+                  <option value="60">
+                  <option value="70">
+                  <option value="80">
+                  <option value="90">
+                  <option value="100" label="100%">
+              </datalist>
+              </div>
+              <div class="col-xs-3 ">
+                10%
+              </div>
             </div>
           </div>
         </fieldset>
 
 
-        <legend>Select your Style</legend>
+        <legend>Magic Articles</legend>
         <fieldset>
-          <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Style Template</label>
-            <div class="col-xs-8 ">
-              <select class="form-control " id="selectstyle ">
-                                     <option>Christmas</option>
-                                     <option>Sports</option>
-                                     <option>YAAAMAAAAAM</option>
-                                   </select>
-            </div>
-          </div>
+
+          <ul>
+
+            <li class="list-group-item ">
+
+              <div class="form-group ">
+                <label class="col-xs-2 control-label ">Article 1</label>
+                <div class="col-xs-4">
+                  <input [(ngModel)]="article.title " name="title-{{i}} " type="text " class="form-control input-xs " placeholder="Article Name ">
+                </div>
+
+                <div class="col-xs-4 ">
+                  <input [(ngModel)]="article.ean " type="text " class="form-control " name="ean-{{i}} " placeholder="EAN " />
+                </div>
+                <div class="col-xs-2 ">
+                  <input [(ngModel)]="article.price " type="text " class="form-control " name="price-{{i}} " placeholder="12,99€" />
+                </div>
+
+              </div>
+            </li>
+          </ul>
+
+
         </fieldset>
 
         <div class="row ">

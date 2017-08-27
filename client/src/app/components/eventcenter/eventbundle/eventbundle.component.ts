@@ -6,6 +6,7 @@ import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
 import {Router} from '@angular/router';
 import {EventService} from "../../../services/event.service";
+import $ = require("jquery");
 
 
 @Component({

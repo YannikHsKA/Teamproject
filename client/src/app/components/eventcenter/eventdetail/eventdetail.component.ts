@@ -30,6 +30,7 @@ export class EventdetailComponent {
   bundle2_status: boolean;
   notification_status: boolean;
   active_status: string;
+  spinning: boolean;
 
   constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage: SessionStorageService) {
 
@@ -39,6 +40,7 @@ export class EventdetailComponent {
     this.bundle2_status = this.storage.retrieve('bundle2_status');
     this.notification_status = this.storage.retrieve('notification_status');
     this.active_status = "detail";
+    this.spinning = false;
 
     if (this.storage.retrieve("mode") == "edit") {
       this.createMode = false;
@@ -99,23 +101,32 @@ export class EventdetailComponent {
   }
 
   addEvent() {
+    //Store Event Data
     let newEvent = new Event();
     newEvent.title = this.event.title;
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
     newEvent.bundles = this.event.bundles;
     this.bundle_id = 0;
-
-    var temp = "";
     this.eventService.addEvent(this.event)
-      .subscribe(result => temp);
-    console.log("create", temp);
+      .subscribe();
     this.storage.store('bundle_id', this.bundle_id);
     this.storage.store('event', newEvent);
     this.storage.store('mode', 'edit');
     this.storage.store('detail_status', true);
 
+    //Spinning Animation
+    this.spinning = true;
+    //setTimeout(() => { this.spinning = false, this.router.navigate(["/eventbundle"]) }, 10000);
+
+
+    //Make Magic
+
+
+
+
   }
+
 
   updateEvent(event: Event) {
     var _event = {

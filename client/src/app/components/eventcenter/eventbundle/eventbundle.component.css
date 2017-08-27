@@ -103,7 +103,7 @@ legend{
 
 
 .wizard {
-  margin: 20px auto;
+
   background: #fff;
   border-radius:4px;
 }
@@ -240,4 +240,8 @@ span.round-tab i{
     position: absolute;
     left: 35%;
   }
+}
+
+#ex1Slider .slider-selection {
+	background: #BABABA;
 }
