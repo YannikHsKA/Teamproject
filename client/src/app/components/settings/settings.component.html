@@ -4,10 +4,10 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Change your E-Mail address</legend>
+        <legend>{{ 'changeemail' | translate}}</legend>
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-xs-4 control-label" for="email">E-Mail</label>
+          <label class="col-xs-4 control-label" for="email">{{ 'email3' | translate}}</label>
           <div class="col-xs-4">
             <input [(ngModel)]="user.email_address" id="email" name="email" type="text" class="form-control input-md">
           </div>
@@ -15,7 +15,7 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-xs-4 control-label" for="phonenumber">Phone Number</label>
+          <label class="col-xs-4 control-label" for="phonenumber">{{ 'phone2' | translate}}</label>
           <div class="col-xs-4">
             <input [(ngModel)]="user.phonenumber" id="phonenumber" name="phonenumber" type="text" class="form-control input-md">
           </div>
@@ -28,11 +28,11 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>What is the best way to reach you?</legend>
+        <legend>{{ 'bestchannel' | translate}}</legend>
 
         <!-- Multiple Checkboxes -->
         <div class="form-group" [hidden]="!phone_entered">
-          <label class="col-xs-4 control-label">WhatsApp</label>
+          <label class="col-xs-4 control-label">{{ 'whatsapp2' | translate}}</label>
           <div class="col-xs-4">
             <label class="switch">
               <input type="checkbox" [checked]="whatsapp_toggle" ([ngModel])="whatsapp_toggle" name="whatsapp_toggle"
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="form-group" [hidden]="!email_entered">
-          <label class="col-xs-4 control-label">E-Mail</label>
+          <label class="col-xs-4 control-label">{{ 'email4' | translate}}</label>
           <div class="col-xs-4">
             <label class="switch">
               <input type="checkbox" [checked]="email_toggle" ([ngModel])="email_toggle" name="email_toggle"
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="form-group" [hidden]="!phone_entered">
-          <label class="col-xs-4 control-label">SMS</label>
+          <label class="col-xs-4 control-label">{{ 'sms2' | translate}}</label>
           <div class="col-xs-4">
             <label class="switch">
               <input type="checkbox" [checked]="sms_toggle" ([ngModel])="sms_toggle" name="sms_toggle"
@@ -68,7 +68,7 @@
         <!-- Alert -->
         <br><br>
         <div class="alert alert-success fade in" *ngIf="saveSuccess">
-          <strong>Success!</strong> Your profile has been updated!
+          {{ 'success4' | translate}}
         </div>
       </fieldset>
     </form>
