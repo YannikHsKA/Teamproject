@@ -154,51 +154,48 @@
         <legend *ngIf="createMode ">{{ 'createEvent' | translate}}</legend>
         <legend *ngIf="!createMode ">{{ 'updateEvent' | translate}}</legend>
 
-        <fieldset>
-          <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">{{ 'eventTitle' | translate}}</label>
-            <div class="col-xs-8 ">
-              <input [(ngModel)]="event.title " id="title " name="title " type="text " class="form-control input-xs ">
-            </div>
+        <div class="form-group row ">
+          <label for="title " class="col-xs-4 col-form-label ">{{ 'eventTitle' | translate}}</label>
+          <div class="col-xs-8 ">
+            <input [(ngModel)]="event.title " id="title " name="title " type="text " class="form-control input-xs ">
           </div>
-          <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">{{ 'startDate' | translate}}</label>
-            <div class="col-xs-8 ">
-              <input [(ngModel)]="event.start " id="start " name="start " type="text " class="form-control input-xs ">
-            </div>
+        </div>
+        <div class="form-group row ">
+          <label for="title " class="col-xs-4 col-form-label ">{{ 'startDate' | translate}}</label>
+          <div class="col-xs-8 ">
+            <input [(ngModel)]="event.start " id="start " name="start " type="text " class="form-control input-xs ">
           </div>
-          <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">{{ 'endDate' | translate}}</label>
-            <div class="col-xs-8 ">
-              <input [(ngModel)]="event.end " id="end " name="end " type="text " class="form-control input-xs ">
-            </div>
+        </div>
+        <div class="form-group row ">
+          <label for="title " class="col-xs-4 col-form-label ">{{ 'endDate' | translate}}</label>
+          <div class="col-xs-8 ">
+            <input [(ngModel)]="event.end " id="end " name="end " type="text " class="form-control input-xs ">
           </div>
+        </div>
+
+        <div class="form-group row ">
+          <legend>Magic Options</legend>
+          <label for="title " class="col-xs-4 col-form-label ">Premium Article</label>
+          <div class="col-xs-8 ">
+            <input [(ngModel)]="event.end " id="end " name="end " type="text " class="form-control input-xs ">
+          </div>
+        </div>
+
+
+        <div class="row ">
+          <div class="text-left col-xs-6 ">
+
+            <button type="button " class="btn btn-danger " data-toggle="modal " data-target="#myModal ">{{ 'cancel1' | translate}}</button>
+          </div>
+          <div class="col-xs-6 text-right ">
+            <a [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="createMode " (click)="addEvent() ">{{ 'addBundle1' | translate}}</a>
+            <a [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">{{ 'update&cont' | translate}}</a>
+          </div>
+
+        </div>
+
+      </form>
+
+
     </div>
-
-    <div class="form-group row ">
-      <legend>Magic Options</legend>
-      <label for="title " class="col-xs-4 col-form-label ">Premium Article</label>
-      <div class="col-xs-8 ">
-        <input [(ngModel)]="event.end " id="end " name="end " type="text " class="form-control input-xs ">
-      </div>
-    </div>
-
-
-    <div class="row ">
-      <div class="text-left col-xs-6 ">
-
-        <button type="button " class="btn btn-danger " data-toggle="modal " data-target="#myModal ">{{ 'cancel1' | translate}}</button>
-      </div>
-      <div class="col-xs-6 text-right ">
-        <a [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="createMode " (click)="addEvent() ">{{ 'addBundle1' | translate}}</a>
-        <a [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">{{ 'update&cont' | translate}}</a>
-      </div>
-
-    </div>
-
-    </form>
-
-
   </div>
-</div>
-</div>

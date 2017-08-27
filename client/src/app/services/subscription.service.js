@@ -17,6 +17,10 @@ var SubscriptionService = (function () {
         console.log('Subscription Service initialized..');
     }
     SubscriptionService.prototype.addUser = function (newUser) {
+        var user_without_plus = newUser;
+        while (user_without_plus.phonenumber.charAt(0) === '+') {
+            user_without_plus.phonenumber = user_without_plus.phonenumber.substr(1);
+        }
         if (newUser.whatsapp == 1) {
             var data = new FormData();
             data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
@@ -33,7 +37,7 @@ var SubscriptionService = (function () {
         }
         var headers_api = new http_1.Headers();
         headers_api.append('Content-Type', 'application/json');
-        return this.http.post('/api/subscribe', JSON.stringify(newUser), { headers: headers_api });
+        return this.http.post('/api/subscribe', JSON.stringify(user_without_plus), { headers: headers_api });
     };
     SubscriptionService = __decorate([
         core_1.Injectable(), 
