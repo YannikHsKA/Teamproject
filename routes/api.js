@@ -515,7 +515,7 @@ router.post("/createpdf", function(req, res) {
 
   // Stream contents to a file
   pdf.pipe(
-      fs.createWriteStream('./file2.pdf')
+      fs.createWriteStream('./bundle.pdf')
     )
     .on('finish', function() {
       console.log('PDF closed');
@@ -523,7 +523,12 @@ router.post("/createpdf", function(req, res) {
 
   // Close PDF and write file.
   pdf.end();
-
+    var file = fs.createReadStream('./bundle.pdf');
+    var stat = fs.statSync('./bundle.pdf');
+    res.setHeader('Content-Length', stat.size);
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename=quote.pdf');
+    file.pipe(res);
 
 });
 
