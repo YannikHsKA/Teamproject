@@ -39,7 +39,7 @@
           <!-- Currently active -->
           <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
             <a aria-controls="step2" title="Step 2">
-              <span class="round-tab" >
+              <span class="round-tab">
                   <i class="glyphicon glyphicon-th"></i>
               </span>
             </a>
@@ -60,7 +60,7 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-th"></i>
               </span>
-          </a>
+            </a>
           </li>
 
           <!-- Second Bundle -->
@@ -88,7 +88,7 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
               </span>
-          </a>
+            </a>
           </li>
 
 
@@ -116,63 +116,63 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-bullhorn"></i>
               </span>
-          </a>
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <div>
 
+  <div class="well">
+    <form class="form-horizontal" style="text-align: center">
 
-    <div class="well ">
-      <form class="form-horizontal " style="text-align: center ">
+      <legend>Choose a Bundle</legend>
 
-        <legend>Choose a Bundle</legend>
-
-        <div class="card-columns">
-          <div class="info-card" *ngFor="let bundle of bundles" (click)="goToEventBundle(bundle)">
-            <div class="front">
-              <div class="card-block">
-                <h4 class="card-title">{{bundle.title}}</h4>
-                <p class="card-text">Smartscore: {{bundle.smartscore}}</p>
-              </div>
-              <img class="card-img-top img-fluid" src="src/assets/Angebote.jpg" alt="Card image cap" style='height: 60%; width: 100%; object-fit: cover;'>
-              <div class="car-block" class="bundledescription">
-                <p class="card-text">{{bundle.description}}</p>
-              </div>
+      <div class="card-columns">
+        <div class="info-card" *ngFor="let bundle of bundles" (click)="goToEventBundle(bundle)">
+          <div class="front">
+            <div class="card-block">
+              <h4 class="card-title">{{bundle.title}}</h4>
+              <p class="card-text">Smartscore: {{bundle.smartscore}}</p>
             </div>
-            <div class="back">
-              <div class="card-block">
-                <legend>Artikel im Bundle</legend>
-                <table class="table table-hover table-bordered">
-                  <thead>
-                  <tr>
-                    <th>Artikel</th>
-                    <th>EAN</th>
-                    <th>Preis</th>
-                  </tr>
+            <img class="card-img-top img-fluid" src="src/assets/Angebote.jpg" alt="Card image cap"
+                 style='height: 60%; width: 100%; object-fit: cover;'>
+            <div class="car-block" class="bundledescription">
+              <p class="card-text">{{bundle.description}}</p>
+            </div>
+          </div>
+          <div class="back">
+            <div class="card-block">
+              <legend>Artikel im Bundle</legend>
+              <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                  <th>Artikel</th>
+                  <th>EAN</th>
+                  <th>Preis</th>
+                </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let article of bundle.articles">
-                    <td>{{article.name}}</td>
-                    <td>{{article.ean}}</td>
-                    <td>{{article.preis}}</td>
-                  </tr>
+                <tr *ngFor="let article of bundle.articles">
+                  <td>{{article.name}}</td>
+                  <td>{{article.ean}}</td>
+                  <td>{{article.preis}}</td>
+                </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="row ">
-          <div class="pull-left ">
+        <div class="row">
+          <div class="pull-left">
             <button [routerLink]="[ '/eventdetail']" class=" btn btn-danger " (click)="backToEvent() ">Back To Events
             </button>
           </div>
         </div>
-      </form>
-    </div>
+    </form>
   </div>
 </div>
+
