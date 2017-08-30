@@ -1,6 +1,6 @@
 li { cursor: pointer; }
 .footer {
-  position:absolute;
+  /*position:absolute;*/
   color: white;
   bottom: 0;
   width: 100%;

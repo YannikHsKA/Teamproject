@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Anaheim);
+@import url(http://fonts.googleapis.com/css?family=Alex+Brush);
 
 button{
   margin-left: 0.5em;
@@ -9,18 +10,7 @@ li {
   text-align: left !important;
 }
 
-legend{
-  font-family: Anaheim;
-}
-
-
-/* Hovercard */
-
-.well {
-  opacity: 0.93;
-}
-
-.card {
+/*.info-card {
   margin-top: 20px;
   padding: 30px;
   background-color: rgba(214, 224, 226, 0.2);
@@ -34,74 +24,16 @@ legend{
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block
-}
-.card.hovercard {
-  position: relative;
-  padding-top: 0;
-  overflow: hidden;
-  text-align: center;
+}*/
 
-  background-color: #fff;
-  background-color: rgba(255, 255, 255, 1);
-}
-.card.hovercard .card-background {
-  height: 130px;
-}
-.card-background img {
-  -webkit-filter: blur(25px);
 
-  -moz-filter: blur(25px);
-  -o-filter: blur(25px);
-  -ms-filter: blur(25px);
-
-  margin-left: -100px;
-  margin-top: -200px;
-  min-width: 130%;
-}
-.card.hovercard .useravatar {
-  position: absolute;
-  top: 15px;
-  left: 0;
-  right: 0;
-}
-.card.hovercard .useravatar img {
-  width: 150px;
-  height: 100px;
-  max-width: 100px;
-  max-height: 100px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 5px solid rgba(255, 255, 255, 0.5);
-}
-.card.hovercard .card-info {
-  position: absolute;
-  bottom: 14px;
-  left: 0;
-  right: 0;
-}
-.card.hovercard .card-info .card-title {
-  padding:0 5px;
-  font-size: 20px;
-  line-height: 1;
-  color: #262626;
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-.card.hovercard .card-info {
-  overflow: hidden;
-  font-size: 12px;
-  line-height: 20px;
-  color: #737373;
-  text-overflow: ellipsis;
-}
-.card.hovercard .bottom {
-  padding: 0 20px;
-  margin-bottom: 17px;
+legend{
+  font-family: Anaheim;
 }
 
+.well {
+  opacity: 0.93;
+}
 
 .wizard {
   background: #fff;
@@ -243,6 +175,10 @@ span.round-tab i{
 }
 
 /* CSS used here will be applied after bootstrap.css */
+.info-card{
+  margin: auto;
+}
+
 
 .card-columns {
   -webkit-column-count: 1;
@@ -267,9 +203,9 @@ Medium devices (tablets, 48em and up (768px))
 */
 @media (min-width: 48em) {
   .card-columns {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
   }
 
 }
@@ -279,9 +215,9 @@ Large devices (desktops, 62em and up(992px) )
 */
 @media (min-width: 62em) {
   .card-columns {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
   }
 
 }
@@ -296,3 +232,58 @@ Extra large devices (large desktops, 75em and up (1200px))
     column-count: 3;
   }
 }
+
+/* Card Flip */
+
+.info-card {
+  float: left;
+  margin: 10px;
+  -webkit-perspective: 600px;
+  cursor: pointer;
+}
+
+.front, .back {
+  background: #FFF;
+  border-radius: 10px;
+  transition: -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+}
+
+.front {
+  overflow: auto;
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  z-index: 1;
+}
+
+.back {
+  overflow: auto;
+  padding: 20px;
+  padding-top: 0px;
+  width: 350px;
+  height: 350px;
+  -webkit-transform: rotateY(-180deg);
+}
+.info-card:hover .back {
+  -webkit-transform: rotateY(0);
+}
+
+.info-card:hover .front {
+  -webkit-transform: rotateY(180deg);
+}
+
+.card-title{
+  font-family: Anaheim;
+  font-weight: 800 !important;
+}
+
+.card-text{
+  font-family: "Arial Narrow";
+}
+
+.th{
+  font-weight: 800;
+}
+
