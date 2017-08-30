@@ -25,6 +25,10 @@ var BundleService = (function () {
         return this.http.get('/api/geteventbundles/' + event.id)
             .map(function (res) { return res.json(); });
     };
+    BundleService.prototype.getBundlesByCweek = function (cweek) {
+        return this.http.get('/api/getdatabundles/' + cweek)
+            .map(function (res) { return res.json(); });
+    };
     BundleService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])

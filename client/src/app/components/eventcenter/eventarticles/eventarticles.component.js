@@ -41,11 +41,8 @@ var EventarticlesComponent = (function () {
             while (n < 3) {
                 this.defaultarticle = {
                     ean: 815,
-                    id: n,
-                    title: "Article",
-                    currency: "€",
-                    price: "12,99",
-                    picture: "...",
+                    name: "Article",
+                    preis: "12,99",
                 };
                 this.articles[n] = this.defaultarticle;
                 n++;

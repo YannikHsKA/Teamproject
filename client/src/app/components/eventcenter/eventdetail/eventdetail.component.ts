@@ -30,7 +30,6 @@ export class EventdetailComponent {
   bundle2_status: boolean;
   notification_status: boolean;
   active_status: string;
-  spinning: boolean;
 
   constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage: SessionStorageService) {
 
@@ -40,7 +39,6 @@ export class EventdetailComponent {
     this.bundle2_status = this.storage.retrieve('bundle2_status');
     this.notification_status = this.storage.retrieve('notification_status');
     this.active_status = "detail";
-    this.spinning = false;
 
     if (this.storage.retrieve("mode") == "edit") {
       this.createMode = false;
@@ -88,9 +86,8 @@ export class EventdetailComponent {
         this.bundle = {
           title: "Please edit the Bundle",
           description: "Sample Description",
-          picture: "...",
-          articles: null,
-          id: n
+          smartscore: "0.00",
+          articles: null
         }
         this.bundles[n] = this.bundle;
         n++;
@@ -101,32 +98,24 @@ export class EventdetailComponent {
   }
 
   addEvent() {
-    //Store Event Data
     let newEvent = new Event();
     newEvent.title = this.event.title;
     newEvent.start = this.event.start;
     newEvent.end = this.event.end;
+    newEvent.cweek = this.event.cweek;
     newEvent.bundles = this.event.bundles;
     this.bundle_id = 0;
+
+    var temp = "";
     this.eventService.addEvent(this.event)
-      .subscribe();
+      .subscribe(result => temp);
+    console.log("create", temp);
     this.storage.store('bundle_id', this.bundle_id);
     this.storage.store('event', newEvent);
     this.storage.store('mode', 'edit');
     this.storage.store('detail_status', true);
 
-    //Spinning Animation
-    this.spinning = true;
-    //setTimeout(() => { this.spinning = false, this.router.navigate(["/eventbundle"]) }, 10000);
-
-
-    //Make Magic
-
-
-
-
   }
-
 
   updateEvent(event: Event) {
     var _event = {
@@ -134,6 +123,7 @@ export class EventdetailComponent {
       start: event.start,
       end: event.end,
       id: event.id,
+      cweek: event.cweek,
       bundles: event.bundles,
       notifications: event.notifications,
     };

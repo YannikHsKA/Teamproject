@@ -21,6 +21,7 @@ import {EventarticlesComponent} from "./components/eventcenter/eventarticles/eve
 import {NotificationcenterComponent} from "./components/notificationcenter/notificationcenter.component";
 import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
 import {Ng2Webstorage} from 'ng2-webstorage';
+import {EventbundleselectionComponent} from "./components/eventcenter/eventbundleselection/eventbundleselection.component";
 
 
 const appRoutes: Routes = [
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
   {path:'eventdetail', component: EventdetailComponent},
   {path:'eventoverview', component: EventoverviewComponent},
   {path:'eventbundle', component: EventbundleComponent},
+  {path:'eventbundleselection', component: EventbundleselectionComponent},
   {path:'detailedbundle', component: DetailedbundleComponent},
   {path:'eventarticles', component: EventarticlesComponent},
   {path:'notificationcenter', component: NotificationcenterComponent},
@@ -46,7 +48,7 @@ const appRoutes: Routes = [
             useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/assets/i18n', '.json'),
             deps: [Http]
         }), Ng2Webstorage,],
-  declarations: [ AppComponent, BundlesComponent, EventarticlesComponent, NotificationcenterComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent ],
+  declarations: [ AppComponent, BundlesComponent, EventarticlesComponent, NotificationcenterComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent, EventbundleselectionComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

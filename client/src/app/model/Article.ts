@@ -1,9 +1,7 @@
 
 export class Article {
-  id: number;
+  id?: number;
   ean: number;
-  title: string;
-  price: string;
-  currency:string;
-  picture: string;
+  name: string;
+  preis: string;
 }

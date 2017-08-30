@@ -42,7 +42,6 @@ export class EventoverviewComponent {
     this.storage.store('mode', 'edit');
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
-
   }
 
   onNotify(event: Event) {

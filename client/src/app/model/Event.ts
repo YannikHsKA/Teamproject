@@ -7,6 +7,7 @@ export class Event {
   start: string;
   end: string;
   id?: string;
+  cweek: number;
   bundles: Array<Bundle>;
   notifications: Array<Notification>;
 }

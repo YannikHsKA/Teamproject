@@ -1,9 +1,9 @@
 import {Article} from './Article';
 
 export class Bundle {
-  id: number;
+  id?: number;
   title: string;
   description: string;
-  picture: string;
+  smartscore: string;
   articles: Array<Article>;
 }
