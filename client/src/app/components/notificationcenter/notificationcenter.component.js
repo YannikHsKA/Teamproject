@@ -29,7 +29,7 @@ var NotificationcenterComponent = (function () {
         //Set NavigationBar Attributes
         this.detail_status = this.storage.retrieve('detail');
         this.bundle1_status = this.storage.retrieve('bundle1_status');
-        this.bundle2_status = this.storage.retrieve('bundle2_status');
+        this.select_status = this.storage.retrieve('select_status');
         this.notification_status = true;
         this.active_status = "notification";
         this.notification = new Notification_1.Notification();
@@ -120,7 +120,7 @@ var NotificationcenterComponent = (function () {
         this.storage.store('mode', 'edit');
     };
     NotificationcenterComponent.prototype.backToBundle2 = function () {
-        this.bundle_id = 1;
+        this.bundle_id = 0;
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
         this.router.navigate(['./eventbundle']);

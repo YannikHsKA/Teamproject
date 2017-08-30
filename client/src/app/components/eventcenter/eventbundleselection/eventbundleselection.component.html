@@ -37,35 +37,35 @@
 
           <!-- First Bundle -->
           <!-- Currently active -->
-          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active active1">
+          <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab" >
-                  <i class="glyphicon glyphicon-shopping-cart"></i>
+                  <i class="glyphicon glyphicon-th"></i>
               </span>
             </a>
           </li>
 
           <!-- Finished -->
-          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+          <li *ngIf="select_status && active_status != 'select'" role="presentation" class="active1">
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab">
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <i class="glyphicon glyphicon-th"></i>
               </span>
             </a>
           </li>
 
           <!-- To be achieved -->
-          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+          <li *ngIf="!select_status" role="presentation" class="disabled">
             <a aria-controls="step2" title="testt">
               <span class="round-tab">
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <i class="glyphicon glyphicon-th"></i>
               </span>
-            </a>
+          </a>
           </li>
 
           <!-- Second Bundle -->
           <!-- Currently active -->
-          <li *ngIf="active_status == 'bundle2'" role="presentation" class="active1 active">
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
             <a aria-controls="step1" title="Step 3">
               <span class="round-tab" >
                   <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -74,7 +74,7 @@
           </li>
 
           <!-- Finished -->
-          <li *ngIf="bundle2_status && active_status != 'bundle2'" role="presentation" class="active1">
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
             <a aria-controls="step3" title="Step 3">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -83,12 +83,12 @@
           </li>
 
           <!-- To be achieved -->
-          <li *ngIf="!bundle2_status" role="presentation" class="disabled">
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
             <a aria-controls="step3" title="Step 3">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
               </span>
-            </a>
+          </a>
           </li>
 
 
@@ -116,7 +116,7 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-bullhorn"></i>
               </span>
-            </a>
+          </a>
           </li>
         </ul>
       </div>
@@ -132,29 +132,29 @@
         <legend>Choose a Bundle</legend>
 
         <div class="card-columns">
-            <div class="card" *ngFor="let bundle of bundles" (click)="goToEventBundle(bundle)">
-              <div class="card-block">
-                <h4 class="card-title">{{bundle.title}}</h4>
-                <p class="card-title">{{bundle.smartscore}}</p>
-                <p class="card-text">{{bundle.description}}</p>
-                <table class="table">
-                  <thead>
+          <div class="card" *ngFor="let bundle of bundles" (click)="goToEventBundle(bundle)">
+            <div class="card-block">
+              <h4 class="card-title">{{bundle.title}}</h4>
+              <p class="card-title">{{bundle.smartscore}}</p>
+              <p class="card-text">{{bundle.description}}</p>
+              <table class="table">
+                <thead>
                   <tr>
                     <th>Artikel</th>
                     <th>EAN</th>
                     <th>Preis</th>
                   </tr>
-                  </thead>
-                  <tbody>
+                </thead>
+                <tbody>
                   <tr *ngFor="let article of bundle.articles">
                     <td>{{article.name}}</td>
                     <td>{{article.ean}}</td>
                     <td>{{article.preis}}</td>
                   </tr>
-                  </tbody>
-                </table>
-              </div>
+                </tbody>
+              </table>
             </div>
+          </div>
         </div>
 
         <div class="row ">

@@ -23,7 +23,7 @@ export class EventbundleselectionComponent {
   bundle_id_text: string;
   detail_status: boolean;
   bundle1_status: boolean;
-  bundle2_status: boolean;
+  select_status: boolean;
   notification_status: boolean;
   active_status: string;
 
@@ -41,24 +41,14 @@ export class EventbundleselectionComponent {
     //Set NavigationBar Attributes
     this.detail_status = this.storage.retrieve('detail_status');
     this.bundle1_status = this.storage.retrieve('bundle1_status');
-    this.bundle2_status = this.storage.retrieve('bundle2_status');
+    this.select_status = this.storage.retrieve('select_status');
     this.notification_status = this.storage.retrieve('notification_status');
 
-    switch (this.bundle_id) {
-      case 0:
-        this.active_status = "bundle1";
-        this.bundle_id_text = "First";
-        this.bundle1_active = true;
-        this.bundle1_status = true;
-        this.storage.store('bundle1_status', true);
-        break;
-      case 1:
-        this.active_status = "bundle2";
-        this.bundle_id_text = "Second";
-        this.bundle2_status = true;
-        this.storage.store('bundle2_status', true);
-        break;
-    }
+
+    this.active_status = "select";
+    this.select_status = true;
+    this.storage.store('select_status', true);
+
 
 
     this.bundleService.getBundlesByCweek(this.event.cweek)
@@ -72,7 +62,7 @@ export class EventbundleselectionComponent {
       });
   }
 
-  goToEventBundle(bundle: Bundle){
+  goToEventBundle(bundle: Bundle) {
     this.storage.store('bundle', bundle);
     this.router.navigate(["/eventbundle"]);
   }

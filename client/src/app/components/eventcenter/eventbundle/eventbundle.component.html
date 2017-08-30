@@ -37,7 +37,7 @@
 
           <!-- First Bundle -->
           <!-- Currently active -->
-          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active active1">
+          <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab" >
                   <i class="glyphicon glyphicon-th"></i>
@@ -46,7 +46,7 @@
           </li>
 
           <!-- Finished -->
-          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+          <li *ngIf="select_status && active_status != 'select'" role="presentation" class="active1">
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-th"></i>
@@ -55,7 +55,7 @@
           </li>
 
           <!-- To be achieved -->
-          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+          <li *ngIf="!select_status" role="presentation" class="disabled">
             <a aria-controls="step2" title="testt">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-th"></i>
@@ -65,7 +65,7 @@
 
           <!-- Second Bundle -->
           <!-- Currently active -->
-          <li *ngIf="active_status == 'bundle2'" role="presentation" class="active1 active">
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
             <a aria-controls="step1" title="Step 3">
               <span class="round-tab" >
                   <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -74,7 +74,7 @@
           </li>
 
           <!-- Finished -->
-          <li *ngIf="bundle2_status && active_status != 'bundle2'" role="presentation" class="active1">
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
             <a aria-controls="step3" title="Step 3">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -83,7 +83,7 @@
           </li>
 
           <!-- To be achieved -->
-          <li *ngIf="!bundle2_status" role="presentation" class="disabled">
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
             <a aria-controls="step3" title="Step 3">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -128,7 +128,7 @@
 
     <div class="well ">
       <form>
-        <legend>{{ 'create1' | translate}}{{bundle_id_text}} {{ 'bundle1' | translate}}</legend>
+        <legend style="text-align: center ">{{ 'create1' | translate}} {{ 'bundle1' | translate}}</legend>
         <div class="form-group col-xs-6">
           <label for="title ">{{ 'bundleTitle' | translate}}</label>
           <div>
@@ -155,43 +155,48 @@
       <div class="form-group col-xs-6">
         <label for="tab ">Total Discount</label>
         <div>
-          <div id="tab " class="btn-group " data-toggle="buttons-radio ">
-            <a class="btn btn-info active " data-toggle="tab ">10%</a>
-            <a class="btn btn-info " data-toggle="tab ">25%</a>
-            <a class="btn btn-info " data-toggle="tab ">50%</a>
-            <a class="btn btn-info " data-toggle="tab ">75%</a>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-default" (click)="handleChange(0.1)">
+            <input type="radio" name="radiogroup" id="option1"> 10%
+              </label>
+            <label class="btn btn-default" (click)="handleChange(0.25)">
+              <input type="radio" name="options" id="option2"> 25%
+            </label>
+            <label class="btn btn-default" (click)="handleChange(0.5)">
+              <input type="radio" name="options" id="option3" >  50%
+            </label>
+            <label class="btn btn-default" (click)="handleChange(0.75)">
+              <input type="radio" name="options" id="option4" > 75%
+            </label>
           </div>
 
-
         </div>
+
       </div>
-      <form class="form-horizontal " style="text-align: center ">
-        <legend>Bundle Articles</legend>
+      <form class="form-horizontal ">
+        <legend style="text-align: center ">Bundle Articles</legend>
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Article Name</th>
+              <th>EAN</th>
+              <th>Retail Price</th>
+              <th>Discount Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let article of chosen_bundle.articles; let i=index ">
+              <td>{{article.name}}</td>
+              <td>{{article.ean}}</td>
+              <td>{{article.preis}}</td>
+              <td>{{discounts[i]}}</td>
+            </tr>
+          </tbody>
+        </table>
 
 
-        <ul>
-
-          <li class="list-group-item " *ngFor="let article of articles; let i=index ">
-
-            <div class="form-group ">
-              <label class="col-xs-2 control-label ">{{ 'product1' | translate}} {{article.id + 1}}</label>
-              <div class="col-xs-2 col-xs-offset-1 ">
-                <input [(ngModel)]="article.title " name="title-{{i}} " class="form-control " type="text " placeholder="Name ">
-              </div>
-
-              <div class="col-xs-2 ">
-                <input [(ngModel)]="article.ean " type="text " class="form-control " name="ean-{{i}} " placeholder="EAN " />
-              </div>
-              <div class="col-xs-2 ">
-                <input [(ngModel)]="article.price " type="text " class="form-control " name="price-{{i}} " placeholder="12,99€ " />
-              </div>
-
-            </div>
-          </li>
-        </ul>
-
-
-        <div class="row ">
+        <div class="row " style="text-align: center ">
           <div class=" col-xs-4 pull-left ">
             <button [routerLink]="[ '/eventdetail'] " class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events' | translate}}</button>
           </div>

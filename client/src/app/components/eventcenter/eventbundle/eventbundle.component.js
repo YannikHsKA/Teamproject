@@ -17,6 +17,8 @@ var EventbundleComponent = (function () {
         this.eventService = eventService;
         this.storage = storage;
         this.router = router;
+        this.articles = new Array();
+        this.discounts = new Array();
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
@@ -25,6 +27,10 @@ var EventbundleComponent = (function () {
         this.bundle_id = this.storage.retrieve('bundle_id');
         this.event = this.storage.retrieve('event');
         this.bundle = this.event.bundles[this.bundle_id];
+        this.chosen_bundle = this.storage.retrieve('bundle');
+        for (var i = 0; i < 3; i++) {
+            this.discounts[i] = this.chosen_bundle.articles[i].preis;
+        }
         //Set NavigationBar Attributes
         this.detail_status = this.storage.retrieve('detail_status');
         this.bundle1_status = this.storage.retrieve('bundle1_status');
@@ -51,47 +57,19 @@ var EventbundleComponent = (function () {
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
     };
-    EventbundleComponent.prototype.backToBundle1 = function () {
-        this.storage.store('event', this.event);
-        this.bundle_id_text = "First";
-        this.bundle = this.event.bundles[0];
-        this.storage.store('bundle_id', 0);
-        this.bundle_id = 0;
-        this.bundle1_active = true;
-        this.active_status = "bundle1";
-    };
-    EventbundleComponent.prototype.GoToArticles = function () {
-        this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
+    EventbundleComponent.prototype.GoNext = function () {
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
-        this.storage.store('active_status', this.active_status);
-    };
-    EventbundleComponent.prototype.GoNext = function () {
-        if (this.bundle_id == 0) {
-            this.bundle_id = 1;
-            this.bundle_id_text = "Second";
-            this.bundle1_active = false;
-            this.bundle = this.event.bundles[this.bundle_id];
-            this.storage.store('event', this.event);
-            this.storage.store('bundle_id', this.bundle_id);
-            this.storage.store('active_status', "bundle2");
-            this.storage.store('bundle2_status', "true");
-            //Set NavigationBar Attributes
-            this.detail_status = this.storage.retrieve('detail_status');
-            this.notification_status = this.storage.retrieve('notification_status');
-            this.bundle2_status = true;
-            this.active_status = "bundle2";
-            this.storage.store('bundle2_status', true);
-            this.router.navigate(['/eventbundle']);
-        }
-        else {
-            this.storage.store('event', this.event);
-            this.storage.store('bundle_id', this.bundle_id);
-            this.storage.store('bundle2_status', true);
-            this.router.navigate(['./notificationcenter']);
-        }
+        this.storage.store('bundle2_status', true);
+        this.router.navigate(['./notificationcenter']);
         this.eventService.updateEvent(this.storage.retrieve('event'))
             .subscribe();
+    };
+    EventbundleComponent.prototype.handleChange = function (num) {
+        for (var i = 0; i < 3; i++) {
+            var res = this.chosen_bundle.articles[i].preis.split("€");
+            this.discounts[i] = (parseFloat(res[0]) * num).toFixed(2).toString().concat("€");
+        }
     };
     EventbundleComponent = __decorate([
         core_1.Component({

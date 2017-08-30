@@ -39,35 +39,35 @@
 
           <!-- First Bundle -->
           <!-- Currently active -->
-          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active active1">
+          <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab" >
-                  <i class="glyphicon glyphicon-shopping-cart"></i>
+                  <i class="glyphicon glyphicon-th"></i>
               </span>
             </a>
           </li>
 
           <!-- Finished -->
-          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
+          <li *ngIf="select_status && active_status != 'select'" role="presentation" class="active1">
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab">
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <i class="glyphicon glyphicon-th"></i>
               </span>
             </a>
           </li>
 
           <!-- To be achieved -->
-          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
+          <li *ngIf="!select_status" role="presentation" class="disabled">
             <a aria-controls="step2" title="testt">
               <span class="round-tab">
-                    <i class="glyphicon glyphicon-shopping-cart"></i>
+                    <i class="glyphicon glyphicon-th"></i>
               </span>
           </a>
           </li>
 
           <!-- Second Bundle -->
           <!-- Currently active -->
-          <li *ngIf="active_status == 'bundle2'" role="presentation" class="active1 active">
+          <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
             <a aria-controls="step1" title="Step 3">
               <span class="round-tab" >
                   <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -76,7 +76,7 @@
           </li>
 
           <!-- Finished -->
-          <li *ngIf="bundle2_status && active_status != 'bundle2'" role="presentation" class="active1">
+          <li *ngIf="bundle1_status && active_status != 'bundle1'" role="presentation" class="active1">
             <a aria-controls="step3" title="Step 3">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -85,7 +85,7 @@
           </li>
 
           <!-- To be achieved -->
-          <li *ngIf="!bundle2_status" role="presentation" class="disabled">
+          <li *ngIf="!bundle1_status" role="presentation" class="disabled">
             <a aria-controls="step3" title="Step 3">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
@@ -93,14 +93,15 @@
           </a>
           </li>
 
+
           <!-- Notification -->
           <!-- Currently active -->
           <li *ngIf="active_status == 'notification'" role="presentation" class="active1 active">
-            <a aria-controls="step3" title="Step 4">
-              <span class="round-tab">
-                    <i class="glyphicon glyphicon-bullhorn"></i>
+            <a aria-controls="step1" title="Step 4">
+              <span class="round-tab" >
+                  <i class="glyphicon glyphicon-bullhorn"></i>
               </span>
-          </a>
+            </a>
           </li>
 
           <!-- Finished -->
@@ -148,47 +149,47 @@
 
   <div class="well ">
 
-      <legend>{{ 'notifcenter' | translate}}</legend>
+    <legend>{{ 'notifcenter' | translate}}</legend>
 
-      <div class="btn-pref btn-group btn-group-justified btn-group-lg " role="group " aria-label="... ">
-        <div class="btn-group " role="group " (click)="switchLane( 'whatsapp') ">
-          <button type="button " id="stars " [ngClass]="{ 'btn' : true, 'btn-primary':whatsapp_active, 'btn-default':!whatsapp_active} " href="#tab1 " data-toggle="tab "><i class="fa fa-whatsapp " aria-hidden="true "></i>
+    <div class="btn-pref btn-group btn-group-justified btn-group-lg " role="group " aria-label="... ">
+      <div class="btn-group " role="group " (click)="switchLane( 'whatsapp') ">
+        <button type="button " id="stars " [ngClass]="{ 'btn' : true, 'btn-primary':whatsapp_active, 'btn-default':!whatsapp_active} " href="#tab1 " data-toggle="tab "><i class="fa fa-whatsapp " aria-hidden="true "></i>
             <div class="hidden-xs ">{{ 'whatsapp3' | translate}}</div>
           </button>
-        </div>
-        <div class="btn-group " role="group " (click)="switchLane( 'sms') ">
-          <button type="button " id="favorites " [ngClass]="{ 'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active} " href="#tab2 " data-toggle="tab "><span class="glyphicon glyphicon-comment " aria-hidden="true "></span>
+      </div>
+      <div class="btn-group " role="group " (click)="switchLane( 'sms') ">
+        <button type="button " id="favorites " [ngClass]="{ 'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active} " href="#tab2 " data-toggle="tab "><span class="glyphicon glyphicon-comment " aria-hidden="true "></span>
             <div class="hidden-xs ">{{ 'sms3' | translate}}</div>
           </button>
-        </div>
-        <div class="btn-group " role="group " (click)="switchLane( 'email') ">
-          <button type="button " id="following " [ngClass]="{ 'btn' : true, 'btn-primary':email_active, 'btn-default':!email_active} " href="#tab3 " data-toggle="tab "><span class="glyphicon glyphicon-envelope " aria-hidden="true "></span>
+      </div>
+      <div class="btn-group " role="group " (click)="switchLane( 'email') ">
+        <button type="button " id="following " [ngClass]="{ 'btn' : true, 'btn-primary':email_active, 'btn-default':!email_active} " href="#tab3 " data-toggle="tab "><span class="glyphicon glyphicon-envelope " aria-hidden="true "></span>
             <div class="hidden-xs ">{{ 'email5' | translate}}</div>
           </button>
-        </div>
       </div>
+    </div>
 
 
-      <div class="tab-content">
-        <div [ngClass]="{'tab-pane fade in active' : whatsapp_active, 'tab-pane fade in' : !whatsapp_active }" id="tab1" >
-          <textarea  [(ngModel)]="notification.whatsapp_text" name="whatsapp_text" placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
-        </div>
-        <div [ngClass]="{'tab-pane fade in active' : sms_active, 'tab-pane fade in' : !sms_active }" id="tab2" >
-          <textarea [(ngModel)]="notification.sms_text" name="sms_text" placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
-        </div>
-        <div [ngClass]="{'tab-pane fade in active' : email_active, 'tab-pane fade in' : !email_active }" id="tab3" >
-          <textarea [(ngModel)]="notification.email_text" name="email_text" placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
-        </div>
+    <div class="tab-content">
+      <div [ngClass]="{'tab-pane fade in active' : whatsapp_active, 'tab-pane fade in' : !whatsapp_active }" id="tab1">
+        <textarea [(ngModel)]="notification.whatsapp_text" name="whatsapp_text" placeholder="Enter your WhatsApp message here.&#10;The use of emojis is suggested for WhatsApp."></textarea>
       </div>
+      <div [ngClass]="{'tab-pane fade in active' : sms_active, 'tab-pane fade in' : !sms_active }" id="tab2">
+        <textarea [(ngModel)]="notification.sms_text" name="sms_text" placeholder="Enter your SMS text here.&#10;Do not use emojis."></textarea>
+      </div>
+      <div [ngClass]="{'tab-pane fade in active' : email_active, 'tab-pane fade in' : !email_active }" id="tab3">
+        <textarea [(ngModel)]="notification.email_text" name="email_text" placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
+      </div>
+    </div>
 
-      <div class="row ">
-        <div class="col-xs-6 ">
-          <a (click)="backToBundle2() " class="btn btn-danger pull-left ">{{ 'back2bundles' | translate}}</a>
-        </div>
-        <div class="col-xs-6 ">
-          <button class="btn btn-info pull-right " data-toggle="modal " data-target="#myModal " (click)="addNotification() ">{{ 'save&send' | translate}}</button>
-        </div>
+    <div class="row ">
+      <div class="col-xs-6 ">
+        <a (click)="backToBundle2() " class="btn btn-danger pull-left ">{{ 'back2bundles' | translate}}</a>
       </div>
+      <div class="col-xs-6 ">
+        <button class="btn btn-info pull-right " data-toggle="modal " data-target="#myModal " (click)="addNotification() ">{{ 'save&send' | translate}}</button>
+      </div>
+    </div>
 
 
     <div class="margin">
