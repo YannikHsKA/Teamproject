@@ -37,17 +37,21 @@ export class EventoverviewComponent {
     this.router.navigate(['./eventdetail']);
   }
 
+  onPublish(event: Event) {
+    this.storage.clear();
+    this.eventService.createPdf(event)
+    this.storage.store('event', event);
+    this.router.navigate(['./notificationcenter']);
+  }
+
   onEdit(event: Event) {
     this.storage.clear();
     this.storage.store('mode', 'edit');
+    this.storage.store('bundle_id', 0);
     this.eventService.event = event;
     this.router.navigate(['./eventdetail']);
   }
 
-  onNotify(event: Event) {
-    this.eventService.event = event;
-    this.router.navigate(['./notificationcenter'])
-  }
 
   onDelete(event: Event) {
     var events = this.events;

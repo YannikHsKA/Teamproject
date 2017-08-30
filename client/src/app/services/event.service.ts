@@ -42,7 +42,23 @@ var headers = new Headers();
   }
 
 
+createPdf(event: Event){
 
+    //Bundle 1
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  console.log("create Pdf Service");
+  var headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  console.log("create PDF for Event :" + event.title );
+  var body = JSON.stringify(event);
+  this.http.post('/api/createpdf', body, {headers: headers})
+    .subscribe(data => {
+
+    }, error => {
+      console.log(JSON.stringify(error.json()));
+    });
+}
 
   updateEvent(event: Event) {
     var headers = new Headers();

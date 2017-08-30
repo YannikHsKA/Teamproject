@@ -443,7 +443,8 @@ router.post("/createbundle/:bundlenum/:eventid", function(req, res) {
   var newRef = ref.update({
     'title': bundle.title,
     'description': bundle.description,
-    'picture': bundle.picture
+    'picture': bundle.picture,
+      'id' : bundlenum
   });
 
   res.sendStatus(201);
@@ -494,65 +495,81 @@ router.get("/getevents", function(req, res) {
 
 //Create PDF for Bundle
 router.post("/createpdf", function(req, res) {
-
+console.log("post angekommen");
+    let event = req.body;
+ console.log("title:" + event.title);
   console.log("Create PDF for Bundle ");
-  var pdf = new pdfkit({
-    info: {
-      Title: 'lidlbundle',
-      Author: 'Some Author',
-    }
-  });
+  let filename = "";
+    let bundle;
 
-  pdf.image('client/src/assets/Lidl-Logo.png', 25, 25, {
-    width: 60
-  });
-  pdf.fontSize(40).text('LIDL-GOLD-CLUB.de', 120, 40);
+  for (var i=0; i<2;i++) {
+      console.log("i" + i);
+      bundle = event.bundles[i];
+      filename = './client/src/assets/bundle/bundle' + bundle.id + '.pdf';
+      console.log(filename);
+      var pdf = new pdfkit({
+          info: {
+              Title: bundle.title,
+              Author: 'Some Author',
+          }
+      });
 
-  pdf.moveTo(0, 435)
-    .lineTo(700, 400)
-    .stroke();
+      pdf.image('client/src/assets/Lidl-Logo.png', 25, 25, {
+          width: 60
+      });
+      pdf.fontSize(40).text('LIDL-GOLD-CLUB.de', 120, 40);
 
-  pdf.image('client/src/assets/pdf/tree.jpeg', 0, 120, {
-    width: 700
-  });
-  pdf.moveTo(0, 435)
-    .lineTo(700, 400)
-    .stroke();
+      pdf.moveTo(0, 435)
+          .lineTo(700, 400)
+          .stroke();
 
-  pdf.rect(0, 119, 700, 700)
-    .fillOpacity(0.8)
-    .fill("white")
+      pdf.image('client/src/assets/pdf/tree.jpeg', 0, 120, {
+          width: 700
+      });
+      pdf.moveTo(0, 435)
+          .lineTo(700, 400)
+          .stroke();
 
-  pdf.fontSize(30).fillColor("black").text('Christmas Deakl lorem ipsi,m lorem ipsum lorem ipsum', 120, 200, {
-    align: 'center'
-  });
+      pdf.rect(0, 119, 700, 700)
+          .fillOpacity(0.8)
+          .fill("white")
 
-  pdf.rect(50, 300, 200, 30)
-    .fillOpacity(0.8)
-    .fill("red")
-
-  pdf.fontSize(10).fillColor("black").text('LIDL Gold Discount!!!', 0, 300, {
-    align: 'center'
-  });
+      pdf.fontSize(30).fillColor("black").text(bundle.description, 120, 200, {
+          align: 'center'
+      });
 
 
-  // Stream contents to a file
-  pdf.pipe(
-      fs.createWriteStream('./bundle.pdf')
-    )
-    .on('finish', function() {
-      console.log('PDF closed');
-    });
+      pdf.rect(50, 300, 200, 30)
+          .fillOpacity(0.8)
+          .fill("red")
 
-  // Close PDF and write file.
-  pdf.end();
-    var file = fs.createReadStream('./bundle.pdf');
-    var stat = fs.statSync('./bundle.pdf');
+      pdf.fontSize(10).fillColor("black").text('LIDL Gold Discount!!!', 0, 300, {
+          align: 'center'
+      });
+
+
+      // Stream contents to a file
+      pdf.pipe(
+          fs.createWriteStream(filename)
+      )
+          .on('finish', function () {
+              console.log('PDF closed');
+
+          });
+
+      // Close PDF and write file.
+      pdf.end();
+
+  }
+
+    res.sendStatus(201);
+  /*  var file = fs.createReadStream('./bundle.pdf');
+    var stat = fs.statSync('./client/src/assets/bundle/bundle.pdf');
     res.setHeader('Content-Length', stat.size);
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', 'attachment; filename=quote.pdf');
     file.pipe(res);
-
+*/
 });
 
 

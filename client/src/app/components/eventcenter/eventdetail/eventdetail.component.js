@@ -70,6 +70,7 @@ var EventdetailComponent = (function () {
             while (n < 2) {
                 this.bundle = {
                     title: "Please edit the Bundle",
+                    id: n,
                     description: "Sample Description",
                     smartscore: "0.00",
                     articles: null

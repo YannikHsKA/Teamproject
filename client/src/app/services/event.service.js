@@ -36,6 +36,21 @@ var EventService = (function () {
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/createnotification/' + eventid, JSON.stringify(newNotification), { headers: headers }).map(this.extractData);
     };
+    EventService.prototype.createPdf = function (event) {
+        //Bundle 1
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        console.log("create Pdf Service");
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        console.log("create PDF for Event :" + event.title);
+        var body = JSON.stringify(event);
+        this.http.post('/api/createpdf', body, { headers: headers })
+            .subscribe(function (data) {
+        }, function (error) {
+            console.log(JSON.stringify(error.json()));
+        });
+    };
     EventService.prototype.updateEvent = function (event) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');

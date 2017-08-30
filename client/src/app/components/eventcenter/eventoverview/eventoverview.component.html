@@ -23,8 +23,11 @@
               class="glyphicon glyphicon-trash"></span> {{ 'delete1' | translate}}
             </button>
               <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
-              class="glyphicon glyphicon-wrench"></span> {{ 'goEvent' | translate}}
-            </button>
+                class="glyphicon glyphicon-wrench"></span> {{ 'goEvent' | translate}}
+              </button>
+              <button class="btn btn-xs btn-info pull-right" (click)="onPublish(event)"><span
+                class="glyphicon glyphicon-star"></span> {{ 'publish' | translate}}
+              </button>
             </li>
           </ul>
         </div>

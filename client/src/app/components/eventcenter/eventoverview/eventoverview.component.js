@@ -34,15 +34,18 @@ var EventoverviewComponent = (function () {
         this.storage.store('mode', 'create');
         this.router.navigate(['./eventdetail']);
     };
+    EventoverviewComponent.prototype.onPublish = function (event) {
+        this.storage.clear();
+        this.eventService.createPdf(event);
+        this.storage.store('event', event);
+        this.router.navigate(['./notificationcenter']);
+    };
     EventoverviewComponent.prototype.onEdit = function (event) {
         this.storage.clear();
         this.storage.store('mode', 'edit');
+        this.storage.store('bundle_id', 0);
         this.eventService.event = event;
         this.router.navigate(['./eventdetail']);
-    };
-    EventoverviewComponent.prototype.onNotify = function (event) {
-        this.eventService.event = event;
-        this.router.navigate(['./notificationcenter']);
     };
     EventoverviewComponent.prototype.onDelete = function (event) {
         var events = this.events;
