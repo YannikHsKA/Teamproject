@@ -54,7 +54,6 @@ createPdf(event: Event){
   var body = JSON.stringify(event);
   this.http.post('/api/createpdf', body, {headers: headers})
     .subscribe(data => {
-
     }, error => {
       console.log(JSON.stringify(error.json()));
     });

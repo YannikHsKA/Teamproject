@@ -501,10 +501,8 @@ console.log("post angekommen");
   console.log("Create PDF for Bundle ");
   let filename = "";
     let bundle;
+      bundle = event.bundles[0];
 
-  for (var i=0; i<2;i++) {
-      console.log("i" + i);
-      bundle = event.bundles[i];
       filename = './client/src/assets/bundle/bundle' + bundle.id + '.pdf';
       console.log(filename);
       var pdf = new pdfkit({
@@ -560,7 +558,7 @@ console.log("post angekommen");
       // Close PDF and write file.
       pdf.end();
 
-  }
+
 
     res.sendStatus(201);
   /*  var file = fs.createReadStream('./bundle.pdf');

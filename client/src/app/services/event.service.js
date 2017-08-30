@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var Event_1 = require("../model/Event");
-var ng2_webstorage_1 = require('ng2-webstorage');
+var ng2_webstorage_1 = require("ng2-webstorage");
 var EventService = (function () {
     function EventService(http, storage) {
         this.http = http;
@@ -70,8 +71,8 @@ var EventService = (function () {
         this.storage_temp.store('event', this.event_temp);
     };
     EventService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, ng2_webstorage_1.SessionStorageService])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, ng2_webstorage_1.SessionStorageService])
     ], EventService);
     return EventService;
 }());
