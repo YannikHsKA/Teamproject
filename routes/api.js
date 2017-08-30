@@ -517,7 +517,7 @@ console.log("post angekommen");
       pdf.image('client/src/assets/Lidl-Logo.png', 25, 25, {
           width: 60
       });
-      pdf.fontSize(40).text('LIDL-GOLD-CLUB.de', 120, 40);
+      pdf.fontSize(40).text('LIDL SMART SHOPPING', 120, 40);
 
       pdf.moveTo(0, 435)
           .lineTo(700, 400)
@@ -539,9 +539,9 @@ console.log("post angekommen");
       });
 
 
-      pdf.rect(50, 300, 200, 30)
-          .fillOpacity(0.8)
-          .fill("red")
+     // pdf.rect(50, 300, 200, 30)
+      //    .fillOpacity(0.8)
+      //    .fill("red")
 
       pdf.fontSize(10).fillColor("black").text('LIDL Gold Discount!!!', 0, 300, {
           align: 'center'

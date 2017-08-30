@@ -26,15 +26,7 @@ constructor(private activatedRoute: ActivatedRoute, private storage: SessionStor
   this.bundle_id = this.storage.retrieve('bundle_id');
   console.log(this.bundle_id);
 
-  this.http.post('/api/createpdf',{responseType:'arraybuffer'})
 
-    .subscribe(data => {
-      var file = new Blob([data], {type: 'application/pdf'});
-      var fileURL = URL.createObjectURL(file);
-      //window.open(fileURL);
-    }, error => {
-      console.log(JSON.stringify(error.json()));
-    });
 
  // let content;
  // console.log("file URL" + fileURL);
