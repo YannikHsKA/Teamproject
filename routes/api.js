@@ -541,7 +541,7 @@ console.log("post angekommen");
       //    .fillOpacity(0.8)
       //    .fill("red")
 
-      pdf.fontSize(10).fillColor("black").text('LIDL Gold Discount!!!', 0, 300, {
+      pdf.fontSize(10).fillColor("black").text('Title:' + bundle.title, 0, 300, {
           align: 'center'
       });
 
