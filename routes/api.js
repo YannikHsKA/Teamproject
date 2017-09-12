@@ -462,6 +462,8 @@ router.get("/getdatabundles/:week/:article", function(req, res) {
         obj.bundle4.articles = Object.keys(obj.bundle4.articles).map(name => obj.bundle4.articles[name]);
         obj.bundle5.articles = Object.keys(obj.bundle5.articles).map(name => obj.bundle5.articles[name]);
 
+        console.log(obj);
+
         if (obj != undefined) {
             res.status(200).send(Object.keys(obj).map(name => obj[name]));
         }

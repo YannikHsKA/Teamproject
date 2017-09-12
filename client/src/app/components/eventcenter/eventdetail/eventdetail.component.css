@@ -282,10 +282,11 @@ span.round-tab i{
 .round{
   border-radius: 100%; width: 500px; height: 500px;
 }
-.countdown{
+.countdown {
   font-size: 5em;
-  display:table;
-margin:0 auto;
+  display: table;
+  margin: 0 auto;
+}
 
 /* Highlight Table Row */
 
