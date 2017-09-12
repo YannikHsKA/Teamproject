@@ -37,7 +37,8 @@ var EventbundleselectionComponent = (function () {
         this.active_status = "select";
         this.select_status = true;
         this.storage.store('select_status', true);
-        this.bundleService.getBundlesByCweek(this.event.cweek)
+        var cweek = this.event.cweek.split("W");
+        this.bundleService.getBundlesByCweek(cweek[1])
             .subscribe(function (bundles) {
             _this.bundles = bundles;
             var num = 1;
@@ -47,6 +48,19 @@ var EventbundleselectionComponent = (function () {
                 num++;
             }
         });
+        if (this.storage.retrieve('article')) {
+            var article = storage.retrieve('article');
+            this.bundleService.getBundlesByCweekAndArticle(cweek[1], article)
+                .subscribe(function (bundles) {
+                _this.bundles = bundles;
+                var num = 1;
+                for (var _i = 0, bundles_2 = bundles; _i < bundles_2.length; _i++) {
+                    var bundle = bundles_2[_i];
+                    bundle.title = "Bundle " + num;
+                    num++;
+                }
+            });
+        }
     }
     EventbundleselectionComponent.prototype.goToEventBundle = function (bundle) {
         this.storage.store('bundle', bundle);

@@ -6,6 +6,7 @@ import {Notification} from "../model/Notification";
 import { Observable } from 'rxjs';
 import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 import {LocalStorage, SessionStorage} from 'ng2-webstorage';
+import {Article} from "../model/Article";
 
 @Injectable()
 export class EventService {
@@ -22,6 +23,11 @@ export class EventService {
 
   getEvents() {
     return this.http.get('/api/getevents')
+      .map(res => res.json());
+  }
+
+  getArticles() {
+    return this.http.get('/api/getarticles')
       .map(res => res.json());
   }
 

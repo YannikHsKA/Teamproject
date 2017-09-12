@@ -286,4 +286,14 @@ span.round-tab i{
   font-size: 5em;
   display:table;
 margin:0 auto;
+
+/* Highlight Table Row */
+
+td{
+  cursor: pointer !important;
+}
+
+.table tr.highlighted td {
+  background-color:#123456 !important;
+  color: white;
 }

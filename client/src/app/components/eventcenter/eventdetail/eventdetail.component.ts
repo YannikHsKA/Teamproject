@@ -23,7 +23,6 @@ export class EventdetailComponent {
   createMode: boolean = false;
   bundles: Bundle[] = new Array();
   articles: Article[] = new Array();
-  notifications: Notification[] = new Array();
   bundle: Bundle;
   detail_status: boolean;
   bundle1_status: boolean;
@@ -32,6 +31,8 @@ export class EventdetailComponent {
   active_status: string;
   hidden: boolean = false;
   countdown: number = 10;
+  articleFilter: any = {name: ''}
+  currentArticle: Article;
 
   constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage: SessionStorageService) {
 
@@ -99,16 +100,22 @@ export class EventdetailComponent {
       this.event.bundles = this.bundles;
       this.storage.store('event', this.event);
     }
+
+    this.eventService.getArticles()
+      .subscribe(articles => {
+        this.articles = articles;
+        console.log(articles);
+      });
+
   }
 
   addEvent() {
     let newEvent = new Event();
     newEvent.title = this.event.title;
-    newEvent.start = this.event.start;
-    newEvent.end = this.event.end;
     newEvent.cweek = this.event.cweek;
     newEvent.bundles = this.event.bundles;
     this.bundle_id = 0;
+
 
     var temp = "";
     this.eventService.addEvent(this.event)
@@ -118,7 +125,6 @@ export class EventdetailComponent {
     this.storage.store('event', newEvent);
     this.storage.store('mode', 'edit');
     this.storage.store('detail_status', true);
-
 
     var that = this;
     function doBoth() {
@@ -131,6 +137,9 @@ export class EventdetailComponent {
     }
     setInterval(doSomething, 1000);
     setTimeout(doBoth, 10000);
+    if(this.currentArticle){
+      this.storage.store('article', this.currentArticle);
+    }
   }
 
   updateEvent(event: Event) {
@@ -156,6 +165,10 @@ export class EventdetailComponent {
     event.preventDefault();
     this.storage.clear();
     this.router.navigate(["/eventoverview"]);
+  }
+
+  selectArticle(item: Article, event: any){
+    this.currentArticle = item;
   }
 
 }

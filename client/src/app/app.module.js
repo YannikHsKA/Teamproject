@@ -23,11 +23,12 @@ var detailedbundle_component_1 = require('./components/detailedbundle/detailedbu
 var eventdetail_component_1 = require("./components/eventcenter/eventdetail/eventdetail.component");
 var eventoverview_component_1 = require("./components/eventcenter/eventoverview/eventoverview.component");
 var eventbundle_component_1 = require("./components/eventcenter/eventbundle/eventbundle.component");
-var eventarticles_component_1 = require("./components/eventcenter/eventarticles/eventarticles.component");
 var notificationcenter_component_1 = require("./components/notificationcenter/notificationcenter.component");
+var eventbundleselection_component_1 = require("./components/eventcenter/eventbundleselection/eventbundleselection.component");
 var ng2_translate_1 = require('ng2-translate');
 var ng2_webstorage_1 = require('ng2-webstorage');
-var eventbundleselection_component_1 = require("./components/eventcenter/eventbundleselection/eventbundleselection.component");
+var angular2_datatable_1 = require('angular2-datatable');
+var ng2_filter_pipe_1 = require('ng2-filter-pipe');
 var appRoutes = [
     { path: 'subscribe', component: subscriptions_component_1.SubscriptionsComponent },
     { path: 'verification', component: verifications_component_1.VerificationsComponent },
@@ -38,7 +39,6 @@ var appRoutes = [
     { path: 'eventbundle', component: eventbundle_component_1.EventbundleComponent },
     { path: 'eventbundleselection', component: eventbundleselection_component_1.EventbundleselectionComponent },
     { path: 'detailedbundle', component: detailedbundle_component_1.DetailedbundleComponent },
-    { path: 'eventarticles', component: eventarticles_component_1.EventarticlesComponent },
     { path: 'notificationcenter', component: notificationcenter_component_1.NotificationcenterComponent },
     { path: '404', component: notfound_component_1.NotFoundComponent },
     { path: '', redirectTo: '/subscribe', pathMatch: 'full' },
@@ -54,8 +54,8 @@ var AppModule = (function () {
                     provide: ng2_translate_1.TranslateLoader,
                     useFactory: function (http) { return new ng2_translate_1.TranslateStaticLoader(http, 'src/assets/i18n', '.json'); },
                     deps: [http_1.Http]
-                }), ng2_webstorage_1.Ng2Webstorage,],
-            declarations: [app_component_1.AppComponent, bundles_component_1.BundlesComponent, eventarticles_component_1.EventarticlesComponent, notificationcenter_component_1.NotificationcenterComponent, eventoverview_component_1.EventoverviewComponent, eventdetail_component_1.EventdetailComponent, eventbundle_component_1.EventbundleComponent, settings_component_1.SettingsComponent, subscriptions_component_1.SubscriptionsComponent, notfound_component_1.NotFoundComponent, verifications_component_1.VerificationsComponent, detailedbundle_component_1.DetailedbundleComponent, eventbundleselection_component_1.EventbundleselectionComponent],
+                }), ng2_webstorage_1.Ng2Webstorage, angular2_datatable_1.DataTableModule, ng2_filter_pipe_1.Ng2FilterPipeModule],
+            declarations: [app_component_1.AppComponent, bundles_component_1.BundlesComponent, notificationcenter_component_1.NotificationcenterComponent, eventoverview_component_1.EventoverviewComponent, eventdetail_component_1.EventdetailComponent, eventbundle_component_1.EventbundleComponent, settings_component_1.SettingsComponent, subscriptions_component_1.SubscriptionsComponent, notfound_component_1.NotFoundComponent, verifications_component_1.VerificationsComponent, detailedbundle_component_1.DetailedbundleComponent, eventbundleselection_component_1.EventbundleselectionComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

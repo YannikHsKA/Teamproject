@@ -1,7 +1,4 @@
-import { NgModule }      from '@angular/core';
-import {Component} from "@angular/core";
-
-
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, Http } from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -17,12 +14,13 @@ import { DetailedbundleComponent } from './components/detailedbundle/detailedbun
 import {EventdetailComponent} from "./components/eventcenter/eventdetail/eventdetail.component";
 import {EventoverviewComponent} from "./components/eventcenter/eventoverview/eventoverview.component";
 import {EventbundleComponent} from "./components/eventcenter/eventbundle/eventbundle.component";
-import {EventarticlesComponent} from "./components/eventcenter/eventarticles/eventarticles.component";
 import {NotificationcenterComponent} from "./components/notificationcenter/notificationcenter.component";
-import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
-import {Ng2Webstorage} from 'ng2-webstorage';
 import {EventbundleselectionComponent} from "./components/eventcenter/eventbundleselection/eventbundleselection.component";
 
+import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-translate';
+import {Ng2Webstorage} from 'ng2-webstorage';
+import {DataTableModule} from 'angular2-datatable';
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 
 const appRoutes: Routes = [
   {path:'subscribe', component: SubscriptionsComponent},
@@ -34,7 +32,6 @@ const appRoutes: Routes = [
   {path:'eventbundle', component: EventbundleComponent},
   {path:'eventbundleselection', component: EventbundleselectionComponent},
   {path:'detailedbundle', component: DetailedbundleComponent},
-  {path:'eventarticles', component: EventarticlesComponent},
   {path:'notificationcenter', component: NotificationcenterComponent},
   {path: '404', component: NotFoundComponent},
   {path: '', redirectTo: '/subscribe', pathMatch: 'full'},
@@ -47,8 +44,8 @@ const appRoutes: Routes = [
             provide: TranslateLoader,
             useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/assets/i18n', '.json'),
             deps: [Http]
-        }), Ng2Webstorage,],
-  declarations: [ AppComponent, BundlesComponent, EventarticlesComponent, NotificationcenterComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent, EventbundleselectionComponent ],
+        }), Ng2Webstorage, DataTableModule, Ng2FilterPipeModule ],
+  declarations: [ AppComponent, BundlesComponent, NotificationcenterComponent, EventoverviewComponent, EventdetailComponent,EventbundleComponent, SettingsComponent, SubscriptionsComponent, NotFoundComponent, VerificationsComponent, DetailedbundleComponent, EventbundleselectionComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

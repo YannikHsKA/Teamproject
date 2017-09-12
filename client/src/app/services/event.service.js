@@ -23,6 +23,10 @@ var EventService = (function () {
         return this.http.get('/api/getevents')
             .map(function (res) { return res.json(); });
     };
+    EventService.prototype.getArticles = function () {
+        return this.http.get('/api/getarticles')
+            .map(function (res) { return res.json(); });
+    };
     EventService.prototype.getEvent = function () {
         return this.event;
     };

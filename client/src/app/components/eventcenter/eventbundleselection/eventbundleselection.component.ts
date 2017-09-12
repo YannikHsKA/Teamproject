@@ -49,9 +49,9 @@ export class EventbundleselectionComponent {
     this.select_status = true;
     this.storage.store('select_status', true);
 
+    var cweek = this.event.cweek.split("W");
 
-
-    this.bundleService.getBundlesByCweek(this.event.cweek)
+    this.bundleService.getBundlesByCweek(cweek[1])
       .subscribe(bundles => {
         this.bundles = bundles;
         var num = 1;
@@ -60,6 +60,22 @@ export class EventbundleselectionComponent {
           num++;
         }
       });
+
+    if(this.storage.retrieve('article')){
+      var article = storage.retrieve('article');
+
+      this.bundleService.getBundlesByCweekAndArticle(cweek[1], article)
+        .subscribe(bundles => {
+          this.bundles = bundles;
+          var num = 1;
+          for (let bundle of bundles) {
+            bundle.title = "Bundle " + num;
+            num++;
+          }
+        });
+    }
+
+
   }
 
   goToEventBundle(bundle: Bundle) {

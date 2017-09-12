@@ -15,9 +15,11 @@
     "ng-range-slider": "^0.2.0",
     "ng2-storage": "0.0.4",
     "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4",
     "pdfkit": "^0.8.3",
     "twilio": "^2.11.1",
-    "typings": "^2.1.1"
+    "typings": "^2.1.1",
+    "xoauth2": "^1.2.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.2.11"

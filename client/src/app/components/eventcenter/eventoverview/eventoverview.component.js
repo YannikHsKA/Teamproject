@@ -25,7 +25,6 @@ var EventoverviewComponent = (function () {
         document.body.style.backgroundSize = "cover";
         this.eventService.getEvents()
             .subscribe(function (events) {
-            console.log("eeveve", events);
             _this.events = events;
         });
     }

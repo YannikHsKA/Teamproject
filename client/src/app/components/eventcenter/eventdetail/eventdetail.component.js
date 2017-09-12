@@ -16,6 +16,7 @@ var router_1 = require("@angular/router");
 var ng2_webstorage_1 = require('ng2-webstorage');
 var EventdetailComponent = (function () {
     function EventdetailComponent(eventService, bundleService, router, storage) {
+        var _this = this;
         this.eventService = eventService;
         this.bundleService = bundleService;
         this.router = router;
@@ -24,15 +25,20 @@ var EventdetailComponent = (function () {
         this.createMode = false;
         this.bundles = new Array();
         this.articles = new Array();
+<<<<<<< HEAD
         this.notifications = new Array();
         this.hidden = false;
         this.countdown = 10;
+=======
+        this.articleFilter = { name: '' };
+>>>>>>> bundleselection second case
         //Set NavigationBar Attributes
         this.detail_status = true;
         this.bundle1_status = this.storage.retrieve('bundle1_status');
         this.bundle2_status = this.storage.retrieve('bundle2_status');
         this.notification_status = this.storage.retrieve('notification_status');
         this.active_status = "detail";
+        this.submit = false;
         if (this.storage.retrieve("mode") == "edit") {
             this.createMode = false;
             switch (this.eventService.event) {
@@ -84,15 +90,19 @@ var EventdetailComponent = (function () {
             this.event.bundles = this.bundles;
             this.storage.store('event', this.event);
         }
+        this.eventService.getArticles()
+            .subscribe(function (articles) {
+            _this.articles = articles;
+            console.log(articles);
+        });
     }
     EventdetailComponent.prototype.addEvent = function () {
         var newEvent = new Event_1.Event();
         newEvent.title = this.event.title;
-        newEvent.start = this.event.start;
-        newEvent.end = this.event.end;
         newEvent.cweek = this.event.cweek;
         newEvent.bundles = this.event.bundles;
         this.bundle_id = 0;
+        this.submit = true;
         var temp = "";
         this.eventService.addEvent(this.event)
             .subscribe(function (result) { return temp; });
@@ -101,6 +111,7 @@ var EventdetailComponent = (function () {
         this.storage.store('event', newEvent);
         this.storage.store('mode', 'edit');
         this.storage.store('detail_status', true);
+<<<<<<< HEAD
         var that = this;
         function doBoth() {
             document.getElementById("closemodal").click();
@@ -111,6 +122,11 @@ var EventdetailComponent = (function () {
         }
         setInterval(doSomething, 1000);
         setTimeout(doBoth, 10000);
+=======
+        if (this.currentArticle) {
+            this.storage.store('article', this.currentArticle);
+        }
+>>>>>>> bundleselection second case
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
@@ -134,6 +150,9 @@ var EventdetailComponent = (function () {
         event.preventDefault();
         this.storage.clear();
         this.router.navigate(["/eventoverview"]);
+    };
+    EventdetailComponent.prototype.selectArticle = function (item, event) {
+        this.currentArticle = item;
     };
     EventdetailComponent = __decorate([
         core_1.Component({

@@ -25,9 +25,12 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
-      'ng2-translate': 'node_modules/ng2-translate/bundles/ng2-translate.umd.js',
+      'angular2-datatable': 'npm:angular2-datatable',
+      'ng2-translate': 'npm:ng2-translate/bundles/ng2-translate.umd.js',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-      'ng2-webstorage': 'node_modules/ng2-webstorage/bundles/core.umd.js'
+      'ng2-webstorage': 'npm:ng2-webstorage/bundles/core.umd.js',
+      'lodash': 'npm:lodash/lodash.js',
+      'ng2-filter-pipe': 'npm:ng2-filter-pipe'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -40,7 +43,18 @@
       'ng2-webstorage': {
         defaultExtension: 'js'
       },
+      'angular2-datatable': {
+        main: 'index.js',
+        defaultExtension: 'js'
+      },
+      'lodash': {
+        defaultExtension: 'js'
+      },
       rxjs: {
+        defaultExtension: 'js'
+      },
+      'ng2-filter-pipe': {
+        main: 'dist/index.js',
         defaultExtension: 'js'
       }
     }

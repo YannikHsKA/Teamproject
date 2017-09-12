@@ -404,6 +404,22 @@ router.get("/geteventbundles/:eventid", function(req, res) {
   });
 });
 
+router.get("/getarticles", function(req, res) {
+    console.log("Get Articles");
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var ref = db.ref('artikel');
+    var obj;
+
+    ref.once('value', function(snapshot) {
+        obj = snapshot.val();
+        if (obj != undefined) {
+            res.status(200).send(Object.keys(obj).map(name => obj[name]));
+        }
+    });
+});
+
 router.get("/getdatabundles/:week", function(req, res) {
     console.log("Get Databundles");
 
@@ -426,6 +442,32 @@ router.get("/getdatabundles/:week", function(req, res) {
         }
     });
 });
+
+
+router.get("/getdatabundles/:week/:article", function(req, res) {
+    console.log("Get Databundles");
+
+    /* Connect to Firebase */
+    var db = admin.database();
+    var week = req.params.week;
+    var article = req.params.article;
+    var ref = db.ref('data/week' + week + '/happybundles/' + article.ean);
+    var obj;
+
+    ref.once('value', function(snapshot) {
+        obj = snapshot.val();
+        obj.bundle1.articles = Object.keys(obj.bundle1.articles).map(name => obj.bundle1.articles[name]);
+        obj.bundle2.articles = Object.keys(obj.bundle2.articles).map(name => obj.bundle2.articles[name]);
+        obj.bundle3.articles = Object.keys(obj.bundle3.articles).map(name => obj.bundle3.articles[name]);
+        obj.bundle4.articles = Object.keys(obj.bundle4.articles).map(name => obj.bundle4.articles[name]);
+        obj.bundle5.articles = Object.keys(obj.bundle5.articles).map(name => obj.bundle5.articles[name]);
+
+        if (obj != undefined) {
+            res.status(200).send(Object.keys(obj).map(name => obj[name]));
+        }
+    });
+});
+
 
 
 // Create & Update Bundle for Event

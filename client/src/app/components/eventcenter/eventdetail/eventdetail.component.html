@@ -33,7 +33,7 @@
           <!-- Currently active -->
           <li *ngIf="active_status == 'detail'" role="presentation" class="active active1">
             <a aria-controls="step1" title="Step 1">
-              <span class="round-tab" >
+              <span class="round-tab">
                   <i class="glyphicon glyphicon-calendar"></i>
               </span>
             </a>
@@ -62,7 +62,7 @@
           <!-- Currently active -->
           <li *ngIf="active_status == 'select'" role="presentation" class="active active1">
             <a aria-controls="step2" title="Step 2">
-              <span class="round-tab" >
+              <span class="round-tab">
                   <i class="glyphicon glyphicon-th"></i>
               </span>
             </a>
@@ -83,14 +83,14 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-th"></i>
               </span>
-          </a>
+            </a>
           </li>
 
           <!-- Second Bundle -->
           <!-- Currently active -->
           <li *ngIf="active_status == 'bundle1'" role="presentation" class="active1 active">
             <a aria-controls="step1" title="Step 3">
-              <span class="round-tab" >
+              <span class="round-tab">
                   <i class="glyphicon glyphicon-shopping-cart"></i>
               </span>
             </a>
@@ -111,7 +111,7 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-shopping-cart"></i>
               </span>
-          </a>
+            </a>
           </li>
 
 
@@ -139,7 +139,7 @@
               <span class="round-tab">
                     <i class="glyphicon glyphicon-bullhorn"></i>
               </span>
-          </a>
+            </a>
           </li>
         </ul>
       </div>
@@ -161,7 +161,9 @@
           <div class="modal-footer">
             <div class="btn-group">
 
-              <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span class="glyphicon glyphicon-check"></span> Yes, Cancel</button>
+              <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span
+                class="glyphicon glyphicon-check"></span> Yes, Cancel
+              </button>
             </div>
           </div>
 
@@ -174,35 +176,82 @@
     <div class="well ">
 
 
-      <form class="form-horizontal " style="text-align: center ">
+      <form class="form-horizontal " #cweekForm="ngForm" style="text-align: center ">
 
         <legend *ngIf="createMode ">Create an Event</legend>
         <legend *ngIf="!createMode ">Update your Event</legend>
 
         <fieldset>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Event-Title</label>
+            <label for="title " class="col-xs-4 col-form-label text-right">Event-Title</label>
             <div class="col-xs-8 ">
               <input [(ngModel)]="event.title " id="title " name="title " type="text " class="form-control input-xs ">
             </div>
           </div>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label ">Calendar Week of Promotion</label>
+            <label for="title " class="col-xs-4 col-form-label text-right">Calendar Week of Promotion</label>
             <div class="col-xs-8 ">
-              <input [disabled]="!createMode" [(ngModel)]="event.cweek " id="cweek" name="cweek" type="number" class="form-control input-xs">
+              <input [disabled]="!createMode" [(ngModel)]="event.cweek" id="cweek" name="cweek" type="week"
+                     class="form-control input-xs" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <legend>Verfügbare Artikel</legend>
+
+        <fieldset>
+          <div class="form-group row ">
+            <label for="title " class="col-xs-4 col-form-label text-right">Articlesearch</label>
+            <div class="col-xs-8 ">
+              <input placeholder="Filter by Articlename" [disabled]="!createMode" [(ngModel)]="articleFilter.name"
+                     name="articleFilter.name" type="text"
+                     class="form-control input-xs">
             </div>
           </div>
         </fieldset>
         <div class="row">
+          <div class="col-xs-12">
+            <table class="table table-striped table-hover" [mfData]="articles | filterBy : articleFilter"
+                   #mf="mfDataTable"
+                   [mfRowsOnPage]="5">
+              <thead>
+              <tr>
+                <th style="width: 40%">
+                  <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                </th>
+                <th style="width: 40%">
+                  <mfDefaultSorter by="ean">EAN</mfDefaultSorter>
+                </th>
+                <th style="width: 20%" class="text-right">
+                  <mfDefaultSorter by="preis">Preis</mfDefaultSorter>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let item of mf.data" (click)="selectArticle(item, $event)" [class.highlighted]="item === currentArticle">
+                <td class="text-left">{{item.Name}}</td>
+                <td class="text-left">{{item.EAN}}</td>
+                <td class="text-right">{{item.reis}}</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="4">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="row">
           <div class="text-left col-xs-6 ">
-
-            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal">Cancel</button>
-
-
+            <button class="btn btn-danger "><!--data-toggle="modal" data-target="#myModal"-->Cancel</button>
           </div>
           <div class="col-xs-6 text-right ">
-            <a [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-info " *ngIf="createMode " (click)="addEvent()">Generate Bundles</a>
-            <a [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">Update Event and continue</a>
+            <button [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-info " *ngIf="createMode " (click)="addEvent()" [disabled]="!cweekForm.form.valid">Generate Bundles</button>
+            <button [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">Update Event and continue</button>
           </div>
 
         </div>

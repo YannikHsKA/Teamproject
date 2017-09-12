@@ -3,6 +3,7 @@ import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from "../model/Event";
 import {Bundle} from "../model/Bundle";
+import {Article} from "../model/Article";
 
 @Injectable()
 export class BundleService {
@@ -25,8 +26,13 @@ export class BundleService {
       .map(res => res.json());
   }
 
-  getBundlesByCweek(cweek:Number){
+  getBundlesByCweek(cweek:String){
     return this.http.get('/api/getdatabundles/'+cweek)
+      .map(res => res.json());
+  }
+
+  getBundlesByCweekAndArticle(cweek:String, article:Article){
+    return this.http.get('/api/getdatabundles/'+cweek+'/'+article)
       .map(res => res.json());
   }
 }

@@ -26,7 +26,6 @@ export class EventoverviewComponent {
 
     this.eventService.getEvents()
       .subscribe(events => {
-        console.log("eeveve", events);
         this.events = events;
       });
 
