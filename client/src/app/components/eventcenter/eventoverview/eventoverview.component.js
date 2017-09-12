@@ -38,7 +38,12 @@ var EventoverviewComponent = (function () {
         this.storage.clear();
         this.eventService.createPdf(event);
         this.storage.store('event', event);
-        this.router.navigate(['./notificationcenter']);
+        var that = this;
+        function doBoth() {
+            document.getElementById("closemodal").click();
+            that.router.navigate(['./notificationcenter']);
+        }
+        setTimeout(doBoth, 5000);
     };
     EventoverviewComponent.prototype.onEdit = function (event) {
         this.storage.clear();

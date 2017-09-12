@@ -1,5 +1,28 @@
 <div class="container containertop" style="margin-top:-50px">
 
+  <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog middle">
+      <div class="modal-content round">
+        <div class="modal-header">
+          <button id="closemodal" hidden="true" type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+        </div>
+        <div class="modal-body">
+
+          <img style="    position: relative;
+    left: 50%;
+    margin-left: -75px;
+    vertical-align: middle;" src="http://localhost:3000/src/assets/spinning.gif" />
+          <br>
+          <br>
+          <br>
+          <br>
+          <span class="countdown">{{countdown}}</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section>
     <div class="wizard">
       <div class="wizard-inner">
@@ -132,7 +155,7 @@
             <h4 class="modal-title">Cancel</h4>
           </div>
           <div class="modal-body">
-          <h4>Are you sure you want to cancel?</h4>
+            <h4>Are you sure you want to cancel?</h4>
             <p>Your progress will be deleted</p>
           </div>
           <div class="modal-footer">
@@ -142,9 +165,12 @@
             </div>
           </div>
 
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dalog -->
-    </div><!-- /.modal -->
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dalog -->
+    </div>
+    <!-- /.modal -->
     <div class="well ">
 
 
@@ -170,12 +196,12 @@
         <div class="row">
           <div class="text-left col-xs-6 ">
 
-            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal" >Cancel</button>
+            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal">Cancel</button>
 
 
           </div>
           <div class="col-xs-6 text-right ">
-            <a [routerLink]="[ '/eventbundleselection'] " class="btn btn-info " *ngIf="createMode " (click)="addEvent()">Add the First Bundle</a>
+            <a [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-info " *ngIf="createMode " (click)="addEvent()">Generate Bundles</a>
             <a [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">Update Event and continue</a>
           </div>
 
@@ -187,6 +213,3 @@
   </div>
 
 </div>
-
-
-

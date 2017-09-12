@@ -155,7 +155,13 @@
       <div class="form-group col-xs-6">
         <label for="tab ">Total Discount</label>
         <div>
-          <div class="btn-group" data-toggle="buttons">
+          <div class="btn-group" id="status" data-toggle="buttons">
+            <label class="btn btn-default btn-on active" (click)="typeChange(1)">
+                      <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Pure</label>
+            <label class="btn btn-default btn-off" (click)="typeChange(2)">
+                      <input type="radio" value="0" name="multifeatured_module[module_id][status]">Mixed</label>
+          </div>
+          <div class="btn-group" data-toggle="buttons" *ngIf="type == 1">
             <label class="btn btn-default" (click)="handleChange(0.1)">
             <input type="radio" name="radiogroup" id="option1"> 10%
               </label>
@@ -183,6 +189,7 @@
               <th>EAN</th>
               <th>Retail Price</th>
               <th>Discount Price</th>
+              <th *ngIf="type == 2">Mixed Discount</th>
             </tr>
           </thead>
           <tbody>
@@ -191,6 +198,22 @@
               <td>{{article.ean}}</td>
               <td>{{article.preis}}</td>
               <td>{{discounts[i]}}</td>
+              <td *ngIf="type == 2">
+                <div class="btn-group" data-toggle="buttons" style="padding-top: 0;">
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.1 )">
+                <input type="radio" name="radiogroup" id="option1"> 10%
+                  </label>
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.25)">
+                  <input type="radio" name="options" id="option2"> 25%
+                </label>
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.5)">
+                  <input type="radio" name="options" id="option3" >  50%
+                </label>
+                  <label class="btn btn-default btn-sm" (click)="handleChangeMixed(i,0.75)">
+                  <input type="radio" name="options" id="option4" > 75%
+                </label>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>

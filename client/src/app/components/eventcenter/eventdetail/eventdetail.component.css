@@ -273,3 +273,17 @@ span.round-tab i{
 .modal .modal-footer .btn-group > .btn:last-child {
   border-top-right-radius: 0;
 }
+.middle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;"
+}
+.round{
+  border-radius: 100%; width: 500px; height: 500px;
+}
+.countdown{
+  font-size: 5em;
+  display:table;
+margin:0 auto;
+}

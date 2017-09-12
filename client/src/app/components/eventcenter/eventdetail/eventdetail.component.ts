@@ -30,6 +30,8 @@ export class EventdetailComponent {
   bundle2_status: boolean;
   notification_status: boolean;
   active_status: string;
+  hidden: boolean = false;
+  countdown: number = 10;
 
   constructor(private eventService: EventService, private bundleService: BundleService, private router: Router, private storage: SessionStorageService) {
 
@@ -88,7 +90,8 @@ export class EventdetailComponent {
           id: n,
           description: "Sample Description",
           smartscore: "0.00",
-          articles: null
+          articles: null,
+          discount: "none",
         }
         this.bundles[n] = this.bundle;
         n++;
@@ -116,6 +119,18 @@ export class EventdetailComponent {
     this.storage.store('mode', 'edit');
     this.storage.store('detail_status', true);
 
+
+    var that = this;
+    function doBoth() {
+
+      document.getElementById("closemodal").click();
+      that.router.navigate(['/eventbundleselection']);
+    }
+    function doSomething() {
+      that.countdown = that.countdown - 1;
+    }
+    setInterval(doSomething, 1000);
+    setTimeout(doBoth, 10000);
   }
 
   updateEvent(event: Event) {

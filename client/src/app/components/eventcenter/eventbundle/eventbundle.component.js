@@ -19,6 +19,7 @@ var EventbundleComponent = (function () {
         this.router = router;
         this.articles = new Array();
         this.discounts = new Array();
+        this.type = 1;
         document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
@@ -28,8 +29,12 @@ var EventbundleComponent = (function () {
         this.event = this.storage.retrieve('event');
         this.bundle = this.event.bundles[this.bundle_id];
         this.chosen_bundle = this.storage.retrieve('bundle');
+        this.event.bundles[0].discount = "none";
+        this.event.bundles[0].articles = this.chosen_bundle.articles;
         for (var i = 0; i < 3; i++) {
-            this.discounts[i] = this.chosen_bundle.articles[i].preis;
+            var res = this.chosen_bundle.articles[i].preis;
+            this.event.bundles[0].articles[i].discount = "none";
+            this.event.bundles[0].articles[i].discountpreis = this.event.bundles[0].articles[i].preis;
         }
         //Set NavigationBar Attributes
         this.detail_status = this.storage.retrieve('detail_status');
@@ -51,6 +56,7 @@ var EventbundleComponent = (function () {
                 this.storage.store('bundle2_status', true);
                 break;
         }
+        this.handleChange(parseFloat(this.chosen_bundle.articles[0].preis.split("€")[0]) * 0.1);
     }
     EventbundleComponent.prototype.backToEvent = function () {
         this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
@@ -58,6 +64,7 @@ var EventbundleComponent = (function () {
         this.storage.store('bundle_id', this.bundle_id);
     };
     EventbundleComponent.prototype.GoNext = function () {
+        this.saveToDB();
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('bundle2_status', true);
@@ -66,10 +73,32 @@ var EventbundleComponent = (function () {
             .subscribe();
     };
     EventbundleComponent.prototype.handleChange = function (num) {
+        this.event.bundles[0].discount = num.toString();
         for (var i = 0; i < 3; i++) {
             var res = this.chosen_bundle.articles[i].preis.split("€");
             this.discounts[i] = (parseFloat(res[0]) * num).toFixed(2).toString().concat("€");
+            this.event.bundles[0].articles[i].discount = num.toString();
+            this.event.bundles[0].articles[i].discountpreis = this.discounts[i].toString();
         }
+    };
+    EventbundleComponent.prototype.handleChangeMixed = function (i, num) {
+        console.log(i);
+        var res = this.chosen_bundle.articles[i].preis.split("€");
+        this.discounts[i] = (parseFloat(res[0]) * num).toFixed(2).toString().concat("€");
+        this.event.bundles[0].articles[i].discount = num.toString();
+        this.event.bundles[0].articles[i].discountpreis = this.discounts[i].toString();
+    };
+    EventbundleComponent.prototype.typeChange = function (num) {
+        this.type = num;
+        for (var i = 0; i < 3; i++) {
+            this.discounts[i] = (parseFloat(this.chosen_bundle.articles[i].preis.split("€")[0])).toString().concat("€");
+        }
+    };
+    EventbundleComponent.prototype.saveToDB = function () {
+        this.event.bundles[0].articles = this.chosen_bundle.articles;
+        console.log("event:", this.event);
+        this.eventService.updateEvent(this.storage.retrieve('event'))
+            .subscribe();
     };
     EventbundleComponent = __decorate([
         core_1.Component({

@@ -57,6 +57,8 @@ export class EventarticlesComponent {
           ean: 815,
           name: "Article",
           preis: "12,99",
+          discount: "10%",
+          discountpreis: "1,23€"
         }
         this.articles[n] = this.defaultarticle;
         n++;

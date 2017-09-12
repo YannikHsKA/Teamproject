@@ -30,11 +30,12 @@ export class EventbundleComponent {
   active_status: string;
   articles: Article[] = new Array();
   discounts: String[] = new Array();
+  type: number;
 
   constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router) {
 
 
-
+    this.type = 1;
 
     document.body.style.backgroundImage = "url('src/assets/admin.jpg')";
     document.body.style.backgroundPosition = "center center";
@@ -46,8 +47,13 @@ export class EventbundleComponent {
     this.event = this.storage.retrieve('event');
     this.bundle = this.event.bundles[this.bundle_id];
     this.chosen_bundle = this.storage.retrieve('bundle');
+    this.event.bundles[0].discount = "none";
+    this.event.bundles[0].articles = this.chosen_bundle.articles;
+
     for (var i = 0; i < 3; i++) {
-      this.discounts[i] = this.chosen_bundle.articles[i].preis;
+      var res = this.chosen_bundle.articles[i].preis;
+      this.event.bundles[0].articles[i].discount = "none";
+      this.event.bundles[0].articles[i].discountpreis = this.event.bundles[0].articles[i].preis;
     }
 
 
@@ -74,6 +80,8 @@ export class EventbundleComponent {
         this.storage.store('bundle2_status', true);
         break;
     }
+    this.handleChange(parseFloat(this.chosen_bundle.articles[0].preis.split("€")[0]) * 0.1);
+
   }
 
   backToEvent() {
@@ -84,6 +92,7 @@ export class EventbundleComponent {
 
   GoNext() {
 
+    this.saveToDB();
     this.storage.store('event', this.event);
     this.storage.store('bundle_id', this.bundle_id);
     this.storage.store('bundle2_status', true);
@@ -95,10 +104,35 @@ export class EventbundleComponent {
   }
 
   handleChange(num: number) {
+    this.event.bundles[0].discount = num.toString();
     for (var i = 0; i < 3; i++) {
       var res = this.chosen_bundle.articles[i].preis.split("€");
       this.discounts[i] = (parseFloat(res[0]) * num).toFixed(2).toString().concat("€");
+      this.event.bundles[0].articles[i].discount = num.toString();
+      this.event.bundles[0].articles[i].discountpreis = this.discounts[i].toString();
     }
+
+  }
+  handleChangeMixed(i: number, num: number) {
+    console.log(i);
+    var res = this.chosen_bundle.articles[i].preis.split("€");
+    this.discounts[i] = (parseFloat(res[0]) * num).toFixed(2).toString().concat("€");
+    this.event.bundles[0].articles[i].discount = num.toString();
+    this.event.bundles[0].articles[i].discountpreis = this.discounts[i].toString();
+  }
+
+  typeChange(num: number) {
+    this.type = num;
+    for (var i = 0; i < 3; i++) {
+      this.discounts[i] = (parseFloat(this.chosen_bundle.articles[i].preis.split("€")[0])).toString().concat("€");
+    }
+  }
+
+  saveToDB() {
+    this.event.bundles[0].articles = this.chosen_bundle.articles;
+    console.log("event:", this.event);
+    this.eventService.updateEvent(this.storage.retrieve('event'))
+      .subscribe();
   }
 
 }

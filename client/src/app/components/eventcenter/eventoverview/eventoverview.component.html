@@ -1,5 +1,26 @@
 <div class="container containertop">
   <div class="container" align="center">
+
+
+    <div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog middle">
+        <div class="modal-content round">
+          <div class="modal-header">
+            <button id="closemodal" hidden="true" type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+          </div>
+          <div class="modal-body">
+            <span class="countdown">Publishing Bundle</span>
+            <img style="    position: relative;
+      left: 50%;
+      margin-left: -400px;
+      vertical-align: middle;" src="http://localhost:3000/src/assets/flightplane.gif" />
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="card hovercard">
       <div class="card-background">
 
@@ -25,7 +46,7 @@
               <button class="btn btn-xs btn-success pull-right" (click)="onEdit(event)"><span
                 class="glyphicon glyphicon-wrench"></span> {{ 'goEvent' | translate}}
               </button>
-              <button class="btn btn-xs btn-info pull-right" (click)="onPublish(event)"><span
+              <button [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-xs btn-info pull-right" (click)="onPublish(event)"><span
                 class="glyphicon glyphicon-star"></span> {{ 'publish' | translate}}
               </button>
             </li>

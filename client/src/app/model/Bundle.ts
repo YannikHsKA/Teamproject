@@ -6,4 +6,5 @@ export class Bundle {
   description: string;
   smartscore: string;
   articles: Array<Article>;
+  discount: String;
 }

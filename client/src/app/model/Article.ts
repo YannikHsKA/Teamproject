@@ -4,4 +4,6 @@ export class Article {
   ean: number;
   name: string;
   preis: string;
+  discountpreis: string;
+  discount: string;
 }

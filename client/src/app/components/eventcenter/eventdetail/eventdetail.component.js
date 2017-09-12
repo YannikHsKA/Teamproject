@@ -25,6 +25,8 @@ var EventdetailComponent = (function () {
         this.bundles = new Array();
         this.articles = new Array();
         this.notifications = new Array();
+        this.hidden = false;
+        this.countdown = 10;
         //Set NavigationBar Attributes
         this.detail_status = true;
         this.bundle1_status = this.storage.retrieve('bundle1_status');
@@ -73,7 +75,8 @@ var EventdetailComponent = (function () {
                     id: n,
                     description: "Sample Description",
                     smartscore: "0.00",
-                    articles: null
+                    articles: null,
+                    discount: "none",
                 };
                 this.bundles[n] = this.bundle;
                 n++;
@@ -98,6 +101,16 @@ var EventdetailComponent = (function () {
         this.storage.store('event', newEvent);
         this.storage.store('mode', 'edit');
         this.storage.store('detail_status', true);
+        var that = this;
+        function doBoth() {
+            document.getElementById("closemodal").click();
+            that.router.navigate(['/eventbundleselection']);
+        }
+        function doSomething() {
+            that.countdown = that.countdown - 1;
+        }
+        setInterval(doSomething, 1000);
+        setTimeout(doBoth, 10000);
     };
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
