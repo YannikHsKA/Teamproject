@@ -50,7 +50,8 @@ var EventbundleselectionComponent = (function () {
         });
         if (this.storage.retrieve('article')) {
             var article = storage.retrieve('article');
-            this.bundleService.getBundlesByCweekAndArticle(cweek[1], article)
+            var ean = article.ean;
+            this.bundleService.getBundlesByCweekAndArticle(cweek[1], ean)
                 .subscribe(function (bundles) {
                 _this.bundles = bundles;
                 var num = 1;

@@ -104,7 +104,6 @@ export class EventdetailComponent {
     this.eventService.getArticles()
       .subscribe(articles => {
         this.articles = articles;
-        console.log(articles);
       });
 
   }
@@ -120,7 +119,6 @@ export class EventdetailComponent {
     var temp = "";
     this.eventService.addEvent(this.event)
       .subscribe(result => temp);
-    console.log("create", temp);
     this.storage.store('bundle_id', this.bundle_id);
     this.storage.store('event', newEvent);
     this.storage.store('mode', 'edit');

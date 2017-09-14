@@ -229,9 +229,9 @@
               </thead>
               <tbody>
               <tr *ngFor="let item of mf.data" (click)="selectArticle(item, $event)" [class.highlighted]="item === currentArticle">
-                <td class="text-left">{{item.Name}}</td>
-                <td class="text-left">{{item.EAN}}</td>
-                <td class="text-right">{{item.reis}}</td>
+                <td class="text-left">{{item.name}}</td>
+                <td class="text-left">{{item.ean}}</td>
+                <td class="text-right">{{item.preis}}</td>
               </tr>
               </tbody>
               <tfoot>

@@ -88,7 +88,6 @@ var EventdetailComponent = (function () {
         this.eventService.getArticles()
             .subscribe(function (articles) {
             _this.articles = articles;
-            console.log(articles);
         });
     }
     EventdetailComponent.prototype.addEvent = function () {
@@ -100,7 +99,6 @@ var EventdetailComponent = (function () {
         var temp = "";
         this.eventService.addEvent(this.event)
             .subscribe(function (result) { return temp; });
-        console.log("create", temp);
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('event', newEvent);
         this.storage.store('mode', 'edit');

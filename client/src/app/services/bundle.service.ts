@@ -31,8 +31,8 @@ export class BundleService {
       .map(res => res.json());
   }
 
-  getBundlesByCweekAndArticle(cweek:String, article:Article){
-    return this.http.get('/api/getdatabundles/'+cweek+'/'+article)
+  getBundlesByCweekAndArticle(cweek:String, ean:Number){
+    return this.http.get('/api/getdatabundlescase2/'+cweek+'/'+ean)
       .map(res => res.json());
   }
 }

@@ -444,14 +444,14 @@ router.get("/getdatabundles/:week", function(req, res) {
 });
 
 
-router.get("/getdatabundles/:week/:article", function(req, res) {
+router.get("/getdatabundlescase2/:week/:ean", function(req, res) {
     console.log("Get Databundles");
 
     /* Connect to Firebase */
     var db = admin.database();
     var week = req.params.week;
-    var article = req.params.article;
-    var ref = db.ref('data/week' + week + '/happybundles/' + article.ean);
+    var ean = req.params.ean;
+    var ref = db.ref('data/week' + week + '/happybundles/' + ean);
     var obj;
 
     ref.once('value', function(snapshot) {

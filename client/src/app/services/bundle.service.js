@@ -29,8 +29,8 @@ var BundleService = (function () {
         return this.http.get('/api/getdatabundles/' + cweek)
             .map(function (res) { return res.json(); });
     };
-    BundleService.prototype.getBundlesByCweekAndArticle = function (cweek, article) {
-        return this.http.get('/api/getdatabundles/' + cweek + '/' + article)
+    BundleService.prototype.getBundlesByCweekAndArticle = function (cweek, ean) {
+        return this.http.get('/api/getdatabundlescase2/' + cweek + '/' + ean)
             .map(function (res) { return res.json(); });
     };
     BundleService = __decorate([
