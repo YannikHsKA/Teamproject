@@ -133,8 +133,12 @@
         <div class="info-card" *ngFor="let bundle of bundles" (click)="goToEventBundle(bundle)">
           <div class="front">
             <div class="card-block">
-              <h4 class="card-title">{{bundle.title}}</h4>
-              <p class="card-text">Smartscore: {{bundle.smartscore}}/10</p>
+              <h4 class="card-title">{{bundle.title}}
+              <span *ngIf="bundle.smartscore >= 8.5 && bundle.smartscore < 10" class="badge progress-bar-success">{{bundle.smartscore}} / 10</span>
+              <span *ngIf="bundle.smartscore >= 6.5 && bundle.smartscore < 8.5" class="badge progress-bar-info">{{bundle.smartscore}} / 10</span>
+              <span *ngIf="bundle.smartscore >= 4.5 && bundle.smartscore < 6.5" class="badge progress-bar-warning">{{bundle.smartscore}} / 10</span>
+              <span *ngIf="bundle.smartscore >= 2.5 && bundle.smartscore < 4.5" class="badge progress-bar-danger">{{bundle.smartscore}} / 10</span>
+              </h4>
             </div>
             <img class="card-img-top img-fluid" src="http://localhost:3000/src/assets/Angebote.jpg" alt="Card image cap" style='height: 60%; width: 100%; object-fit: cover;'>
             <div class="car-block" class="bundledescription">

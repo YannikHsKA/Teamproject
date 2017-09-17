@@ -287,3 +287,11 @@ Extra large devices (large desktops, 75em and up (1200px))
   font-weight: 800;
 }
 
+/* Badge */
+
+.badge{
+  position:absolute;
+  top:10px;
+  right:10px;
+}
+
