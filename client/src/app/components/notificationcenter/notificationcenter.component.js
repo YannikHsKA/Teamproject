@@ -26,6 +26,7 @@ var NotificationcenterComponent = (function () {
         this.email_active = false;
         this.sms_active = true;
         this.whatsapp_active = false;
+        this.amazon_active = false;
         //Set NavigationBar Attributes
         this.detail_status = this.storage.retrieve('detail');
         this.bundle1_status = this.storage.retrieve('bundle1_status');
@@ -54,17 +55,25 @@ var NotificationcenterComponent = (function () {
                 this.whatsapp_active = true;
                 this.sms_active = false;
                 this.email_active = false;
+                this.amazon_active = false;
                 break;
             case "sms":
                 this.email_active = false;
                 this.sms_active = true;
                 this.whatsapp_active = false;
+                this.amazon_active = false;
                 break;
             case "email":
                 this.email_active = true;
                 this.sms_active = false;
                 this.whatsapp_active = false;
+                this.amazon_active = false;
                 break;
+            case "amazon":
+                this.amazon_active = true;
+                this.email_active = false;
+                this.sms_active = false;
+                this.whatsapp_active = false;
         }
     };
     NotificationcenterComponent.prototype.ngOnDestroy = function () {

@@ -7,17 +7,18 @@
 
     <div class="row">
 
-        <button  type="button"  class=" glyphicon glyphicon-comment button btn btn-info" (click)="showPhoneFields()">
-          {{ 'sms1' | translate}}
+        <button  type="button"  class="button btn btn-info" (click)="showPhoneFields()">
+          <i class="fa fa-comments-o " aria-hidden="true "></i> {{ 'sms1' | translate}}
         </button>
-        <button type="button"  class="glyphicon glyphicon-envelope button btn btn-info" (click)="showMailFields()">
-          {{ 'email1' | translate}}
+        <button type="button"  class="button btn btn-info" (click)="showMailFields()">
+          <i class="fa fa-envelope-o " aria-hidden="true "></i> {{ 'email1' | translate}}
         </button>
         <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
           <i class="fa fa-whatsapp " aria-hidden="true "></i> {{ 'whatsapp1' | translate}}
         </button>
-
-
+        <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
+          <i class="fa fa-amazon " aria-hidden="true "></i> Amazon Alexa
+        </button>
     </div>
     <div class="row">
       <div class="col col-xs-12">

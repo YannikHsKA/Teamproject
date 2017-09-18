@@ -33,6 +33,10 @@ p{
 }
 
 button{
-  width: 8em;
+  width: 9.5em;
+}
+
+.glyphicon{
+  font-family: none !important;
 }
 

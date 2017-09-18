@@ -52,7 +52,7 @@
             <a aria-controls="step2" title="Step 2">
               <span class="round-tab">
                     <i class="glyphicon glyphicon-th"></i>
-              </span>
+              </span>sss
             </a>
           </li>
 
@@ -158,14 +158,19 @@
           </button>
       </div>
       <div class="btn-group " role="group " (click)="switchLane( 'sms') ">
-        <button type="button " id="favorites " [ngClass]="{ 'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active} " href="#tab2 " data-toggle="tab "><span class="glyphicon glyphicon-comment " aria-hidden="true "></span>
+        <button type="button " id="favorites " [ngClass]="{ 'btn' : true, 'btn-primary':sms_active, 'btn-default':!sms_active} " href="#tab2 " data-toggle="tab "><i class="fa fa-comments-o " aria-hidden="true "></i>
             <div class="hidden-xs ">{{ 'sms3' | translate}}</div>
           </button>
       </div>
       <div class="btn-group " role="group " (click)="switchLane( 'email') ">
-        <button type="button " id="following " [ngClass]="{ 'btn' : true, 'btn-primary':email_active, 'btn-default':!email_active} " href="#tab3 " data-toggle="tab "><span class="glyphicon glyphicon-envelope " aria-hidden="true "></span>
+        <button type="button " id="following " [ngClass]="{ 'btn' : true, 'btn-primary':email_active, 'btn-default':!email_active} " href="#tab3 " data-toggle="tab "><i class="fa fa-envelope-o " aria-hidden="true "></i>
             <div class="hidden-xs ">{{ 'email5' | translate}}</div>
           </button>
+      </div>
+      <div class="btn-group " role="group " (click)="switchLane( 'amazon') ">
+        <button type="button " id="following " [ngClass]="{ 'btn' : true, 'btn-primary':amazon_active, 'btn-default':!amazon_active} " href="#tab4 " data-toggle="tab "><i class="fa fa-amazon " aria-hidden="true "></i>
+          <div class="hidden-xs ">Amazon Alexa</div>
+        </button>
       </div>
     </div>
 
@@ -179,6 +184,9 @@
       </div>
       <div [ngClass]="{'tab-pane fade in active' : email_active, 'tab-pane fade in' : !email_active }" id="tab3">
         <textarea [(ngModel)]="notification.email_text" name="email_text" placeholder="Enter your E-Mail text here.&#10;The text will appear in the E-Mail Bundle Template."></textarea>
+      </div>
+      <div [ngClass]="{'tab-pane fade in active' : amazon_active, 'tab-pane fade in' : !amazon_active }" id="tab3">
+        <textarea name="email_text" placeholder="Enter your Amazon Alexa text here.&#10;The text will be spoken by Amazon Alexa."></textarea>
       </div>
     </div>
 

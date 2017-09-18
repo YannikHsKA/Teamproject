@@ -61,6 +61,15 @@
             </label>
           </div>
         </div>
+        <div class="form-group">
+          <label class="col-xs-4 control-label"> Amazon Alexa </label>
+          <div class="col-xs-4">
+            <label class="switch">
+              <input type="checkbox" [checked]="true" name="amazon_toggle">
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </div>
         <button type="button" class="btn btn-info" (click)="saveSettings()">
           Done
         </button>

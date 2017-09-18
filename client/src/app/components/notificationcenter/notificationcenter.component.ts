@@ -17,6 +17,7 @@ export class NotificationcenterComponent {
   whatsapp_active: boolean;
   sms_active: boolean;
   email_active: boolean;
+  amazon_active: boolean;
   bundle_id: number;
   detail_status: boolean;
   bundle1_status: boolean;
@@ -35,6 +36,7 @@ export class NotificationcenterComponent {
     this.email_active = false;
     this.sms_active = true;
     this.whatsapp_active = false;
+    this.amazon_active = false;
     //Set NavigationBar Attributes
     this.detail_status = this.storage.retrieve('detail');
     this.bundle1_status = this.storage.retrieve('bundle1_status');
@@ -72,18 +74,25 @@ export class NotificationcenterComponent {
         this.whatsapp_active = true;
         this.sms_active = false;
         this.email_active = false;
+        this.amazon_active = false;
         break;
       case "sms":
         this.email_active = false;
         this.sms_active = true;
         this.whatsapp_active = false;
+        this.amazon_active = false;
         break;
       case "email":
         this.email_active = true;
         this.sms_active = false;
         this.whatsapp_active = false;
+        this.amazon_active = false;
         break;
-
+      case "amazon":
+        this.amazon_active = true;
+        this.email_active = false;
+        this.sms_active = false;
+        this.whatsapp_active = false;
     }
   }
 
