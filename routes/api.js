@@ -545,68 +545,135 @@ router.post("/createpdf", function(req, res) {
     let event = req.body;
  console.log("title:" + event.title);
   console.log("Create PDF for Bundle ");
+
+
   let filename = "";
     let bundle;
       bundle = event.bundles[0];
+    console.log(bundle.articles[0]);
+   console.log(bundle.articles[0].ean);
+    var article1_ean= "client/src/assets/articles/" + bundle.articles[0].ean + ".jpg";
+    var article2_ean = "client/src/assets/articles/" + bundle.articles[1].ean + ".jpg";
+    var article3_ean = "client/src/assets/articles/" + bundle.articles[2].ean + ".jpg";
+    var done = false;
 
-      filename = './client/src/assets/bundle/bundle' + bundle.id + '.pdf';
+
+    try {
+        var stats = fs.statSync(article1_ean);
+        console.log('File exists');
+    }
+    catch(err) {
+        console.log('it does not exist');
+        article1_ean = "client/src/assets/notfound.jpg";
+    }
+
+    try {
+        var stats = fs.statSync(article2_ean);
+        console.log('File exists');
+    }
+    catch(err) {
+        console.log('it does not exist');
+        article2_ean = "client/src/assets/notfound.jpg";
+    }
+
+
+    try {
+        var stats = fs.statSync(article3_ean);
+        console.log('File exists');
+    }
+    catch(err) {
+        console.log('it does not exist');
+        article3_ean = "client/src/assets/notfound.jpg";
+    }
+
+
+    filename = './client/src/assets/bundle/bundle' + bundle.id + '.pdf';
       console.log(filename);
-      var pdf = new pdfkit({
-          info: {
-              Title: bundle.title,
-              Author: 'Some Author',
-          }
-      });
-
-      pdf.image('client/src/assets/Lidl-Logo.png', 25, 25, {
-          width: 80
-      });
-      pdf.fontSize(40).text('LIDL SMART SHOPPING', 130, 25);
-
-      pdf.moveTo(0, 435)
-          .lineTo(700, 400)
-          .stroke();
-
-      pdf.image('client/src/assets/pdf/tree.jpg', 0, 120, {
-          width: 700
-      });
-      pdf.moveTo(0, 435)
-          .lineTo(700, 400)
-          .stroke();
-
-      pdf.rect(0, 119, 700, 700)
-          .fillOpacity(0.8)
-          .fill("white")
-
-      pdf.fontSize(30).fillColor("black").text(bundle.description, 120, 200, {
-          align: 'center'
-      });
-
-    pdf.image('client/src/assets/pdf/tree.jpg', 0, 0, {
-        scale: 0.25
-    })
-
-     // pdf.rect(50, 300, 200, 30)
-      //    .fillOpacity(0.8)
-      //    .fill("red")
-
-      pdf.fontSize(10).fillColor("black").text('Title:' + bundle.title, 0, 300, {
-          align: 'center'
-      });
 
 
-      // Stream contents to a file
-      pdf.pipe(
-          fs.createWriteStream(filename)
-      )
-          .on('finish', function () {
-              console.log('PDF closed');
+          var pdf = new pdfkit({
+              size: [567, 690],
+              info: {
+                  Title: bundle.title,
+                  Author: 'Lidl Smart Shopping',
 
+              }
+          });
+          pdf.image('client/src/assets/pdf/weihnachts_bundle_theme.jpg', 0, 0, {
+              scale: 1
+          })
+
+          /* pdf.moveTo(0, 435)
+               .lineTo(700, 400)
+               .stroke();
+
+           pdf.image('client/src/assets/pdf/tree.jpg', 0, 120, {
+               width: 700
+           });
+           pdf.moveTo(0, 435)
+               .lineTo(700, 400)
+               .stroke();
+
+           pdf.rect(0, 119, 700, 700)
+               .fillOpacity(0.7)
+               .fill("white")
+     */
+          //pdf.fontSize(40).text('LIDL SMART SHOPPING', 130, 25);
+
+
+          // pdf.rect(50, 300, 200, 30)
+          //    .fillOpacity(0.8)
+          //    .fill("red")
+
+          pdf.fontSize(35).fillColor("black").text(bundle.title, 310, 120, {
+              width: 220
           });
 
-      // Close PDF and write file.
-      pdf.end();
+          pdf.fontSize(18).fillColor("black").text(bundle.description, 310, 200, {});
 
+          pdf.fontSize(18).fillColor("black").text('Kaufen Sie diese drei Produkte gemeinsam und sparen Sie ' + bundle.discount + ' %', 350, 300, {
+              width: 220
+          });
+          pdf.image(article1_ean, 0, 420, {
+              width: 190
+          });
+
+          pdf.image(article2_ean, 185, 420, {
+              width: 190
+          });
+
+          pdf.image(article3_ean, 375, 420, {
+              width: 190
+          });
+
+
+            pdf.rect(0, 575, 300, 575)
+        .fillOpacity(1)
+        .fill("white")
+
+    pdf.fontSize(15).fillColor("black").text(bundle.articles[0].name, 10, 560, {
+        width: 200
+    });
+
+    pdf.fontSize(15).fillColor("black").text(bundle.articles[1].name, 200, 560, {
+        width: 160
+    });
+
+    pdf.fontSize(15).fillColor("black").text(bundle.articles[2].name, 300, 520, {
+        width: 12
+    });
+
+          // Stream contents to a file
+          pdf.pipe(
+              fs.createWriteStream(filename)
+          )
+              .on('finish', function () {
+                  console.log('PDF closed');
+
+              });
+
+          // Close PDF and write file.
+          pdf.end();
 
 
     res.sendStatus(201);

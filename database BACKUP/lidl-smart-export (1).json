@@ -1,0 +1,5728 @@
+{
+  "admin" : {
+    "events" : {
+      "-KuU-Gzu4BgfUbuPaeK-" : {
+        "bundles" : [ {
+          "articles" : [ {
+            "discount" : "0.30000000000000004",
+            "discountpreis" : "0.90€",
+            "ean" : 20435486,
+            "name" : "Kuchenschnitten BA",
+            "preis" : "3€"
+          }, {
+            "discount" : "0.30000000000000004",
+            "discountpreis" : "0.45€",
+            "ean" : 4003848107814,
+            "name" : "M Skistrümpfe",
+            "preis" : "1.5€"
+          }, {
+            "discount" : "0.30000000000000004",
+            "discountpreis" : "2.40€",
+            "ean" : 4304493674950,
+            "name" : "LED-Deckenleuchten",
+            "preis" : "8€"
+          } ],
+          "description" : "beschr",
+          "discount" : "0.30000000000000004",
+          "id" : 0,
+          "smartscore" : "0.00",
+          "title" : "title"
+        }, {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 1,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        } ],
+        "cweek" : "2017-W02",
+        "end" : "Sample End",
+        "id" : "-KuU-Gzu4BgfUbuPaeK-",
+        "notifications" : {
+          "-KuU-RvoiflbcK8NsBu0" : {
+            "email_text" : "no Text",
+            "id" : "-KuU-RvoiflbcK8NsBu0",
+            "sms_text" : "no Text",
+            "time" : "2017-09-20T11:17:29.528Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          },
+          "-KuU-g3g-cHgEchjYvQT" : {
+            "email_text" : "no Text",
+            "id" : "-KuU-g3g-cHgEchjYvQT",
+            "sms_text" : "no Text",
+            "time" : "2017-09-20T11:18:31.522Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          },
+          "-KuU-hnV4rLIgFUYOVLK" : {
+            "email_text" : "no Text",
+            "id" : "-KuU-hnV4rLIgFUYOVLK",
+            "sms_text" : "test",
+            "time" : "2017-09-20T11:18:38.619Z",
+            "whatsapp_receiver" : 2,
+            "whatsapp_text" : "no Text"
+          }
+        },
+        "start" : "Sample Start",
+        "title" : "Sample Title"
+      },
+      "-KuU3cujRLb6kHN6Pdhp" : {
+        "bundles" : [ {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 0,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        }, {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 1,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        } ],
+        "end" : "Sample End",
+        "id" : "-KuU3cujRLb6kHN6Pdhp",
+        "start" : "Sample Start",
+        "title" : "Sample Title"
+      },
+      "-KuU8aehy1DluLaXkOuJ" : {
+        "bundles" : [ {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 0,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        }, {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 1,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        } ],
+        "end" : "Sample End",
+        "id" : "-KuU8aehy1DluLaXkOuJ",
+        "start" : "Sample Start",
+        "title" : "Sample Title"
+      },
+      "-KuU8hcsGIpL1L827Iwo" : {
+        "bundles" : [ {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 0,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        }, {
+          "description" : "Sample Description",
+          "discount" : "none",
+          "id" : 1,
+          "smartscore" : "0.00",
+          "title" : "Please edit the Bundle"
+        } ],
+        "end" : "Sample End",
+        "id" : "-KuU8hcsGIpL1L827Iwo",
+        "start" : "Sample Start",
+        "title" : "Sample Title"
+      }
+    }
+  },
+  "artikel" : [ {
+    "ean" : 50099,
+    "name" : "Bananen, KG",
+    "preis" : 1.39
+  }, {
+    "ean" : 4000417925008,
+    "name" : "Ritter Sport Tafelschokolade BA, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 9000000011809,
+    "name" : "AMA Weizenkrustenbrot mit K̦rnern, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20189891,
+    "name" : "AMA Fruchtmolke 0,1% BA, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 20090302,
+    "name" : "QS Puten-Grillies mariniert, ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 4304493136649,
+    "name" : "Paniermehl, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 4009900379564,
+    "name" : "Hubba Bubba Bubble Tape BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20603373,
+    "name" : "Edamer Scheiben, ST",
+    "preis" : 4.44
+  }, {
+    "ean" : 4304493929883,
+    "name" : "Thermotrinkflasche, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20239541,
+    "name" : "Classico ganze Bohne, ST",
+    "preis" : 3.78
+  }, {
+    "ean" : 20453992,
+    "name" : "Allzweckreiniger Konzentrat BA, ST",
+    "preis" : 1.06
+  }, {
+    "ean" : 20622374,
+    "name" : "Pfirsiche Choice leicht gezuckert, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4304493138063,
+    "name" : "Steinofenpizza Margherita, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 9001420001159,
+    "name" : "Jacobs Monarch gemahlen, ST",
+    "preis" : 5.99
+  }, {
+    "ean" : 4008596641238,
+    "name" : "Wei��e Bohnen, ST",
+    "preis" : 0.65
+  }, {
+    "ean" : 20562960,
+    "name" : "Fl. Handseife Lim. Edi. Sommer BA, ST",
+    "preis" : 0.95
+  }, {
+    "ean" : 9007041915974,
+    "name" : "AMA ��sterr. Topfen cremig, ST",
+    "preis" : 0.65
+  }, {
+    "ean" : 20628277,
+    "name" : "AMA Bio Frischk�_se BA, ST",
+    "preis" : 1.12
+  }, {
+    "ean" : 20104542,
+    "name" : "Fr�_hst�_ckscerealien BA 7, ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 20417161,
+    "name" : "Joghurt Minis 3,5% BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20242213,
+    "name" : "Kartoffeln fk 2kg, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20242053,
+    "name" : "Salatherzen 3er, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 9002975114875,
+    "name" : "Haribo Happy Cherries/ Pico Balla BA, ST",
+    "preis" : 1.35
+  }, {
+    "ean" : 4008508256000,
+    "name" : "Schwammtuch, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20159368,
+    "name" : "K�_seaufschnitt light, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20347987,
+    "name" : "Lufterfrischer Flakon mit Docht BA, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 8004030341760,
+    "name" : "Rio Mare Thunfisch natur/Oliven̦l, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 9000332813782,
+    "name" : "Casali Rumkugeln, ST",
+    "preis" : 3
+  }, {
+    "ean" : 20627966,
+    "name" : "AMA Bio Kornspitz vorgegart, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 50051,
+    "name" : "Endiviensalat (Stk), ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 7613031466986,
+    "name" : "Maggi Rindfleischsuppenw�_rfel 12er, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20205775,
+    "name" : "Rucola 125g, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20138189,
+    "name" : "Cerealien-Riegel BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 9000144002008,
+    "name" : "Rama Pflanzenmargarine 80%, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 20094683,
+    "name" : "Thunfisch in Wasser Yellowfin, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20490416,
+    "name" : "Pizza Salami, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20235130,
+    "name" : "Sandwich Toast BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 9000331608013,
+    "name" : "Manner Eierbiskotten, ST",
+    "preis" : 1.75
+  }, {
+    "ean" : 4002239908603,
+    "name" : "Antipasti ohne ü ��l BA, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 9001495010421,
+    "name" : "Machland Fruchtsnack Apfel Birne, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 50061,
+    "name" : "Rettich wei�� (Stk), ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 3574660421927,
+    "name" : "Bebe Young Care Reinigungst�_cher BA, ST",
+    "preis" : 1.75
+  }, {
+    "ean" : 20486945,
+    "name" : "Marillen-Schmetterling vorgegart, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20303167,
+    "name" : "QS Puten-Filetstreifen, ST",
+    "preis" : 3.19
+  }, {
+    "ean" : 4304493123311,
+    "name" : "Schoko-Waffelr̦llchen BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20668518,
+    "name" : "ASC R�_ucherlachs trockengesalzen, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20377298,
+    "name" : "AMA Schopf- und Karreesteaks BA, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 9012501000039,
+    "name" : "Wiener Zucker Feinkristallzucker, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9007041915844,
+    "name" : "AMA K̦rniger Frischk�_se BA, ST",
+    "preis" : 0.68
+  }, {
+    "ean" : 20178062,
+    "name" : "AMA L�_ngerfr. fettarme Milch 1,5%, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20013066,
+    "name" : "QS Frikadellen BA, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 9002349000063,
+    "name" : "Juvina Mineralwasser BA, ST",
+    "preis" : 0.47
+  }, {
+    "ean" : 4035485008735,
+    "name" : "Benzin-Rasenm�_her FBM 450A1, ST",
+    "preis" : 199
+  }, {
+    "ean" : 20045869,
+    "name" : "Snack-Mix 8 Sorten, ST",
+    "preis" : 1.09
+  }, {
+    "ean" : 20142827,
+    "name" : "Toilettenpapier Recycling 3lg 8x200B, ST",
+    "preis" : 1.75
+  }, {
+    "ean" : 50081,
+    "name" : "Zucchini rund (kg), KG",
+    "preis" : 1.79
+  }, {
+    "ean" : 9001969001092,
+    "name" : "Toni Kaiser S�_��e Kn̦del BA, ST",
+    "preis" : 3.49
+  }, {
+    "ean" : 20106317,
+    "name" : "Sardinen o. Haut o. Gr�_ten BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 7798155403649,
+    "name" : "Birnen, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 8426561700159,
+    "name" : "Popcorn aus Mikrowelle salzig, ST",
+    "preis" : 0.97
+  }, {
+    "ean" : 20268886,
+    "name" : "Obstbaum veredelt, ST",
+    "preis" : 8.99
+  }, {
+    "ean" : 9028800705445,
+    "name" : "Schnee Weisse Weizenbier, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20341855,
+    "name" : "Staudensellerie, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20627355,
+    "name" : "AMA Bio Korntaler, vorgegart, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 4005500310105,
+    "name" : "Maggi W�_rze, ST",
+    "preis" : 2.39
+  }, {
+    "ean" : 4304493197374,
+    "name" : "Fruchtjoghurt 1,8% (F) BA, ST",
+    "preis" : 0.4
+  }, {
+    "ean" : 20051310,
+    "name" : "Sitzhase in Alufolie, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9000275623219,
+    "name" : "Knorr Bitte zu Tisch Nudelsuppe 4 Te, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20132989,
+    "name" : "Fettarmer Joghurt 0,1%/1,5% BA, ST",
+    "preis" : 0.54
+  }, {
+    "ean" : 5000159417969,
+    "name" : "Balisto 9er BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20542238,
+    "name" : "AMA Apfel-Birne gespritzt, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20403942,
+    "name" : "MSC Teufelsroller, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 7613034079664,
+    "name" : "Felix Pouch Multi 2 BA, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 4001686386613,
+    "name" : "Haribo Goldb�_ren/Goldb�_ren Sauer BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 9007041920497,
+    "name" : "Cola, ST",
+    "preis" : 0.52
+  }, {
+    "ean" : 20152918,
+    "name" : "Rotwein lieblich, ST",
+    "preis" : 1.26
+  }, {
+    "ean" : 9000311050825,
+    "name" : "R̦merquelle BA, ST",
+    "preis" : 0.37
+  }, {
+    "ean" : 9007041924174,
+    "name" : "AMA H - Milch 0,5%, ST",
+    "preis" : 0.65
+  }, {
+    "ean" : 20668457,
+    "name" : "Energy Drink Limette, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 20071097,
+    "name" : "Butter-Hefe-Bl�_tterteiggeb�_ck BA, ST",
+    "preis" : 0.98
+  }, {
+    "ean" : 4304493159860,
+    "name" : "Paprika edels�_��, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 4025500163396,
+    "name" : "M�_ller Fruchtbuttermilch BA I, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9002100100414,
+    "name" : "Nescaf̩ Gold Edelmischung, ST",
+    "preis" : 6.99
+  }, {
+    "ean" : 20347963,
+    "name" : "Parboiled Spitzenreis, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20082413,
+    "name" : "Snacker Fertiggerichte BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4304493168565,
+    "name" : "Euka-Menthol-Bonbons, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20228675,
+    "name" : "Dattelcherrytomaten, ST",
+    "preis" : 1.24
+  }, {
+    "ean" : 20131135,
+    "name" : "��bersee-Kleinflaschen BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20242107,
+    "name" : "Tomaten 1kg, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20590284,
+    "name" : "Feuchtes Toilettenpap. Prem. 2x70 BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20061494,
+    "name" : "QS H�_hnchenfl�_gel gew�_rzt, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 4304493207325,
+    "name" : "Muffins 4er BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4002420710756,
+    "name" : "Italienische Gew�_rze, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20628383,
+    "name" : "Bio Brotaufstriche BA, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 4046499741464,
+    "name" : "D Slip hohe Taille figurformend, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 50077,
+    "name" : "Zucchini (kg), KG",
+    "preis" : 1.49
+  }, {
+    "ean" : 3838705941161,
+    "name" : "Buchweizenbrot m. Waln�_ssen vorgeb., ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20509484,
+    "name" : "Nuss- und Fruchtmischungen BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 9001622942212,
+    "name" : "Blaschke Kokoskuppel, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 20399306,
+    "name" : "Retro Zungenwurst, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20251871,
+    "name" : "Blauer Portugieser, ̦sterr. QW, ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 20458492,
+    "name" : "AMA Mooskirchner am St�_ck, ST",
+    "preis" : 3.79
+  }, {
+    "ean" : 9000275642517,
+    "name" : "Knorr Basis Gulasch, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 4304493171657,
+    "name" : "Mozzarella Classic, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 20247874,
+    "name" : "Spitzpaprika gelb 500g, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20107345,
+    "name" : "AMA L�_ngerfr. Vollmilch 3,5%, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 7613032722807,
+    "name" : "Felix Pouch Multipack BA, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20362058,
+    "name" : "Toilettenpapier 3lg. m. Farbleim+Duf, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 8006408002006,
+    "name" : "Knoblauch, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20501006,
+    "name" : "Brioche-Zopf (Brioche tress̩e), ST",
+    "preis" : 2.15
+  }, {
+    "ean" : 20389130,
+    "name" : "Kaugummi-Dragees BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20047139,
+    "name" : "Cola Limonaden BA, ST",
+    "preis" : 0.32
+  }, {
+    "ean" : 4304493120341,
+    "name" : "Lasagne Bolognese (Schwein), ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20313395,
+    "name" : "Bio-Abfallbeutel mit Griff 15l, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 50176,
+    "name" : "Kren (kg), KG",
+    "preis" : 3.99
+  }, {
+    "ean" : 9001465052024,
+    "name" : "AMA Wachauer, vorgegart, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20001407,
+    "name" : "Premium Eiskrem BA 3, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20216269,
+    "name" : "Gef�_llte Kartoffeltaschen BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20198060,
+    "name" : "Gehackte Tomaten mit Gew�_rzen BA, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 8006663000892,
+    "name" : "Grana Padano 16M gereift, ST",
+    "preis" : 3.12
+  }, {
+    "ean" : 20153229,
+    "name" : "Gem�_semais (Super Sweet), ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 20009618,
+    "name" : "Thunfisch in Oliven̦l Skipjack, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 9007041915172,
+    "name" : "AMA Wiener/Polnische gebraten BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20155049,
+    "name" : "MSC Alaska Seelachsfilet natur, ST",
+    "preis" : 3.59
+  }, {
+    "ean" : 20487201,
+    "name" : "AMA Bio K̦rniger Frischk�_se 20%, ST",
+    "preis" : 1.25
+  }, {
+    "ean" : 20682903,
+    "name" : "Wackelpudding mit Sauce BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4018077766244,
+    "name" : "Nic Nac��s Original, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4304493197831,
+    "name" : "Pudding mit Sahne BA, ST",
+    "preis" : 0.29
+  }, {
+    "ean" : 20005726,
+    "name" : "Studentenfutter BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20279875,
+    "name" : "Picco Pizzi 12er BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4304493945456,
+    "name" : "LED Kugelleuchte Solar 20cm 0,2W, ST",
+    "preis" : 7.99
+  }, {
+    "ean" : 20001582,
+    "name" : "Backofen Kroketten/R̦sti Ecken BA, ST",
+    "preis" : 1.34
+  }, {
+    "ean" : 20514747,
+    "name" : "Cola Einzeldose, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20242800,
+    "name" : "Gartenkr�_uter, ST",
+    "preis" : 0.85
+  }, {
+    "ean" : 20487423,
+    "name" : "Frische Salate mit Dressing BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20015329,
+    "name" : "Margarinew�_rfel, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 20362997,
+    "name" : "Retro K�_mmelbratenaufstrich, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 3000122025933,
+    "name" : "Chicoree 500g, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20003470,
+    "name" : "Fusilli HWG, ST",
+    "preis" : 0.42
+  }, {
+    "ean" : 20335106,
+    "name" : "Cracker rund gesalzen, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20254162,
+    "name" : "Frischer Blutorangensaft 100%, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 2103232000000,
+    "name" : "Original Parmaschinkenst�_ck GGA, KG",
+    "preis" : 16.9
+  }, {
+    "ean" : 4304493155633,
+    "name" : "Gew�_rzgurken Auslese, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 8710283631366,
+    "name" : "Kaffeewei��er, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 90363764,
+    "name" : "Danone Activia BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20318536,
+    "name" : "Toffee Pecannuss Roulade, ST",
+    "preis" : 5.55
+  }, {
+    "ean" : 9000000729384,
+    "name" : "K�_se-Laugenstange, ST",
+    "preis" : 0.44
+  }, {
+    "ean" : 20242886,
+    "name" : "Bunt dragierte Erdn�_sse, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20305185,
+    "name" : "Bl�_tterteiggeb�_ck BA, ST",
+    "preis" : 1.59
+  }, {
+    "ean" : 20625290,
+    "name" : "Fr�_hlingsmandeln BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4260077880868,
+    "name" : "D Bermuda, ST",
+    "preis" : 7.99
+  }, {
+    "ean" : 20537081,
+    "name" : "Pfannen-Lachs BA, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 9019100609908,
+    "name" : "N̦m L.free AMA Sauerrahm 15%, ST",
+    "preis" : 0.95
+  }, {
+    "ean" : 4304493147751,
+    "name" : "Gem�_sesalate BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20414870,
+    "name" : "Kr�_uterbutter BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 9015350000120,
+    "name" : "Landbr�_u Naturtr�_ber Zitronenradler, ST",
+    "preis" : 0.54
+  }, {
+    "ean" : 4304493127647,
+    "name" : "Caff̩ in Grani, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 4014500041100,
+    "name" : "Zott Monte Drink 1,8% Fett 3+1 grati, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 4304493113282,
+    "name" : "Italienischer Essig BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4050146070463,
+    "name" : "H Funktionshose Fahrrad kurz / Capri, ST",
+    "preis" : 8.99
+  }, {
+    "ean" : 4304493178519,
+    "name" : "Katzennassnahrung Premium BA, ST",
+    "preis" : 0.25
+  }, {
+    "ean" : 20621148,
+    "name" : "Spezialmehle/Dinkelmehl BA, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20540623,
+    "name" : "L�_becker Edelmarzipan-Eier BA, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 9007041920763,
+    "name" : "Weizenmehl Type W480 glatt, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20470913,
+    "name" : "Mayonnaise 25%, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 8712561855891,
+    "name" : "Cif Power & Shine K�_che und Bad BA, ST",
+    "preis" : 2.45
+  }, {
+    "ean" : 20244330,
+    "name" : "Apfel pink, ST",
+    "preis" : 2.86
+  }, {
+    "ean" : 20259105,
+    "name" : "AMA ESL-Schlagobers 32%, ST",
+    "preis" : 1.15
+  }, {
+    "ean" : 20352202,
+    "name" : "AMA Gourmetschinken BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20431839,
+    "name" : "Microfasert�_cher BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20292232,
+    "name" : "Gef�_llter Brie BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20005771,
+    "name" : "Edelvollmilch ganze N�_sse, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20486631,
+    "name" : "Gabelbissen 3er, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20181550,
+    "name" : "Taschent�_cherbox 4lg, ST",
+    "preis" : 1.09
+  }, {
+    "ean" : 20368135,
+    "name" : "AMA Heumilch Naturjoghurt 3,5%, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 20231903,
+    "name" : "QS ��sterreichische Wurstspeziali. BA, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 20627317,
+    "name" : "AMA Bio Roggenbrot vorgebacken, ST",
+    "preis" : 2.15
+  }, {
+    "ean" : 4304493138186,
+    "name" : "Steinofenpizza Salami, ST",
+    "preis" : 2.37
+  }, {
+    "ean" : 20253356,
+    "name" : "Limetten, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20201791,
+    "name" : "Knusperm�_sli BA, ST",
+    "preis" : 2.26
+  }, {
+    "ean" : 20174705,
+    "name" : "Backpapier Formatrolle 38x42cm, ST",
+    "preis" : 0.95
+  }, {
+    "ean" : 9001511400618,
+    "name" : "Puntigamer M�_rzenbier 5,1% Vol., ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20309725,
+    "name" : "Tomaten Mix 300g, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20318819,
+    "name" : "Kuchenteige BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20552909,
+    "name" : "Tulpenstrau��, gro��, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4050146070623,
+    "name" : "D Funktionshose Fahrrad kurz / Capri, ST",
+    "preis" : 8.99
+  }, {
+    "ean" : 20434670,
+    "name" : "Spezial Salami BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9002490100070,
+    "name" : "Red Bull, ST",
+    "preis" : 1.12
+  }, {
+    "ean" : 50218,
+    "name" : "Bio Zitronen, KG ( 1 ST )",
+    "preis" : 0.49
+  }, {
+    "ean" : 20541149,
+    "name" : "AMA Tilsiter in Scheiben, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20399474,
+    "name" : "Salzbrezeln, ST",
+    "preis" : 0.58
+  }, {
+    "ean" : 4304493160781,
+    "name" : "Hautpflegecremes BA, ST",
+    "preis" : 1.25
+  }, {
+    "ean" : 20476670,
+    "name" : "Lauchzwiebeln, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 50062,
+    "name" : "Knollensellerie (kg), KG",
+    "preis" : 0.99
+  }, {
+    "ean" : 20133290,
+    "name" : "Schmelzk�_se-Scheiben BA, ST",
+    "preis" : 1.09
+  }, {
+    "ean" : 2106960000000,
+    "name" : "AMA Bio H�_hnchen o. Hals u. Inner., KG",
+    "preis" : 8.99
+  }, {
+    "ean" : 20001926,
+    "name" : "Cr̬me Fraiche BA, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 2101469000000,
+    "name" : "AMA H�_hnchen o. Hals, KG",
+    "preis" : 3.99
+  }, {
+    "ean" : 50085,
+    "name" : "Birnen (kg), KG",
+    "preis" : 2.69
+  }, {
+    "ean" : 20023065,
+    "name" : "Apfelschorle Einzelflasche, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20010300,
+    "name" : "Frischk�_se/Frischk�_sezubereitung BA, ST",
+    "preis" : 0.66
+  }, {
+    "ean" : 20753535,
+    "name" : "Take it! (Keks) BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20639129,
+    "name" : "Thunfisch-Steak Yellowfin, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 20542658,
+    "name" : "Tomatentasche, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9019100192400,
+    "name" : "N̦m AMA Cremix 7% BA, ST",
+    "preis" : 0.42
+  }, {
+    "ean" : 20240059,
+    "name" : "Bio Strauchtomaten 500g, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20039011,
+    "name" : "Kaisergem�_se / Gem�_se Mix BA, ST",
+    "preis" : 1.59
+  }, {
+    "ean" : 4017566978601,
+    "name" : "Gel-Satteldecke, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 9007041915967,
+    "name" : "AMA ��sterr. Sauerrahm 15%, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20265861,
+    "name" : "��sterr. Buttermilch m. Fr. 1% BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 50121,
+    "name" : "Clementinen (kg), KG",
+    "preis" : 2.99
+  }, {
+    "ean" : 20321062,
+    "name" : "Men Deospray BA, ST",
+    "preis" : 1.15
+  }, {
+    "ean" : 20707361,
+    "name" : "Amidala Praline mit Waffel und Hasel, ST",
+    "preis" : 1.87
+  }, {
+    "ean" : 4304493197206,
+    "name" : "Softcakes BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20184933,
+    "name" : "Eistee Pfirsich Einzelflasche, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 20143114,
+    "name" : "Gratink�_se gerieben BA, ST",
+    "preis" : 1.11
+  }, {
+    "ean" : 20243654,
+    "name" : "AMA Bio Naturjoghurt 3,5%, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20327989,
+    "name" : "Italienische Fenchelsalami geschnitt, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 9007041924181,
+    "name" : "AMA H - Vollmilch 3,5%, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 20752934,
+    "name" : "Berliner mit Marillenf�_llung, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 4304493128897,
+    "name" : "Erdnusskerne gew�_rzt BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20449100,
+    "name" : "Alpenvollmilchschokolade Traube-Nuss, ST",
+    "preis" : 0.66
+  }, {
+    "ean" : 20714055,
+    "name" : "Ciabatta classic (B), ST",
+    "preis" : 0.74
+  }, {
+    "ean" : 20182151,
+    "name" : "Duschbad BA, ST",
+    "preis" : 1.32
+  }, {
+    "ean" : 20166922,
+    "name" : "Katzensticks Mix BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9019100174505,
+    "name" : "N̦m Mix Fruchtmix BA, ST",
+    "preis" : 0.42
+  }, {
+    "ean" : 20139124,
+    "name" : "Bl�_tterteige BA, ST",
+    "preis" : 0.65
+  }, {
+    "ean" : 20000073,
+    "name" : "Men 2-Klingenrasierer inkl. 20 Rasie, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20037505,
+    "name" : "Kr�_uter BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20164683,
+    "name" : "Marzipan-Eier 10er, ST",
+    "preis" : 1.59
+  }, {
+    "ean" : 20012588,
+    "name" : "Rohwurst in Scheiben BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20344436,
+    "name" : "XXL Katzennahrung Multipack, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 20487393,
+    "name" : "AMA Eier aus Bodenhaltung, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20488123,
+    "name" : "Lachsfilet mit Haut, ST",
+    "preis" : 5.99
+  }, {
+    "ean" : 9000300122830,
+    "name" : "Vanish Oxi Action BA, ST",
+    "preis" : 8.99
+  }, {
+    "ean" : 20229535,
+    "name" : "Schokoladenst�_bchen Pfefferminz, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4000007021301,
+    "name" : "Heidelbeeren, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20438906,
+    "name" : "AMA Fruchtjoghurt 3,2% BA, ST",
+    "preis" : 0.29
+  }, {
+    "ean" : 20242305,
+    "name" : "Zwiebeln gelb 2kg, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 50064,
+    "name" : "Kohl (kg), KG",
+    "preis" : 1.29
+  }, {
+    "ean" : 20428921,
+    "name" : "Fruchtcocktail leicht gezuckert, ST",
+    "preis" : 1.48
+  }, {
+    "ean" : 4304493255685,
+    "name" : "Energy Drink light, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 4304493207561,
+    "name" : "Tissue Toilettenpapier 4lg. 10x160 B, ST",
+    "preis" : 2.85
+  }, {
+    "ean" : 20100872,
+    "name" : "Frischer Sahnejoghurt 10% BA, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 20100100,
+    "name" : "Katzentrockenfutter Premium BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20456825,
+    "name" : "QS XXL H�_hnchenschenkel, ST",
+    "preis" : 5.55
+  }, {
+    "ean" : 4008407013094,
+    "name" : "Californ. Mandeln blanchiert gemahle, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4000415068004,
+    "name" : "Trumpf Schogetten BA, ST",
+    "preis" : 0.45
+  }, {
+    "ean" : 4304493162327,
+    "name" : "Pralinen, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20565220,
+    "name" : "Duo Creme BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 41017708,
+    "name" : "Uniferm Hefe W�_rfel, ST",
+    "preis" : 0.17
+  }, {
+    "ean" : 4304493215337,
+    "name" : "Backofen Pommes Frites 7x7, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20401641,
+    "name" : "Gr�_ner Spargel gegrillt, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20627591,
+    "name" : "Bl. Zweigelt x Bl. Portug. ̦st. QW h, ST",
+    "preis" : 2.19
+  }, {
+    "ean" : 9000300123455,
+    "name" : "Dettol Fl�_ssigseife BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20097721,
+    "name" : "2Kammer Joghurt Schoko BA, ST",
+    "preis" : 0.43
+  }, {
+    "ean" : 4304493101180,
+    "name" : "Stangenspargel, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4054596061910,
+    "name" : "3M Gewebe-Reparaturband silber/schwa, ST",
+    "preis" : 3.49
+  }, {
+    "ean" : 20288174,
+    "name" : "Brot, geschnitten, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 50058,
+    "name" : "Strauchtomaten, KG",
+    "preis" : 1.79
+  }, {
+    "ean" : 8715700016504,
+    "name" : "Heinz Tomatenketchup, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20450373,
+    "name" : "Gef�_llter Vanille-Creme-Donut, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 50092,
+    "name" : "Avocado, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20573102,
+    "name" : "Frucht auf Joghurt (Yoo Fruit) BA, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 9007041920770,
+    "name" : "Weizenmehl Type W480 griffig, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20541729,
+    "name" : "AMA ��sterr. Bergk�_se 6M am St�_ck, ST",
+    "preis" : 2.19
+  }, {
+    "ean" : 5000174864885,
+    "name" : "Blend-a-Med Zahncreme BA, ST",
+    "preis" : 1.75
+  }, {
+    "ean" : 4047046005008,
+    "name" : "Senseo Pads BA, ST",
+    "preis" : 2
+  }, {
+    "ean" : 3000045040433,
+    "name" : "Feldsalat, ST",
+    "preis" : 1.43
+  }, {
+    "ean" : 9000000011533,
+    "name" : "Baguette, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 9000144000509,
+    "name" : "Thea W�_rfel, ST",
+    "preis" : 0.95
+  }, {
+    "ean" : 20507572,
+    "name" : "Snack Gurken 250g, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 20526672,
+    "name" : "Mousse BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 9005653025883,
+    "name" : "Topfentascherl, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20379629,
+    "name" : "Wurstplatte KP, ST",
+    "preis" : 1.11
+  }, {
+    "ean" : 20059422,
+    "name" : "Feuchte Allzweckrein.t�_cher BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20013639,
+    "name" : "Sonnenbl.Margarine 80%/ 0,2% Salz, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4017100511004,
+    "name" : "Leibniz Butterkeks 3er BA, ST",
+    "preis" : 2.79
+  }, {
+    "ean" : 20260439,
+    "name" : "AMA L�_nger frische Bio Vollmilch, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20004026,
+    "name" : "Wildpreiselbeeren, ST",
+    "preis" : 1.45
+  }, {
+    "ean" : 20079871,
+    "name" : "Gebirgswasser, ST",
+    "preis" : 1.5
+  }, {
+    "ean" : 4003240507007,
+    "name" : "Multi 12 Mehrfruchtgetr�_nke Plus BA, ST",
+    "preis" : 1
+  }, {
+    "ean" : 5099748792426,
+    "name" : "CD Kinder / Erwachsene DACH, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20002527,
+    "name" : "Delikatess Fleischsalat, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4009700076854,
+    "name" : "Danone Actimel Kids Erdbeere-Banane, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4000206809014,
+    "name" : "Erdnusskerne, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20239060,
+    "name" : "Spinat 500g, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20268916,
+    "name" : "Erdbeerpflanze, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 4304493171251,
+    "name" : "Fruchtkaubonbons, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 20456023,
+    "name" : "Premium Zanderfilets mit Haut, ST",
+    "preis" : 8.59
+  }, {
+    "ean" : 20602581,
+    "name" : "Hundebackwarenmix BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20486129,
+    "name" : "Gebackenes Gem�_se/ Champignons BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 9002349000919,
+    "name" : "Schartner Bombe Limonade BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 4052873204906,
+    "name" : "Fliegengitter Lamellenvorhang f�_r T�_, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 20568009,
+    "name" : "Hochwertiger Balsamico di Modena, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 2106214000000,
+    "name" : "Schweiner�_cken Dattel, KG",
+    "preis" : 7.99
+  }, {
+    "ean" : 8712100735141,
+    "name" : "Eskimo Cremissimo Spez. Heidelbeer T, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 9001445005224,
+    "name" : "Retro Limonade BA, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 4001954161010,
+    "name" : "Kerry Gold Irische Butter 82%Fett, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20540906,
+    "name" : "AMA L�_nger frische Bio Milch 0,9%, ST",
+    "preis" : 1.15
+  }, {
+    "ean" : 20327736,
+    "name" : "AMA XXL Jausenwurst, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 50055,
+    "name" : "Radieschen (Bd), ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20668464,
+    "name" : "Energy Drink Heidelbeer, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 4017100344008,
+    "name" : "Bahlsen Messino BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4304493132832,
+    "name" : "QS Landrohschinken BA, ST",
+    "preis" : 2.89
+  }, {
+    "ean" : 4334035029979,
+    "name" : "Rosend�_nger, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 50174,
+    "name" : "Ingwer, KG",
+    "preis" : 4.79
+  }, {
+    "ean" : 20557416,
+    "name" : "Bio Dinkel Kekse BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20382605,
+    "name" : "MSC Polardorsch BA, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4304493109674,
+    "name" : "Schaumzuckerk�_sse, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20155605,
+    "name" : "Quark fruchtunterlegt BA, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 9012501000053,
+    "name" : "Wiener Zucker Staubzucker, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20749910,
+    "name" : "Aufstriche BA, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20239763,
+    "name" : "Bio Karotten 1kg, ST",
+    "preis" : 1.38
+  }, {
+    "ean" : 20434694,
+    "name" : "AMA Weinviertler Salami, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4304493941960,
+    "name" : "Solar Maulwurfschreck, ST",
+    "preis" : 9.99
+  }, {
+    "ean" : 20305123,
+    "name" : "Sardellenfilets in Oliven̦l, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 20628031,
+    "name" : "Putenschinkenaufschnitt, ST",
+    "preis" : 2.39
+  }, {
+    "ean" : 4304493127364,
+    "name" : "Katzentrockenfutter BA, ST",
+    "preis" : 1.98
+  }, {
+    "ean" : 3600521998199,
+    "name" : "L'Oreal Elvital Sp�_lung BA, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 20460877,
+    "name" : "Prof. Keratin Haarspray Volumen, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 9001465051447,
+    "name" : "Semmel, vorgegart, ST",
+    "preis" : 0.15
+  }, {
+    "ean" : 20289720,
+    "name" : "QS Puten Mini-Steaks, ST",
+    "preis" : 3.49
+  }, {
+    "ean" : 20532321,
+    "name" : "Katzennassn. Premium St�_ckchen BA, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 20174033,
+    "name" : "Gesichtsreinigungst�_cher BA, ST",
+    "preis" : 1.35
+  }, {
+    "ean" : 20215323,
+    "name" : "Steirercuv̩e, ̦sterr. QW, trocken, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 9001901051048,
+    "name" : "Nordpol Tortenglasuren BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20572624,
+    "name" : "Apfelstreuselkuchen, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20119270,
+    "name" : "Kraut-/ Kartoffelsalat BA, ST",
+    "preis" : 2.19
+  }, {
+    "ean" : 4250661504065,
+    "name" : "Fahrradschloss, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4304493204119,
+    "name" : "Sch�_ltomaten 5 Brix, ST",
+    "preis" : 0.33
+  }, {
+    "ean" : 20325343,
+    "name" : "XXL Johannisbeer-Zitronensirup, ST",
+    "preis" : 2.79
+  }, {
+    "ean" : 20368128,
+    "name" : "AMA Heumilch Sauerrahm 15%, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 9001465052017,
+    "name" : "Mohnflesserl, vorgegart, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 9120042422002,
+    "name" : "Broccoli, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 9007041915141,
+    "name" : "AMA K�_sekrainer, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20542283,
+    "name" : "AMA H�_hnchen Innenfilets, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20564629,
+    "name" : "Soloknoblauch, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 50063,
+    "name" : "Chinakohl (kg), KG",
+    "preis" : 0.99
+  }, {
+    "ean" : 4021700900021,
+    "name" : "Nippon H�_ppchen, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20438166,
+    "name" : "Premium Makronen, ST",
+    "preis" : 3.29
+  }, {
+    "ean" : 20541460,
+    "name" : "Schinkenspezialit�_tenplatte, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20288303,
+    "name" : "Helles Mischbrot, geschnitten, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 4250661504140,
+    "name" : "Fahrradschl�_uche 2er, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 9007041915950,
+    "name" : "AMA Fr. ̦sterr. Schlagobers 36%, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20451943,
+    "name" : "Rasenpfleged�_nger, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 40255644,
+    "name" : "M�_ller Milchreis BA, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 50084,
+    "name" : "Apfel rot (kg), KG",
+    "preis" : 0.99
+  }, {
+    "ean" : 9066000211007,
+    "name" : "Sch�_rdinger Formil AMA H-Leichtmil., ST",
+    "preis" : 0.54
+  }, {
+    "ean" : 20570255,
+    "name" : "Tagliolini mit Tr�_ffel verfeinert, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 9003506237407,
+    "name" : "Sch�_rdinger AMA Altwiener Speisetopf, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 9019100200105,
+    "name" : "N̦m AMA FruFru 3,2% BA, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 20039547,
+    "name" : "H-Sahne 30%, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 20694319,
+    "name" : "Griechischer Joghurt 9,4% BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20232108,
+    "name" : "Zwiebeln rot 1kg, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20627300,
+    "name" : "AMA Heurigenstangerl vorgegart, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4001724628804,
+    "name" : "Dr. Oetker Ristorante Salame, ST",
+    "preis" : 5.79
+  }, {
+    "ean" : 20051389,
+    "name" : "Mayonnaise BA, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20022976,
+    "name" : "Mineralwasser mit Kohlens�_ure Classi, ST",
+    "preis" : 1.5
+  }, {
+    "ean" : 8018190071962,
+    "name" : "Panini Official Pack, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 2101553000000,
+    "name" : "QS Traditionsschinken geschnitten, KG",
+    "preis" : 12.49
+  }, {
+    "ean" : 4210201848158,
+    "name" : "Oral-B Aufsteckb. Precision Clean 2e, ST",
+    "preis" : 9.99
+  }, {
+    "ean" : 8717191019521,
+    "name" : "Beetpflanzen, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20047214,
+    "name" : "Mozzarella gerieben, ST",
+    "preis" : 1.51
+  }, {
+    "ean" : 20106089,
+    "name" : "Backofen Pommes Frites 10x10, ST",
+    "preis" : 1.98
+  }, {
+    "ean" : 9000100810494,
+    "name" : "Blue Star WC Hygiene BA, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20060220,
+    "name" : "Zahncreme Spezial BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20541132,
+    "name" : "AMA K�_seaufschnitt, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 2103201000000,
+    "name" : "US Rumpsteak, KG",
+    "preis" : 36.99
+  }, {
+    "ean" : "",
+    "name" : "",
+    "preis" : ""
+  }, {
+    "ean" : 20524913,
+    "name" : "Zahnpflege BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4011984723706,
+    "name" : "Manik�_re und Pedik�_re-Sets, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20306205,
+    "name" : "Kartoffeln vfk 2kg, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20541996,
+    "name" : "AMA Naturjoghurt ger�_hrt 3,6%, ST",
+    "preis" : 0.29
+  }, {
+    "ean" : 20576974,
+    "name" : "Griechische Fischspezialit�_ten BA, ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 40204628,
+    "name" : "Vivil ohne Zucker BA, ST",
+    "preis" : 1.09
+  }, {
+    "ean" : 9002349030176,
+    "name" : "Schartner Bombe Limonade BA, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 20094805,
+    "name" : "Vollkornbrot m. SBkernen geschnitten, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 20453510,
+    "name" : "Frischer Salat-Mix BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20293567,
+    "name" : "Schokoladensticks BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 7622300315733,
+    "name" : "Philadelphia BA, ST",
+    "preis" : 1.51
+  }, {
+    "ean" : 20486600,
+    "name" : "Feinkostaufstriche BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4304493203372,
+    "name" : "Fr�_hlingsrollen BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 9000275604614,
+    "name" : "Knorr  Kaiser Teller K�_rbiscremesup., ST",
+    "preis" : 0.92
+  }, {
+    "ean" : 20432294,
+    "name" : "AMA Bernerw�_rstel, ST",
+    "preis" : 2.39
+  }, {
+    "ean" : 20411558,
+    "name" : "Mini Paprika Mix 150g, ST",
+    "preis" : 1.27
+  }, {
+    "ean" : 20447700,
+    "name" : "AMA Bio Mozzarella, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 4008400245423,
+    "name" : "Kinder kleine Geschenke BA, ST",
+    "preis" : 3.19
+  }, {
+    "ean" : 20136550,
+    "name" : "Duschgel BA, ST",
+    "preis" : 0.85
+  }, {
+    "ean" : 20131159,
+    "name" : "AMA Bio Freilandeier, Gew. Kl. M/L, ST",
+    "preis" : 3.49
+  }, {
+    "ean" : 8715477661006,
+    "name" : "Eisbergsalat, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 40084107,
+    "name" : "Kinder ��berraschungs-Ei 1er, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 4020400000666,
+    "name" : "Vivil Friendship 1er BA, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 9011900139623,
+    "name" : "Mautner Markhof Estragon Senf, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20055813,
+    "name" : "QS Kochschinken Hauchd�_nnschnitt BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20627263,
+    "name" : "Schoko-Vanillecreme-H̦rnch. vorg., ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20166090,
+    "name" : "Kidney-Bohnen in Lake, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20080655,
+    "name" : "M�_sli-Riegel BA, ST",
+    "preis" : 0.88
+  }, {
+    "ean" : 4014500036830,
+    "name" : "Zott Monte Maxi, ST",
+    "preis" : 2.25
+  }, {
+    "ean" : 20236502,
+    "name" : "QS Putenbrustschnitzel, ST",
+    "preis" : 4.49
+  }, {
+    "ean" : 20494438,
+    "name" : "Laugenbrezel, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 20590147,
+    "name" : "Bio Oliven̦l extra nativ (EU-Blend), ST",
+    "preis" : 4.59
+  }, {
+    "ean" : 20349158,
+    "name" : "Tiroler Speckverhackertes, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 4304493141636,
+    "name" : "Erdbeer-Konfit�_re extra, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20047238,
+    "name" : "Feine Nussvariation (Nuts Royal), ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 4304493160606,
+    "name" : "Tissue Toilettenpapier 3lg 10x200, ST",
+    "preis" : 2.75
+  }, {
+    "ean" : 20349189,
+    "name" : "Reiswaffeln BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20477080,
+    "name" : "K�_rbiskernbr̦tchen, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 20443375,
+    "name" : "Oliven ohne Stein BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 4003848124217,
+    "name" : "Feinstrumpfartikel 15 DEN, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20324414,
+    "name" : "XXL Toilettenpapier 4lg 16x160 Bl., ST",
+    "preis" : 4.44
+  }, {
+    "ean" : 4304493135871,
+    "name" : "Gouda Scheiben 48%, ST",
+    "preis" : 1.98
+  }, {
+    "ean" : 4304493159945,
+    "name" : "Knoblauch granuliert, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20162559,
+    "name" : "MSC Schlemmerfilet BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4304493930339,
+    "name" : "Mosaikleuchte Solar LED, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 20628604,
+    "name" : "AMA H�_hnchenplatte gemischt, ST",
+    "preis" : 4.59
+  }, {
+    "ean" : 20119010,
+    "name" : "Schaumzucker/Gummibonbon Party-Mix, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 2126572000000,
+    "name" : "Parmigiano Reggiano 24M gereift, KG",
+    "preis" : 19.9
+  }, {
+    "ean" : 20431143,
+    "name" : "AMA-Bauchspeck d�_nn geschnitten, ST",
+    "preis" : 2.79
+  }, {
+    "ean" : 20626013,
+    "name" : "Sitzhase mit Schleife BA, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 8717906000127,
+    "name" : "Trauben rot, kernlos, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20027834,
+    "name" : "AMA Extrawurst geschnitten BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 8423049000114,
+    "name" : "Erdbeeren 500g, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 5449000000286,
+    "name" : "Coca Cola, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20312381,
+    "name" : "Kr�_uter Feins�_mereien - PG 1, ST",
+    "preis" : 0.19
+  }, {
+    "ean" : 20046439,
+    "name" : "D�_nische Makrelenfilets in SB-��l, ST",
+    "preis" : 0.85
+  }, {
+    "ean" : 50083,
+    "name" : "��pfel gr�_n (kg), KG",
+    "preis" : 0.99
+  }, {
+    "ean" : 4009700074768,
+    "name" : "Danone Actimel Drink BA, ST",
+    "preis" : 2.65
+  }, {
+    "ean" : 90383014,
+    "name" : "Gurktaler Alpenkr�_uter 27% Vol., ST",
+    "preis" : 7.99
+  }, {
+    "ean" : 20003401,
+    "name" : "Haselnusskerne, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20488956,
+    "name" : "QS Mini-Wiener im ESC-Saitling sort., ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 4032611206904,
+    "name" : "Blumentreppe rechteckig pulverbesch., ST",
+    "preis" : 22.99
+  }, {
+    "ean" : 9000133012575,
+    "name" : "Rupp Rahm zum Streichen, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 9002100017934,
+    "name" : "Maggi GutenAppetit Suppen BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20708160,
+    "name" : "Gummib�_rchen BA, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20554712,
+    "name" : "Brillenputzt�_cher 54Stk., ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 4304493132924,
+    "name" : "K�_chent�_cher 3lg 26x24cm, ST",
+    "preis" : 1.43
+  }, {
+    "ean" : 4304493159716,
+    "name" : "Magenbitter (Boonekamp) 44% Vol., ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20516369,
+    "name" : "Dentalsnacks/Kaurollen BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 9008537143055,
+    "name" : "D Clogs, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 4009900405362,
+    "name" : "Wrigley Orbit Dragees BA, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 20287894,
+    "name" : "��sterr. Faschierter Braten, ST",
+    "preis" : 2.79
+  }, {
+    "ean" : 4060800100214,
+    "name" : "Pepsi Cola, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 4044208261401,
+    "name" : "J Sweathose Fashion Basics, ST",
+    "preis" : 5.99
+  }, {
+    "ean" : 4009041888000,
+    "name" : "L̦slicher Kaffee Gold gefriergetrock, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 20436353,
+    "name" : "Merlot, ̦sterr. QW, trocken, ST",
+    "preis" : 6.99
+  }, {
+    "ean" : 20289904,
+    "name" : "Baguette 6er BA, ST",
+    "preis" : 2.39
+  }, {
+    "ean" : 20542320,
+    "name" : "Frische Salami BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 3800020420003,
+    "name" : "Nestl̩ Riegel BA, ST",
+    "preis" : 1.65
+  }, {
+    "ean" : 9015160104223,
+    "name" : "Almdudler traditionell, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 20399412,
+    "name" : "Croissants mit Cremef�_llung BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20165789,
+    "name" : "AMA Schweineschnitzel geschnitten, ST",
+    "preis" : 3.79
+  }, {
+    "ean" : 20202392,
+    "name" : "Paran�_sse, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 20316655,
+    "name" : "Mini-Sahnewindbeutel, ST",
+    "preis" : 1
+  }, {
+    "ean" : 7613034754127,
+    "name" : "Nestl̩ Smarties Riesenrolle, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 20487676,
+    "name" : "Knusperstange Schinken-Zwiebel, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4003655452312,
+    "name" : "Back-K�_sesnacks BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20250300,
+    "name" : "Kiwi, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 4008400321622,
+    "name" : "Kinder Bueno 6er, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 9008537143291,
+    "name" : "KK J M Clogs, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 5053990101795,
+    "name" : "Pringles BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 9000295870211,
+    "name" : "Felix Ketchup mit Stevia, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20668860,
+    "name" : "Schlaufentragetasche Rec. MB 55��, ST",
+    "preis" : 0.15
+  }, {
+    "ean" : 9007041915165,
+    "name" : "AMA Extrawurst Stange BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20514648,
+    "name" : "Espressokapseln Ristretto, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4000345033981,
+    "name" : "Gem�_sebr�_hw�_rfel 12er, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20318451,
+    "name" : "5 Sterne Suppen BA, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 4304493125162,
+    "name" : "Tomatensauce tafelfertig, ST",
+    "preis" : 1.15
+  }, {
+    "ean" : 20622305,
+    "name" : "Fondant Halbeier u. Hasen u. Nester, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20005962,
+    "name" : "Weinbrandbohnen, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 4304493175099,
+    "name" : "Erbsen extra fein, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 9000100562782,
+    "name" : "Fewa Fl�_ssigwaschmittel 50WL BA, ST",
+    "preis" : 6.95
+  }, {
+    "ean" : 4001686505021,
+    "name" : "Maoam Stange 5er, ST",
+    "preis" : 0.65
+  }, {
+    "ean" : 4304493161238,
+    "name" : "Oliven̦l extra nativ (EU-Blend), ST",
+    "preis" : 3.79
+  }, {
+    "ean" : 9000000011526,
+    "name" : "AMA Hausbrot, vorgebacken, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20415648,
+    "name" : "Funny Fruit Drinks BA, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 4304493212749,
+    "name" : "BE Meeresfr�_chte (Nougat-Pralinen), ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 4304493796805,
+    "name" : "Tischtuchhalter 4er, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20344702,
+    "name" : "Gefrierbeutel mit Zippverschluss 1l, ST",
+    "preis" : 2
+  }, {
+    "ean" : 20217983,
+    "name" : "Mineralwasser Medium, ST",
+    "preis" : 1.5
+  }, {
+    "ean" : 20243647,
+    "name" : "AMA Probiotisches Naturjoghurt 0,1%, ST",
+    "preis" : 0.25
+  }, {
+    "ean" : 20196509,
+    "name" : "Milchbr̦tchen 10er, ST",
+    "preis" : 1.09
+  }, {
+    "ean" : 2102828000000,
+    "name" : "Schwarzw�_lder Schinkenst�_ck, KG",
+    "preis" : 8.5
+  }, {
+    "ean" : 20216733,
+    "name" : "Sonnenblumen̦l, ST",
+    "preis" : 1.93
+  }, {
+    "ean" : 3222110022452,
+    "name" : "Chaumes/St. Albray Weichk�_se BA, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 20275716,
+    "name" : "Kompositions-��llicht Nr.7, ST",
+    "preis" : 0.85
+  }, {
+    "ean" : 20039486,
+    "name" : "Gurkensticks s�_��-w�_rzig, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4003310266001,
+    "name" : "Kupferberg Gold Ros̩ trocken, ST",
+    "preis" : 2.79
+  }, {
+    "ean" : 9007041920800,
+    "name" : "Landj�_ger-Salami, ST",
+    "preis" : 2.19
+  }, {
+    "ean" : 20113766,
+    "name" : "QS Bacon Bauch in Scheiben BA, ST",
+    "preis" : 1.25
+  }, {
+    "ean" : 20201265,
+    "name" : "Orangen, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20486815,
+    "name" : "Sonnenblumenweckerl, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 20364625,
+    "name" : "Basmati Reis (Pusa), ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 4304493130012,
+    "name" : "Nuss-Nougat-Creme, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 9019100590404,
+    "name" : "N̦m L.free AMA ESLMilch 1,8%, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20346348,
+    "name" : "XXL Muffins mit Schokost�_cken BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4017040012210,
+    "name" : "Schoko-Donut, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20649845,
+    "name" : "Dragierte Kaubonbons 3er BA, ST",
+    "preis" : 0.77
+  }, {
+    "ean" : 90444012,
+    "name" : "Haas Kren BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4019641041613,
+    "name" : "Elektricher Allessch�_rfer 20 W, ST",
+    "preis" : 7.99
+  }, {
+    "ean" : 8005989194926,
+    "name" : "Frischhaltedosenset 3tlg, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20006204,
+    "name" : "Baguette Br̦tchen BA, ST",
+    "preis" : 0.45
+  }, {
+    "ean" : 20384791,
+    "name" : "Fix f�_r Gulasch, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20206567,
+    "name" : "Garnelenspie��e in Kokos-Panade, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20095949,
+    "name" : "MSC Fisch in Bl�_tterteig BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 9000331607993,
+    "name" : "Manner Haselnuss Mignon Schnitten, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4250155404574,
+    "name" : "Punica Abenteuer Drink BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20445928,
+    "name" : "QS H�_hnchen Mini Steaks, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 20395483,
+    "name" : "Gurken, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 9019100743107,
+    "name" : "N̦m Fasten Vitaldrink BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20289126,
+    "name" : "Brausetabletten Calcium 20er, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4004954068105,
+    "name" : "QS Schwarzw�_lder Schinken geschnitte, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20005832,
+    "name" : "Zartbitterschokolade, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 20337025,
+    "name" : "AMA Eier aus Bodenhaltung Gew.Kl. M/, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 20514785,
+    "name" : "Orangenlimonade 3%, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 20516932,
+    "name" : "Mais / Erbsen extra fein BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 9000331608723,
+    "name" : "Manner Linzer Keksi, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 50066,
+    "name" : "Kohlrabi (Stk), ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 20192198,
+    "name" : "Mandarinen/Clementinen, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 9000143021024,
+    "name" : "Iglo Cremespinat, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4304493118645,
+    "name" : "Haushaltst�_cher BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20846930,
+    "name" : "Gebirgswasser Einzelflasche, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 9000275772313,
+    "name" : "Knorr Kaiser Teller Zwiebelsuppe, ST",
+    "preis" : 0.92
+  }, {
+    "ean" : 6009631260009,
+    "name" : "Trauben hell, kernlos, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20542184,
+    "name" : "Steirischer Kren, wie fr. gerieben, ST",
+    "preis" : 1.63
+  }, {
+    "ean" : 20385668,
+    "name" : "Milchschnitte / Kakaoschnitte BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20446789,
+    "name" : "AMA Pastete im St�_ck BA, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20579715,
+    "name" : "Spinat Tagliatelle, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 4103520000027,
+    "name" : "Californische Mandelkerne ganz, ST",
+    "preis" : 2.89
+  }, {
+    "ean" : 4001686340264,
+    "name" : "Haribo Fruchtgummi BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20458508,
+    "name" : "AMA Gro��lochk�_se ger�_uchert, ST",
+    "preis" : 4.79
+  }, {
+    "ean" : 20285982,
+    "name" : "Tulpen, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4304493189737,
+    "name" : "Gehackte Tomaten 6 Brix, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 4304493201576,
+    "name" : "Flips BA, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 9000331605036,
+    "name" : "Manner Feine Pralin̩s, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20068349,
+    "name" : "Backaromen 5-fach sortiert, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4304493159594,
+    "name" : "Hirtenk�_se 45%, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 4304493133532,
+    "name" : "Geschirrsp�_lmittel Bigsize BA, ST",
+    "preis" : 0.85
+  }, {
+    "ean" : 9006900010683,
+    "name" : "Pfanner Multivitamingetr�_nk ACE 12%, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20486792,
+    "name" : "B�_rli, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20108915,
+    "name" : "Gem�_se BA, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20068264,
+    "name" : "Carcare Reifenpflegeschaum, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4250133735508,
+    "name" : "Strahler 10 W LED, ST",
+    "preis" : 14.99
+  }, {
+    "ean" : 9000000586239,
+    "name" : "Ciabatta classic, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20245726,
+    "name" : "Apfel rot, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4304493160620,
+    "name" : "Spaghetti HWG, ST",
+    "preis" : 0.42
+  }, {
+    "ean" : 20093099,
+    "name" : "Farfalle HWG, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 2100211000000,
+    "name" : "Retro Selchrippen, KG",
+    "preis" : 5.99
+  }, {
+    "ean" : 20002190,
+    "name" : "Mascarpone, ST",
+    "preis" : 1.34
+  }, {
+    "ean" : 9005653053138,
+    "name" : "AMA Roggenbrot ohne Hefe, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4084500247505,
+    "name" : "Lenor Weichsp�_ler 38WL BA, ST",
+    "preis" : 2.35
+  }, {
+    "ean" : 2101299000000,
+    "name" : "AMA Krenschinken, KG",
+    "preis" : 6.9
+  }, {
+    "ean" : 50086,
+    "name" : "Trauben hell kernlos (kg), KG",
+    "preis" : 2.49
+  }, {
+    "ean" : 20077310,
+    "name" : "Chips Salz, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20294908,
+    "name" : "Laugenbr̦tchen, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 9000159193937,
+    "name" : "Soletti Salzstangen, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20155575,
+    "name" : "Butter mit Salzkristallen a. Noirmou, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 20255275,
+    "name" : "Blauer Zweigelt QW, ̦sterr. QW, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 90171727,
+    "name" : "Inzersdorfer Jagdwurst, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20345983,
+    "name" : "Chicken-Nuggets mit Dip BA, ST",
+    "preis" : 2.19
+  }, {
+    "ean" : 20217785,
+    "name" : "QS Cheeseburger BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20265250,
+    "name" : "M�_rzenbier 5,0% Vol., ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 5449000000996,
+    "name" : "Coca Cola Dose, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 3574660464337,
+    "name" : "Carefree Megapack BA, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 20260262,
+    "name" : "Porree k�_chenf 400g, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4304493207417,
+    "name" : "Zahncremes BA, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 4002603080287,
+    "name" : "Eichetti Spitzt�_te, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20215743,
+    "name" : "Cruspies Paprika (Erdn. im Teigmante, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20360740,
+    "name" : "MSC Knuspertaschen BA, ST",
+    "preis" : 1.11
+  }, {
+    "ean" : 20267605,
+    "name" : "Cashewkerne, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 4304493190863,
+    "name" : "Buttertoast, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20126162,
+    "name" : "AMA Frankfurter, ST",
+    "preis" : 2.65
+  }, {
+    "ean" : 2104724000000,
+    "name" : "AMA Schweinefilet, KG",
+    "preis" : 9.99
+  }, {
+    "ean" : 9000159014164,
+    "name" : "Kelly's Chips classic, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20100292,
+    "name" : "Fleischstreifen f�_r Hunde BA, ST",
+    "preis" : 0.71
+  }, {
+    "ean" : 20054717,
+    "name" : "WC-Stein fl�_ssig BA, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 20750237,
+    "name" : "AMA Bio Rindersaftschinken BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20343378,
+    "name" : "Jahrgangssekt halbtrocken, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 20008246,
+    "name" : "Baguettes tiefgefroren BA, ST",
+    "preis" : 0.9
+  }, {
+    "ean" : 20092825,
+    "name" : "QS Rohwurst 1A Wellenschnitt BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 8424059002013,
+    "name" : "Himbeeren, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4008400630823,
+    "name" : "Giotto 4er BA, ST",
+    "preis" : 2.89
+  }, {
+    "ean" : 20283131,
+    "name" : "Gesichtscremes Anti-Falten BA, ST",
+    "preis" : 2.45
+  }, {
+    "ean" : 20362843,
+    "name" : "Holl�_ndischer Gouda jung vom Laib, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20522445,
+    "name" : "Ambiento Confiserie Pralinen, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20188146,
+    "name" : "Fruchtnektar BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4000264000125,
+    "name" : "DeBeukelaer Prinzenrolle, ST",
+    "preis" : 1.95
+  }, {
+    "ean" : 9011600008892,
+    "name" : "Oriental Garden Hummus BA, ST",
+    "preis" : 1.39
+  }, {
+    "ean" : 20096236,
+    "name" : "Johannisbeer-Zitronensirup 15%, ST",
+    "preis" : 2.79
+  }, {
+    "ean" : 20668471,
+    "name" : "Energy Drink Cranberry, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 20542252,
+    "name" : "AMA H�_hnchen Unterkeulen, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 4304493169258,
+    "name" : "Tomatenmark 3fach konzentriert, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 4304493255654,
+    "name" : "Energy Drink, ST",
+    "preis" : 0.35
+  }, {
+    "ean" : 20149680,
+    "name" : "Rohwurstspezialit�_ten BA, ST",
+    "preis" : 1.59
+  }, {
+    "ean" : 20355180,
+    "name" : "Schinken-K�_se-Croissant, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 4304493121645,
+    "name" : "Slipeinlagen mit Aloe Vera BA, ST",
+    "preis" : 0.91
+  }, {
+    "ean" : 4015000435185,
+    "name" : "Pattex Acrylat wei��, ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 20165437,
+    "name" : "Dessert mit Sahne 4er BA, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20390082,
+    "name" : "Fl�_ssige Cremeseife/Handseife NFB BA, ST",
+    "preis" : 1.28
+  }, {
+    "ean" : 20394363,
+    "name" : "AMA XXL Frankfurter nach Landm.Art, ST",
+    "preis" : 4.99
+  }, {
+    "ean" : 20155087,
+    "name" : "MSC Fischst�_bchen, ST",
+    "preis" : 1.34
+  }, {
+    "ean" : 20029845,
+    "name" : "Schoko-Bananen, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 6420256001134,
+    "name" : "Tutti Frutti Fruchtgummi 4er, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20027810,
+    "name" : "AMA Toastschinken geschnitten, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 4304493197626,
+    "name" : "Alpen-VM-Schok. m. gehackten Haseln�_, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 20429614,
+    "name" : "Weichweizengrie�� Type W480, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 20136468,
+    "name" : "AMA Knacker, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20034153,
+    "name" : "L̦ffelbiscuits (Savoiardi), ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20209070,
+    "name" : "Cremebonbons gef�_llt BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20306250,
+    "name" : "Speisekartoffeln rot 1kg, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20062163,
+    "name" : "QS Schweinekoteletts, ST",
+    "preis" : 3.79
+  }, {
+    "ean" : 20486914,
+    "name" : "AMA Tiroler Krustenwecken vorgeb., ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 20242145,
+    "name" : "Cherrystrauchtomaten, ST",
+    "preis" : 1.19
+  }, {
+    "ean" : 20609399,
+    "name" : "Butter-Croissant, ST",
+    "preis" : 0.36
+  }, {
+    "ean" : 20077327,
+    "name" : "Chips Paprika, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20501419,
+    "name" : "Ersatzb�_rstenkopf elek. Zahnb�_rste, ST",
+    "preis" : 5.99
+  }, {
+    "ean" : 20363765,
+    "name" : "Kindergetr�_nke BA, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 4000400008053,
+    "name" : "Bresso Frischk�_se BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20486679,
+    "name" : "AMA Rinderfaschiertes, ST",
+    "preis" : 3.29
+  }, {
+    "ean" : 20025847,
+    "name" : "Frischei-Waffeln, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20372231,
+    "name" : "Mandel-Bienenstich Torte, ST",
+    "preis" : 4.44
+  }, {
+    "ean" : 20293147,
+    "name" : "Putenrohwurstspezialit�_ten BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 4250241203524,
+    "name" : "Iglo Fischst�_bchen 15er, ST",
+    "preis" : 3.89
+  }, {
+    "ean" : 20263744,
+    "name" : "AMA Tiroler K�_se am St�_ck BA, ST",
+    "preis" : 2.39
+  }, {
+    "ean" : 20269517,
+    "name" : "Kn̦delbrot, ST",
+    "preis" : 0.66
+  }, {
+    "ean" : 20627133,
+    "name" : "AMA Heumilch Bergk�_se, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20091170,
+    "name" : "Schoko und Keks Riegel BA, ST",
+    "preis" : 2.29
+  }, {
+    "ean" : 4008400191423,
+    "name" : "Kinder Milchschnitte, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 20166625,
+    "name" : "Kulturchampignons braun, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4008432041772,
+    "name" : "Emmentaler Scheiben, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4304493103108,
+    "name" : "Rahmspinat, ST",
+    "preis" : 0.74
+  }, {
+    "ean" : 20169268,
+    "name" : "Partygarnelen, ST",
+    "preis" : 2.63
+  }, {
+    "ean" : 20125486,
+    "name" : "Belgische Pralinen, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20362362,
+    "name" : "Creme zum Kochen BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20541873,
+    "name" : "AMA Bio Kornspitz, vorgegart, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20624477,
+    "name" : "Zucker, ST",
+    "preis" : 0.59
+  }, {
+    "ean" : 4304493161047,
+    "name" : "Sonnenblumen̦l, ST",
+    "preis" : 1.35
+  }, {
+    "ean" : 4000789203964,
+    "name" : "Safari-Nuggets, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 50116,
+    "name" : "Grapefruit (Stk), ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 9006900217037,
+    "name" : "Pfanner Eistee Pfirsich, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 4009900487405,
+    "name" : "Wrigley Streifenkaugummi BA, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20045128,
+    "name" : "Griechischer Retsina, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20346010,
+    "name" : "AMA Bio Butter, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20462598,
+    "name" : "Nuss- und Fruchtmischungen BA 2, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20231637,
+    "name" : "Vollkorntoast, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 20101268,
+    "name" : "Fr�_hst�_ckscerealien BA 5, ST",
+    "preis" : 2.19
+  }, {
+    "ean" : 9006900010386,
+    "name" : "Pfanner Mango-Maracuja BCE 10%, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20669010,
+    "name" : "Universalvollwaschmittel 100WL, ST",
+    "preis" : 6.99
+  }, {
+    "ean" : 4032611205020,
+    "name" : "Dreibeinliege Alumin. m. Sonnendach, ST",
+    "preis" : 44.99
+  }, {
+    "ean" : 4304493155930,
+    "name" : "Rote Bete Scheiben, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 90024115,
+    "name" : "Alma Schmelzk�_seecken BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20386498,
+    "name" : "Kinderzahncremes BA, ST",
+    "preis" : 0.85
+  }, {
+    "ean" : 4009097010158,
+    "name" : "Unsere Besten Br̦tchen BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20603106,
+    "name" : "Mehrkorn Baguette, ST",
+    "preis" : 0.95
+  }, {
+    "ean" : 20620264,
+    "name" : "XXL Energy Drink, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 20707897,
+    "name" : "Sahnepudding BA, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20376819,
+    "name" : "XXL K�_chent�_cher mit Dekor 2lg, ST",
+    "preis" : 2.69
+  }, {
+    "ean" : 4021274565992,
+    "name" : "Salatkr�_uter gefriergetrocknet, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20241834,
+    "name" : "Zitronen, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20266370,
+    "name" : "Suppengem�_se 400g, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 4006402027139,
+    "name" : "Bergader Minitorten BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 8076809513388,
+    "name" : "Barilla Pasta Saucen BA, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 20573003,
+    "name" : "Schlaufentr. Zuckerrohr (50�� MB), ST",
+    "preis" : 0.25
+  }, {
+    "ean" : 4304493197619,
+    "name" : "Alpen-Vollmilch-Schokolade, ST",
+    "preis" : 0.55
+  }, {
+    "ean" : 4304493104549,
+    "name" : "Fl�_ssige Handseife BA, ST",
+    "preis" : 0.95
+  }, {
+    "ean" : 20541309,
+    "name" : "Brotaufstriche BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 9008200008490,
+    "name" : "Dr. Oetker Puddingpulver Schokolade, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20486648,
+    "name" : "AMA Dauerwurststangerl BA, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 20333072,
+    "name" : "Orangen Marmelade mit Scotch Whisky, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 9005653011992,
+    "name" : "Salzstangerl handgefertigt, vorgebac, ST",
+    "preis" : 0.49
+  }, {
+    "ean" : 20045197,
+    "name" : "Butterk�_se Scheiben 45%, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 20220440,
+    "name" : "Schaumfestiger BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 90082542,
+    "name" : "Dr. Oetker Backpulver, ST",
+    "preis" : 0.45
+  }, {
+    "ean" : 4052873204876,
+    "name" : "Fliegengitter 2er / Pollenschutz 3er, ST",
+    "preis" : 1.99
+  }, {
+    "ean" : 4304493204676,
+    "name" : "K�_seaufschnitt, ST",
+    "preis" : 1.49
+  }, {
+    "ean" : 8711627195636,
+    "name" : "Karotten 1kg, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4015000997584,
+    "name" : "FA Duschgel BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 2101630000000,
+    "name" : "AMA Selchroller, KG",
+    "preis" : 5.99
+  }, {
+    "ean" : 20554828,
+    "name" : "Weichsp�_lkonzentrat 66WL BA, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 9000275487712,
+    "name" : "Knorr Basis BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20046835,
+    "name" : "Edamer Scheiben 40%, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4032611207345,
+    "name" : "Ausziehleine m. R�_ckzugmech. + Kotbe, ST",
+    "preis" : 7.99
+  }, {
+    "ean" : 20603304,
+    "name" : "Apfeltasche, ST",
+    "preis" : 0.89
+  }, {
+    "ean" : 20438951,
+    "name" : "AMA Fruchtjoghurt 3,2% BA, ST",
+    "preis" : 0.29
+  }, {
+    "ean" : 9007041915981,
+    "name" : "AMA ��sterr. Speisetopfen 20%, ST",
+    "preis" : 0.75
+  }, {
+    "ean" : 20396770,
+    "name" : "AMA Spezialit�_tensortiment I BA, ST",
+    "preis" : 1.29
+  }, {
+    "ean" : 20805890,
+    "name" : "Snackradieschen 300g, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 4008400183022,
+    "name" : "Ferrero Raffaello 23er, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 20476991,
+    "name" : "Pastasauce BA, ST",
+    "preis" : 0.97
+  }, {
+    "ean" : 5449000131805,
+    "name" : "Coca Cola Zero Dose, ST",
+    "preis" : 0.65
+  }, {
+    "ean" : 4014155321022,
+    "name" : "Beetpflanzen, ST",
+    "preis" : 3.99
+  }, {
+    "ean" : 20689278,
+    "name" : "ASC Stremellachs BA, ST",
+    "preis" : 2.59
+  }, {
+    "ean" : 20242169,
+    "name" : "Champ. wei�� 250g, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 20542504,
+    "name" : "AMA Faschiertes gemischt, ST",
+    "preis" : 2.49
+  }, {
+    "ean" : 4304493139428,
+    "name" : "Passierte Tomaten 8,5 Brix, ST",
+    "preis" : 0.39
+  }, {
+    "ean" : 4008400260921,
+    "name" : "Ferrero Kinder Country 9er, ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 20707637,
+    "name" : "Milchbr̦tchen 10er, ST",
+    "preis" : 1.09
+  }, {
+    "ean" : 4304493893535,
+    "name" : "D Feinstrick Cardigan, ST",
+    "preis" : 7.99
+  }, {
+    "ean" : 20343606,
+    "name" : "Kopfsalat, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 9006548970103,
+    "name" : "AMA ��sterr. Teebutter mind. 82%, ST",
+    "preis" : 1.35
+  }, {
+    "ean" : 4008407011502,
+    "name" : "Haselnusskerne gemahlen, ST",
+    "preis" : 2.99
+  }, {
+    "ean" : 4017100136009,
+    "name" : "Leibniz Choco Keks BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20178437,
+    "name" : "Fruchtjoghurt 0,1% BA, ST",
+    "preis" : 0.27
+  }, {
+    "ean" : 20262969,
+    "name" : "Griechischer Fetak�_se Weichpackung, ST",
+    "preis" : 1.59
+  }, {
+    "ean" : 4009900360937,
+    "name" : "Wrigley Airwaves zuckerfrei 3er BA, ST",
+    "preis" : 1.69
+  }, {
+    "ean" : 5053990107339,
+    "name" : "Pringles Original, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20008024,
+    "name" : "Apfelsaft naturtr�_b 100%, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 4008400301020,
+    "name" : "Duplo T10, ST",
+    "preis" : 1.79
+  }, {
+    "ean" : 20664435,
+    "name" : "All-in-1 Geschirr-Reiniger-Tabs, ST",
+    "preis" : 2.85
+  }, {
+    "ean" : 20244972,
+    "name" : "S�_dafrika Chenin Blanc (EUA), ST",
+    "preis" : 1.89
+  }, {
+    "ean" : 4009700007490,
+    "name" : "Danone Obstgarten Vanille BA, ST",
+    "preis" : 0.79
+  }, {
+    "ean" : 4020300119413,
+    "name" : "Frischk�_se-Spezialit�_ten BA, ST",
+    "preis" : 0.99
+  }, {
+    "ean" : 20173852,
+    "name" : "Kosmetikt�_cher 3lg Aloe Vera Balsam, ST",
+    "preis" : 0.69
+  }, {
+    "ean" : 4260290830794,
+    "name" : "Insektenhotel FSC, ST",
+    "preis" : 9.99
+  } ],
+  "data" : {
+    "week01" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "discount" : "10%",
+              "discountpreis" : "10€",
+              "ean" : 4015112823214,
+              "name" : "D Jeans-Jacke",
+              "preis" : "10€"
+            },
+            "article2" : {
+              "ean" : 20028763,
+              "name" : "AMA Eier Freilandhaltung M/L",
+              "preis" : "1.75€"
+            },
+            "article3" : {
+              "ean" : 20147334,
+              "name" : "AMA Länger frische Bio Vollmilch",
+              "preis" : "1.10€"
+            }
+          },
+          "description" : "Tolle Dinge",
+          "id" : 1,
+          "smartscore" : 2.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20411527,
+              "name" : "Traditions-Lachsschinken BA",
+              "preis" : "5€"
+            },
+            "article2" : {
+              "ean" : 4211125588854,
+              "name" : "Britney Spears Multifunktionsstyler",
+              "preis" : "15€"
+            },
+            "article3" : {
+              "ean" : 4044208150972,
+              "name" : "D Top",
+              "preis" : "8€"
+            }
+          },
+          "description" : "Tolle Sachen",
+          "id" : 2,
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4004070355325,
+              "name" : "Drucker-",
+              "preis" : "30€"
+            },
+            "article2" : {
+              "ean" : 20792695,
+              "name" : "Antipasti ohne Öl BA2",
+              "preis" : "6.9€"
+            },
+            "article3" : {
+              "ean" : 20194192,
+              "name" : "Mixx Max",
+              "preis" : "0.39€"
+            }
+          },
+          "description" : "Wunderbare Sachen",
+          "id" : 3,
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20540814,
+              "name" : "AMA Bio Speisetopfen 20%",
+              "preis" : "2.39€"
+            },
+            "article2" : {
+              "ean" : 4304493976467,
+              "name" : "D Hose Leinen Baumwolle",
+              "preis" : "10€"
+            },
+            "article3" : {
+              "ean" : 4005500027461,
+              "name" : "Nestlé Joghurt Lion Cereals",
+              "preis" : "1.99€"
+            }
+          },
+          "description" : "Gut und Gut",
+          "id" : 4,
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20540814,
+              "name" : "AMA Bio Speisetopfen 20%",
+              "preis" : "2.39€"
+            },
+            "article2" : {
+              "ean" : 4006639151331,
+              "name" : "Rügenwalder Streichwurst BA",
+              "preis" : "2.75€"
+            },
+            "article3" : {
+              "ean" : 20333737,
+              "name" : "Cashew Peanut Mix BA",
+              "preis" : "2€"
+            }
+          },
+          "description" : "Es ist gut",
+          "id" : 5,
+          "smartscore" : 7.32
+        }
+      },
+      "happybundles" : {
+        "20077327" : {
+          "bundle1" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 20077327,
+                "name" : "Chips Paprika, ST",
+                "preis" : "0.79€"
+              },
+              "article2" : {
+                "ean" : 20231637,
+                "name" : "Vollkorntoast, ST",
+                "preis" : "0.69€"
+              },
+              "article3" : {
+                "ean" : 6420256001134,
+                "name" : "Tutti Frutti Fruchtgummi 4er, ST",
+                "preis" : "0.89€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Chips Paprika, ST' gekauft werden - Variante 1.",
+            "id" : 1,
+            "smartscore" : 9.55
+          },
+          "bundle2" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 20077327,
+                "name" : "Chips Paprika, ST",
+                "preis" : "0.79€"
+              },
+              "article2" : {
+                "ean" : 20147334,
+                "name" : "AMA Länger frische Bio Vollmilch",
+                "preis" : "1.10€"
+              },
+              "article3" : {
+                "ean" : 4005500027461,
+                "name" : "Nestlé Joghurt Lion Cereals",
+                "preis" : "1.99€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Chips Paprika, ST' gekauft werden - Variante 2.",
+            "id" : 2,
+            "smartscore" : 9.45
+          },
+          "bundle3" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 20077327,
+                "name" : "Chips Paprika, ST",
+                "preis" : "0.79€"
+              },
+              "article2" : {
+                "ean" : 20333737,
+                "name" : "Cashew Peanut Mix BA",
+                "preis" : "2€"
+              },
+              "article3" : {
+                "ean" : 4006639151331,
+                "name" : "Rügenwalder Streichwurst BA",
+                "preis" : "2.75€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Chips Paprika, ST' gekauft werden - Variante 3.",
+            "id" : 3,
+            "smartscore" : 8.23
+          },
+          "bundle4" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 20077327,
+                "name" : "Chips Paprika, ST",
+                "preis" : "0.79€"
+              },
+              "article2" : {
+                "ean" : 20396770,
+                "name" : "AMA Spezialit�_tensortiment I BA, ST",
+                "preis" : "1.29€"
+              },
+              "article3" : {
+                "ean" : 20462598,
+                "name" : "Nuss- und Fruchtmischungen BA 2, ST",
+                "preis" : "0.99€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Chips Paprika, ST' gekauft werden - Variante 4.",
+            "id" : 4,
+            "smartscore" : 5.12
+          },
+          "bundle5" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 20077327,
+                "name" : "Chips Paprika, ST",
+                "preis" : "0.79€"
+              },
+              "article2" : {
+                "ean" : 20045128,
+                "name" : "Griechischer Retsina, ST",
+                "preis" : "1.49€"
+              },
+              "article3" : {
+                "ean" : 4304493135871,
+                "name" : "Gouda Scheiben 48%, ST",
+                "preis" : "1.98€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Chips Paprika, ST' gekauft werden - Variante 5.",
+            "id" : 5,
+            "smartscore" : 5.1
+          }
+        },
+        "8423049000114" : {
+          "bundle1" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 8423049000114,
+                "name" : "Erdbeeren 500g, ST",
+                "preis" : "1.69€"
+              },
+              "article2" : {
+                "ean" : 20324414,
+                "name" : "XXL Toilettenpapier 4lg 16x160 Bl., ST",
+                "preis" : "4.44€"
+              },
+              "article3" : {
+                "ean" : 8711627195636,
+                "name" : "Karotten 1kg, ST",
+                "preis" : "0.99€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Erdbeeren 500g, ST' gekauft werden - Variante 1.",
+            "id" : 1,
+            "smartscore" : 9.67
+          },
+          "bundle2" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 8423049000114,
+                "name" : "Erdbeeren 500g, ST",
+                "preis" : "1.69€"
+              },
+              "article2" : {
+                "ean" : 2106214000000,
+                "name" : "Schweiner�_cken Dattel, KG",
+                "preis" : "7.99€"
+              },
+              "article3" : {
+                "ean" : 7613034754127,
+                "name" : "Nestl̩ Smarties Riesenrolle, ST",
+                "preis" : "1.95€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Erdbeeren 500g, ST' gekauft werden - Variante 2.",
+            "id" : 2,
+            "smartscore" : 7.43
+          },
+          "bundle3" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 8423049000114,
+                "name" : "Erdbeeren 500g, ST",
+                "preis" : "1.69€"
+              },
+              "article2" : {
+                "ean" : 4008400321622,
+                "name" : "Kinder Bueno 6er, ST",
+                "preis" : "1.69€"
+              },
+              "article3" : {
+                "ean" : 9000275604614,
+                "name" : "Knorr  Kaiser Teller K�_rbiscremesup., ST",
+                "preis" : "0.92€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Erdbeeren 500g, ST' gekauft werden - Variante 3.",
+            "id" : 3,
+            "smartscore" : 7.23
+          },
+          "bundle4" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 8423049000114,
+                "name" : "Erdbeeren 500g, ST",
+                "preis" : "1.69€"
+              },
+              "article2" : {
+                "ean" : 5449000000286,
+                "name" : "Coca Cola, ST",
+                "preis" : "1.99€"
+              },
+              "article3" : {
+                "ean" : 9000133012575,
+                "name" : "Rupp Rahm zum Streichen, ST",
+                "preis" : "1.29€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Erdbeeren 500g, ST' gekauft werden - Variante 4.",
+            "id" : 4,
+            "smartscore" : 7.12
+          },
+          "bundle5" : {
+            "articles" : {
+              "article1" : {
+                "ean" : 8423049000114,
+                "name" : "Erdbeeren 500g, ST",
+                "preis" : "1.69€"
+              },
+              "article2" : {
+                "ean" : 20324414,
+                "name" : "XXL Toilettenpapier 4lg 16x160 Bl., ST",
+                "preis" : "4.44€"
+              },
+              "article3" : {
+                "ean" : 20668471,
+                "name" : "Energy Drink Cranberry, ST",
+                "preis" : "0.35€"
+              }
+            },
+            "description" : "Beliebte Produkte die in Kombination mit 'Erdbeeren 500g, ST' gekauft werden - Variante 5.",
+            "id" : 5,
+            "smartscore" : 3.56
+          }
+        }
+      }
+    },
+    "week02" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20435486,
+              "name" : "Kuchenschnitten BA",
+              "preis" : "3€"
+            },
+            "article2" : {
+              "ean" : 4003848107814,
+              "name" : "M Skistrümpfe",
+              "preis" : "1.5€"
+            },
+            "article3" : {
+              "ean" : 4304493674950,
+              "name" : "LED-Deckenleuchten",
+              "preis" : "8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493765399,
+              "name" : "Microfaser Kuscheldecke 150 x 200 c",
+              "preis" : "8€"
+            },
+            "article2" : {
+              "ean" : 20549299,
+              "name" : "Schnapsgläser (GM) 4cl",
+              "preis" : "6€"
+            },
+            "article3" : {
+              "ean" : 42143789,
+              "name" : "Pils 4",
+              "preis" : "3.5€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493834194,
+              "name" : "Pinselset",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 20423582,
+              "name" : "Orecchiette cime rapa(Stängelkohl)",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 4304493979642,
+              "name" : "D Knöcheljeans",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4040109971166,
+              "name" : "Kurzhantelset 10",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 8009404212189,
+              "name" : "Hocker TÜV/GS",
+              "preis" : "12€"
+            },
+            "article3" : {
+              "ean" : 20226527,
+              "name" : "Erbsen 500g",
+              "preis" : "1.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4040109971166,
+              "name" : "Kurzhantelset 10",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 20203436,
+              "name" : "Rosenkohl",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 20054762,
+              "name" : "Cashewkerne",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      },
+      "happybundles" : {
+        "bundle1" : {
+          "articles" : {
+            "artikel1" : {
+              "ean" : 213123,
+              "name" : "dasdasda",
+              "preis" : "12,20€"
+            }
+          }
+        }
+      }
+    },
+    "week03" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493963832,
+              "name" : "D Fashion Shirt",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 4211125651688,
+              "name" : "Sanitas Blutdruckmessgerät",
+              "preis" : "15€"
+            },
+            "article3" : {
+              "ean" : 4304493034617,
+              "name" : "Silikon-Backformen",
+              "preis" : "4€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20540814,
+              "name" : "AMA Bio Speisetopfen 20%",
+              "preis" : "2.39€"
+            },
+            "article2" : {
+              "ean" : 4304493976467,
+              "name" : "D Hose Leinen Baumwolle",
+              "preis" : "10€"
+            },
+            "article3" : {
+              "ean" : 4005500027461,
+              "name" : "Nestlé Joghurt Lion Cereals",
+              "preis" : "1.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20225711,
+              "name" : "Sommerpralinen",
+              "preis" : "3€"
+            },
+            "article2" : {
+              "ean" : 4019641045079,
+              "name" : "Multifunktionswerkzeug mit Tasche",
+              "preis" : "10€"
+            },
+            "article3" : {
+              "ean" : 20029906,
+              "name" : "Pils",
+              "preis" : "0.80€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9025900050369,
+              "name" : "Salzburg Schoko. XXL Dragee-Misch.",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 20535179,
+              "name" : "XXL Obst BA",
+              "preis" : "6€"
+            },
+            "article3" : {
+              "ean" : 20751630,
+              "name" : "AMA XXL Hähnchenschenkel mit Rücken",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9025900050369,
+              "name" : "Salzburg Schoko. XXL Dragee-Misch.",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 20333485,
+              "name" : "Vanilleschote planifolia Bourbon",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 4060800100214,
+              "name" : "Pepsi Cola",
+              "preis" : "0.65€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week04" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4017566971954,
+              "name" : "Radzierblenden 4er Satz",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 5900511903355,
+              "name" : "Trefl Cartoon Puzzle Liz. Disney",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 20309725,
+              "name" : "Tomaten Mix 300g",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20338060,
+              "name" : "Chips Käse und Zwiebel",
+              "preis" : "1.99€"
+            },
+            "article2" : {
+              "ean" : 20804244,
+              "name" : "Chicken-Nuggets ohne Pappschuber/Fol",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 4304493925786,
+              "name" : "D Langarmshirt",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493834194,
+              "name" : "Pinselset",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 20423582,
+              "name" : "Orecchiette cime rapa(Stängelkohl)",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 4304493979642,
+              "name" : "D Knöcheljeans",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 3288130601251,
+              "name" : "Kalibio Cool Fruits Apfel Mango Anan",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 20005009,
+              "name" : "Blended Scotch Whisky 3 Jahre 40% Vo",
+              "preis" : "12€"
+            },
+            "article3" : {
+              "ean" : 20630195,
+              "name" : "Irisches Craft Rotes Ale 4",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 3288130601251,
+              "name" : "Kalibio Cool Fruits Apfel Mango Anan",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 20621148,
+              "name" : "Spezialmehle/Dinkelmehl BA",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4260018037474,
+              "name" : "Cupcake Maker / Cake Pop Maker 1200W",
+              "preis" : "15€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week05" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20684419,
+              "name" : "BBQ Salate BA",
+              "preis" : "5€"
+            },
+            "article2" : {
+              "ean" : 20884222,
+              "name" : "Bio gehackte Tomaten mit Gewürzen BA",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 20110161,
+              "name" : "Le Pavé Weichkäse",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20411527,
+              "name" : "Traditions-Lachsschinken BA",
+              "preis" : "5€"
+            },
+            "article2" : {
+              "ean" : 4211125588854,
+              "name" : "Britney Spears Multifunktionsstyler",
+              "preis" : "15€"
+            },
+            "article3" : {
+              "ean" : 4044208150972,
+              "name" : "D Top",
+              "preis" : "8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493834194,
+              "name" : "Pinselset",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 4333991060279,
+              "name" : "Duschabstreifer Silikon",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4050069065683,
+              "name" : "D Bademantel Mikrofaser",
+              "preis" : "20€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20384487,
+              "name" : "Schaumwein weis D.O. Valencia Muskat",
+              "preis" : "8€"
+            },
+            "article2" : {
+              "ean" : 20255466,
+              "name" : "Bio Rapsöl kaltgepresst",
+              "preis" : "4.99€"
+            },
+            "article3" : {
+              "ean" : 20898236,
+              "name" : "Bio Tiramisu Classic",
+              "preis" : "13€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20384487,
+              "name" : "Schaumwein weis D.O. Valencia Muskat",
+              "preis" : "8€"
+            },
+            "article2" : {
+              "ean" : 20831837,
+              "name" : "Borschtsch BA",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 4333991020464,
+              "name" : "Leuchtmittel LED 3",
+              "preis" : "15€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week06" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20338060,
+              "name" : "Chips Käse und Zwiebel",
+              "preis" : "1.99€"
+            },
+            "article2" : {
+              "ean" : 4304493666740,
+              "name" : "H Armbanduhr",
+              "preis" : "10€"
+            },
+            "article3" : {
+              "ean" : 602537489497,
+              "name" : "K CD",
+              "preis" : "8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4260018033919,
+              "name" : "Haar- und Bartschneider",
+              "preis" : "23.99€"
+            },
+            "article2" : {
+              "ean" : 20804244,
+              "name" : "Chicken-Nuggets ohne Pappschuber/Fol",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 4304493925786,
+              "name" : "D Langarmshirt",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493790032,
+              "name" : "Treibhaus begehbar",
+              "preis" : "20€"
+            },
+            "article2" : {
+              "ean" : 20423582,
+              "name" : "Orecchiette cime rapa(Stängelkohl)",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 5900511903355,
+              "name" : "Trefl Cartoon Puzzle Liz. Disney",
+              "preis" : "5€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20979485,
+              "name" : "Bio Basis Müsli BA",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 4058844238260,
+              "name" : "H Jogg-Jeans",
+              "preis" : "12€"
+            },
+            "article3" : {
+              "ean" : 4048887109603,
+              "name" : "D Pantoletten",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20979485,
+              "name" : "Bio Basis Müsli BA",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 4304493907881,
+              "name" : "Bügeltischbezug",
+              "preis" : "7€"
+            },
+            "article3" : {
+              "ean" : 4048887094534,
+              "name" : "H Sneaker",
+              "preis" : "25€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week07" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4019641044645,
+              "name" : "Crimpzangen",
+              "preis" : "20€"
+            },
+            "article2" : {
+              "ean" : 20377793,
+              "name" : "XXL Kaffeegetränk BA",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 20856236,
+              "name" : "Feingefüllte Kugeln Alpenmilchsch. B",
+              "preis" : "3.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9019100218902,
+              "name" : "AMA H-Milch 1",
+              "preis" : "0.69€"
+            },
+            "article2" : {
+              "ean" : 20306441,
+              "name" : "AMA XXL Käsekrainer",
+              "preis" : "1.5€"
+            },
+            "article3" : {
+              "ean" : 4048887094534,
+              "name" : "H Sneaker",
+              "preis" : "25€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4100130937163,
+              "name" : "Beck's Pils 4",
+              "preis" : "3.5€"
+            },
+            "article2" : {
+              "ean" : 9120004882516,
+              "name" : "Blaufränkisch Exclusiv",
+              "preis" : "6€"
+            },
+            "article3" : {
+              "ean" : 4040109971166,
+              "name" : "Kurzhantelset 10",
+              "preis" : "6€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9004283015103,
+              "name" : "Kärntnermilch AMA Fruchtmolke Mango",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 20316433,
+              "name" : "Panettone mit Schokoladencreme",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 76121043,
+              "name" : "Ovomaltine Schokolade UTZ",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9004283015103,
+              "name" : "Kärntnermilch AMA Fruchtmolke Mango",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 20535179,
+              "name" : "XXL Obst BA",
+              "preis" : "6€"
+            },
+            "article3" : {
+              "ean" : 4304493925786,
+              "name" : "D Langarmshirt",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week08" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4002707305873,
+              "name" : "Pendelleuchten LED Textil 2er",
+              "preis" : "20€"
+            },
+            "article2" : {
+              "ean" : 20306441,
+              "name" : "AMA XXL Käsekrainer",
+              "preis" : "1.5€"
+            },
+            "article3" : {
+              "ean" : 20548438,
+              "name" : "Premium Stieleis mit Sauce BA",
+              "preis" : "3.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4015000429887,
+              "name" : "Pattex Powerkleber Gel 20g / Kunstst",
+              "preis" : "2€"
+            },
+            "article2" : {
+              "ean" : 76121043,
+              "name" : "Ovomaltine Schokolade UTZ",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 20955151,
+              "name" : "Beauty Lippenstift BA",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20566180,
+              "name" : "Recovery Drink Vanille",
+              "preis" : "2€"
+            },
+            "article2" : {
+              "ean" : 5900511014440,
+              "name" : "Trefl Spielsammlung/Hidden Treas. Li",
+              "preis" : "6€"
+            },
+            "article3" : {
+              "ean" : 7898938310024,
+              "name" : "Trauben rot",
+              "preis" : "4€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9002490100070,
+              "name" : "Red Bull",
+              "preis" : "1.19€"
+            },
+            "article2" : {
+              "ean" : 4304493318250,
+              "name" : "D Funktionsshirt Laufen",
+              "preis" : "12€"
+            },
+            "article3" : {
+              "ean" : 20572587,
+              "name" : "Sahneklassiker BA",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9002490100070,
+              "name" : "Red Bull",
+              "preis" : "1.19€"
+            },
+            "article2" : {
+              "ean" : 20335106,
+              "name" : "Cracker rund gesalzen",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 20525880,
+              "name" : "Bio Fairtrade Tee BA",
+              "preis" : "4€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week09" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20048396,
+              "name" : "Crema di Limoncino 17% Vol.",
+              "preis" : "5€"
+            },
+            "article2" : {
+              "ean" : 20332662,
+              "name" : "Cornflakes",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 8005125991778,
+              "name" : "Clementoni Puzzle fluoreszierend",
+              "preis" : "8.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4050276296863,
+              "name" : "D Dirndl Tasche",
+              "preis" : "8€"
+            },
+            "article2" : {
+              "ean" : 20478711,
+              "name" : "QS Gyrosspieße gewürzt",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 20445928,
+              "name" : "QS Hähnchen Mini Steaks",
+              "preis" : "4€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20329389,
+              "name" : "Premium Nut Selection in Chocolate",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 20399306,
+              "name" : "Retro Zungenwurst",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 4007219309449,
+              "name" : "Profil-Gummidichtung und Türbodendi",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20008116,
+              "name" : "Traubensaft rot 100%",
+              "preis" : "2€"
+            },
+            "article2" : {
+              "ean" : 4211125588854,
+              "name" : "Britney Spears Multifunktionsstyler",
+              "preis" : "15€"
+            },
+            "article3" : {
+              "ean" : 20846350,
+              "name" : "Bubikopf mit Stecker",
+              "preis" : "6€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20008116,
+              "name" : "Traubensaft rot 100%",
+              "preis" : "2€"
+            },
+            "article2" : {
+              "ean" : 20525767,
+              "name" : "Cashewkerne Wasabi",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 20333737,
+              "name" : "Cashew Peanut Mix BA",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week10" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493161412,
+              "name" : "Curry",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 20873776,
+              "name" : "Cyperus",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4304493717022,
+              "name" : "D H Armbanduhren Slimline",
+              "preis" : "8.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 8718215707141,
+              "name" : "D Ballerina Füßlinge Tactel nahtlos",
+              "preis" : "8€"
+            },
+            "article2" : {
+              "ean" : 20478711,
+              "name" : "QS Gyrosspieße gewürzt",
+              "preis" : "3€"
+            },
+            "article3" : {
+              "ean" : 4019641044645,
+              "name" : "Crimpzangen",
+              "preis" : "15€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 8715700411187,
+              "name" : "Heinz Feinkostsaucen BA",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 4015001001648,
+              "name" : "Gliss Kur Shampoo/Spülung Doppelp. B",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 4007219309449,
+              "name" : "Profil-Gummidichtung und Türbodendi",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493691155,
+              "name" : "D H Sport-Armbanduhr",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 20209094,
+              "name" : "Butter Toffees",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 3838824142296,
+              "name" : "Fa Duschgel BA",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493691155,
+              "name" : "D H Sport-Armbanduhr",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 9120022212654,
+              "name" : "Cuvée Schieferkristall",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4000405001417,
+              "name" : "Rügenwalder Mühle Teewurst BA",
+              "preis" : "6€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week11" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4025700007209,
+              "name" : "Milka Alpenmilch  ",
+              "preis" : "0.99€"
+            },
+            "article2" : {
+              "ean" : 20565183,
+              "name" : "Blumen ",
+              "preis" : "7.5€"
+            },
+            "article3" : {
+              "ean" : 4000417650306,
+              "name" : "Ritter Sport Schokow. + 2St gratis B",
+              "preis" : "2.45"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9005800255781,
+              "name" : "Nivea Duschgel Duo BA, ST  ",
+              "preis" : "6.30€"
+            },
+            "article2" : {
+              "ean" : 20908843,
+              "name" : "Make-up Grundierung, ST  ",
+              "preis" : "14€"
+            },
+            "article3" : {
+              "ean" : 9000331644745,
+              "name" : "Manner Weihnachtsherzen Erdbeer ",
+              "preis" : "1.8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20327774,
+              "name" : "XXL Faschiertes ",
+              "preis" : "7.5€"
+            },
+            "article2" : {
+              "ean" : 20232092,
+              "name" : "Zwiebeln gelb ",
+              "preis" : "6.99€"
+            },
+            "article3" : {
+              "ean" : 20151201,
+              "name" : "Griechische Spezialitäten BA ",
+              "preis" : "3.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20364632,
+              "name" : "Grilltaler ",
+              "preis" : "4.55€"
+            },
+            "article2" : {
+              "ean" : 4006501566737,
+              "name" : "Leifheit Reinigungshelfer ",
+              "preis" : "6€"
+            },
+            "article3" : {
+              "ean" : 20383572,
+              "name" : "Bittergetränke ",
+              "preis" : "1.2€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4333991017075,
+              "name" : "Futter- und Trinknapf ",
+              "preis" : "9€"
+            },
+            "article2" : {
+              "ean" : 20123789,
+              "name" : "Waffel-Sandwich-Eis",
+              "preis" : "2.2€"
+            },
+            "article3" : {
+              "ean" : 20383572,
+              "name" : "Bittergetränke",
+              "preis" : "1.2€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week12" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4001868084078,
+              "name" : "Maxi-Farbkartonbl. / Maxi-Tonzeichen  ",
+              "preis" : "8.7€"
+            },
+            "article2" : {
+              "ean" : 4008339460645,
+              "name" : "Wärmflasche mit Fleecebezug ",
+              "preis" : "5.5€"
+            },
+            "article3" : {
+              "ean" : 4304493977983,
+              "name" : "Lesehilfe/getönte Lesehilfe",
+              "preis" : "7.45"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9005800255781,
+              "name" : "Nivea Duschgel Duo BA, ST  ",
+              "preis" : "6.30€"
+            },
+            "article2" : {
+              "ean" : 20908843,
+              "name" : "Make-up Grundierung, ST  ",
+              "preis" : "14€"
+            },
+            "article3" : {
+              "ean" : 9000331644745,
+              "name" : "Manner Weihnachtsherzen Erdbeer ",
+              "preis" : "1.8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20294908,
+              "name" : "Laugenbrötchen ",
+              "preis" : "3.99€"
+            },
+            "article2" : {
+              "ean" : 9006037006948,
+              "name" : "Gusteria Grillkäse 45% F.i.T. ",
+              "preis" : "6.59€"
+            },
+            "article3" : {
+              "ean" : 7610859147738,
+              "name" : "Messbecher 3er / Streudosen 3er ",
+              "preis" : "5.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4008400486826,
+              "name" : "Kinder kleine Geschenke ",
+              "preis" : "0.75€"
+            },
+            "article2" : {
+              "ean" : 8000070038868,
+              "name" : "Lavazza Crema e Gusto",
+              "preis" : "4.99€"
+            },
+            "article3" : {
+              "ean" : 20121860,
+              "name" : "Zwieback (DE-Variante)",
+              "preis" : "0.55€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4008400486826,
+              "name" : "Kinder kleine Geschenke ",
+              "preis" : "0.75€"
+            },
+            "article2" : {
+              "ean" : 20546014,
+              "name" : "Södergarden Mischstreichfett",
+              "preis" : "1.8€"
+            },
+            "article3" : {
+              "ean" : 4017100289910,
+              "name" : "Leibniz Choco Kokos",
+              "preis" : "3.2€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week13" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20561345,
+              "name" : "Likörkirschpralinen in Herz-Formpack ",
+              "preis" : "1.7€"
+            },
+            "article2" : {
+              "ean" : 20253356,
+              "name" : "Limetten ",
+              "preis" : "2.2€"
+            },
+            "article3" : {
+              "ean" : 20241711,
+              "name" : "Blutorangen",
+              "preis" : "1.45"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4019641036343,
+              "name" : "Stabmixer Set 600 ",
+              "preis" : "26.99€"
+            },
+            "article2" : {
+              "ean" : 4304493064065,
+              "name" : "Weihnachtstischd. eckig / 2 Tischläu",
+              "preis" : "16€"
+            },
+            "article3" : {
+              "ean" : 20132712,
+              "name" : "Confiserie Hasen ",
+              "preis" : "1.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20689506,
+              "name" : "MSC Alaska Seelachs im Backteig",
+              "preis" : "7.2€"
+            },
+            "article2" : {
+              "ean" : 20361150,
+              "name" : "Wermut weiß 15 % Vol.",
+              "preis" : "14.55€"
+            },
+            "article3" : {
+              "ean" : 20152901,
+              "name" : "Weisswein lieblich",
+              "preis" : "10.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20368197,
+              "name" : "Weiße Schokolade",
+              "preis" : "1.45€"
+            },
+            "article2" : {
+              "ean" : 20532987,
+              "name" : "Gourmet Frischkäse-Spezialitäten",
+              "preis" : "4.55€"
+            },
+            "article3" : {
+              "ean" : 20408299,
+              "name" : "Luxus Butter",
+              "preis" : "0.65€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20368197,
+              "name" : "Weiße Schokolade ",
+              "preis" : "1.45€"
+            },
+            "article2" : {
+              "ean" : 20810191,
+              "name" : "Kesselchips",
+              "preis" : "1.35€"
+            },
+            "article3" : {
+              "ean" : 50067,
+              "name" : "Weißkohl (kg)",
+              "preis" : "1.26€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week14" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20532970,
+              "name" : "Gourmet Frischkäse-Spezialitäten",
+              "preis" : "4.2€"
+            },
+            "article2" : {
+              "ean" : 20004415,
+              "name" : "Weinsauerkraut",
+              "preis" : "2.1€"
+            },
+            "article3" : {
+              "ean" : 20534851,
+              "name" : "Chicken Nuggets mit Dip",
+              "preis" : "3.45"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20479787,
+              "name" : "Wachteleier ",
+              "preis" : "1.99€"
+            },
+            "article2" : {
+              "ean" : 20532864,
+              "name" : "Gefüllte Antipasti",
+              "preis" : "3"
+            },
+            "article3" : {
+              "ean" : 20525415,
+              "name" : "Nussmix im Korb mit Nussknacker",
+              "preis" : "3.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20283421,
+              "name" : "Olivenöl extra nativ (IT) naturtrüb",
+              "preis" : "5.25€"
+            },
+            "article2" : {
+              "ean" : 20345488,
+              "name" : "Mahlzeit (Brotaufstrich)",
+              "preis" : "4.55€"
+            },
+            "article3" : {
+              "ean" : 20369538,
+              "name" : "Bio Saure Salate",
+              "preis" : "6.25€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20459758,
+              "name" : "Orange und Passionsfrucht 100%",
+              "preis" : "2.45€"
+            },
+            "article2" : {
+              "ean" : 20532338,
+              "name" : "Nussmix Roasties",
+              "preis" : "5.99€"
+            },
+            "article3" : {
+              "ean" : 20221911,
+              "name" : "Wachteln",
+              "preis" : "0.95€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20459758,
+              "name" : "Orange und Passionsfrucht 100%",
+              "preis" : "2.45€"
+            },
+            "article2" : {
+              "ean" : 20241698,
+              "name" : "Orangen, ST ",
+              "preis" : "2.99€"
+            },
+            "article3" : {
+              "ean" : 20305871,
+              "name" : "Vogerlsalat, ST ",
+              "preis" : "1.5€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week15" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20362065,
+              "name" : "Cheese for Burgers, ST  ",
+              "preis" : "3€"
+            },
+            "article2" : {
+              "ean" : 20204730,
+              "name" : "Salatfixe BA, ST",
+              "preis" : "3.3€"
+            },
+            "article3" : {
+              "ean" : 9002560780270,
+              "name" : "Brauseschlauch, ST",
+              "preis" : "5.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20045111,
+              "name" : "Buttergemüse, ST",
+              "preis" : "1.59€"
+            },
+            "article2" : {
+              "ean" : 20119706,
+              "name" : "Asiasuppen BA, ST",
+              "preis" : "0.99"
+            },
+            "article3" : {
+              "ean" : 8710911007044,
+              "name" : "Champignons III. Wahl Scheiben, ST",
+              "preis" : "2.87€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20096984,
+              "name" : "Ceylon-Assam, ST ",
+              "preis" : "3.25€"
+            },
+            "article2" : {
+              "ean" : 4011100038653,
+              "name" : "Bounty 3er, ST",
+              "preis" : "0.55€"
+            },
+            "article3" : {
+              "ean" : 20172022,
+              "name" : "Brillenputztücher, ST ",
+              "preis" : "2.50€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20466602,
+              "name" : "Salami in Scheiben BA, ST ",
+              "preis" : "1.85€"
+            },
+            "article2" : {
+              "ean" : 4002448093480,
+              "name" : "Calgon Gel, ST   ",
+              "preis" : "3.99€"
+            },
+            "article3" : {
+              "ean" : 20682873,
+              "name" : "Kaffeegetränk Spezialitäten BA, ST",
+              "preis" : "2.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20466602,
+              "name" : "Salami in Scheiben BA, ST ",
+              "preis" : "1.85€"
+            },
+            "article2" : {
+              "ean" : 20077495,
+              "name" : "Caramel Biscuit-Riegel, ST ",
+              "preis" : "1.85€"
+            },
+            "article3" : {
+              "ean" : 20357283,
+              "name" : "Französisches Gebäck BA, ST   ",
+              "preis" : ".45€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week16" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20355906,
+              "name" : "Geräucherte u. gravad Forelle BA, ST  ",
+              "preis" : "3.5€"
+            },
+            "article2" : {
+              "ean" : 8000245006166,
+              "name" : "Calzone mit Schinken und Käse, ST",
+              "preis" : "1.3€"
+            },
+            "article3" : {
+              "ean" : 20067816,
+              "name" : "Dünnes Knäckebrot, ST ",
+              "preis" : "0.55"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20812072,
+              "name" : "Bündner Fleisch, ST    ",
+              "preis" : "5.55€"
+            },
+            "article2" : {
+              "ean" : 8000500221099,
+              "name" : "Duplo Chocnut white 5er, ST",
+              "preis" : "1.99"
+            },
+            "article3" : {
+              "ean" : 9002023004769,
+              "name" : "Calcex Entkalker, ST   ",
+              "preis" : "2€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 7613034698438,
+              "name" : "Bübchen Kinder Shampoo, ST     ",
+              "preis" : "1.25€"
+            },
+            "article2" : {
+              "ean" : 20445591,
+              "name" : "Cantuccini mit Butter, ST",
+              "preis" : "1.55€"
+            },
+            "article3" : {
+              "ean" : 20341107,
+              "name" : "Französische Süßspeise BA, ST ",
+              "preis" : "1.50€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 8000245006166,
+              "name" : "Calzone mit Schinken und Käse, ST ",
+              "preis" : "1.3€"
+            },
+            "article2" : {
+              "ean" : 9002560781932,
+              "name" : "Duschsäule LED, ST",
+              "preis" : "2.99€"
+            },
+            "article3" : {
+              "ean" : 4002448061083,
+              "name" : "Calgon Express Action Gel, ST",
+              "preis" : "1.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 8000245006166,
+              "name" : "Calzone mit Schinken und Käse, ST ",
+              "preis" : "1.3€"
+            },
+            "article2" : {
+              "ean" : 4304493204812,
+              "name" : "Caffé in Grani, ST     ",
+              "preis" : "1.25€"
+            },
+            "article3" : {
+              "ean" : 20068264,
+              "name" : "Carcare Reifenpflegeschaum, ST",
+              "preis" : "3.45€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week17" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20220617,
+              "name" : "Champagner brut rosé, ST ",
+              "preis" : "7.5€"
+            },
+            "article2" : {
+              "ean" : 20046835,
+              "name" : "Edamer Scheiben 40%, ST",
+              "preis" : "1.25€"
+            },
+            "article3" : {
+              "ean" : 20392932,
+              "name" : "Microfaser Haushaltstücher BA, ST  ",
+              "preis" : "1.55"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493261525,
+              "name" : "Californischer Zinfandel rosé (EUA), ST  ",
+              "preis" : "4.55€"
+            },
+            "article2" : {
+              "ean" : 20626860,
+              "name" : "Duschkabinenreiniger, ST  ",
+              "preis" : "1.99"
+            },
+            "article3" : {
+              "ean" : 20242671,
+              "name" : "AMA Rohwurst Tiroler Kaminwurzerl BA, ST",
+              "preis" : "2.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20305321,
+              "name" : "Edle Cocktail-Pralinen mit Nuss, ST     ",
+              "preis" : "2.5€"
+            },
+            "article2" : {
+              "ean" : 4000521013127,
+              "name" : "Dr. Oetker Tassenkuchen BA, ST   ",
+              "preis" : "1.3€"
+            },
+            "article3" : {
+              "ean" : 20125394,
+              "name" : "Dublette, ST ",
+              "preis" : "1.50€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20645373,
+              "name" : "Tortilla BA, ST  ",
+              "preis" : "2.5€"
+            },
+            "article2" : {
+              "ean" : 20278885,
+              "name" : "Eistee Cola, ST ",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 20815356,
+              "name" : "Edelzartbitter mit ganzen Nüssen, ST",
+              "preis" : "1.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20645373,
+              "name" : "Tortilla BA, ST  ",
+              "preis" : "2.5€"
+            },
+            "article2" : {
+              "ean" : 4084500764590,
+              "name" : "Lenor Weichspüler 35WL AKTION BA, ST ",
+              "preis" : "2.25€"
+            },
+            "article3" : {
+              "ean" : 20002336,
+              "name" : "Emmentaler Stück, ST ",
+              "preis" : "1.45€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week18" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20908195,
+              "name" : "Krapfen mit Füllung BA, ST",
+              "preis" : "1.5€"
+            },
+            "article2" : {
+              "ean" : 20501327,
+              "name" : "Eiweißbrot, ST",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 8006214031276,
+              "name" : "Emaillierte Pfanne 24 cm, ST",
+              "preis" : "1.95"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4014505050619,
+              "name" : "Effekt-Spray 400 ml, ST",
+              "preis" : "4.55€"
+            },
+            "article2" : {
+              "ean" : 4009078537384,
+              "name" : "Duftlichte 18er / Maxi Duftlichte 6e, ST",
+              "preis" : "2.99"
+            },
+            "article3" : {
+              "ean" : 20257552,
+              "name" : "Eiskaffee Klassik, ST  ",
+              "preis" : "1.20€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4333991008561,
+              "name" : "KK M Langarmshirts 2er, ST ",
+              "preis" : "6.99€"
+            },
+            "article2" : {
+              "ean" : 20891732,
+              "name" : "WC-Stick slim BA, ST   ",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 9002560785633,
+              "name" : "Einhebelmischer Granit ausziehb. Bra, ST ",
+              "preis" : "3.50€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4001724819103,
+              "name" : "Dr. Oetker Ristorante Pizza Funghi, ST   ",
+              "preis" : "2.29€"
+            },
+            "article2" : {
+              "ean" : 3120095209021,
+              "name" : "Deckelbox mit Rollen 47,5 L, ST",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 4304493694705,
+              "name" : "Dekostecker beleuchtet Solar, ST ",
+              "preis" : "2.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4001724819103,
+              "name" : "Dr. Oetker Ristorante Pizza Funghi, ST   ",
+              "preis" : "2.29€"
+            },
+            "article2" : {
+              "ean" : 20560621,
+              "name" : "Oliven in Scheiben BA, ST  ",
+              "preis" : "1.25€"
+            },
+            "article3" : {
+              "ean" : 7622300624088,
+              "name" : "Milka Crispello BA, ST ",
+              "preis" : "1.25€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week19" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 8718016001912,
+              "name" : "Crocs D Clogs verschiedene Modelle, ST",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 4045357000743,
+              "name" : "Brunch Brotaufstrich Indian Curry, ST",
+              "preis" : "2.45€"
+            },
+            "article3" : {
+              "ean" : 20377823,
+              "name" : "XXL Cremoso Fruchtjoghurt 5% BA, ST",
+              "preis" : "1.95"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9005200117573,
+              "name" : "Bona Feinstes Pflanzenöl, ST",
+              "preis" : "4.55€"
+            },
+            "article2" : {
+              "ean" : 4009078537384,
+              "name" : "Duftlichte 18er / Maxi Duftlichte 6e, ST",
+              "preis" : "2.99"
+            },
+            "article3" : {
+              "ean" : 20562687,
+              "name" : "Eis X-treme Sour BA, ST ",
+              "preis" : "3.20€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 42194231,
+              "name" : "Cherry Cola, ST",
+              "preis" : "0.99€"
+            },
+            "article2" : {
+              "ean" : 4075600055145,
+              "name" : "Bürger Orig. Schwäbische Maultaschen, ST",
+              "preis" : "2.45€"
+            },
+            "article3" : {
+              "ean" : 9002560785633,
+              "name" : "Einhebelmischer Granit ausziehb. Bra, ST ",
+              "preis" : "3.50€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4019641038088,
+              "name" : "Alarm - Türstopper / Fensteralarm 4e, ST",
+              "preis" : "7.29€"
+            },
+            "article2" : {
+              "ean" : 9005653047663,
+              "name" : "AMA Bio Kornvintschgerl, vorgeb., ST      ",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 20121327,
+              "name" : "Aluminiumfolie 10µ 29cmx20m, ST",
+              "preis" : "1.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4019641038088,
+              "name" : "Alarm - Türstopper / Fensteralarm 4e, ST",
+              "preis" : "7.29€"
+            },
+            "article2" : {
+              "ean" : 20856090,
+              "name" : "Bio Gemüsemais, ST    ",
+              "preis" : "2.25€"
+            },
+            "article3" : {
+              "ean" : 76121043,
+              "name" : "Ovomaltine Schokolade UTZ",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week20" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20561222,
+              "name" : "Aprikosen-Croissant, ST",
+              "preis" : "1.5€"
+            },
+            "article2" : {
+              "ean" : 4023091036877,
+              "name" : "Gläser COCA COLA Lizenz, ST",
+              "preis" : "0.45€"
+            },
+            "article3" : {
+              "ean" : 20589608,
+              "name" : "Salat und Pasta BA, ST",
+              "preis" : "1.95"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4019641042948,
+              "name" : "4in1 Benzin-Kombigerät, ST",
+              "preis" : "8.55€"
+            },
+            "article2" : {
+              "ean" : 4006938242501,
+              "name" : "Kehrgarnitur 4fach so, ST",
+              "preis" : "4.99"
+            },
+            "article3" : {
+              "ean" : 20562687,
+              "name" : "Eis X-treme Sour BA, ST ",
+              "preis" : "3.20€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9783625170792,
+              "name" : " Bücher Iberia, ST",
+              "preis" : "3.99€"
+            },
+            "article2" : {
+              "ean" : 4009078436823,
+              "name" : " Citronellateelichter un, ST",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 4038114008960,
+              "name" : " Knicklichter-Sets, ST",
+              "preis" : "4.50€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20507336,
+              "name" : "Bio Brote BA, ST",
+              "preis" : "1.29€"
+            },
+            "article2" : {
+              "ean" : 4304493331075,
+              "name" : "D Sneaker/Slipper, ST                     ",
+              "preis" : "5.45€"
+            },
+            "article3" : {
+              "ean" : 4304493694705,
+              "name" : "Dekostecker beleuchtet Solar, ST ",
+              "preis" : "2.45€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20507336,
+              "name" : "Bio Brote BA, ST",
+              "preis" : "1.29€"
+            },
+            "article2" : {
+              "ean" : 5900791061165,
+              "name" : "Deckelbox 58 L, ST",
+              "preis" : "1.25€"
+            },
+            "article3" : {
+              "ean" : 8717418439781,
+              "name" : "Disney DVD, ST",
+              "preis" : "4.25€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week21" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20201449,
+              "name" : "Bio Apfelmus, ST ",
+              "preis" : "1.5€"
+            },
+            "article2" : {
+              "ean" : 4009078436823,
+              "name" : " Citronellateelichter un, ST",
+              "preis" : "1.45€"
+            },
+            "article3" : {
+              "ean" : 20589608,
+              "name" : "Salat und Pasta BA, ST",
+              "preis" : "1.95"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493963832,
+              "name" : "D Fashion Shirt",
+              "preis" : "6€"
+            },
+            "article2" : {
+              "ean" : 4304493976467,
+              "name" : "D Hose Leinen Baumwolle",
+              "preis" : "10€"
+            },
+            "article3" : {
+              "ean" : 4005500027461,
+              "name" : "Nestlé Joghurt Lion Cereals",
+              "preis" : "1.99€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20225711,
+              "name" : "Sommerpralinen",
+              "preis" : "3€"
+            },
+            "article2" : {
+              "ean" : 4019641045079,
+              "name" : "Multifunktionswerkzeug mit Tasche",
+              "preis" : "10€"
+            },
+            "article3" : {
+              "ean" : 20029906,
+              "name" : "Pils",
+              "preis" : "0.80€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9025900050369,
+              "name" : "Salzburg Schoko. XXL Dragee-Misch.",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 5900511903355,
+              "name" : "Trefl Cartoon Puzzle Liz. Disney",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 20309725,
+              "name" : "Tomaten Mix 300g",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 9025900050369,
+              "name" : "Salzburg Schoko. XXL Dragee-Misch.",
+              "preis" : "4€"
+            },
+            "article2" : {
+              "ean" : 20804244,
+              "name" : "Chicken-Nuggets ohne Pappschuber/Fol",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 20029906,
+              "name" : "Pils",
+              "preis" : "0.80€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week22" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493834194,
+              "name" : "Pinselset",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 5900511903355,
+              "name" : "Trefl Cartoon Puzzle Liz. Disney",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4304493925786,
+              "name" : "D Langarmshirt",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4017566971954,
+              "name" : "Radzierblenden 4er Satz",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 20804244,
+              "name" : "Chicken-Nuggets ohne Pappschuber/Fol",
+              "preis" : "4€"
+            },
+            "article3" : {
+              "ean" : 4304493979642,
+              "name" : "D Knöcheljeans",
+              "preis" : "10€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20338060,
+              "name" : "Chips Käse und Zwiebel",
+              "preis" : "1.99€"
+            },
+            "article2" : {
+              "ean" : 20423582,
+              "name" : "Orecchiette cime rapa(Stängelkohl)",
+              "preis" : "2€"
+            },
+            "article3" : {
+              "ean" : 20309725,
+              "name" : "Tomaten Mix 300g",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4260018037474,
+              "name" : "Cupcake Maker / Cake Pop Maker 1200W",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 4211125588854,
+              "name" : "Britney Spears Multifunktionsstyler",
+              "preis" : "15€"
+            },
+            "article3" : {
+              "ean" : 4044208150972,
+              "name" : "D Top",
+              "preis" : "8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4260018037474,
+              "name" : "Cupcake Maker / Cake Pop Maker 1200W",
+              "preis" : "15€"
+            },
+            "article2" : {
+              "ean" : 20792695,
+              "name" : "Antipasti ohne Öl BA2",
+              "preis" : "6.9€"
+            },
+            "article3" : {
+              "ean" : 20194192,
+              "name" : "Mixx Max",
+              "preis" : "0.39€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    },
+    "week23" : {
+      "bundles" : {
+        "bundle1" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493834194,
+              "name" : "Pinselset",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 4211125588854,
+              "name" : "Britney Spears Multifunktionsstyler",
+              "preis" : "15€"
+            },
+            "article3" : {
+              "ean" : 20110161,
+              "name" : "Le Pavé Weichkäse",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle2" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 20684419,
+              "name" : "BBQ Salate BA",
+              "preis" : "5€"
+            },
+            "article2" : {
+              "ean" : 4333991060279,
+              "name" : "Duschabstreifer Silikon",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4044208150972,
+              "name" : "D Top",
+              "preis" : "8€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle3" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4304493834194,
+              "name" : "Pinselset",
+              "preis" : "1€"
+            },
+            "article2" : {
+              "ean" : 20884222,
+              "name" : "Bio gehackte Tomaten mit Gewürzen BA",
+              "preis" : "5€"
+            },
+            "article3" : {
+              "ean" : 4050069065683,
+              "name" : "D Bademantel Mikrofaser",
+              "preis" : "20€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle4" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4260018033919,
+              "name" : "Haar- und Bartschneider",
+              "preis" : "23.99€"
+            },
+            "article2" : {
+              "ean" : 20428471,
+              "name" : "Blaubeer-Muffins, ST",
+              "preis" : "1.5€"
+            },
+            "article3" : {
+              "ean" : 20116408,
+              "name" : "Bio Tomatenketchup, ST",
+              "preis" : "3€"
+            }
+          },
+          "smartscore" : 7.32
+        },
+        "bundle5" : {
+          "articles" : {
+            "article1" : {
+              "ean" : 4260018033919,
+              "name" : "Haar- und Bartschneider",
+              "preis" : "23.99€"
+            },
+            "article2" : {
+              "ean" : 20710507,
+              "name" : "Bio Strauchtomaten 750g, ST",
+              "preis" : "0.9€"
+            },
+            "article3" : {
+              "ean" : 20194192,
+              "name" : "Mixx Max",
+              "preis" : "0.39€"
+            }
+          },
+          "smartscore" : 7.32
+        }
+      }
+    }
+  },
+  "user" : {
+    "-KsTubmhsSls9BWrS0qY" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KsTubmhsSls9BWrS0qY",
+      "phonenumber" : "+491735990392",
+      "setting_key" : 30181,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KsrP_e3mN9RumGxzTxm" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KsrP_e3mN9RumGxzTxm",
+      "phonenumber" : "4915122946735",
+      "setting_key" : 79928,
+      "sms" : 0,
+      "whatsapp" : 1
+    },
+    "-KuTewJAfE-A71mkt6mc" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KuTewJAfE-A71mkt6mc",
+      "phonenumber" : "015787295695",
+      "setting_key" : 52315,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KuTfdnRDefImzjIjgEB" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KuTfdnRDefImzjIjgEB",
+      "phonenumber" : "015787295694",
+      "setting_key" : 85119,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KuUCcM8IXl7Y3aN8_nM" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KuUCcM8IXl7Y3aN8_nM",
+      "phonenumber" : "015787295693",
+      "setting_key" : 13595,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KuUChpzs1YZ8DO0BP4Y" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KuUChpzs1YZ8DO0BP4Y",
+      "phonenumber" : "01578729561",
+      "setting_key" : 52558,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KuUFu-tPs9b8UMVK8MA" : {
+      "email" : 1,
+      "email_address" : "domenik.fox@gmail.com",
+      "id" : "-KuUFu-tPs9b8UMVK8MA",
+      "phonenumber" : "",
+      "setting_key" : 54741,
+      "sms" : 0,
+      "whatsapp" : 0
+    },
+    "-KuUGBkUXqm7Q8appIV-" : {
+      "email" : 1,
+      "id" : "-KuUGBkUXqm7Q8appIV-",
+      "phonenumber" : "",
+      "setting_key" : 59613,
+      "sms" : 0,
+      "whatsapp" : 0
+    },
+    "-KuULNYI8C918S70uM4n" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KuULNYI8C918S70uM4n",
+      "phonenumber" : "4343",
+      "setting_key" : 86629,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KuUNH28kAI1Bl_hOxcu" : {
+      "email" : 0,
+      "email_address" : "",
+      "id" : "-KuUNH28kAI1Bl_hOxcu",
+      "phonenumber" : "01578729595",
+      "setting_key" : 82128,
+      "sms" : 1,
+      "whatsapp" : 0
+    },
+    "-KuUQiEFw6vIu7eKfjmh" : {
+      "email" : 0,
+      "email_address" : "yannik.werth@gmail.com",
+      "id" : "-KuUQiEFw6vIu7eKfjmh",
+      "phonenumber" : "017636760677",
+      "setting_key" : 81008,
+      "sms" : 1,
+      "whatsapp" : 0
+    }
+  }
+}
