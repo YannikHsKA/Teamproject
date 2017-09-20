@@ -38,6 +38,7 @@ var EventoverviewComponent = (function () {
         this.storage.clear();
         this.eventService.createPdf(event);
         this.storage.store('event', event);
+        this.eventService.updateCurrentEvent(event);
         var that = this;
         function doBoth() {
             document.getElementById("closemodal").click();

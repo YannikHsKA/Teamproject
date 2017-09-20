@@ -67,7 +67,6 @@ var SettingsComponent = (function () {
         document.body.style.backgroundImage = "none";
     };
     SettingsComponent.prototype.switch = function (toggle) {
-        //  console.log(toggle);
         switch (toggle) {
             case 'whatsapp':
                 this.whatsapp_toggle = !this.whatsapp_toggle;

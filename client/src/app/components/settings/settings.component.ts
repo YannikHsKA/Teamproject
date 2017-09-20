@@ -75,11 +75,8 @@ export class SettingsComponent {
 
 
 
-
   switch(toggle: String) {
-    //  console.log(toggle);
     switch (toggle) {
-
       case 'whatsapp':
         this.whatsapp_toggle = !this.whatsapp_toggle;
         break;

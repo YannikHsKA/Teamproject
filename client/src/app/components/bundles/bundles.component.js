@@ -11,22 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var ng2_webstorage_1 = require('ng2-webstorage');
+var event_service_1 = require("../../services/event.service");
 var BundlesComponent = (function () {
-    function BundlesComponent(storage, router) {
+    function BundlesComponent(storage, router, eventService) {
+        var _this = this;
         this.storage = storage;
         this.router = router;
+        this.eventService = eventService;
         document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
         document.body.style.backgroundPosition = "center center";
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
+        this.eventService.getCurrentEvent()
+            .subscribe(function (events) {
+            _this.events = events;
+            console.log(_this.events);
+        });
     }
-    BundlesComponent.prototype.gotoBundle1 = function () {
+    BundlesComponent.prototype.gotoBundle = function () {
         this.storage.store('bundle_id', 0);
-        this.router.navigate(['/detailedbundle']);
-    };
-    BundlesComponent.prototype.gotoBundle2 = function () {
-        this.storage.store('bundle_id', 1);
         this.router.navigate(['/detailedbundle']);
     };
     BundlesComponent.prototype.ngOnDestroy = function () {
@@ -39,7 +43,7 @@ var BundlesComponent = (function () {
             templateUrl: "bundles.component.html",
             styleUrls: ["bundles.component.css"]
         }), 
-        __metadata('design:paramtypes', [ng2_webstorage_1.SessionStorageService, router_1.Router])
+        __metadata('design:paramtypes', [ng2_webstorage_1.SessionStorageService, router_1.Router, event_service_1.EventService])
     ], BundlesComponent);
     return BundlesComponent;
 }());

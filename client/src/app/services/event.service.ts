@@ -31,8 +31,9 @@ export class EventService {
       .map(res => res.json());
   }
 
-  getEvent() {
-    return this.event;
+  getCurrentEvent(){
+    return this.http.get('/api/getcurrentevent')
+      .map(res => res.json());
   }
 
   addEvent(newEvent: Event) {
@@ -69,6 +70,12 @@ createPdf(event: Event){
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('/api/updateevent', JSON.stringify(event), { headers: headers });
+  }
+
+  updateCurrentEvent(event: Event){
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/updatecurrentevent', JSON.stringify(event), { headers: headers });
   }
 
   deleteEvent(event: Event) {

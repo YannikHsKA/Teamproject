@@ -366,6 +366,26 @@ router.post("/updateevent", function(req, res) {
   res.sendStatus(201);
 });
 
+
+// Update CurrentEvent
+router.post("/updatecurrentevent", function(req, res) {
+    console.log("Update Event");
+    /* Read POST Request */
+    let event = req.body;
+
+    // Connect to Firebase
+    var db = admin.database();
+    var ref = db.ref('admin/currentevent/');
+
+    var newRef = ref.update({
+        'title': event.title,
+        'cweek': event.cweek,
+        'bundles': event.bundles
+    });
+
+    res.sendStatus(201);
+});
+
 // Delete Event
 router.post("/deleteevent", function(req, res) {
   console.log("Remove Event");
@@ -537,6 +557,22 @@ router.get("/getevents", function(req, res) {
         res.status(200).send(Object.keys(obj).map(name => obj[name]));
     }
   });
+});
+
+// Get all Events
+router.get("/getcurrentevent", function(req, res) {
+    console.log("Get Currentevent");
+
+    // Connect Firebase
+    var db = admin.database();
+    var ref = db.ref('admin/currentevent');
+
+    ref.once('value', function(snapshot) {
+        var obj = snapshot.val();
+        if(obj != null) {
+            res.status(200).send(Object.keys(obj).map(name => obj[name]));
+        }
+    });
 });
 
 //Create PDF for Bundle

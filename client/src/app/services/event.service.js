@@ -27,8 +27,9 @@ var EventService = (function () {
         return this.http.get('/api/getarticles')
             .map(function (res) { return res.json(); });
     };
-    EventService.prototype.getEvent = function () {
-        return this.event;
+    EventService.prototype.getCurrentEvent = function () {
+        return this.http.get('/api/getcurrentevent')
+            .map(function (res) { return res.json(); });
     };
     EventService.prototype.addEvent = function (newEvent) {
         var headers = new http_1.Headers();
@@ -59,6 +60,11 @@ var EventService = (function () {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/updateevent', JSON.stringify(event), { headers: headers });
+    };
+    EventService.prototype.updateCurrentEvent = function (event) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/updatecurrentevent', JSON.stringify(event), { headers: headers });
     };
     EventService.prototype.deleteEvent = function (event) {
         var headers = new http_1.Headers();
