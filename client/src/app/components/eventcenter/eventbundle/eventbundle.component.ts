@@ -31,6 +31,7 @@ export class EventbundleComponent {
   articles: Article[] = new Array();
   discounts: String[] = new Array();
   type: number;
+  themevalue:number;
 
   constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router) {
 
@@ -45,11 +46,14 @@ export class EventbundleComponent {
     console.log("WORKING MODE: "+this.storage.retrieve("mode") );
 
     if (this.storage.retrieve("mode") == "edit") {
+
       this.event = this.storage.retrieve('event');
       this.chosen_bundle = this.event.bundles[0];
       this.bundle = this.chosen_bundle;
+      this.themevalue = this.bundle.theme;
     }
     else{
+      this.themevalue = 1;
       this.bundle_id = this.storage.retrieve('bundle_id');
       this.event = this.storage.retrieve('event');
       this.bundle = this.event.bundles[this.bundle_id];
@@ -89,9 +93,6 @@ export class EventbundleComponent {
       }
     }
 
-
-
-
     this.handleChange(parseFloat(this.chosen_bundle.articles[0].preis.split("€")[0]) * 0.1);
 
   }
@@ -103,7 +104,6 @@ export class EventbundleComponent {
   }
 
   GoNext() {
-
     this.saveToDB();
     this.storage.store('event', this.event);
     this.storage.store('bundle_id', this.bundle_id);
@@ -145,6 +145,14 @@ export class EventbundleComponent {
     console.log("event:", this.event);
     this.eventService.updateEvent(this.storage.retrieve('event'))
       .subscribe();
+  }
+
+  handleStyle(num: number)
+  {
+    this.event = this.storage.retrieve('event');
+    this.event.bundles[0].theme = num;
+    this.storage.store('event', this.event);
+
   }
 
 }

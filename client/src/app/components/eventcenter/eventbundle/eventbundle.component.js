@@ -31,8 +31,10 @@ var EventbundleComponent = (function () {
             this.event = this.storage.retrieve('event');
             this.chosen_bundle = this.event.bundles[0];
             this.bundle = this.chosen_bundle;
+            this.themevalue = this.bundle.theme;
         }
         else {
+            this.themevalue = 1;
             this.bundle_id = this.storage.retrieve('bundle_id');
             this.event = this.storage.retrieve('event');
             this.bundle = this.event.bundles[this.bundle_id];
@@ -108,6 +110,11 @@ var EventbundleComponent = (function () {
         console.log("event:", this.event);
         this.eventService.updateEvent(this.storage.retrieve('event'))
             .subscribe();
+    };
+    EventbundleComponent.prototype.handleStyle = function (num) {
+        this.event = this.storage.retrieve('event');
+        this.event.bundles[0].theme = num;
+        this.storage.store('event', this.event);
     };
     EventbundleComponent = __decorate([
         core_1.Component({

@@ -138,10 +138,10 @@
         <div class="form-group col-xs-6">
           <label for="selectstyle ">{{ 'styleTemplate' | translate}}</label>
           <div>
-            <select class="form-control " id="selectstyle ">
-                                   <option>{{ 'opt1' | translate}}</option>
-                                   <option>{{ 'opt2' | translate}}</option>
-                                   <option>{{ 'opt3' | translate}}</option>
+            <select [(ngModel)]="themevalue" name="selectstyle" class="form-control " id="selectstyle " (change)="handleStyle($event.target.value)">
+                                   <option [value]=1>{{ 'opt1' | translate}}</option>
+                                   <option [value]=2>{{ 'opt2' | translate}}</option>
+                                   <option [value]=3>{{ 'opt3' | translate}}</option>
                                  </select>
           </div>
         </div>

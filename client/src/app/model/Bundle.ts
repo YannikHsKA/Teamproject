@@ -7,4 +7,5 @@ export class Bundle {
   smartscore: string;
   articles: Array<Article>;
   discount: String;
+  theme:number;
 }

@@ -79,6 +79,7 @@ var EventdetailComponent = (function () {
                     smartscore: "0.00",
                     articles: null,
                     discount: "none",
+                    theme: 1,
                 };
                 this.bundles[n] = this.bundle;
                 n++;
@@ -108,10 +109,10 @@ var EventdetailComponent = (function () {
             document.getElementById("closemodal").click();
             that.router.navigate(['/eventbundleselection']);
         }
-        function doSomething() {
+        function countdown() {
             that.countdown = that.countdown - 1;
         }
-        setInterval(doSomething, 1000);
+        setInterval(countdown, 1000);
         setTimeout(doBoth, 10000);
         if (this.currentArticle) {
             this.storage.store('article', this.currentArticle);
