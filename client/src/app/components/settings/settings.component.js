@@ -11,10 +11,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var settings_service_1 = require('../../services/settings.service');
 var verification_service_1 = require('../../services/verification.service');
+var router_1 = require("@angular/router");
 var SettingsComponent = (function () {
-    function SettingsComponent(settingsservice, verificationService) {
+    function SettingsComponent(settingsservice, verificationService, router) {
         this.settingsservice = settingsservice;
         this.verificationService = verificationService;
+        this.router = router;
         this.user = this.verificationService.user;
         console.log(this.user);
         if (this.user.phonenumber == null) {
@@ -120,8 +122,15 @@ var SettingsComponent = (function () {
                 this.email_toggle_initial = false;
             }
         }
+        if (!this.user.email_address.indexOf("")) {
+            this.email_entered = true;
+        }
+        else if (!this.user.phonenumber.indexOf("")) {
+            this.phone_entered = true;
+        }
         this.settingsservice.updateSettings(this.user);
         this.saveSuccess = true;
+        this.router.navigate(['./verification']);
     };
     SettingsComponent = __decorate([
         core_1.Component({
@@ -130,7 +139,7 @@ var SettingsComponent = (function () {
             templateUrl: "settings.component.html",
             styleUrls: ['settings.component.css']
         }), 
-        __metadata('design:paramtypes', [settings_service_1.SettingsService, verification_service_1.VerificationService])
+        __metadata('design:paramtypes', [settings_service_1.SettingsService, verification_service_1.VerificationService, router_1.Router])
     ], SettingsComponent);
     return SettingsComponent;
 }());

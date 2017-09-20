@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {SettingsService} from '../../services/settings.service';
 import {User} from "../../model/User";
 import {VerificationService} from '../../services/verification.service';
+import {Router} from "@angular/router";
 @Component({
   moduleId: module.id,
   selector: 'settings',
@@ -19,7 +20,7 @@ export class SettingsComponent {
   whatsapp_toggle_initial: boolean;
   email_toggle_initial: boolean;
   sms_toggle_initial: boolean;
-  constructor(private settingsservice: SettingsService, private verificationService: VerificationService) {
+  constructor(private settingsservice: SettingsService, private verificationService: VerificationService, private router: Router) {
     this.user = this.verificationService.user;
     console.log(this.user);
 
@@ -136,9 +137,14 @@ export class SettingsComponent {
       }
     }
 
-
+    if (!this.user.email_address.indexOf("")) {
+      this.email_entered = true;
+    } else if (!this.user.phonenumber.indexOf("")) {
+      this.phone_entered = true;
+    }
     this.settingsservice.updateSettings(this.user);
     this.saveSuccess = true;
+    this.router.navigate(['./verification']);
 
 
 

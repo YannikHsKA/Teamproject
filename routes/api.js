@@ -747,7 +747,6 @@ router.post("/sendEmailUpdate_subscribe", function(req, res) {
         } else {
             // console.log(response);
             console.log("Email Sent");
-            WriteUserToDB();
         }
         smtpTransport.close();
     });
@@ -786,7 +785,6 @@ router.post("/sendEmailUpdate_unsubscribe", function(req, res) {
     } else {
       // console.log(response);
       console.log("Email Sent");
-      WriteUserToDB();
     }
     smtpTransport.close();
   });
