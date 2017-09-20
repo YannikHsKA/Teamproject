@@ -146,6 +146,8 @@
     </div>
   </section>
   <div>
+
+    <!-- Modal for Animation -->
     <div id="myModal" class="modal fade in" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -173,6 +175,37 @@
       <!-- /.modal-dalog -->
     </div>
     <!-- /.modal -->
+
+
+    <div id="myModal_cancel" class="modal fade in" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+            <h4 class="modal-title">Cancel</h4>
+          </div>
+          <div class="modal-body">
+            <h4>Are you sure you want to cancel?</h4>
+            <p>Your progress will be deleted</p>
+          </div>
+          <div class="modal-footer">
+            <div class="btn-group">
+
+              <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span
+                class="glyphicon glyphicon-check"></span> Yes, Cancel
+              </button>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dalog -->
+    </div>
+    <!-- /.modal -->
+
+
     <div class="well ">
 
 
@@ -247,7 +280,7 @@
 
         <div class="row">
           <div class="text-left col-xs-6 ">
-            <button class="btn btn-danger "><!--data-toggle="modal" data-target="#myModal"-->Cancel</button>
+            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal_cancel">Cancel</button>
           </div>
           <div class="col-xs-6 text-right ">
             <button [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-info " *ngIf="createMode " (click)="addEvent()" [disabled]="!cweekForm.form.valid">Generate Bundles</button>

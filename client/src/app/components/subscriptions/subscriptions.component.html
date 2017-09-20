@@ -7,18 +7,18 @@
 
     <div class="row">
 
-        <button  type="button"  class="button btn btn-info" (click)="showPhoneFields()">
-          <i class="fa fa-comments-o " aria-hidden="true "></i> {{ 'sms1' | translate}}
-        </button>
-        <button type="button"  class="button btn btn-info" (click)="showMailFields()">
-          <i class="fa fa-envelope-o " aria-hidden="true "></i> {{ 'email1' | translate}}
-        </button>
-        <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
-          <i class="fa fa-whatsapp " aria-hidden="true "></i> {{ 'whatsapp1' | translate}}
-        </button>
-        <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
-          <i class="fa fa-amazon " aria-hidden="true "></i> Amazon Alexa
-        </button>
+      <button  type="button"  class="button btn btn-info" (click)="showPhoneFields()">
+        <i class="fa fa-comments-o " aria-hidden="true "></i> {{ 'sms1' | translate}}
+      </button>
+      <button type="button"  class="button btn btn-info" (click)="showMailFields()">
+        <i class="fa fa-envelope-o " aria-hidden="true "></i> {{ 'email1' | translate}}
+      </button>
+      <button type="button"  class=" button btn btn-info" (click)="showWhatsappFields()">
+        <i class="fa fa-whatsapp " aria-hidden="true "></i> {{ 'whatsapp1' | translate}}
+      </button>
+      <button type="button"  class=" button btn btn-info" (click)="showAlexaFields()">
+        <i class="fa fa-amazon " aria-hidden="true "></i> Amazon Alexa
+      </button>
     </div>
     <div class="row">
       <div class="col col-xs-12">
@@ -26,25 +26,26 @@
 
           <br>
 
-          <input type="tel" class="form-control" placeholder="Add your phone number.." required pattern="^(((((((\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$" [(ngModel)]="phonenumber"
-                 name="phonenumber" #number="ngModel">
-          <br>
-          <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
-            <div [hidden]="!number.errors.required">
+          <input type="tel" class="form-control" placeholder="Enter your Phonenumber" required pattern="^(((((((\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
 
+                 [(ngModel)]="phonenumber" name="phonenumber" #pnumber="ngModel">
+          <br>
+          <div *ngIf="pnumber.errors && (pnumber.dirty || pnumber.touched)" class="alert alert-danger">
+            <div [hidden]="!pnumber.errors.required">
+              {{ 'typenum2' | translate}}
             </div>
-            <div [hidden]="!number.errors.pattern">
-              {{ 'invalidnum1' | translate}}
+            <div [hidden]="!pnumber.errors.pattern">
+              {{ 'invalidnum2' | translate}}
             </div>
 
           </div>
 
-          <button type="button" class="btn btn-danger" [disabled]="!phoneForm.form.valid" (click)="addUser()">
-            {{ 'subscribebutton1' | translate}}
+          <button type="button" class="btn btn-danger" [disabled]="!phoneForm.form.valid" (click)="addUser(1)">
+            {{ 'subscribebutton2' | translate}}
           </button>
           <br><br>
           <div class="alert alert-success fade in" *ngIf="saveSuccess">
-            {{ 'success1' | translate}}
+            {{ 'success2' | translate}}
           </div>
         </form>
 
@@ -53,12 +54,12 @@
 
           <br>
 
-          <input type="tel" class="form-control" placeholder="Add your phone number.." required pattern="^(((((((\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
+          <input type="tel" class="form-control" placeholder="Enter your Phonenumber" required pattern="^(((((((\+)49[ \-/]?)|0)[1-9][0-9]{1,4})[ \-/]?)|((((00|\+)49\()|\(0)[1-9][0-9]{1,4}\)[ \-/]?))[0-9]{1,7}([ \-/]?[0-9]{1,5})?)$"
                  [(ngModel)]="whatsapp_number" name="whatsapp_number" #number="ngModel">
           <br>
           <div *ngIf="number.errors && (number.dirty || number.touched)" class="alert alert-danger">
             <div [hidden]="!number.errors.required">
-
+              {{ 'typenum2' | translate}}
             </div>
             <div [hidden]="!number.errors.pattern">
               {{ 'invalidnum2' | translate}}
@@ -66,7 +67,7 @@
 
           </div>
 
-          <button type="button" class="btn btn-danger" [disabled]="!whatsappForm.form.valid" (click)="addUser()">
+          <button type="button" class="btn btn-danger" [disabled]="!whatsappForm.form.valid" (click)="addUser(3)">
             {{ 'subscribebutton2' | translate}}
           </button>
           <br><br>
@@ -83,20 +84,20 @@
 
           <br>
 
-          <input type="email" class="form-control" placeholder="Add here your E-Mail.." required [(ngModel)]="email_address" pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
-            name="email_address" #mail="ngModel">
+          <input type="email" class="form-control" placeholder="Enter your Email" required [(ngModel)]="email_address" pattern='^(([^<>()\[\]\\.,;:\s@\\"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+                 name="email_address" #mail="ngModel">
           <br>
           <div *ngIf="mail.errors && (mail.dirty || mail.touched)" class="alert alert-danger">
             <div [hidden]="!mail.errors.required">
               {{ 'typeemail1' | translate}}
             </div>
             <div [hidden]="!mail.errors.pattern">
-              {{ 'invaliedemail1' | translate}}
+              {{ 'invalidemail1' | translate}}
             </div>
 
           </div>
 
-          <button type="button" class="btn btn-danger" [disabled]="!mailForm.form.valid" (click)="addUser()">
+          <button type="button" class="btn btn-danger" [disabled]="!mailForm.form.valid" (click)="addUser(2)">
             {{ 'subscribebutton3' | translate}}
 
           </button>
@@ -105,6 +106,18 @@
             {{ 'success3' | translate}}
           </div>
         </form>
+
+        <form #alexaForm="ngForm" [hidden]="!registerAlexa">
+
+          <br>
+
+          <input type="tel" class="form-control" placeholder="Enter your Alexa ID" [(ngModel)]="alexa_id" name="alexa_id" >
+          <br>
+          <button type="button" class="btn btn-danger" >
+            {{ 'subscribebutton3' | translate}}
+          </button>
+        </form>
+
       </div>
     </div>
   </div>

@@ -533,7 +533,9 @@ router.get("/getevents", function(req, res) {
 
   ref.once('value', function(snapshot) {
     var obj = snapshot.val();
-    res.status(200).send(Object.keys(obj).map(name => obj[name]));
+    if(obj != null) {
+        res.status(200).send(Object.keys(obj).map(name => obj[name]));
+    }
   });
 });
 

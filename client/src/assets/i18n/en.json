@@ -24,6 +24,7 @@
     "typenum1":"Type your registered phone number and press Enter: ",
     "error1":"ERROR! Please use a registered phone number.",
     "typenum2":"Type your phone number.",
+  "typealexa":"Type your Alexa ID.",
     "error2":" Oops..It must be a valid phone number. Try this format +4911221234567.",
     "typecode1":"Type the verification code you just received and press Enter:",
     "error3":"ERROR! Please use the correct verification code.",
