@@ -25,36 +25,44 @@ var EventbundleComponent = (function () {
         document.body.style.backgroundRepeat = "no-repeat";
         document.body.style.backgroundAttachment = "fixed";
         document.body.style.backgroundSize = "cover";
-        this.bundle_id = this.storage.retrieve('bundle_id');
-        this.event = this.storage.retrieve('event');
-        this.bundle = this.event.bundles[this.bundle_id];
-        this.chosen_bundle = this.storage.retrieve('bundle');
-        this.event.bundles[0].discount = "none";
-        this.event.bundles[0].articles = this.chosen_bundle.articles;
-        for (var i = 0; i < 3; i++) {
-            var res = this.chosen_bundle.articles[i].preis;
-            this.event.bundles[0].articles[i].discount = "none";
-            this.event.bundles[0].articles[i].discountpreis = this.event.bundles[0].articles[i].preis;
+        console.log("WORKING MODE: " + this.storage.retrieve("mode"));
+        if (this.storage.retrieve("mode") == "edit") {
+            this.event = this.storage.retrieve('event');
+            this.chosen_bundle = this.event.bundles[0];
+            this.bundle = this.chosen_bundle;
         }
-        //Set NavigationBar Attributes
-        this.detail_status = this.storage.retrieve('detail_status');
-        this.bundle1_status = this.storage.retrieve('bundle1_status');
-        this.bundle2_status = this.storage.retrieve('bundle2_status');
-        this.notification_status = this.storage.retrieve('notification_status');
-        switch (this.bundle_id) {
-            case 0:
-                this.active_status = "bundle1";
-                this.bundle_id_text = "First";
-                this.bundle1_active = true;
-                this.bundle1_status = true;
-                this.storage.store('bundle1_status', true);
-                break;
-            case 1:
-                this.active_status = "bundle2";
-                this.bundle_id_text = "Second";
-                this.bundle2_status = true;
-                this.storage.store('bundle2_status', true);
-                break;
+        else {
+            this.bundle_id = this.storage.retrieve('bundle_id');
+            this.event = this.storage.retrieve('event');
+            this.bundle = this.event.bundles[this.bundle_id];
+            this.chosen_bundle = this.storage.retrieve('bundle');
+            this.event.bundles[0].discount = "none";
+            this.event.bundles[0].articles = this.chosen_bundle.articles;
+            for (var i = 0; i < 3; i++) {
+                var res = this.chosen_bundle.articles[i].preis;
+                this.event.bundles[0].articles[i].discount = "none";
+                this.event.bundles[0].articles[i].discountpreis = this.event.bundles[0].articles[i].preis;
+            }
+            //Set NavigationBar Attributes
+            this.detail_status = this.storage.retrieve('detail_status');
+            this.bundle1_status = this.storage.retrieve('bundle1_status');
+            this.bundle2_status = this.storage.retrieve('bundle2_status');
+            this.notification_status = this.storage.retrieve('notification_status');
+            switch (this.bundle_id) {
+                case 0:
+                    this.active_status = "bundle1";
+                    this.bundle_id_text = "First";
+                    this.bundle1_active = true;
+                    this.bundle1_status = true;
+                    this.storage.store('bundle1_status', true);
+                    break;
+                case 1:
+                    this.active_status = "bundle2";
+                    this.bundle_id_text = "Second";
+                    this.bundle2_status = true;
+                    this.storage.store('bundle2_status', true);
+                    break;
+            }
         }
         this.handleChange(parseFloat(this.chosen_bundle.articles[0].preis.split("€")[0]) * 0.1);
     }

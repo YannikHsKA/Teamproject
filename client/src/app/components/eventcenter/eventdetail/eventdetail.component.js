@@ -101,7 +101,6 @@ var EventdetailComponent = (function () {
             .subscribe(function (result) { return temp; });
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('event', newEvent);
-        this.storage.store('mode', 'edit');
         this.storage.store('detail_status', true);
         var that = this;
         function doBoth() {
