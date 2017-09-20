@@ -647,20 +647,20 @@ router.post("/createpdf", function(req, res) {
           });
 
 
-            pdf.rect(0, 575, 300, 575)
+            pdf.rect(0, 560, 575, 40)
         .fillOpacity(1)
         .fill("white")
 
-    pdf.fontSize(15).fillColor("black").text(bundle.articles[0].name, 10, 560, {
-        width: 200
+    pdf.fontSize(15).fillColor("black").text(bundle.articles[0].name, 15, 570, {
+        width: 150
     });
 
-    pdf.fontSize(15).fillColor("black").text(bundle.articles[1].name, 200, 560, {
-        width: 160
+    pdf.fontSize(15).fillColor("black").text(bundle.articles[1].name, 220, 570, {
+        width: 150
     });
 
-    pdf.fontSize(15).fillColor("black").text(bundle.articles[2].name, 300, 520, {
-        width: 12
+    pdf.fontSize(15).fillColor("black").text(bundle.articles[2].name, 430, 570, {
+        width: 150
     });
 
           // Stream contents to a file
