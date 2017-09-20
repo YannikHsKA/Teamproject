@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var event_service_1 = require('../../services/event.service');
-var notification_service_1 = require('../../services/notification.service');
-var ng2_webstorage_1 = require('ng2-webstorage');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var event_service_1 = require("../../services/event.service");
+var notification_service_1 = require("../../services/notification.service");
+var ng2_webstorage_1 = require("ng2-webstorage");
+var router_1 = require("@angular/router");
 var Notification_1 = require("../../model/Notification");
 var NotificationcenterComponent = (function () {
     function NotificationcenterComponent(notificationService, http, eventService, storage, router) {
@@ -146,8 +147,8 @@ var NotificationcenterComponent = (function () {
             selector: 'notificationcenter',
             templateUrl: "notificationcenter.component.html",
             styleUrls: ['notificationcenter.component.css']
-        }), 
-        __metadata('design:paramtypes', [notification_service_1.NotificationService, http_1.Http, event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
+        }),
+        __metadata("design:paramtypes", [notification_service_1.NotificationService, http_1.Http, event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router])
     ], NotificationcenterComponent);
     return NotificationcenterComponent;
 }());

@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var ng2_webstorage_1 = require('ng2-webstorage');
-var http_1 = require('@angular/http');
+var ng2_webstorage_1 = require("ng2-webstorage");
+var http_1 = require("@angular/http");
 var DetailedbundleComponent = (function () {
     function DetailedbundleComponent(activatedRoute, storage, http) {
         this.activatedRoute = activatedRoute;
@@ -34,8 +35,8 @@ var DetailedbundleComponent = (function () {
             selector: 'detailedbundle',
             templateUrl: "detailedbundle.component.html",
             styleUrls: ["detailedbundle.component.css"]
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, ng2_webstorage_1.SessionStorageService, http_1.Http])
+        }),
+        __metadata("design:paramtypes", [router_1.ActivatedRoute, ng2_webstorage_1.SessionStorageService, http_1.Http])
     ], DetailedbundleComponent);
     return DetailedbundleComponent;
 }());

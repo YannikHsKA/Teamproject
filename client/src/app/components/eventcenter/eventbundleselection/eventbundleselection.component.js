@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ng2_webstorage_1 = require('ng2-webstorage');
-var router_1 = require('@angular/router');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var ng2_webstorage_1 = require("ng2-webstorage");
+var router_1 = require("@angular/router");
 var event_service_1 = require("../../../services/event.service");
 var bundle_service_1 = require("../../../services/bundle.service");
 var EventbundleselectionComponent = (function () {
@@ -62,6 +63,9 @@ var EventbundleselectionComponent = (function () {
                 }
             });
         }
+        this.article1_ean = 50084;
+        this.article2_ean = 20542320;
+        this.article3_ean = 20668457;
     }
     EventbundleselectionComponent.prototype.goToEventBundle = function (bundle) {
         this.storage.store('bundle', bundle);
@@ -93,8 +97,8 @@ var EventbundleselectionComponent = (function () {
             selector: 'eventbundleselection',
             templateUrl: "eventbundleselection.component.html",
             styleUrls: ["eventbundleselection.component.css"]
-        }), 
-        __metadata('design:paramtypes', [event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router, bundle_service_1.BundleService])
+        }),
+        __metadata("design:paramtypes", [event_service_1.EventService, ng2_webstorage_1.SessionStorageService, router_1.Router, bundle_service_1.BundleService])
     ], EventbundleselectionComponent);
     return EventbundleselectionComponent;
 }());

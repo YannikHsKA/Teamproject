@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {SessionStorageService} from 'ng2-webstorage';
 import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
+import {Article} from "../../../model/Article";
 import {Router} from '@angular/router';
 import {EventService} from "../../../services/event.service";
 import {BundleService} from "../../../services/bundle.service";
@@ -16,6 +17,10 @@ import {BundleService} from "../../../services/bundle.service";
 export class EventbundleselectionComponent {
 
   event: Event;
+  article1_ean: number;
+  article2_ean: number;
+  article3_ean: number;
+  article: Article;
   bundle: Bundle;
   bundles: Bundle[] = new Array();
   bundle_id: number;
@@ -75,6 +80,9 @@ export class EventbundleselectionComponent {
         });
     }
 
+    this.article1_ean = 50084;
+    this.article2_ean = 20542320;
+    this.article3_ean = 20668457;
 
   }
 

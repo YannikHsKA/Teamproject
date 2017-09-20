@@ -8,9 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var ng2_webstorage_1 = require('ng2-webstorage');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var ng2_webstorage_1 = require("ng2-webstorage");
 var BundlesComponent = (function () {
     function BundlesComponent(storage, router) {
         this.storage = storage;
@@ -38,8 +39,8 @@ var BundlesComponent = (function () {
             selector: 'bundles',
             templateUrl: "bundles.component.html",
             styleUrls: ["bundles.component.css"]
-        }), 
-        __metadata('design:paramtypes', [ng2_webstorage_1.SessionStorageService, router_1.Router])
+        }),
+        __metadata("design:paramtypes", [ng2_webstorage_1.SessionStorageService, router_1.Router])
     ], BundlesComponent);
     return BundlesComponent;
 }());

@@ -253,7 +253,7 @@ Extra large devices (large desktops, 75em and up (1200px))
 .front {
   overflow: auto;
   width: 350px;
-  height: 350px;
+  height: 420px;
   position: absolute;
   z-index: 1;
 }
@@ -263,7 +263,7 @@ Extra large devices (large desktops, 75em and up (1200px))
   padding: 20px;
   padding-top: 0px;
   width: 350px;
-  height: 350px;
+  height: 420px;
   -webkit-transform: rotateY(-180deg);
 }
 .info-card:hover .back {

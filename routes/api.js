@@ -539,7 +539,7 @@ router.get("/getevents", function(req, res) {
 
 //Create PDF for Bundle
 router.post("/createpdf", function(req, res) {
-console.log("post angekommen");
+
     let event = req.body;
  console.log("title:" + event.title);
   console.log("Create PDF for Bundle ");
@@ -557,15 +557,15 @@ console.log("post angekommen");
       });
 
       pdf.image('client/src/assets/Lidl-Logo.png', 25, 25, {
-          width: 60
+          width: 80
       });
-      pdf.fontSize(40).text('LIDL SMART SHOPPING', 120, 40);
+      pdf.fontSize(40).text('LIDL SMART SHOPPING', 130, 25);
 
       pdf.moveTo(0, 435)
           .lineTo(700, 400)
           .stroke();
 
-      pdf.image('client/src/assets/pdf/tree.jpeg', 0, 120, {
+      pdf.image('client/src/assets/pdf/tree.jpg', 0, 120, {
           width: 700
       });
       pdf.moveTo(0, 435)
@@ -580,6 +580,9 @@ console.log("post angekommen");
           align: 'center'
       });
 
+    pdf.image('client/src/assets/pdf/tree.jpg', 0, 0, {
+        scale: 0.25
+    })
 
      // pdf.rect(50, 300, 200, 30)
       //    .fillOpacity(0.8)
