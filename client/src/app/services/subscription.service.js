@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/map');
 var SubscriptionService = (function () {
     function SubscriptionService(http) {
         this.http = http;
@@ -19,11 +18,11 @@ var SubscriptionService = (function () {
     }
     SubscriptionService.prototype.addUser = function (newUser, mode) {
         switch (mode) {
-            case 1://Phone
+            case 1:
                 break;
-            case 2://Email
+            case 2:
                 break;
-            case 3://Whatsapp
+            case 3:
                 var data = new FormData();
                 data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
                 data.append("usernumber", newUser.phonenumber);
@@ -43,8 +42,8 @@ var SubscriptionService = (function () {
         return this.http.post('/api/subscribe', JSON.stringify(newUser), { headers: headers_api });
     };
     SubscriptionService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http])
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
     ], SubscriptionService);
     return SubscriptionService;
 }());

@@ -13,6 +13,7 @@ import {Event} from "../../model/Event";
 export class BundlesComponent {
   events: Event[];
   event: Event;
+  title: String;
 
   constructor(private  storage: SessionStorageService, private router: Router, private eventService: EventService) {
     document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
@@ -23,8 +24,7 @@ export class BundlesComponent {
 
     this.eventService.getCurrentEvent()
       .subscribe(events => {
-        this.events = events;
-        console.log(this.events);
+        this.title = events[4];
       });
   }
 

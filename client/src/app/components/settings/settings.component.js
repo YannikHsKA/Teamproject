@@ -8,10 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var settings_service_1 = require("../../services/settings.service");
-var verification_service_1 = require("../../services/verification.service");
+var core_1 = require('@angular/core');
+var settings_service_1 = require('../../services/settings.service');
+var verification_service_1 = require('../../services/verification.service');
 var router_1 = require("@angular/router");
 var SettingsComponent = (function () {
     function SettingsComponent(settingsservice, verificationService, router) {
@@ -138,8 +137,8 @@ var SettingsComponent = (function () {
             selector: 'settings',
             templateUrl: "settings.component.html",
             styleUrls: ['settings.component.css']
-        }),
-        __metadata("design:paramtypes", [settings_service_1.SettingsService, verification_service_1.VerificationService, router_1.Router])
+        }), 
+        __metadata('design:paramtypes', [settings_service_1.SettingsService, verification_service_1.VerificationService, router_1.Router])
     ], SettingsComponent);
     return SettingsComponent;
 }());

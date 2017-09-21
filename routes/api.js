@@ -90,7 +90,7 @@ router.post("/subscribe", function(req, res) {
           to: req.body.email_address,
           subject: "Willkommen bei LIDL Smart Shopping!",
           generateTextFromHTML: true,
-          html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2
+          html: "<b>Hallo!</b> Dein Verification Key lautet " + settingkey2 + " Viel Erfolg. Bekomme 5% mit dem Code ASH737 "
         };
 
         smtpTransport.sendMail(mailOptions, function(error, response) {
@@ -129,7 +129,7 @@ router.post("/subscribe", function(req, res) {
         client.sendMessage({
           to: user.phonenumber,
           from: '+4915735984837',
-          body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2 + " Viel Erfolg "
+          body: "Willkommen bei LIDL Smart Shopping!!! Dein Setting Key lautet... " + settingkey2
         }, function(err, data) {
           if (err) {
             // console.log(err);
@@ -667,7 +667,7 @@ router.post("/createpdf", function(req, res) {
 
           pdf.fontSize(18).fillColor("black").text(bundle.description, 310, 200, {});
 
-          pdf.fontSize(18).fillColor("black").text('Kaufen Sie diese drei Produkte gemeinsam und sparen Sie ' + bundle.discount + ' %', 350, 300, {
+          pdf.fontSize(18).fillColor("black").text('Kaufen Sie diese drei Produkte gemeinsam und sparen Sie ' + (bundle.discount *100)+ ' %', 350, 300, {
               width: 220
           });
           pdf.image(article1_ean, 0, 420, {
@@ -747,9 +747,9 @@ console.log("SEND EMAIL NEWSLETTER")
                 var mailOptions = {
                     from: "lidlsmartshopping@gmail.com",
                     to: inputmail,
-                    subject: "Neue interessante Bundles!",
+                    subject: "Neue interessante Bundles! Check out www.lidlsmartshopping.de/bundles" ,
                     generateTextFromHTML: true,
-                    html: notification.email_text
+                    html: notification.email_text + "Check out www.lidlsmartshopping.de/bundle"
                 };
                 smtpTransport.sendMail(mailOptions, function (error, response) {
                     if (error) {
