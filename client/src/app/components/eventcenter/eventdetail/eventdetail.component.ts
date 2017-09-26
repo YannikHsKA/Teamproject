@@ -30,7 +30,7 @@ export class EventdetailComponent {
   notification_status: boolean;
   active_status: string;
   hidden: boolean = false;
-  countdown: number = 10;
+  countdown: number;
   articleFilter: any = {name: ''}
   currentArticle: Article;
 
@@ -134,7 +134,14 @@ export class EventdetailComponent {
       that.countdown = that.countdown - 1;
     }
     setInterval(countdown, 1000);
-    setTimeout(doBoth, 10000);
+
+    let countdownReal:number = Math.floor(Math.random() * (8000 - 3000) ) + 3000;
+
+    setTimeout(doBoth, countdownReal);
+
+    this.countdown = parseInt((countdownReal/1000).toFixed(0));
+
+
     if(this.currentArticle){
       this.storage.store('article', this.currentArticle);
     }

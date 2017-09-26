@@ -92,32 +92,7 @@
           </li>
 
 
-          <!-- Notification -->
-          <!-- Currently active -->
-          <li *ngIf="active_status == 'notification'" role="presentation" class="active1 active">
-            <a aria-controls="step4" title="Step 4">
-              <span class="round-tab" class="active" class="active">
-                  <i class="glyphicon-glyphicon-bullhorn"></i>
-              </span>
-            </a>
-          </li>
 
-          <!-- Finished -->
-          <li *ngIf="notification_status && active_status != 'notification'" role="presentation" class="active1">
-            <a aria-controls="step4" title="Step 4">
-              <span class="round-tab">
-                    <i class="glyphicon glyphicon-bullhorn"></i>
-              </span>
-            </a>
-          </li>
-          <!-- To be... -->
-          <li *ngIf="!notification_status" role="presentation" class="disabled">
-            <a aria-controls="step3" title="Step 4">
-              <span class="round-tab">
-                    <i class="glyphicon glyphicon-bullhorn"></i>
-              </span>
-          </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -224,7 +199,7 @@
             <button [routerLink]="[ '/eventdetail'] " class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events' | translate}}</button>
           </div>
           <div class="col-xs-4 pull-right ">
-            <button class="btn btn-info " (click)="GoNext() ">{{ 'next2notif' | translate}}</button>
+            <button class="btn btn-info " (click)="saveEvent() ">Save Event</button>
           </div>
 
         </div>

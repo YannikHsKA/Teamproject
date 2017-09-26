@@ -73,12 +73,12 @@ var EventbundleComponent = (function () {
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
     };
-    EventbundleComponent.prototype.GoNext = function () {
+    EventbundleComponent.prototype.saveEvent = function () {
         this.saveToDB();
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('bundle2_status', true);
-        this.router.navigate(['./notificationcenter']);
+        this.router.navigate(['./eventoverview']);
         this.eventService.updateEvent(this.storage.retrieve('event'))
             .subscribe();
     };

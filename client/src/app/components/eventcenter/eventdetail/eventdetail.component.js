@@ -26,7 +26,6 @@ var EventdetailComponent = (function () {
         this.bundles = new Array();
         this.articles = new Array();
         this.hidden = false;
-        this.countdown = 10;
         this.articleFilter = { name: '' };
         //Set NavigationBar Attributes
         this.detail_status = true;
@@ -112,7 +111,9 @@ var EventdetailComponent = (function () {
             that.countdown = that.countdown - 1;
         }
         setInterval(countdown, 1000);
-        setTimeout(doBoth, 10000);
+        var countdownReal = Math.floor(Math.random() * (10000 - 3000)) + 3000;
+        setTimeout(doBoth, countdownReal);
+        this.countdown = parseInt((countdownReal / 1000).toFixed(0));
         if (this.currentArticle) {
             this.storage.store('article', this.currentArticle);
         }
