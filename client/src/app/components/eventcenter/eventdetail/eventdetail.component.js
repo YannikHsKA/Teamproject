@@ -65,8 +65,6 @@ var EventdetailComponent = (function () {
             //start with empty default storage
             this.createMode = true;
             this.event.title = "Sample Title";
-            this.event.start = "Sample Start";
-            this.event.end = "Sample End";
             this.event.notifications = null;
             //build bundles
             var n = 0;
@@ -96,6 +94,7 @@ var EventdetailComponent = (function () {
         newEvent.title = this.event.title;
         newEvent.cweek = this.event.cweek;
         newEvent.bundles = this.event.bundles;
+        newEvent.notifications = this.event.notifications;
         this.bundle_id = 0;
         var temp = "";
         this.eventService.addEvent(this.event)
@@ -120,8 +119,6 @@ var EventdetailComponent = (function () {
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
             title: event.title,
-            start: event.start,
-            end: event.end,
             id: event.id,
             cweek: event.cweek,
             bundles: event.bundles,

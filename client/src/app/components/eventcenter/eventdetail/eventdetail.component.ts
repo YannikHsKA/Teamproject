@@ -79,8 +79,6 @@ export class EventdetailComponent {
       //start with empty default storage
       this.createMode = true;
       this.event.title = "Sample Title";
-      this.event.start = "Sample Start";
-      this.event.end = "Sample End";
       this.event.notifications = null;
 
       //build bundles
@@ -114,6 +112,7 @@ export class EventdetailComponent {
     newEvent.title = this.event.title;
     newEvent.cweek = this.event.cweek;
     newEvent.bundles = this.event.bundles;
+    newEvent.notifications = this.event.notifications;
     this.bundle_id = 0;
 
 
@@ -143,8 +142,6 @@ export class EventdetailComponent {
   updateEvent(event: Event) {
     var _event = {
       title: event.title,
-      start: event.start,
-      end: event.end,
       id: event.id,
       cweek: event.cweek,
       bundles: event.bundles,

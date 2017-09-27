@@ -25,7 +25,10 @@ var BundlesComponent = (function () {
         document.body.style.backgroundSize = "cover";
         this.eventService.getCurrentEvent()
             .subscribe(function (events) {
-            _this.title = events[4];
+            _this.events = events;
+            console.log(events);
+            _this.bundles = _this.events[0].bundles;
+            console.log(_this.bundles);
         });
     }
     BundlesComponent.prototype.gotoBundle = function () {

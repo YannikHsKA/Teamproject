@@ -303,7 +303,6 @@ router.post("/checkveritel", function(req, res) {
 router.post("/updatesettings", function(req, res) {
   console.log("Update User");
   let user = req.body;
-  //console.log(user);
 
   // Connect to Firebase
   var db = admin.database();
@@ -333,9 +332,9 @@ router.post("/createevent", function(req, res) {
 
   var newRef = ref.push({
     'title': event.title,
-    'start': event.start,
-    'end': event.end,
-    'bundles': event.bundles
+    'cweek': event.cweek,
+    'bundles': event.bundles,
+      'notifications': event.notifications
   });
 
   // Add Key to Entry
@@ -369,18 +368,20 @@ router.post("/updateevent", function(req, res) {
 
 // Update CurrentEvent
 router.post("/updatecurrentevent", function(req, res) {
-    console.log("Update Event");
+    console.log("Update CurrentEvent");
     /* Read POST Request */
     let event = req.body;
 
     // Connect to Firebase
     var db = admin.database();
-    var ref = db.ref('admin/currentevent/');
+    var ref = db.ref('admin/currentevent/' + 0);
 
     var newRef = ref.update({
         'title': event.title,
         'cweek': event.cweek,
-        'bundles': event.bundles
+        'bundles': event.bundles,
+        'id': event.id,
+        'notifications': event.notifications
     });
 
     res.sendStatus(201);

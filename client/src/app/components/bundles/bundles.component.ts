@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {SessionStorageService} from 'ng2-webstorage';
 import {EventService} from "../../services/event.service";
 import {Event} from "../../model/Event";
+import {Bundle} from "../../model/Bundle";
 
 @Component({
   moduleId: module.id,
@@ -14,6 +15,7 @@ export class BundlesComponent {
   events: Event[];
   event: Event;
   title: String;
+  bundles: Bundle[];
 
   constructor(private  storage: SessionStorageService, private router: Router, private eventService: EventService) {
     document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
@@ -24,7 +26,11 @@ export class BundlesComponent {
 
     this.eventService.getCurrentEvent()
       .subscribe(events => {
-        this.title = events[4];
+        this.events = events;
+        console.log(events);
+        this.bundles = this.events[0].bundles;
+
+        console.log(this.bundles);
       });
   }
 
