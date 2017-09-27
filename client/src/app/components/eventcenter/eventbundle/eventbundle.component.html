@@ -113,7 +113,7 @@
         <div class="form-group col-xs-6">
           <label for="selectstyle ">{{ 'styleTemplate' | translate}}</label>
           <div>
-            <select [(ngModel)]="themevalue" name="selectstyle" class="form-control " id="selectstyle " (change)="handleStyle($event.target.value)">
+            <select [(ngModel)]="themevalue" name="selectstyle" class="form-control " id="selectstyle " (change)="handleThemeChange($event.target.value)">
                                    <option [value]=1>{{ 'opt1' | translate}}</option>
                                    <option [value]=2>{{ 'opt2' | translate}}</option>
                                    <option [value]=3>{{ 'opt3' | translate}}</option>
@@ -131,22 +131,22 @@
         <label for="tab ">Total Discount</label>
         <div>
           <div class="btn-group" id="status" data-toggle="buttons">
-            <label class="btn btn-default btn-on active" (click)="typeChange(1)">
+            <label class="btn btn-default btn-on active" (click)="handleBundleTypeChange(1)">
                       <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Pure</label>
-            <label class="btn btn-default btn-off" (click)="typeChange(2)">
+            <label class="btn btn-default btn-off" (click)="handleBundleTypeChange(2)">
                       <input type="radio" value="0" name="multifeatured_module[module_id][status]">Mixed</label>
           </div>
           <div class="btn-group" data-toggle="buttons" *ngIf="type == 1">
-            <label class="btn btn-default" (click)="handleChange(0.1)">
+            <label class="btn btn-default" (click)="handleChangePure(0.1)">
             <input type="radio" name="radiogroup" id="option1"> 10%
               </label>
-            <label class="btn btn-default" (click)="handleChange(0.25)">
+            <label class="btn btn-default" (click)="handleChangePure(0.25)">
               <input type="radio" name="options" id="option2"> 25%
             </label>
-            <label class="btn btn-default" (click)="handleChange(0.5)">
+            <label class="btn btn-default" (click)="handleChangePure(0.5)">
               <input type="radio" name="options" id="option3" >  50%
             </label>
-            <label class="btn btn-default" (click)="handleChange(0.75)">
+            <label class="btn btn-default" (click)="handleChangePure(0.75)">
               <input type="radio" name="options" id="option4" > 75%
             </label>
           </div>
@@ -196,7 +196,7 @@
 
         <div class="row " style="text-align: center ">
           <div class=" col-xs-4 pull-left ">
-            <button [routerLink]="[ '/eventdetail'] " class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events' | translate}}</button>
+            <button class=" btn btn-danger " (click)="backToEvent() ">{{ 'back2events' | translate}}</button>
           </div>
           <div class="col-xs-4 pull-right ">
             <button class="btn btn-info " (click)="saveEvent() ">Save Event</button>

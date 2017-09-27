@@ -110,23 +110,16 @@ export class EventdetailComponent {
   }
 
   addEvent() {
-    let newEvent = new Event();
-    newEvent.title = this.event.title;
-    newEvent.cweek = this.event.cweek;
-    newEvent.bundles = this.event.bundles;
+
     this.bundle_id = 0;
 
-
-    var temp = "";
-    this.eventService.addEvent(this.event)
-      .subscribe(result => temp);
     this.storage.store('bundle_id', this.bundle_id);
-    this.storage.store('event', newEvent);
+    this.storage.store('event', this.event);
     this.storage.store('detail_status', true);
 
-    var that = this;
-    function doBoth() {
 
+    var that = this;
+    function closeModal() {
       document.getElementById("closemodal").click();
       that.router.navigate(['/eventbundleselection']);
     }
@@ -134,13 +127,9 @@ export class EventdetailComponent {
       that.countdown = that.countdown - 1;
     }
     setInterval(countdown, 1000);
-
     let countdownReal:number = Math.floor(Math.random() * (8000 - 3000) ) + 3000;
-
-    setTimeout(doBoth, countdownReal);
-
+    setTimeout(closeModal, countdownReal);
     this.countdown = parseInt((countdownReal/1000).toFixed(0));
-
 
     if(this.currentArticle){
       this.storage.store('article', this.currentArticle);

@@ -79,11 +79,6 @@ export class EventbundleselectionComponent {
           }
         });
     }
-
-    this.article1_ean = 50084;
-    this.article2_ean = 20542320;
-    this.article3_ean = 20668457;
-
   }
 
   goToEventBundle(bundle: Bundle) {
@@ -96,19 +91,5 @@ export class EventbundleselectionComponent {
     this.storage.store('event', this.event);
     this.storage.store('bundle_id', this.bundle_id);
   }
-  backToBundle1() {
-    this.storage.store('event', this.event);
-    this.bundle_id_text = "First";
-    this.bundle = this.event.bundles[0];
-    this.storage.store('bundle_id', 0);
-    this.bundle_id = 0;
-    this.bundle1_active = true;
-    this.active_status = "bundle1";
-  }
-  GoToArticles() {
-    this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
-    this.storage.store('event', this.event);
-    this.storage.store('bundle_id', this.bundle_id);
-    this.storage.store('active_status', this.active_status);
-  }
+
 }

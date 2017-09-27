@@ -66,23 +66,27 @@ var EventbundleComponent = (function () {
                     break;
             }
         }
-        this.handleChange(parseFloat(this.chosen_bundle.articles[0].preis.split("€")[0]) * 0.1);
+        this.handleChangePure(parseFloat(this.chosen_bundle.articles[0].preis.split("€")[0]) * 0.1);
     }
     EventbundleComponent.prototype.backToEvent = function () {
         this.event.bundles[this.storage.retrieve('bundle_id')] = this.bundle;
         this.storage.store('event', this.event);
         this.storage.store('bundle_id', this.bundle_id);
+        this.router.navigate(['./eventdetail']);
     };
     EventbundleComponent.prototype.saveEvent = function () {
-        this.saveToDB();
-        this.storage.store('event', this.event);
-        this.storage.store('bundle_id', this.bundle_id);
-        this.storage.store('bundle2_status', true);
+        //Read current list of articles
+        this.event.bundles[0].articles = this.chosen_bundle.articles;
+        //Update or Create
+        if (this.storage.retrieve("mode") == "edit")
+            this.eventService.updateEvent(this.event).subscribe();
+        else
+            this.eventService.addEvent(this.event).subscribe();
+        //Navigate to Overview
         this.router.navigate(['./eventoverview']);
-        this.eventService.updateEvent(this.storage.retrieve('event'))
-            .subscribe();
     };
-    EventbundleComponent.prototype.handleChange = function (num) {
+    EventbundleComponent.prototype.handleChangePure = function (num) {
+        //handle change for pure bundling
         this.event.bundles[0].discount = num.toString();
         for (var i = 0; i < 3; i++) {
             var res = this.chosen_bundle.articles[i].preis.split("€");
@@ -92,25 +96,21 @@ var EventbundleComponent = (function () {
         }
     };
     EventbundleComponent.prototype.handleChangeMixed = function (i, num) {
-        console.log(i);
+        //handle change for mixed bundling
         var res = this.chosen_bundle.articles[i].preis.split("€");
         this.discounts[i] = (parseFloat(res[0]) * num).toFixed(2).toString().concat("€");
         this.event.bundles[0].articles[i].discount = num.toString();
         this.event.bundles[0].articles[i].discountpreis = this.discounts[i].toString();
     };
-    EventbundleComponent.prototype.typeChange = function (num) {
+    EventbundleComponent.prototype.handleBundleTypeChange = function (num) {
+        //handle change between Pure and Mixed Bundling
         this.type = num;
         for (var i = 0; i < 3; i++) {
             this.discounts[i] = (parseFloat(this.chosen_bundle.articles[i].preis.split("€")[0])).toString().concat("€");
         }
     };
-    EventbundleComponent.prototype.saveToDB = function () {
-        this.event.bundles[0].articles = this.chosen_bundle.articles;
-        console.log("event:", this.event);
-        this.eventService.updateEvent(this.storage.retrieve('event'))
-            .subscribe();
-    };
-    EventbundleComponent.prototype.handleStyle = function (num) {
+    EventbundleComponent.prototype.handleThemeChange = function (num) {
+        //handle change in Theme selection
         this.event = this.storage.retrieve('event');
         this.event.bundles[0].theme = num;
         this.storage.store('event', this.event);

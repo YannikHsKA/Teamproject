@@ -91,19 +91,12 @@ var EventdetailComponent = (function () {
         });
     }
     EventdetailComponent.prototype.addEvent = function () {
-        var newEvent = new Event_1.Event();
-        newEvent.title = this.event.title;
-        newEvent.cweek = this.event.cweek;
-        newEvent.bundles = this.event.bundles;
         this.bundle_id = 0;
-        var temp = "";
-        this.eventService.addEvent(this.event)
-            .subscribe(function (result) { return temp; });
         this.storage.store('bundle_id', this.bundle_id);
-        this.storage.store('event', newEvent);
+        this.storage.store('event', this.event);
         this.storage.store('detail_status', true);
         var that = this;
-        function doBoth() {
+        function closeModal() {
             document.getElementById("closemodal").click();
             that.router.navigate(['/eventbundleselection']);
         }
@@ -111,8 +104,8 @@ var EventdetailComponent = (function () {
             that.countdown = that.countdown - 1;
         }
         setInterval(countdown, 1000);
-        var countdownReal = Math.floor(Math.random() * (10000 - 3000)) + 3000;
-        setTimeout(doBoth, countdownReal);
+        var countdownReal = Math.floor(Math.random() * (8000 - 3000)) + 3000;
+        setTimeout(closeModal, countdownReal);
         this.countdown = parseInt((countdownReal / 1000).toFixed(0));
         if (this.currentArticle) {
             this.storage.store('article', this.currentArticle);

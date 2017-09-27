@@ -37,6 +37,7 @@ export class EventService {
   }
 
   addEvent(newEvent: Event) {
+    console.log("addEvent",newEvent);
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);

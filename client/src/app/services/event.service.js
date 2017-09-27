@@ -32,6 +32,7 @@ var EventService = (function () {
             .map(function (res) { return res.json(); });
     };
     EventService.prototype.addEvent = function (newEvent) {
+        console.log("addEvent", newEvent);
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);

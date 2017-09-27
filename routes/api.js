@@ -335,6 +335,7 @@ router.post("/createevent", function(req, res) {
     'title': event.title,
     'start': event.start,
     'end': event.end,
+      'cweek': event.cweek,
     'bundles': event.bundles
   });
 
