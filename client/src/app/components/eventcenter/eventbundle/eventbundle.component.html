@@ -132,9 +132,9 @@
         <div>
           <div class="btn-group" id="status" data-toggle="buttons">
             <label class="btn btn-default btn-on active" (click)="handleBundleTypeChange(1)">
-                      <input type="radio" value="1" name="multifeatured_module[module_id][status]" checked="checked">Pure</label>
+                      <input type="radio" name="multifeatured_module[module_id][status]">Pure</label>
             <label class="btn btn-default btn-off" (click)="handleBundleTypeChange(2)">
-                      <input type="radio" value="0" name="multifeatured_module[module_id][status]">Mixed</label>
+                      <input type="radio" name="multifeatured_module[module_id][status]">Mixed</label>
           </div>
           <div class="btn-group" data-toggle="buttons" *ngIf="type == 1">
             <label class="btn btn-default" (click)="handleChangePure(0.1)">

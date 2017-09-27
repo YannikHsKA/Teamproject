@@ -33,7 +33,6 @@ var EventbundleselectionComponent = (function () {
         this.detail_status = this.storage.retrieve('detail_status');
         this.bundle1_status = this.storage.retrieve('bundle1_status');
         this.select_status = this.storage.retrieve('select_status');
-        this.notification_status = this.storage.retrieve('notification_status');
         this.active_status = "select";
         this.select_status = true;
         this.storage.store('select_status', true);

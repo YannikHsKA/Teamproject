@@ -17,19 +17,13 @@ import {BundleService} from "../../../services/bundle.service";
 export class EventbundleselectionComponent {
 
   event: Event;
-  article1_ean: number;
-  article2_ean: number;
-  article3_ean: number;
   article: Article;
   bundle: Bundle;
   bundles: Bundle[] = new Array();
   bundle_id: number;
-  bundle1_active: boolean;
-  bundle_id_text: string;
   detail_status: boolean;
   bundle1_status: boolean;
   select_status: boolean;
-  notification_status: boolean;
   active_status: string;
 
   constructor(private eventService: EventService, private storage: SessionStorageService, private router: Router, private bundleService: BundleService) {
@@ -47,7 +41,6 @@ export class EventbundleselectionComponent {
     this.detail_status = this.storage.retrieve('detail_status');
     this.bundle1_status = this.storage.retrieve('bundle1_status');
     this.select_status = this.storage.retrieve('select_status');
-    this.notification_status = this.storage.retrieve('notification_status');
 
 
     this.active_status = "select";

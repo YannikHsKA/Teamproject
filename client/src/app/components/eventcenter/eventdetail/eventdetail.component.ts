@@ -1,13 +1,12 @@
 import {Component} from '@angular/core';
 import {Event} from "../../../model/Event";
 import {Bundle} from "../../../model/Bundle";
-import {Notification} from "../../../model/Notification";
 import {Article} from "../../../model/Article";
 import {EventService} from "../../../services/event.service";
 import {BundleService} from "../../../services/bundle.service";
 import {Router} from "@angular/router";
-import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
-import {LocalStorage, SessionStorage} from 'ng2-webstorage';
+import {SessionStorageService} from 'ng2-webstorage';
+
 
 
 @Component({
@@ -26,8 +25,6 @@ export class EventdetailComponent {
   bundle: Bundle;
   detail_status: boolean;
   bundle1_status: boolean;
-  bundle2_status: boolean;
-  notification_status: boolean;
   active_status: string;
   hidden: boolean = false;
   countdown: number;
@@ -39,11 +36,10 @@ export class EventdetailComponent {
     //Set NavigationBar Attributes
     this.detail_status = true;
     this.bundle1_status = this.storage.retrieve('bundle1_status');
-    this.bundle2_status = this.storage.retrieve('bundle2_status');
-    this.notification_status = this.storage.retrieve('notification_status');
     this.active_status = "detail";
 
-    if (this.storage.retrieve("mode") == "edit") {
+    if (this.storage.retrieve("mode") == "edit")
+    {
       this.createMode = false;
       switch (this.eventService.event) {
         case undefined:
@@ -65,13 +61,12 @@ export class EventdetailComponent {
       }
       this.storage.store('event', this.event);
     }
-    else {
+    else
+      {
       console.log("CREATE MODE");
 
       //Status for Navigation Bar
       this.storage.store('bundle1_status', false);
-      this.storage.store('bundle2_status', false);
-      this.storage.store('notification_status', false);
       this.storage.store('detail_status', true);
 
 
@@ -112,11 +107,9 @@ export class EventdetailComponent {
   addEvent() {
 
     this.bundle_id = 0;
-
     this.storage.store('bundle_id', this.bundle_id);
     this.storage.store('event', this.event);
     this.storage.store('detail_status', true);
-
 
     var that = this;
     function closeModal() {

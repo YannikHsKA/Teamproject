@@ -30,8 +30,6 @@ var EventdetailComponent = (function () {
         //Set NavigationBar Attributes
         this.detail_status = true;
         this.bundle1_status = this.storage.retrieve('bundle1_status');
-        this.bundle2_status = this.storage.retrieve('bundle2_status');
-        this.notification_status = this.storage.retrieve('notification_status');
         this.active_status = "detail";
         if (this.storage.retrieve("mode") == "edit") {
             this.createMode = false;
@@ -57,8 +55,6 @@ var EventdetailComponent = (function () {
             console.log("CREATE MODE");
             //Status for Navigation Bar
             this.storage.store('bundle1_status', false);
-            this.storage.store('bundle2_status', false);
-            this.storage.store('notification_status', false);
             this.storage.store('detail_status', true);
             //working on create mode
             //start with empty default storage
