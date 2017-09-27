@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12" *ngFor="let bundle of bundles">
       <div class="section">
         <div class="offer offer-default">
           <div class="shape">
@@ -19,12 +19,12 @@
           <a (click)="gotoBundle()">
             <div class="offer-content" >
               <h3 class="lead">
-                {{title}}
+                 {{ bundle.title }}
               </h3>
             </div>
           </a>
           <div class="panel-footer">
-            <div> {{title}}</div>
+            <div> {{ bundle.description }}</div>
             <div>{{ 'expire1' | translate}}</div>
           </div>
         </div>

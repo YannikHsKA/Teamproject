@@ -46,9 +46,6 @@ var EventService = (function () {
         //Bundle 1
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        console.log("create Pdf Service");
-        var headers = new http_1.Headers();
-        headers.append('Content-Type', 'application/json');
         console.log("create PDF for Event :" + event.title);
         var body = JSON.stringify(event);
         this.http.post('/api/createpdf', body, { headers: headers })
@@ -65,7 +62,11 @@ var EventService = (function () {
     EventService.prototype.updateCurrentEvent = function (event) {
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/updatecurrentevent', JSON.stringify(event), { headers: headers });
+        this.http.post('/api/updatecurrentevent', JSON.stringify(event), { headers: headers })
+            .subscribe(function (data) {
+        }, function (error) {
+            console.log(JSON.stringify(error.json()));
+        });
     };
     EventService.prototype.deleteEvent = function (event) {
         var headers = new http_1.Headers();

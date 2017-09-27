@@ -34,10 +34,10 @@ var EventoverviewComponent = (function () {
         this.router.navigate(['./eventdetail']);
     };
     EventoverviewComponent.prototype.onPublish = function (event) {
+        this.eventService.updateCurrentEvent(event);
         this.storage.clear();
         this.eventService.createPdf(event);
         this.storage.store('event', event);
-        this.eventService.updateCurrentEvent(event);
         var that = this;
         function doBoth() {
             document.getElementById("closemodal").click();

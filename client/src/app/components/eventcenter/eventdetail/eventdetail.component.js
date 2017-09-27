@@ -60,8 +60,6 @@ var EventdetailComponent = (function () {
             //start with empty default storage
             this.createMode = true;
             this.event.title = "Sample Title";
-            this.event.start = "Sample Start";
-            this.event.end = "Sample End";
             this.event.notifications = null;
             //build bundles
             var n = 0;
@@ -87,6 +85,14 @@ var EventdetailComponent = (function () {
         });
     }
     EventdetailComponent.prototype.addEvent = function () {
+<<<<<<< HEAD
+=======
+        var newEvent = new Event_1.Event();
+        newEvent.title = this.event.title;
+        newEvent.cweek = this.event.cweek;
+        newEvent.bundles = this.event.bundles;
+        newEvent.notifications = this.event.notifications;
+>>>>>>> zwischenstand themes
         this.bundle_id = 0;
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('event', this.event);
@@ -110,8 +116,6 @@ var EventdetailComponent = (function () {
     EventdetailComponent.prototype.updateEvent = function (event) {
         var _event = {
             title: event.title,
-            start: event.start,
-            end: event.end,
             id: event.id,
             cweek: event.cweek,
             bundles: event.bundles,

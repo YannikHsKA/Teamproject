@@ -3,7 +3,7 @@ import {Http, Headers, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Event} from "../model/Event";
 import {Notification} from "../model/Notification";
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 import {LocalStorageService, SessionStorageService} from 'ng2-webstorage';
 import {LocalStorage, SessionStorage} from 'ng2-webstorage';
 import {Article} from "../model/Article";
@@ -31,7 +31,7 @@ export class EventService {
       .map(res => res.json());
   }
 
-  getCurrentEvent(){
+  getCurrentEvent() {
     return this.http.get('/api/getcurrentevent')
       .map(res => res.json());
   }
@@ -40,49 +40,49 @@ export class EventService {
     console.log("addEvent",newEvent);
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/createevent', JSON.stringify(newEvent), { headers: headers }).map(this.extractData);
+    return this.http.post('/api/createevent', JSON.stringify(newEvent), {headers: headers}).map(this.extractData);
   }
 
-  addNotification(newNotification: Notification, eventid: String){
-var headers = new Headers();
+  addNotification(newNotification: Notification, eventid: String) {
+    var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/createnotification/' + eventid , JSON.stringify(newNotification), { headers: headers }).map(this.extractData);
+    return this.http.post('/api/createnotification/' + eventid, JSON.stringify(newNotification), {headers: headers}).map(this.extractData);
   }
 
 
-createPdf(event: Event){
-
+  createPdf(event: Event) {
     //Bundle 1
-  var headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  console.log("create Pdf Service");
-  var headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  console.log("create PDF for Event :" + event.title );
-  var body = JSON.stringify(event);
-  this.http.post('/api/createpdf', body, {headers: headers})
-    .subscribe(data => {
-    }, error => {
-      console.log(JSON.stringify(error.json()));
-    });
-}
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    console.log("create PDF for Event :" + event.title);
+    var body = JSON.stringify(event);
+    this.http.post('/api/createpdf', body, {headers: headers})
+      .subscribe(data => {
+      }, error => {
+        console.log(JSON.stringify(error.json()));
+      });
+  }
 
   updateEvent(event: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/updateevent', JSON.stringify(event), { headers: headers });
+    return this.http.post('/api/updateevent', JSON.stringify(event), {headers: headers});
   }
 
-  updateCurrentEvent(event: Event){
+  updateCurrentEvent(event: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/updatecurrentevent', JSON.stringify(event), { headers: headers });
+    this.http.post('/api/updatecurrentevent', JSON.stringify(event), {headers: headers})
+      .subscribe(data => {
+      }, error => {
+        console.log(JSON.stringify(error.json()));
+      });
   }
 
   deleteEvent(event: Event) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/deleteevent', JSON.stringify(event), { headers: headers });
+    return this.http.post('/api/deleteevent', JSON.stringify(event), {headers: headers});
   }
 
   private extractData(res: Response) {
