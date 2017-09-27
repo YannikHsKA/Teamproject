@@ -11,28 +11,38 @@ import {Bundle} from "../../model/Bundle";
   templateUrl: `bundles.component.html`,
   styleUrls: [`bundles.component.css`]
 })
-export class BundlesComponent {
+export class BundlesComponent{
   events: Event[];
   event: Event;
   title: String;
   bundles: Bundle[];
+  bundlebackground: String;
 
   constructor(private  storage: SessionStorageService, private router: Router, private eventService: EventService) {
-    document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
-    document.body.style.backgroundPosition = "center center";
-    document.body.style.backgroundRepeat = "no-repeat";
-    document.body.style.backgroundAttachment = "fixed";
-    document.body.style.backgroundSize = "cover";
-
     this.eventService.getCurrentEvent()
       .subscribe(events => {
         this.events = events;
-        console.log(events);
         this.bundles = this.events[0].bundles;
+        
+        if(this.bundles[0].theme == 1){
+          document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
+          this.bundlebackground = "kekse.jpg";
+        } else if(this.bundles[0].theme == 2){
+          document.body.style.backgroundImage = "url('src/assets/sportbackground.jpg')";
+          this.bundlebackground = "superbowlsnacks.jpg";
+        } else {
+          document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+          this.bundlebackground = "Angebote.jpg";
+        }
 
-        console.log(this.bundles);
+        document.body.style.backgroundPosition = "center center";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundAttachment = "fixed";
+        document.body.style.backgroundSize = "cover";
+
       });
   }
+
 
   gotoBundle() {
     this.storage.store('bundle_id', 0);

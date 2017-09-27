@@ -18,17 +18,26 @@ var BundlesComponent = (function () {
         this.storage = storage;
         this.router = router;
         this.eventService = eventService;
-        document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
-        document.body.style.backgroundPosition = "center center";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundSize = "cover";
         this.eventService.getCurrentEvent()
             .subscribe(function (events) {
             _this.events = events;
-            console.log(events);
             _this.bundles = _this.events[0].bundles;
-            console.log(_this.bundles);
+            if (_this.bundles[0].theme == 1) {
+                document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
+                _this.bundlebackground = "kekse.jpg";
+            }
+            else if (_this.bundles[0].theme == 2) {
+                document.body.style.backgroundImage = "url('src/assets/sportbackground.jpg')";
+                _this.bundlebackground = "superbowlsnacks.jpg";
+            }
+            else {
+                document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+                _this.bundlebackground = "Angebote.jpg";
+            }
+            document.body.style.backgroundPosition = "center center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundAttachment = "fixed";
+            document.body.style.backgroundSize = "cover";
         });
     }
     BundlesComponent.prototype.gotoBundle = function () {

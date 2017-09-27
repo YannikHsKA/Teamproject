@@ -10,16 +10,17 @@
   <div class="row">
     <div class="col-xs-12" *ngFor="let bundle of bundles">
       <div class="section">
-        <div class="offer offer-default">
+        <div class="offer offer-default"
+             [ngStyle]="{background: 'url(src/assets/' + bundlebackground + ')'}">
           <div class="shape">
             <div class="shape-text">
               New
             </div>
           </div>
           <a (click)="gotoBundle()">
-            <div class="offer-content" >
+            <div class="offer-content">
               <h3 class="lead">
-                 {{ bundle.title }}
+                {{ bundle.title }}
               </h3>
             </div>
           </a>
