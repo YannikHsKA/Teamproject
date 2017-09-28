@@ -10,8 +10,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12" *ngFor="let bundle of bundles">
-      <div class="section">
+    <div class="col-xs-12" *ngFor="let bundle of bundles; let i=index;">
+      <div *ngIf="i<1" class="section">
         <div class="offer offer-default"
              [ngStyle]="{background: 'url(src/assets/' + bundlebackground + ')'}">
           <div class="shape">
