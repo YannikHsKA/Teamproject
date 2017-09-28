@@ -60,6 +60,8 @@ var EventService = (function () {
         return this.http.post('/api/updateevent', JSON.stringify(event), { headers: headers });
     };
     EventService.prototype.updateCurrentEvent = function (event) {
+        console.log(event);
+        event.notifications = null;
         var headers = new http_1.Headers();
         headers.append('Content-Type', 'application/json');
         this.http.post('/api/updatecurrentevent', JSON.stringify(event), { headers: headers })

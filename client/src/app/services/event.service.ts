@@ -70,6 +70,11 @@ export class EventService {
   }
 
   updateCurrentEvent(event: Event) {
+
+    console.log(event);
+
+    event.notifications = null;
+
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
     this.http.post('/api/updatecurrentevent', JSON.stringify(event), {headers: headers})
