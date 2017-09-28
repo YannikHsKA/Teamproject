@@ -85,14 +85,11 @@ var EventdetailComponent = (function () {
         });
     }
     EventdetailComponent.prototype.addEvent = function () {
-<<<<<<< HEAD
-=======
         var newEvent = new Event_1.Event();
         newEvent.title = this.event.title;
         newEvent.cweek = this.event.cweek;
         newEvent.bundles = this.event.bundles;
         newEvent.notifications = this.event.notifications;
->>>>>>> zwischenstand themes
         this.bundle_id = 0;
         this.storage.store('bundle_id', this.bundle_id);
         this.storage.store('event', this.event);
