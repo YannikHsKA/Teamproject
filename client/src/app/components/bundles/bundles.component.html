@@ -1,10 +1,12 @@
 <div class="container containertop">
   <div class="row">
     <div class="col-xs-12">
-      <div class="header">
-        <div class="header2" id="snow">
-        </div>
-      </div>
+        <h1 [ngStyle]="{'font-family': fontfamily, 'color': fontcolor}">{{ title }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 [ngStyle]="{'font-family': fontfamily2, 'color': fontcolor}">{{ title2 }}</h3>
     </div>
   </div>
   <div class="row">
@@ -33,3 +35,4 @@
     </div>
   </div>
 </div>
+

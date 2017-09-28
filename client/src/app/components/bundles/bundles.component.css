@@ -1,3 +1,19 @@
+@import url(http://fonts.googleapis.com/css?family=Archivo+Black);
+@import url(http://fonts.googleapis.com/css?family=Anaheim);
+@import url(http://fonts.googleapis.com/css?family=Fontdiner+Swanky);
+@import url(http://fonts.googleapis.com/css?family=Bonbon);
+@import url(http://fonts.googleapis.com/css?family=Graduate);
+@import url(http://fonts.googleapis.com/css?family=Playball);
+
+h1{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+
 .panel-footer {
   height: 3rem;
   position: absolute;

@@ -22,17 +22,30 @@ var BundlesComponent = (function () {
             .subscribe(function (events) {
             _this.events = events;
             _this.bundles = _this.events[0].bundles;
+            _this.title2 = "Verfügbare Bundles in der Kalenderwoche " + _this.events[0].cweek.substr(6, 2) + ", " + _this.events[0].cweek.substr(0, 4);
             if (_this.bundles[0].theme == 1) {
                 document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
                 _this.bundlebackground = "kekse.jpg";
+                _this.title = "LIDL Christmas Special " + _this.events[0].title;
+                _this.fontfamily = "'Fontdiner Swanky', cursive";
+                _this.fontfamily2 = "'Bonbon', cursive";
+                _this.fontcolor = "white";
             }
             else if (_this.bundles[0].theme == 2) {
                 document.body.style.backgroundImage = "url('src/assets/sportbackground.jpg')";
                 _this.bundlebackground = "superbowlsnacks.jpg";
+                _this.title = "LIDL Sports Special " + _this.events[0].title;
+                _this.fontfamily = "'Graduate', cursive";
+                _this.fontfamily2 = "'Playball', cursive";
+                _this.fontcolor = "red";
             }
             else {
                 document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
                 _this.bundlebackground = "Angebote.jpg";
+                _this.title = "LIDL Smart Bundles " + _this.events[0].title;
+                _this.fontfamily = "'Archivo Black', sans-serif";
+                _this.fontfamily2 = "'Anaheim'";
+                _this.fontcolor = "black";
             }
             document.body.style.backgroundPosition = "center center";
             document.body.style.backgroundRepeat = "no-repeat";
