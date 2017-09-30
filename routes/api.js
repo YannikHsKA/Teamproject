@@ -16,6 +16,8 @@ var smtpTransport = nodemailer.createTransport(smtpTransport({
     pass: "lidlsmartshopping123",
   }
 }));
+var path    = require('path');
+var pdf2img = require('pdf2img');
 
 //FIREBASE
 var admin = require("firebase-admin");
@@ -707,10 +709,36 @@ router.post("/createpdf", function(req, res) {
               .on('finish', function () {
                   console.log('PDF closed');
 
+
+
+                  var input   = path.join(__dirname, '../client/src/assets/bundle/', 'bundle0.pdf');
+                  console.log("dirname" + __dirname);
+                  console.log("newdir" + input);
+                  pdf2img.setOptions({
+                      type: 'jpg',                                // png or jpg, default jpg
+                      size: 1024,                                 // default 1024
+                      density: 600,                               // default 600
+                      outputdir: path.join(__dirname, '../client/src/assets/bundle'),       // output folder, default null (if null given, then it will create folder name same as file name)
+                      outputname: 'bundle_picture',                         // output file name, dafault null (if null given, then it will create image name same as input name)
+                      page: null                                  // convert selected page, default null (if null given, then it will convert all pages)
+                  });
+
+                  pdf2img.convert(input, function(err, info) {
+                      if (err) console.log(err)
+                      else console.log(info);
+                  });
+
+
+                  
+
               });
 
           // Close PDF and write file.
           pdf.end();
+
+
+
+
 
 
     res.sendStatus(201);
