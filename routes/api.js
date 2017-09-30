@@ -580,8 +580,8 @@ router.get("/getcurrentevent", function(req, res) {
 router.post("/createpdf", function(req, res) {
 
     let event = req.body;
- console.log("title:" + event.title);
-  console.log("Create PDF for Bundle ");
+    console.log("title:" + event.title);
+    console.log("Create PDF for Bundle ");
 
 
   let filename = "";
@@ -632,13 +632,24 @@ router.post("/createpdf", function(req, res) {
               size: [567, 690],
               info: {
                   Title: bundle.title,
-                  Author: 'Lidl Smart Shopping',
-
+                  Author: 'Lidl Smart Shopping'
               }
           });
-          pdf.image('client/src/assets/pdf/weihnachts_bundle_theme.jpg', 0, 0, {
-              scale: 1
-          })
+
+          if(bundle.theme == 1){
+              pdf.image('client/src/assets/pdf/weihnachts_bundle_theme.jpg', 0, 0, {
+                  scale: 1
+              });
+          }else if(bundle.theme == 2){
+              pdf.image('client/src/assets/pdf/sport_bundle_theme.jpg', 0, 0, {
+                  scale: 1
+              });
+          }else {
+              pdf.image('client/src/assets/pdf/default_bundle_theme.jpg', 0, 0, {
+                  scale: 1
+              });
+          }
+
 
           /* pdf.moveTo(0, 435)
                .lineTo(700, 400)
