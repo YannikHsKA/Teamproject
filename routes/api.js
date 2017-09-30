@@ -736,7 +736,52 @@ router.post("/createpdf", function(req, res) {
 
                   pdf2img.convert(input, function(err, info) {
                       if (err) console.log(err)
-                      else console.log(info);
+                      else {
+                          console.log(info)
+
+                          var gcloud = require('google-cloud')({
+                              projectId: 'lidl-smart',
+                              // Specify a path to a keyfile.
+                              keyFilename: 'routes/firebasekey.json'
+                          });
+
+                          var gcs = gcloud.storage();
+
+// Reference an existing bucket.
+                          var bucket = gcs.bucket('lidl-smart.appspot.com');
+
+
+
+                          var remoteFile = bucket.file('currentBundle.jpg');
+                          console.log("remote file:" + remoteFile)
+                          var localFilename = 'test.jpg';
+
+
+                          /*
+                          remoteFile.createReadStream()
+                              .on('error', function(err) {console.log(err);})
+                              .on('response', function(response) {
+
+                                  // Server connected and responded with the specified status and headers.
+                              })
+                              .on('end', function() {
+                                  // The file is fully downloaded.
+                                  console.log("fully downloaded")
+                              })
+                              .pipe(fs.createWriteStream(localFilename));
+*/
+
+                          fs.createReadStream(path.join(__dirname, '/../client/src/assets/bundle/bundle_picture_1.jpg'))
+                              .pipe(remoteFile.createWriteStream())
+                              .on('error', function(err) {console.log(err)})
+                              .on('finish', function() {
+                                  console.log("completely uploaded")
+                                  // The file upload is complete.
+                              });
+
+
+
+                      } ;
                   });
 
 
