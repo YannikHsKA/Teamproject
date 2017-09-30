@@ -12,21 +12,34 @@ var core_1 = require('@angular/core');
 var router_1 = require("@angular/router");
 var ng2_webstorage_1 = require('ng2-webstorage');
 var http_1 = require('@angular/http');
+var event_service_1 = require("../../services/event.service");
 var DetailedbundleComponent = (function () {
-    function DetailedbundleComponent(activatedRoute, storage, http) {
+    function DetailedbundleComponent(activatedRoute, storage, http, eventService) {
+        var _this = this;
         this.activatedRoute = activatedRoute;
         this.storage = storage;
         this.http = http;
-        document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
-        document.body.style.backgroundPosition = "center center";
-        document.body.style.backgroundRepeat = "no-repeat";
-        document.body.style.backgroundAttachment = "fixed";
-        document.body.style.backgroundSize = "cover";
+        this.eventService = eventService;
+        this.eventService.getCurrentEvent()
+            .subscribe(function (events) {
+            _this.events = events;
+            _this.bundles = _this.events[0].bundles;
+            if (_this.bundles[0].theme == 1) {
+                document.body.style.backgroundImage = "url('src/assets/christable.jpg')";
+            }
+            else if (_this.bundles[0].theme == 2) {
+                document.body.style.backgroundImage = "url('src/assets/sportbackground.jpg')";
+            }
+            else {
+                document.body.style.backgroundImage = "url('src/assets/LIDL-Customer.jpg')";
+            }
+            document.body.style.backgroundPosition = "center center";
+            document.body.style.backgroundRepeat = "no-repeat";
+            document.body.style.backgroundAttachment = "fixed";
+            document.body.style.backgroundSize = "cover";
+        });
         this.bundle_id = this.storage.retrieve('bundle_id');
         console.log(this.bundle_id);
-        // let content;
-        // console.log("file URL" + fileURL);
-        // content = $sce.trustAsResourceUrl(fileURL);
     }
     DetailedbundleComponent = __decorate([
         core_1.Component({
@@ -35,7 +48,7 @@ var DetailedbundleComponent = (function () {
             templateUrl: "detailedbundle.component.html",
             styleUrls: ["detailedbundle.component.css"]
         }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, ng2_webstorage_1.SessionStorageService, http_1.Http])
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, ng2_webstorage_1.SessionStorageService, http_1.Http, event_service_1.EventService])
     ], DetailedbundleComponent);
     return DetailedbundleComponent;
 }());
