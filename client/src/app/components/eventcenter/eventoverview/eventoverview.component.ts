@@ -48,7 +48,7 @@ export class EventoverviewComponent {
       document.getElementById("closemodal").click();
       that.router.navigate(['./notificationcenter']);
     }
-    setTimeout(doBoth, 5000);
+    setTimeout(doBoth, 5500);
 
   }
 

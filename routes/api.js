@@ -753,7 +753,7 @@ router.post("/createpdf", function(req, res) {
 
 
                           var remoteFile = bucket.file('currentBundle.jpg');
-                          console.log("remote file:" + remoteFile)
+                         // console.log("remote file:" + remoteFile)
                           var localFilename = 'test.jpg';
 
 
@@ -772,9 +772,23 @@ router.post("/createpdf", function(req, res) {
 */
 
                           fs.createReadStream(path.join(__dirname, '/../client/src/assets/bundle/bundle_picture_1.jpg'))
-                              .pipe(remoteFile.createWriteStream())
+                              .pipe(remoteFile.createWriteStream({
+                                  metadata: {
+                                      contentType: 'image/jpeg',
+                                      metadata: {
+                                          public: true
+                                      },
+                                      public: true
+                                  }
+                              }))
                               .on('error', function(err) {console.log(err)})
                               .on('finish', function() {
+                                  var options = {
+                                      entity: 'allUsers',
+                                      role: gcs.acl.READER_ROLE
+                                  };
+
+                                  remoteFile.acl.add(options, function(err, aclObject) {});
                                   console.log("completely uploaded")
                                   // The file upload is complete.
                               });
