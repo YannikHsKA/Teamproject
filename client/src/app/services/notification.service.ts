@@ -19,7 +19,7 @@ export class NotificationService {
 
     var data = new FormData();
     data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
-    data.append("caption", notification.whatsapp_text);
+    data.append("caption", notification.whatsapp_text + " Webseite: https://goo.gl/CqL91L");
     data.append("msg_type", "image");
     data.append("content", "https://storage.googleapis.com/lidl-smart.appspot.com/currentBundle.jpg");
     //https://whatsbroadcast.me/en/images/telegram-img.jpg

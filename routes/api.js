@@ -14,7 +14,8 @@ var smtpTransport = nodemailer.createTransport(smtpTransport({
   auth: {
     user: "lidlsmartshopping@gmail.com",
     pass: "lidlsmartshopping123",
-  }
+  },
+    tls: { rejectUnauthorized: false }
 }));
 var path    = require('path');
 var pdf2img = require('pdf2img');
@@ -842,13 +843,15 @@ console.log("SEND EMAIL NEWSLETTER")
             if (inputmail && obj.email == 1) {
 
                 console.log("inputmail:" + inputmail);
+                var path_picture = path.join(__dirname, '../client/src/assets/bundle/');
+                console.log("path:" + path_picture);
                 //console.log("Notify User about current Event");
                 var mailOptions = {
                     from: "lidlsmartshopping@gmail.com",
                     to: inputmail,
-                    subject: "Neue interessante Bundles! Check out www.lidlsmartshopping.de/bundles" ,
+                    subject: "Neue interessante Bundles - Lidl Smart Shopping" ,
                     generateTextFromHTML: true,
-                    html: notification.email_text + "Check out www.lidlsmartshopping.de/bundle"
+                    html: "Hallo " + obj.email_address + ", <br />"  + notification.email_text + '<br /> Schau dir unsere Seite an unter: https://goo.gl/CqL91L <img src="https://storage.googleapis.com/lidl-smart.appspot.com/currentBundle.jpg" height="50%" width="50%"/>',
                 };
                 smtpTransport.sendMail(mailOptions, function (error, response) {
                     if (error) {
