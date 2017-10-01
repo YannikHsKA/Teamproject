@@ -23,9 +23,11 @@ var SubscriptionService = (function () {
             case 2:
                 break;
             case 3:
+                var newnumber = newUser.phonenumber.substr(1);
+                console.log("newnumber" + newnumber);
                 var data = new FormData();
                 data.append("api_key", "1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb");
-                data.append("usernumber", newUser.phonenumber);
+                data.append("usernumber", newnumber);
                 var xhr = new XMLHttpRequest();
                 xhr.withCredentials = false;
                 xhr.addEventListener("readystatechange", function () {

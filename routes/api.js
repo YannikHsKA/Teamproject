@@ -142,7 +142,38 @@ router.post("/subscribe", function(req, res) {
             res.status(200).send("Success");
           }
         });} else{
-          console.log("new Whatsapp User")
+
+            var new_phonenumber = user.phonenumber.substring(1);
+            console.log("cut number:" + new_phonenumber);
+            var request = require("request");
+
+            var options = { method: 'POST',
+                url: 'https://api.whatsbroadcast.com/v071/send_message',
+                headers:
+                    {   'cache-control': 'no-cache',
+                        'accept-encoding': 'gzip, deflate, br',
+                        referer: 'http://localhost:3000/eventoverview',
+                        'content-type': 'application/x-www-form-urlencoded',
+                        origin: 'http://localhost:3000',
+                        accept: 'application/json, text/plain, */*',
+                        'content-length': '286',
+                        connection: 'keep-alive' },
+                form:
+                    { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb',
+                        usernumber: new_phonenumber,
+                        content: 'Vielen Dank, Deine Anmeldung war erfolgreich. Du wirst in Kürze in unseren Verteiler aufgenommen und empfängst damit unsere Neuigkeiten. Um deine Einstellungen zu ändern, gib einfach deinen Code:' + settingkey2 + ' unter https://goo.gl/CqL91L ein. Viel Spaß mit LIDL Smart Shopping!',
+                        msg_type: 'text' } };
+
+            request(options, function (error, response, body) {
+                if (error) throw new Error(error);
+
+                console.log(body);
+            });
+
+
+
+
+            console.log("new Whatsapp User")
 
         }
       }
