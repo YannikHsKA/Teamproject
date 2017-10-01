@@ -953,7 +953,7 @@ router.post("/sendEmailUpdate_subscribe", function(req, res) {
         to: req.body.email_address,
         subject: "Willkommen bei LIDL Smart Shopping!",
         generateTextFromHTML: true,
-        html: "<b>Hallo!</b> neue Mail "
+        html: "<b>Hallo!</b> Sie haben erfolgreich ihre Einstellungen geändert und erhalten von nun kann Email-Benachrichtigungen von Lidl-Smart-Shopping "
     };
 
     smtpTransport.sendMail(mailOptions, function(error, response) {
@@ -1059,13 +1059,109 @@ router.post("/sendSMSUpdate_unsubscribe", function(req, res) {
 
 
 router.post("/sendWhatsAppUpdate_subscribe", function(req, res) {
+    var new_phonenumber = req.body.phonenumber.substring(1);
+    console.log("cut number:" + new_phonenumber);
+    var request = require("request");
+
+    var options = { method: 'POST',
+        url: 'https://api.whatsbroadcast.com/v071/send_message',
+        headers:
+            {   'cache-control': 'no-cache',
+                'accept-encoding': 'gzip, deflate, br',
+                referer: 'http://localhost:3000/eventoverview',
+                'content-type': 'application/x-www-form-urlencoded',
+                origin: 'http://localhost:3000',
+                accept: 'application/json, text/plain, */*',
+                'content-length': '286',
+                connection: 'keep-alive' },
+        form:
+            { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb',
+                usernumber: new_phonenumber,
+                content: 'Vielen Dank, du hast erfolgreich deine Einstellungen geändert und dich von dem Lidl-Smart-Shopping Newsletter abgemeldet',
+                msg_type: 'text' } };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+    });
+
+
+    var options = { method: 'POST',
+        url: 'https://api.whatsbroadcast.com/v071/set_start',
+        headers:
+            {   'cache-control': 'no-cache',
+                'accept-encoding': 'gzip, deflate, br',
+                referer: 'http://localhost:3000/eventoverview',
+                'content-type': 'application/x-www-form-urlencoded',
+                origin: 'http://localhost:3000',
+                accept: 'application/json, text/plain, */*',
+                'content-length': '286',
+                connection: 'keep-alive' },
+        form:
+            { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb',
+                usernumber: new_phonenumber,
+            } };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+    });
 
   console.log("Whatsapp Subscribe");
 
 });
 
 router.post("/sendWhatsAppUpdate_unsubscribe", function(req, res) {
+    var new_phonenumber = req.body.phonenumber.substring(1);
+    console.log("cut number:" + new_phonenumber);
+    var request = require("request");
 
+    var options = { method: 'POST',
+        url: 'https://api.whatsbroadcast.com/v071/send_message',
+        headers:
+            {   'cache-control': 'no-cache',
+                'accept-encoding': 'gzip, deflate, br',
+                referer: 'http://localhost:3000/eventoverview',
+                'content-type': 'application/x-www-form-urlencoded',
+                origin: 'http://localhost:3000',
+                accept: 'application/json, text/plain, */*',
+                'content-length': '286',
+                connection: 'keep-alive' },
+        form:
+            { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb',
+                usernumber: new_phonenumber,
+                content: 'Vielen Dank, du hast erfolgreich deine Einstellungen geändert und dich beim Lidl-Smart-Shopping Newsletter abgemeldet',
+                msg_type: 'text' } };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+    });
+
+    var options = { method: 'POST',
+        url: 'https://api.whatsbroadcast.com/v071/set_stop',
+        headers:
+            {   'cache-control': 'no-cache',
+                'accept-encoding': 'gzip, deflate, br',
+                referer: 'http://localhost:3000/eventoverview',
+                'content-type': 'application/x-www-form-urlencoded',
+                origin: 'http://localhost:3000',
+                accept: 'application/json, text/plain, */*',
+                'content-length': '286',
+                connection: 'keep-alive' },
+        form:
+            { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb',
+                usernumber: new_phonenumber,
+             } };
+
+    request(options, function (error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+    });
   console.log("Whatsapp Unsubscribe");
 
 });
