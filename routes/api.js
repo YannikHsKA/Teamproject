@@ -758,20 +758,6 @@ router.post("/createpdf", function(req, res) {
                           var localFilename = 'test.jpg';
 
 
-                          /*
-                          remoteFile.createReadStream()
-                              .on('error', function(err) {console.log(err);})
-                              .on('response', function(response) {
-
-                                  // Server connected and responded with the specified status and headers.
-                              })
-                              .on('end', function() {
-                                  // The file is fully downloaded.
-                                  console.log("fully downloaded")
-                              })
-                              .pipe(fs.createWriteStream(localFilename));
-*/
-
                           fs.createReadStream(path.join(__dirname, '/../client/src/assets/bundle/bundle_picture_1.jpg'))
                               .pipe(remoteFile.createWriteStream({
                                   metadata: {
@@ -794,13 +780,8 @@ router.post("/createpdf", function(req, res) {
                                   // The file upload is complete.
                               });
 
-
-
                       } ;
                   });
-
-
-                  
 
               });
 
@@ -900,7 +881,7 @@ router.post("/sendSMSNewsletter", function(req, res) {
                 client.sendMessage({
                     to: phonenumber,
                     from: '+4915735984837',
-                    body: notification.sms_text
+                    body: notification.sms_text + " https://goo.gl/CqL91L"
                 }, function(err, data) {
                     if (err) {
                          console.log(err);
