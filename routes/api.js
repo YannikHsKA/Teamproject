@@ -144,6 +144,7 @@ router.post("/subscribe", function(req, res) {
         });} else{
 
             var new_phonenumber = user.phonenumber.substring(1);
+            var nachricht = 'Vielen Dank, Deine Anmeldung war erfolgreich. Du wirst in Kürze in unseren Verteiler aufgenommen und empfängst damit unsere Neuigkeiten. Um deine Einstellungen zu ändern, gib einfach deinen Code:' + settingkey2 + ' unter https://goo.gl/CqL91L ein. Viel Spaß mit LIDL Smart Shopping!';
             console.log("cut number:" + new_phonenumber);
             var request = require("request");
 
@@ -161,7 +162,7 @@ router.post("/subscribe", function(req, res) {
                 form:
                     { api_key: '1709510af522e46ea619b11642f3c3a8_4552_b41a2200d6875bf6bda88332cb',
                         usernumber: new_phonenumber,
-                        content: 'Vielen Dank, Deine Anmeldung war erfolgreich. Du wirst in Kürze in unseren Verteiler aufgenommen und empfängst damit unsere Neuigkeiten. Um deine Einstellungen zu ändern, gib einfach deinen Code:' + settingkey2 + ' unter https://goo.gl/CqL91L ein. Viel Spaß mit LIDL Smart Shopping!',
+                        content: nachricht,
                         msg_type: 'text' } };
 
             request(options, function (error, response, body) {
