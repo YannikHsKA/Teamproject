@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="form-group">
-          <label class="col-xs-4 control-label"> Amazon Alexa </label>
+          <label class="col-xs-4 control-label"> {{ 'alexa' | translate}}</label>
           <div class="col-xs-4">
             <label class="switch">
               <input type="checkbox" [checked]="true" name="amazon_toggle">
@@ -71,7 +71,7 @@
           </div>
         </div>
         <button type="button" class="btn btn-info" (click)="saveSettings()">
-          Done
+          {{ 'done' | translate}}
         </button>
 
       </fieldset>

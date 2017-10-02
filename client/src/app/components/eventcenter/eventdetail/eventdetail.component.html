@@ -130,14 +130,14 @@
             <h4 class="modal-title">Cancel</h4>
           </div>
           <div class="modal-body">
-            <h4>Are you sure you want to cancel?</h4>
-            <p>Your progress will be deleted</p>
+            <h4>{{ 'confirmCancel' | translate}}</h4>
+            <p>{{ 'lostProgress' | translate}}</p>
           </div>
           <div class="modal-footer">
             <div class="btn-group">
 
               <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span
-                class="glyphicon glyphicon-check"></span> Yes, Cancel
+                class="glyphicon glyphicon-check"></span> {{ 'yes' | translate}}
               </button>
             </div>
           </div>
@@ -156,17 +156,17 @@
 
           <div class="modal-header">
             <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
-            <h4 class="modal-title">Cancel</h4>
+            <h4 class="modal-title">{{ 'cancel' | translate}}</h4>
           </div>
           <div class="modal-body">
-            <h4>Are you sure you want to cancel?</h4>
-            <p>Your progress will be deleted</p>
+            <h4>{{ 'confirmCancel1' | translate}}</h4>
+            <p>{{ 'lostProgress1' | translate}}</p>
           </div>
           <div class="modal-footer">
             <div class="btn-group">
 
               <button data-dismiss="modal" class="btn btn-info" [routerLink]="[ '/eventoverview'] "><span
-                class="glyphicon glyphicon-check"></span> Yes, Cancel
+                class="glyphicon glyphicon-check"></span> {{ 'yes1' | translate}}
               </button>
             </div>
           </div>
@@ -184,18 +184,18 @@
 
       <form class="form-horizontal " #cweekForm="ngForm" style="text-align: center ">
 
-        <legend *ngIf="createMode ">Create an Event</legend>
-        <legend *ngIf="!createMode ">Update your Event</legend>
+        <legend *ngIf="createMode ">{{ 'createEvent1' | translate}}</legend>
+        <legend *ngIf="!createMode ">{{ 'updateEvent1' | translate}}</legend>
 
         <fieldset>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label text-right">Event-Title</label>
+            <label for="title " class="col-xs-4 col-form-label text-right">{{ 'eventTitle1' | translate}}</label>
             <div class="col-xs-8 ">
               <input [(ngModel)]="event.title " id="title " name="title " type="text " class="form-control input-xs ">
             </div>
           </div>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label text-right">Calendar Week of Promotion</label>
+            <label for="title " class="col-xs-4 col-form-label text-right">{{ 'calWeek' | translate}}</label>
             <div class="col-xs-8 ">
               <input [disabled]="!createMode" [(ngModel)]="event.cweek" id="cweek" name="cweek" type="week"
                      class="form-control input-xs" required>
@@ -203,11 +203,11 @@
           </div>
         </fieldset>
 
-        <legend>Verfügbare Artikel</legend>
+        <legend>{{ 'availableProd' | translate}}</legend>
 
         <fieldset>
           <div class="form-group row ">
-            <label for="title " class="col-xs-4 col-form-label text-right">Articlesearch</label>
+            <label for="title " class="col-xs-4 col-form-label text-right">{{ 'prodSearch' | translate}}</label>
             <div class="col-xs-8 ">
               <input placeholder="Filter by Articlename" [disabled]="!createMode" [(ngModel)]="articleFilter.name"
                      name="articleFilter.name" type="text"
@@ -223,13 +223,13 @@
               <thead>
               <tr>
                 <th style="width: 40%">
-                  <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                  <mfDefaultSorter by="name">{{ 'prodName1' | translate}}</mfDefaultSorter>
                 </th>
                 <th style="width: 40%">
-                  <mfDefaultSorter by="ean">EAN</mfDefaultSorter>
+                  <mfDefaultSorter by="ean">{{ 'EAN2' | translate}}</mfDefaultSorter>
                 </th>
                 <th style="width: 20%" class="text-right">
-                  <mfDefaultSorter by="preis">Preis</mfDefaultSorter>
+                  <mfDefaultSorter by="preis">{{ 'price2' | translate}}</mfDefaultSorter>
                 </th>
               </tr>
               </thead>
@@ -253,11 +253,11 @@
 
         <div class="row">
           <div class="text-left col-xs-6 ">
-            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal_cancel">Cancel</button>
+            <button class="btn btn-danger " data-toggle="modal" data-target="#myModal_cancel">{{ 'cancel2' | translate}}</button>
           </div>
           <div class="col-xs-6 text-right ">
             <button [hidden]="false" data-toggle="modal" data-target="#myModal" class="btn btn-info " *ngIf="createMode " (click)="addEvent()" [disabled]="!cweekForm.form.valid">Generate Bundles</button>
-            <button [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">Update Event and continue</button>
+            <button [routerLink]="[ '/eventbundle'] " class="btn btn-info " *ngIf="!createMode " (click)="updateEvent(event) ">{{ 'updateCont' | translate}}</button>
           </div>
 
         </div>
