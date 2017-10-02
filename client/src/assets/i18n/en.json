@@ -19,7 +19,7 @@
 
     "lidlssv":"LIDL Smart Shopping Verification",
     "channel?":"How did you choose to use the LIDL Smart Shopping Service?",
-    "phone1":"Phone Number",
+    "phone1":"SMS/WhatsApp",
     "email2": "E-Mail",
     "typenum1":"Type your registered phone number and press Enter: ",
     "error1":"ERROR! Please use a registered phone number.",
@@ -113,6 +113,51 @@
     "expire1":"Expires: September 30th, 2017",
     "Bundle2":"Cosy Christmas Fashion",
     "code2":"GBWO2",
-    "expire2":"Expires: September 30th, 2017"
+    "expire2":"Expires: September 30th, 2017",
+
+    "new1":"New",
+    "text":"Alternative text - include a link to the PDF!",
+
+    "discount":"Total Discount",
+    "pure":"Pure",
+    "mixed":"Mixed",
+    "bundleProd":"Bundle Products",
+    "prodName":"Product Name",
+    "EAN":"EAN",
+    "retailPrice":"Retail Price",
+    "discountPrice":"Discounted Price",
+    "mixedDiscount":"Mixed Discount",
+    "saveEvent":"Save Event",
+
+    "chooseBundle":"Choose a Bundle",
+    "bundleProd1":"Bundle Products",
+    "product2":"Product",
+    "EAN1":"EAN",
+    "price":"Price",
+    "back2events1":"Back to Events",
+
+    "confirmCancel":"Are you sure you want to cancel?",
+    "lostProgress":"Your progress will be lost.",
+    "yes":"Yes",
+    "cancel":"Cancel",
+    "confirmCancel1":"Are you sure you want to cancel?",
+    "lostProgress1":"Your progress will be lost.",
+    "yes1":"Yes",
+    "createEvent1":"Create an Event",
+    "updateEvent1":"Update an Event",
+    "eventTitle1":"Event Title",
+    "calWeek":"Calendar Week of Promotion",
+    "availableProd":"Available Products",
+    "prodSearch":"Product Search",
+    "prodName1":"Product Name",
+    "EAN2":"EAN",
+    "price2":"Price",
+    "cancel2":"Cancel",
+    "updateCont":"Update the Event and Continue",
+
+    "publishBundle":"Publishing Bundle",
+    "alexa":"Amazon Alexa",
+    "done":"Done",
+    "alexa1":"Amazon Alexa"
 
 }

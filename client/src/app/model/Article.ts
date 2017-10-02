@@ -6,4 +6,5 @@ export class Article {
   preis: string;
   discountpreis: string;
   discount: string;
+  category: string;
 }

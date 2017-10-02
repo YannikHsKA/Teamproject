@@ -511,11 +511,18 @@ router.get("/getdatabundlescase2/:week/:ean", function(req, res) {
 
     ref.once('value', function(snapshot) {
         obj = snapshot.val();
-        obj.bundle1.articles = Object.keys(obj.bundle1.articles).map(name => obj.bundle1.articles[name]);
-        obj.bundle2.articles = Object.keys(obj.bundle2.articles).map(name => obj.bundle2.articles[name]);
-        obj.bundle3.articles = Object.keys(obj.bundle3.articles).map(name => obj.bundle3.articles[name]);
-        obj.bundle4.articles = Object.keys(obj.bundle4.articles).map(name => obj.bundle4.articles[name]);
-        obj.bundle5.articles = Object.keys(obj.bundle5.articles).map(name => obj.bundle5.articles[name]);
+
+            obj.bundle1.articles = Object.keys(obj.bundle1.articles).map(name => obj.bundle1.articles[name]);
+        if(obj.bundle2){
+            obj.bundle2.articles = Object.keys(obj.bundle2.articles).map(name => obj.bundle2.articles[name]);
+        } if (obj.bundle3){
+            obj.bundle3.articles = Object.keys(obj.bundle3.articles).map(name => obj.bundle3.articles[name]);
+        } if(obj.bundle4){
+            obj.bundle4.articles = Object.keys(obj.bundle4.articles).map(name => obj.bundle4.articles[name]);
+        } if(obj.bundle5) {
+            obj.bundle5.articles = Object.keys(obj.bundle5.articles).map(name => obj.bundle5.articles[name]);
+        }
+
 
         console.log(obj);
 
