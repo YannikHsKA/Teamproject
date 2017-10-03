@@ -670,7 +670,7 @@ router.post("/createpdf", function(req, res) {
 
 
           var pdf = new pdfkit({
-              size: [567, 690],
+              size: [567, 600],
               info: {
                   Title: bundle.title,
                   Author: 'Lidl Smart Shopping'
@@ -714,29 +714,32 @@ router.post("/createpdf", function(req, res) {
 
 
 
-    pdf.fontSize(20).fillColor("white").text( (parseFloat(bundle.articles[0].preis) +parseFloat(bundle.articles[0].preis) + parseFloat(bundle.articles[0].preis)).toFixed(2)+"€", 410, 310, {
+    pdf.fontSize(24).fillColor("white").text( (parseFloat(bundle.articles[0].preis) +parseFloat(bundle.articles[1].preis) + parseFloat(bundle.articles[2].preis)).toFixed(2)+"€", 420, 310, {
         width: 100
     });
 
-    pdf.fontSize(12).fillColor("white").text(bundle.articles[0].name, 20, 390, {
+    pdf.fontSize(12).fillColor("white").text(bundle.articles[0].name, 20, 370, {
         width: 100
     });
-    pdf.fontSize(18).fillColor("black").text(((bundle.articles[0].discount)*100).toFixed(0)+"%", 130, 390, {
-        width: 50
+    pdf.fontSize(18).fillColor("red").text(((bundle.articles[0].discount)*100).toFixed(0)+"%", 140, 380, {
+        width: 50,
+        height: 50
     });
 
-    pdf.fontSize(12).fillColor("white").text(bundle.articles[1].name, 200, 390, {
+    pdf.fontSize(12).fillColor("white").text(bundle.articles[1].name, 200, 370, {
         width: 100
     });
-    pdf.fontSize(18).fillColor("black").text(((bundle.articles[1].discount)*100).toFixed(0)+"%", 320, 390, {
-        width: 50
+    pdf.fontSize(18).fillColor("red").text(((bundle.articles[1].discount)*100).toFixed(0)+"%", 320, 380, {
+        width: 50,
+        height: 50
     });
 
-    pdf.fontSize(12).fillColor("white").text(bundle.articles[2].name, 385, 390, {
+    pdf.fontSize(12).fillColor("white").text(bundle.articles[2].name, 385, 370, {
         width: 100
     });
-    pdf.fontSize(18).fillColor("black").text(((bundle.articles[2].discount)*100).toFixed(0)+"%", 500, 390, {
-        width: 50
+    pdf.fontSize(18).fillColor("red").text(((bundle.articles[2].discount)*100).toFixed(0)+"%", 500, 380, {
+        width: 50,
+        height: 50
     });
 
 
