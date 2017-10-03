@@ -144,7 +144,7 @@ router.post("/subscribe", function(req, res) {
         });} else{
 
             var new_phonenumber = user.phonenumber.substring(1);
-            var nachricht = 'Vielen Dank, Deine Anmeldung war erfolgreich. Du wirst in Kürze in unseren Verteiler aufgenommen und empfängst damit unsere Neuigkeiten. Um deine Einstellungen zu ändern, gib einfach deinen Code:' + settingkey2 + ' unter https://goo.gl/CqL91L ein. Viel Spaß mit LIDL Smart Shopping!';
+            var nachricht = "Wilkommen bei Smart Shoppping! Dein Verifizierungscode lautet " + settingkey2 + ". Gib ihn einfach unter https://goo.gl/9Upcxo ein.";
             console.log("cut number:" + new_phonenumber);
             var request = require("request");
 
@@ -170,7 +170,6 @@ router.post("/subscribe", function(req, res) {
 
                 console.log(body);
             });
-
 
 
 
