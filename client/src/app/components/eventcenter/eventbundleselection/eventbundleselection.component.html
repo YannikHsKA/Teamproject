@@ -109,13 +109,9 @@
           <div class="front">
             <h4 class="card-title">{{bundle.title}}
             <span class="card-block" style="object-fit: contain">
-              <span *ngIf="bundle.smartscore >= 8.5 && bundle.smartscore < 10" class="badge progress-bar-success">{{bundle.smartscore}} / 10</span>
-              <span *ngIf="bundle.smartscore >= 5.5 && bundle.smartscore < 8.5" class="badge progress-bar-info">{{bundle.smartscore}} / 10</span>
-              <span *ngIf="bundle.smartscore >= 2.5 && bundle.smartscore < 5.5" class="badge progress-bar-warning">{{bundle.smartscore}} / 10</span>
-              <span *ngIf="bundle.smartscore < 2.5" class="badge progress-bar-danger">{{bundle.smartscore}} / 10</span>
+              <span class="badge progress-bar-info">{{bundle.smartscore}} / 10</span>
             </span>
               </h4>
-
             <img class="card-img-top img-fluid" src="http://localhost:3000/src/assets/logo_preview.png" alt="Card image cap" style='height: 40%; width: 45%; object-fit: contain ;'>
             <span *ngFor="let article of bundle.articles">
             <img class="card-img-top img-fluid" onError="this.src='http://localhost:3000/src/assets/notfound.jpg';" src="http://localhost:3000/src/assets/articles/{{article.ean}}.jpg" alt="Card image cap" style='height: 40%; width: 45%; object-fit: cover;'>
@@ -142,6 +138,21 @@
                     <td>{{article.ean}}</td>
                     <td>{{article.preis}}</td>
                   </tr>
+                </tbody>
+              </table>
+              <legend>Product Weighting</legend>
+              <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Weighting</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let article of bundle.articles">
+                  <td>{{article.name}}</td>
+                  <td>{{article.category}}</td>
+                </tr>
                 </tbody>
               </table>
             </div>

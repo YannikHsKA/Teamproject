@@ -285,8 +285,8 @@ Extra large devices (large desktops, 75em and up (1200px))
   font-family: "Arial Narrow";
 }
 
-.th{
-  font-weight: 800;
+th{
+  text-align: center;
 }
 
 /* Badge */
@@ -296,4 +296,8 @@ Extra large devices (large desktops, 75em and up (1200px))
   top:10px;
   right:10px;
 }
+
+/* Table */
+
+
 
